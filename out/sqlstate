@@ -1,0 +1,39 @@
+00 Unqualified Successful Completion
+01 Warning
+02 No Data
+07 Dynamic SQL Error
+08 Connection Exception
+09 Triggered Action Exception
+0A Feature Not Supported
+0D Invalid Target Type Specification
+0F Invalid Token
+0K Invalid RESIGNAL Statement
+0N SQL/XML mapping error
+20 Case Not Found for CASE Statement
+21 Cardinality Violation
+22 Data Exception
+23 Constraint Violation
+24 Invalid Cursor State
+25 Invalid Transaction State
+26 Invalid SQL Statement Identifier
+28 Invalid Authorization Specification
+2D Invalid Transaction Termination
+2E Invalid Connection Name
+34 Invalid Cursor Name
+36 Cursor Sensitivity Exception
+38 External Function Exception
+39 External Function Call Exception
+3B Invalid SAVEPOINT
+40 Transaction Rollback
+42 Syntax Error or Access Rule Violation
+44 WITH CHECK OPTION Violation
+45 Unhandled User-Defined Exception
+46 Java DDL
+51 Invalid Application State
+53 Invalid Operand or Inconsistent Specification
+54 SQL or Product Limit Exceeded
+55 Object Not in Prerequisite State
+56 Miscellaneous SQL or Product Error
+57 Resource Not Available or Operator Intervention
+58 System Error
+5U Utilities

@@ -1,0 +1,2689 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL20500 - SQL20999</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d80536e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic24">
+   <h1 class="topictitle1" id="d80536e14">SQL20500 - SQL20999</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d80536e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e64" lang="en-us" id="sql20500n">
+<h1 class="msghead" id="d80536e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL20500N</span></span>  <span class="shortdesc shortdesc msgText">Invalid use of row data type value in a list of values.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20500N: Explanation"><h2 class="sectiontitle" id="d80536e88">Explanation</h2><p>The use of a row type in a list is invalid.</p>
+
+<p>Invalid uses of a row variable in a list include:</p>
+
+<ul>
+<li>In a list of source variables for an assignment statement or the assignment clause of an update operation.</li>
+
+<li>In a list of target variables for a simple assignment statement or an assignment statement in a SELECT INTO, FETCH, or VALUES INTO statement.</li>
+
+<li>In a list of expressions representing a row in the VALUES clause of an insert operation.</li>
+</ul>
+
+<p>The statement cannot be executed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20500N: User response"><h2 class="sectiontitle" id="d80536e111">User response</h2><p>Rewrite the statement so that the list contains no row variable or replace the list with a single row variable value.</p>
+
+<p><strong>sqlcode</strong>:  -20500</p>
+
+<p><strong>sqlstate</strong>:  428HR</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e132" lang="en-us" id="sql20501n">
+<h1 class="msghead" id="d80536e132"><span class="title title msgId"><span class="ph ph msgNumber">SQL20501N</span></span>  <span class="shortdesc shortdesc msgText">The explain facility failed because the specified section could not be found.  Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20501N: Explanation"><h2 class="sectiontitle" id="d80536e159">Explanation</h2><p>The explain facility was invoked to provide access plan information from a section, and the specified section could not be found. The reason codes are as follows:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The section identified by the specified executable ID could not be found in the specified source location.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The section identified by the specified activity information could not be located in the specified activity event monitor.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The section identified by the specified package and section information could not be located in the catalogs.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The section was not captured by the activity event monitor.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20501N: User response"><h2 class="sectiontitle" id="d80536e203">User response</h2><p>The user response corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Verify that the executable ID and section source location were specified correctly. Confirm that the section with the specified executable ID is still present in the source location. If the source location is the in-memory package cache, the section may already have been removed from the cache, in which case, no further action can be taken.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Verify that the specified activity information is correct and corresponds to an activity captured by the specified activity event monitor.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Verify that the specified package and section information corresponds to a section in the catalogs.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Ensure that section collection has been enabled for the activities of interest using the COLLECT ACTIVITY WITH DETAILS, SECTION clause on a workload management object.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20501</p>
+
+<p><strong>sqlstate</strong>:  4274L</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e263" lang="en-us" id="sql20502n">
+<h1 class="msghead" id="d80536e263"><span class="title title msgId"><span class="ph ph msgNumber">SQL20502N</span></span>  <span class="shortdesc shortdesc msgText">The explain facility failed because the specified activity event monitor <var class="keyword varname vartype=quotedString varnumber=1">evmon_name</var> is not a write-to-table event monitor.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20502N: Explanation"><h2 class="sectiontitle" id="d80536e290">Explanation</h2><p>The Explain facility has been invoked to provide access plan information from a section captured by an activity event monitor. The event monitor must be a write-to-table event monitor type. The activity event monitor specified as the section source location is not a write-to-table event monitor.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20502N: User response"><h2 class="sectiontitle" id="d80536e296">User response</h2><p>Provide the name of a write-to-table activity event monitor. The CREATE EVENT MONITOR ...WRITE TO TABLE statement can be used to create a write-to-table event monitor.</p>
+
+<p><strong>sqlcode</strong>:  -20502</p>
+
+<p><strong>sqlstate</strong>:  55074</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e317" lang="en-us" id="sql20503n">
+<h1 class="msghead" id="d80536e317"><span class="title title msgId"><span class="ph ph msgNumber">SQL20503N</span></span>  <span class="shortdesc shortdesc msgText">The explain facility is not supported for the specified section.  Reason code: <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20503N: Explanation"><h2 class="sectiontitle" id="d80536e344">Explanation</h2><p>The explain facility has been invoked to provide access plan information from a section but the section does not support this action. The reason codes indicates the reason for the failure:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The section specified as input was captured in a release prior to DB2 Version 9.7. The explain facility cannot be used on a section captured from a release prior to DB2 V9.7.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The section specified as input was captured in a release prior to the current DB2 version and the explain facility is no longer supported on sections in that release.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The section specified as input was captured in a release later than the current DB2 version. The explain facility cannot be used on a section captured from a release later than the current release.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The section specified as input is not recognized as a valid section.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The section does not contain access plan information. Some sections for statements such as DDL do not contain an access plan. The explain facility cannot be used on these sections.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The section does not exist because the statement is invalid. The statement was in error when the package was bound.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The section does not exist because the statement is an incremental bind statement. Incremental bind statements do not have a section stored in the catalogs. These statements are bound during the execution of an application process.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20503N: User response"><h2 class="sectiontitle" id="d80536e416">User response</h2><p>Respond according to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Invoke the explain facility specifying a section captured from a valid release.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Invoke the explain facility specifying a section captured from a valid release.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Invoke the explain facility specifying a section captured from a valid release.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Invoke the explain facility specifying a valid section as input.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Invoke the explain facility specifying a section that contains access plan information.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>If the statement is supposed to execute at this database server, correct the problem found and reissue the PRECOMPILE or BIND command using the ACTION REPLACE option. After correcting the problem, retry the explain facility.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>To use the explain facility on the section for an incremental bind statement, follow a process similar to dynamic statements:  identify the statement in the package cache after it has been bound, and invoke the explain facility specifying the executable ID corresponding to the section for the statement.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20503</p>
+
+<p><strong>sqlstate</strong>:  55075</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e504" lang="en-us" id="sql20504n">
+<h1 class="msghead" id="d80536e504"><span class="title title msgId"><span class="ph ph msgNumber">SQL20504N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because the target object of the anchored data type is unsupported or is being used in an unsupported context.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20504N: Explanation"><h2 class="sectiontitle" id="d80536e528">Explanation</h2><p>An anchored data type is a data type that is defined to be the same as that of another object. If the underlying object data type changes, the anchored data type also changes.  An anchored data type can reference a variety of objects, but certain objects cannot be referenced.</p>
+
+<p>This message is returned when an attempt is made to reference an unsupported target in an anchored data type, or to reference a target in an anchored data type in an unsupported context.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20504N: User response"><h2 class="sectiontitle" id="d80536e537">User response</h2><p>Remove any anchored data type references that are unsupported or that are used in unsupported contexts and then reissue the statement.</p>
+
+<p><strong>sqlcode</strong>:  -20504</p>
+
+<p><strong>sqlstate</strong>:  428HS</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e558" lang="en-us" id="sql20505n">
+<h1 class="msghead" id="d80536e558"><span class="title title msgId"><span class="ph ph msgNumber">SQL20505N</span></span>  <span class="shortdesc shortdesc msgText">The WITH ORDINALITY clause is not valid with UNNEST of an associative array.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20505N: Explanation"><h2 class="sectiontitle" id="d80536e582">Explanation</h2><p>The WITH ORDINALITY clause must not be specified when the argument of the UNNEST table function is an associative array. An associative array is not organized according to ordinal position.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20505N: User response"><h2 class="sectiontitle" id="d80536e588">User response</h2><p>Remove the WITH ORDINALITY clause or change the argument of the UNNEST function to an ordinary array.  Try the statement again.</p>
+
+<p><strong>sqlcode</strong>:  -20505</p>
+
+<p><strong>sqlstate</strong>:  428HT</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e610" lang="en-us" id="sql20506n">
+<h1 class="msghead" id="d80536e610"><span class="title title msgId"><span class="ph ph msgNumber">SQL20506N</span></span>  <span class="shortdesc shortdesc msgText">The cursor variable could not be used in an OPEN statement in the current scope because the cursor constructor value was assigned in a different scope.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20506N: Explanation"><h2 class="sectiontitle" id="d80536e634">Explanation</h2><p>A cursor variable cannot be used in an OPEN statement that is outside the scope in which the cursor constructor value is assigned to the cursor variable.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20506N: User response"><h2 class="sectiontitle" id="d80536e640">User response</h2><p>Use the cursor variable in an OPEN statement that is in the same scope as the assignment of the cursor constructor to the cursor variable.</p>
+
+<p><strong>sqlcode</strong>:  -20506</p>
+
+<p><strong>sqlstate</strong>:  51044</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e661" lang="en-us" id="sql20507n">
+<h1 class="msghead" id="d80536e661"><span class="title title msgId"><span class="ph ph msgNumber">SQL20507N</span></span>  <span class="shortdesc shortdesc msgText">The query associated with the cursor variable used in an OPEN or FETCH statement recursively invokes another cursor operation using the same cursor.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20507N: Explanation"><h2 class="sectiontitle" id="d80536e685">Explanation</h2><p>The query associated with a cursor variable used in an OPEN or FETCH statement includes an invocation of a function that is passed a cursor variable as an argument and that cursor argument is used to perform some cursor operation within the function. If the query specifies the same variable name as specified in the cursor operation, or specifies a cursor variable that references the same cursor, then the function would be recursively operating on the same cursor. Such recursive cursor operations are not supported.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20507N: User response"><h2 class="sectiontitle" id="d80536e694">User response</h2><p>Change the query associated with the cursor variable used in the OPEN or FETCH statement so that the function which is passed a cursor variable argument is using a different cursor variable that does not reference the same cursor as the OPEN or FETCH statement. Try the statement again.</p>
+
+<p><strong>sqlcode</strong>:  -20507</p>
+
+<p><strong>sqlstate</strong>:  24525</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e716" lang="en-us" id="sql20508n">
+<h1 class="msghead" id="d80536e716"><span class="title title msgId"><span class="ph ph msgNumber">SQL20508N</span></span>  <span class="shortdesc shortdesc msgText">An error occurred during the revalidation of object <var class="keyword varname vartype=quotedString varnumber=1">object-name</var>. Operation <var class="keyword varname vartype=quotedString varnumber=2">operation</var> failed with SQLCODE <var class="keyword varname vartype=quotedString varnumber=3">sqlcode</var>, SQLSTATE <var class="keyword varname vartype=quotedString varnumber=4">sqlstate</var>, and message tokens <var class="keyword varname vartype=quotedString varnumber=5">token-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20508N: Explanation"><h2 class="sectiontitle" id="d80536e755">Explanation</h2><p>The processing of statement <var class="keyword varname">operation</var> by the SYSPROC.ADMIN_REVALIDATE_DB_OBJECTS procedure failed. During this processing an error was encountered. The SQLCODE, SQLSTATE and  message token list (each token is separated by the vertical bar character) are provided. The  message tokens might be truncated. See the corresponding message for the <var class="keyword varname">sqlcode</var> for further explanation of the error.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20508N: User response"><h2 class="sectiontitle" id="d80536e767">User response</h2><p>Check the message associated with the SQLCODE of the SQL statement that failed. Follow the action suggested by that message.</p>
+
+<p><strong>sqlcode</strong>:  -20508</p>
+
+<p><strong>sqlstate</strong>:  5UA03</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e788" lang="en-us" id="sql20509n">
+<h1 class="msghead" id="d80536e788"><span class="title title msgId"><span class="ph ph msgNumber">SQL20509N</span></span>  <span class="shortdesc shortdesc msgText">The statement was not processed because the specified alias cannot be used as the target of the statement.  Specified alias: <var class="keyword varname vartype=quotedString varnumber=1">alias-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20509N: Explanation"><h2 class="sectiontitle" id="d80536e815">Explanation</h2><p>When you create a new database object, you specify a name for the new object with the CREATE statement.  After the object is created, you can also define one or more aliases for that object.</p>
+
+<p>This message is returned when an alias is specified as the target of a statement when the name of the object must be specified instead of an alias.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20509N: User response"><h2 class="sectiontitle" id="d80536e824">User response</h2><p>Resubmit the SQL statement, specifying the name of the object to which the alias <var class="keyword varname">alias-name</var> refers instead of specifying the alias.</p>
+
+<p><strong>sqlcode</strong>:  -20509</p>
+
+<p><strong>sqlstate</strong>:  560CT</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e849" lang="en-us" id="sql20510n">
+<h1 class="msghead" id="d80536e849"><span class="title title msgId"><span class="ph ph msgNumber">SQL20510N</span></span>  <span class="shortdesc shortdesc msgText">Invalid context of use for a compound SQL (compiled) statement.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20510N: Explanation"><h2 class="sectiontitle" id="d80536e873">Explanation</h2><p>Compound SQL (compiled) statements can be used in contexts including the following:</p>
+
+<ul>
+<li>As a standalone statement</li>
+
+<li>As the body of a SQL procedure</li>
+
+<li>As the body of a SQL scalar function</li>
+
+<li>As the body of a trigger when the trigger is not defined using the: 
+<ul>
+<li>FOR EACH STATEMENT clause</li>
+
+<li>REFERENCING OLD TABLE clause</li>
+
+<li>REFERENCING NEW TABLE clause</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20510N: User response"><h2 class="sectiontitle" id="d80536e903">User response</h2><p>Do one of the following and try the request again:</p>
+
+<ul>
+<li>Remove the invalid compound SQL (compiled) statement.</li>
+
+<li>Replace the invalid compound SQL g(compiled) statement with a compound SQL (inlined) statement.</li>
+
+<li>If used within a trigger definition, modify the trigger definition so that the clause that restricts the use of the compound SQL (compiled) statement is removed.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20510</p>
+
+<p><strong>sqlstate</strong>:  429C6</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e935" lang="en-us" id="sql20511n">
+<h1 class="msghead" id="d80536e935"><span class="title title msgId"><span class="ph ph msgNumber">SQL20511N</span></span>  <span class="shortdesc shortdesc msgText">The attempt to put data into the message buffer failed because there is not enough available space in the message buffer.  Message buffer name: <var class="keyword varname vartype=quotedString varnumber=1">buffer-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20511N: Explanation"><h2 class="sectiontitle" id="d80536e962">Explanation</h2><p>The attempt to put data into the message buffer failed because the available free space in the buffer is not large enough for the data.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20511N: User response"><h2 class="sectiontitle" id="d80536e968">User response</h2><p>Respond to this message in one of the following ways:</p>
+
+<ul>
+<li>For the DBMS_OUTPUT buffer, take one of the following actions: 
+<ul>
+<li>Call the DBMS_OUTPUT.GET_LINE procedure or DBMS_OUTPUT.GET_LINES procedure to retrieve the data from the local message buffer to free up space.</li>
+
+<li>Increase the size of the buffer using the DBMS_OUTPUT.ENABLE procedure.</li>
+</ul>
+</li>
+
+<li>For the DBMS_PIPE buffer, invoke DBMS_OUTPUT.SEND_MESSAGE function to send the content in the message buffer through the pipe.</li>
+
+<li>For the UTL_TCP.READ_LINE buffer, decrease the amount of data per line transmitted by the sender.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20511</p>
+
+<p><strong>sqlstate</strong>:  5UA0P</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1008" lang="en-us" id="sql20512n">
+<h1 class="msghead" id="d80536e1008"><span class="title title msgId"><span class="ph ph msgNumber">SQL20512N</span></span>  <span class="shortdesc shortdesc msgText">No alert has been registered previously with the DBMS_ALERT.REGISTER procedure.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20512N: Explanation"><h2 class="sectiontitle" id="d80536e1032">Explanation</h2><p>No alert has been registered previously with the DBMS_ALERT.REGISTER procedure for the current session.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20512N: User response"><h2 class="sectiontitle" id="d80536e1038">User response</h2><p>Call the DBMS_ALERT.REGISTER procedure to register an alert.</p>
+
+<p><strong>sqlcode</strong>:  -20512</p>
+
+<p><strong>sqlstate</strong>:  5UA04</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1059" lang="en-us" id="sql20513n">
+<h1 class="msghead" id="d80536e1059"><span class="title title msgId"><span class="ph ph msgNumber">SQL20513N</span></span>  <span class="shortdesc shortdesc msgText">The UTL_FILE procedure <var class="keyword varname vartype=quotedString varnumber=1">procedure-name</var> failed to delete or rename the file <var class="keyword varname vartype=quotedString varnumber=2">file-name</var>. Operating system error = <var class="keyword varname vartype=quotedString varnumber=3">error-text</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20513N: Explanation"><h2 class="sectiontitle" id="d80536e1092">Explanation</h2><p>The procedure <var class="keyword varname">procedure-name</var> in module UTL_FILE failed to either delete or rename the specified file, <var class="keyword varname">file-name</var>, and received the error <var class="keyword varname">error-text</var> from the operating system.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20513N: User response"><h2 class="sectiontitle" id="d80536e1107">User response</h2><p>The system error <var class="keyword varname">error-text</var> provides more details on the error situation and an appropriate response might be: Verify that the arguments of the procedure are valid. Verify that the file <var class="keyword varname">file-name</var> exists and has the appropriate attributes. If renaming the file <var class="keyword varname">file-name</var>, verify that the target file does not exist or set the OVERRIDE parameter to TRUE.</p>
+
+<p><strong>sqlcode</strong>:  -20513</p>
+
+<p><strong>sqlstate</strong>:  5UA0C, 5UA0D</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1138" lang="en-us" id="sql20514n">
+<h1 class="msghead" id="d80536e1138"><span class="title title msgId"><span class="ph ph msgNumber">SQL20514N</span></span>  <span class="shortdesc shortdesc msgText">A UTL_SMTP module routine encountered an SMTP server error. SMTP error code = <var class="keyword varname vartype=quotedString varnumber=1">error-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20514N: Explanation"><h2 class="sectiontitle" id="d80536e1165">Explanation</h2><p>A UTL_SMTP module routine encountered either a transient or permanent SMTP server error.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20514N: User response"><h2 class="sectiontitle" id="d80536e1171">User response</h2><p>The error code <var class="keyword varname">error-code</var> provides more details on the specific SMTP error encountered. If the error code value is in the range 400 to 499, the error is a transient error and the same request may be successful at a later time. If the error code value is in the range 500 to 599, the error is a permanent error and the exact error code can help to determine how to resolve the error situation. You might need to contact the person responsible for the SMTP server to have them fix the error with the SMTP server or you might choose a different SMTP server.</p>
+
+<p><strong>sqlcode</strong>:  -20514</p>
+
+<p><strong>sqlstate</strong>:  5UA0E, 5UA0F</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1195" lang="en-us" id="sql20515n">
+<h1 class="msghead" id="d80536e1195"><span class="title title msgId"><span class="ph ph msgNumber">SQL20515N</span></span>  <span class="shortdesc shortdesc msgText">A dynamic statement name cannot be used in the cursor value constructor.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20515N: Explanation"><h2 class="sectiontitle" id="d80536e1219">Explanation</h2><p>A dynamic statement name is specified in a cursor value constructor that:</p>
+
+<ul>
+<li>also specifies one or more named parameters in a cursor value constructor parameter list.</li>
+
+<li>is assigned to a variable with a strongly typed cursor data type.</li>
+</ul>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20515N: User response"><h2 class="sectiontitle" id="d80536e1236">User response</h2><p>Do one of the following and try the request again:</p>
+
+<ul>
+<li>Replace the dynamic statement name with a SELECT statement.</li>
+
+<li>Remove the parameter list from the cursor value constructor.</li>
+
+<li>Change the cursor variable to a weakly typed cursor data type.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20515</p>
+
+<p><strong>sqlstate</strong>:  428HU</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1269" lang="en-us" id="sql20516w">
+<h1 class="msghead" id="d80536e1269"><span class="title title msgId"><span class="ph ph msgNumber">SQL20516W</span></span>  <span class="shortdesc shortdesc msgText">The statement compilation was successful but the access plan for this statement could not be preserved.  Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20516W: Explanation"><h2 class="sectiontitle" id="d80536e1296">Explanation</h2><p>The statement was compiled successfully during a BIND, REBIND, or PRECOMPILE, but the previous access plan could not be preserved. The reason codes are as follows:</p>
+
+<dl>
+
+<dt class="dlterm">101</dt>
+
+<dd class="dlentry"><p>The package was last bound or rebound in a version prior to DB2 Version 9.7. The access plan of a section generated by a version prior to DB2 Version 9.7 cannot be preserved.</p>
+</dd>
+
+
+<dt class="dlterm">102</dt>
+
+<dd class="dlentry"><p>The package was last bound or rebound in a version of the database product that is previous to the version installed, but access plans from that previous version cannot be preserved in the version installed.</p>
+</dd>
+
+
+<dt class="dlterm">103</dt>
+
+<dd class="dlentry"><p>The package was last bound or rebound in a version of the database product later than the version installed, but access plans from later versions might not be able to be preserved in earlier versions. This can occur when the installed version of the database manager is reverted back to an earlier fix pack level or version.</p>
+</dd>
+
+
+<dt class="dlterm">104</dt>
+
+<dd class="dlentry"><p>A section within the package is not recognized as a valid section.</p>
+</dd>
+
+
+<dt class="dlterm">105</dt>
+
+<dd class="dlentry"><p>The query could not be found in the existing package. New statements may have been introduced, the statement text may have changed or new host variables may have been created in the source file.</p>
+</dd>
+
+
+<dt class="dlterm">106</dt>
+
+<dd class="dlentry"><p>The internal representation of the query changed in such a way that the previous access plan is no longer applicable. Examples of changes that might have occurred are: changes to referenced database objects, changes to the database manager's configuration, and changes to the SQL query compiler.</p>
+</dd>
+
+
+<dt class="dlterm">107</dt>
+
+<dd class="dlentry"><p>The query compiler could no longer produce the same access plan due to changes in the circumstances under which a query is compiled. Examples of this are: the previous access plan accesses an index which no longer exists, or the query is being compiled at a different optimization level than before and the new optimization level does not allow the access plan strategy that was previously chosen.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20516W: User response"><h2 class="sectiontitle" id="d80536e1368">User response</h2><p>In most situations, you can choose to ignore this warning because the failure to preserve the previous access plan can be the result of normal and expected database object changes or database configuration changes. In some circumstances, you might want to monitor the performance of the queries or use the explain facility to examine the access plans and compare them to the access plans generated in the past for the same query. You can then follow accepted query performance tuning and monitoring procedures to verify that the query performs well, or if necessary, improve the performance. To avoid having this warning returned, take one of the following actions based on the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">101</dt>
+
+<dd class="dlentry"><p>Bind or rebind the package with a version of at least DB2 Version 9.7 before enabling the access plan reuse option of the BIND, REBIND, or PRECOMPILE command.</p>
+</dd>
+
+
+<dt class="dlterm">102</dt>
+
+<dd class="dlentry"><p>Bind or rebind the package with the installed version before enabling the access plan reuse option of the BIND, REBIND, or PRECOMPILE command.</p>
+</dd>
+
+
+<dt class="dlterm">103</dt>
+
+<dd class="dlentry"><p>Bind or rebind the package with the installed version or a version whose access plans are supported for access plan reuse by the installed version before enabling the access plan reuse option of the BIND, REBIND, or PRECOMPILE command.</p>
+</dd>
+
+
+<dt class="dlterm">104</dt>
+
+<dd class="dlentry"><p>To report this unexpected result, contact IBM software support and provide the db2diag diagnostic log files and the contents of the diagnostic directory path (as specified by the DIAGPATH database manager configuration parameter).</p>
+</dd>
+
+
+<dt class="dlterm">105</dt>
+
+<dd class="dlentry"><p>If preserving existing access plans for this query is essential, do not reformat or change the queries, or refer to new host variables. Alternatively you can confirm that the new access plan is satisfactory.</p>
+</dd>
+
+
+<dt class="dlterm">106</dt>
+
+<dd class="dlentry"><p>If preserving existing access plans for this query is essential, do not change referenced database objects or the database manager configuration (in some cases, an access plan cannot be reused because of changes to the database manager code). Alternatively you can follow accepted query performance tuning and monitoring procedures to verify that the query performs as expected.</p>
+</dd>
+
+
+<dt class="dlterm">107</dt>
+
+<dd class="dlentry"><p>If preserving existing access plans for this query is essential, do not change referenced database objects, the database manager configuration, or optimization options. Alternatively you can follow accepted query performance tuning and monitoring procedures to verify the query performs as expected or use the explain facility diagnostics to examine why the previous access plan could not be preserved.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  +20516</p>
+
+<p><strong>sqlstate</strong>:  01602</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1455" lang="en-us" id="sql20518n">
+<h1 class="msghead" id="d80536e1455"><span class="title title msgId"><span class="ph ph msgNumber">SQL20518N</span></span>  <span class="shortdesc shortdesc msgText">The operation is invalid because the UTL_SMTP module routine <var class="keyword varname vartype=quotedString varnumber=1">routine_name</var> is called out of sequence.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20518N: Explanation"><h2 class="sectiontitle" id="d80536e1482">Explanation</h2><p>The SMTP protocol requires that the operations be performed in a particular order. The routine <var class="keyword varname">routine-name</var> was called but the SMTP protocol requires that another operation be performed before the operation this routine was attempting to perform can complete successfully. For example, the UTL_SMTP.WRITE_DATA routine must be called after the UTL_SMTP.OPEN_DATA routine completes successfully, and the UTL_SMTP.RCPT routine must be called after the UTL_SMTP.MAIL routine completes successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20518N: User response"><h2 class="sectiontitle" id="d80536e1491">User response</h2><p>Refer to the SMTP protocol and ensure that the UTL_SMTP module routines are called in the correct order.</p>
+
+<p><strong>sqlcode</strong>:  -20518</p>
+
+<p><strong>sqlstate</strong>:  5UA0N</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1513" lang="en-us" id="sql20519n">
+<h1 class="msghead" id="d80536e1513"><span class="title title msgId"><span class="ph ph msgNumber">SQL20519N</span></span>  <span class="shortdesc shortdesc msgText">There is no data in the local message buffer to unpack.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20519N: Explanation"><h2 class="sectiontitle" id="d80536e1537">Explanation</h2><p>You can call one of the DBMS_PIPE.UNPACK_MESSAGE procedures to receive the next data item from the local message buffer and assign that data to a variable. This message is returned when there is no more data in the local message buffer to receive.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20519N: User response"><h2 class="sectiontitle" id="d80536e1543">User response</h2><p>Change the application logic to check if DBMS_PIPE.NEXT_TYPE() returns a non-zero value before calling one of the DBMS_PIPE.UNPACK_MESSAGE procedures.</p>
+
+<p><strong>sqlcode</strong>:  -20519</p>
+
+<p><strong>sqlstate</strong>:  55019</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1564" lang="en-us" id="sql20521n">
+<h1 class="msghead" id="d80536e1564"><span class="title title msgId"><span class="ph ph msgNumber">SQL20521N</span></span>  <span class="shortdesc shortdesc msgText">Error occurred processing a conditional compilation directive near <var class="keyword varname vartype=quotedString varnumber=1">string</var>. Reason code=<var class="keyword varname vartype=quotedString varnumber=2">rc</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20521N: Explanation"><h2 class="sectiontitle" id="d80536e1594">Explanation</h2><p>The SQL compiler was processing a statement that included conditional compilation directives. An error occurred at or near the statement text given in the token <var class="keyword varname">string</var>. Possible reasons are given by the reason code.</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>A global variable reference in a selection directive is not a valid data type. Valid data types are BOOLEAN, INTEGER, or VARCHAR.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>A global variable reference in a selection directive is not defined as a constant.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>A global variable reference in a selection directive is defined as a constant, but requires the evaluation of an expression.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>A constant was found that is not a BOOLEAN, INTEGER, or VARCHAR constant.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The search condition specifies an unsupported expression or predicate.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>An invalid conditional compilation directive was specified. A single underscore character (or dollar character) is used as a prefix, but the characters that follow do not match a supported conditional compilation directive.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>A conditional compilation directive was specified in a context where conditional compilation directives are not supported.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>A new selection directive is specified in the code fragment of a selection directive. Nesting of selection directives is not supported.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>Keywords for a selection directive are incorrectly specified. A required keyword is missing or a keyword is used in the incorrect order.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>An inquiry directive could not be processed because the value of the SQL_CCFLAGS database configuration parameter is not valid.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20521N: User response"><h2 class="sectiontitle" id="d80536e1696">User response</h2><p>Correct the error based on the reason code.</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Change or remove the global variable reference from the selection directive or replace the global variable so that it has a supported data type.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Change or remove the global variable reference from the selection directive or replace the global variable so that it is defined using a CONSTANT clause.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Change or remove the global variable reference from the selection directive or replace the global variable so that it is defined using a CONSTANT clause with a simple literal value.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Replace the constant with a BOOLEAN, INTEGER, or VARCHAR constant.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Ensure that there are no expressions in the search condition and that only basic predicates or NULL predicates are used. Remove any unsupported expressions or predicates.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Ensure that the conditional compilation prefix character is used only with supported directives. If an inquiry directive was intended, the prefix character must be doubled. If use of conditional compilation was not intended, an identifier must be delimited with double quotation mark characters or have the underscore character (or dollar character) removed.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Ensure that the context in which the compilation directive is used is valid. Valid contexts include: SQL procedure definitions, compiled SQL function definitions, compiled trigger definitions, and PL/SQL package definitions.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>Ensure that no selection directive is started before an already started selection directive is ended. Use separate selection directives without nesting, or make use of additional _ELSEIF or _ELSE blocks to determine the code fragments that are to be selected for compilation.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>Check the syntax for the selection directive to ensure that each _IF and _ELSEIF is followed by a corresponding _THEN keyword. Also, ensure that the _END keyword completes the selection directive.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>Perform the following steps:</p>
+
+<ol>
+<li>[Optional] Temporarily override the SQL_CCFLAGS database configuration parameter using the CURRENT SQL_CCFLAGS special register.</li>
+
+<li>Set the SQL_CCFLAGS database configuration parameter to a valid value.</li>
+</ol>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20521</p>
+
+<p><strong>sqlstate</strong>:  428HV</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1819" lang="en-us" id="sql20522n">
+<h1 class="msghead" id="d80536e1819"><span class="title title msgId"><span class="ph ph msgNumber">SQL20522N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because of an invalid specification of the WITHOUT OVERLAPS clause. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20522N: Explanation"><h2 class="sectiontitle" id="d80536e1846">Explanation</h2><p>The specification of the WITHOUT OVERLAPS clause is invalid for one of the following reasons:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>A partitioned index must not specify BUSINESS_TIME WITHOUT OVERLAPS if the table partitioning key includes the begin column or end column of the BUSINESS_TIME period.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The columns of the specified period must not be specified in the constraint clause.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>For a DB2 Database for Linux, UNIX, and Windows server, WITHOUT OVERLAPS can only be specified in a CREATE INDEX statement and only if the index is defined as UNIQUE. For a DB2 for z/OS, WITHOUT OVERLAPS can only be specified in a CREATE or ALTER INDEX statement if the index is defined as UNIQUE or UNIQUE WHERE NOT NULL.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>A unique index must not specify BUSINESS_TIME WITHOUT OVERLAPS if the table distribution key includes the begin column or end column of the BUSINESS_TIME period.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The columns of the specified period must not be specified in the index specification.</p>
+</dd>
+</dl>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20522N: User response"><h2 class="sectiontitle" id="d80536e1902">User response</h2><p>Correct the syntax and resubmit the statement.</p>
+
+<p><strong>sqlcode</strong>:  -20522</p>
+
+<p><strong>sqlstate</strong>:  428HW</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e1923" lang="en-us" id="sql20523n">
+<h1 class="msghead" id="d80536e1923"><span class="title title msgId"><span class="ph ph msgNumber">SQL20523N</span></span>  <span class="shortdesc shortdesc msgText">Table <var class="keyword varname vartype=quotedString varnumber=1">table-name</var> was specified as a history table, but the table definition is not valid for a 
+history table. Reason code <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20523N: Explanation"><h2 class="sectiontitle" id="d80536e1953">Explanation</h2><p>For a table specified as a history table in a CREATE or ALTER statement, the table definition is invalid for the reason code indicated:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The table must not be an existing system-period temporal table, history table, declared global temporary  table, created global temporary table, materialized query table, typed table, or view. For a DB2 for z/OS server, the table  must also not be an auxiliary table, clone table, table with a clone defined on it, or a table that was implicitly  created for an XML column.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>For a DB2 for z/OS server, the table must not have an incomplete table definition.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>For a DB2 for z/OS server, the table must be the only table in the table space.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The table must not contain an identity column, row change timestamp column, row-begin column, row-end column,  transaction-start-ID column, or generated expression column.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The table must not include a period definition.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The table must not be involved in any referential integrity constraints.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The history table must have the same number and order of columns as the table used as the system-period  temporal table.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The table must not contain a security label column or have a security policy associated with it.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>For a DB2 for z/OS server, if a column of the system-period temporal table is defined as ROWID, then  the corresponding history column should be defined as ROWID with the same generation attribute  (GENERATED ALWAYS or GENERATED BY DEFAULT).</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The corresponding columns of the system-period temporal table and associated history table must have these same  attributes:</p>
+
+<ul>
+<li>name</li>
+
+<li>data type</li>
+
+<li>length (including inline LOB length, precision, and scale)</li>
+
+<li>null attribute</li>
+
+<li>hidden attribute</li>
+
+<li>field procedure (DB2 for z/OS only)</li>
+
+<li>subtype (FOR BIT, SBCS, or MIXED DATA attribute) and CCSID</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>For a DB2 for z/OS server, the table must not have a column mask or row permission defined on it.</p>
+</dd>
+</dl>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20523N: User response"><h2 class="sectiontitle" id="d80536e2088">User response</h2><p>Correct the syntax and resubmit the statement.</p>
+
+<p><strong>sqlcode</strong>:  -20523</p>
+
+<p><strong>sqlstate</strong>:  428HX</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2110" lang="en-us" id="sql20524n">
+<h1 class="msghead" id="d80536e2110"><span class="title title msgId"><span class="ph ph msgNumber">SQL20524N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because of an invalid period specification or period clause for period <var class="keyword varname vartype=quotedString varnumber=1">period-name</var>. Reason code <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20524N: Explanation"><h2 class="sectiontitle" id="d80536e2140">Explanation</h2><p>A period specification or period clause is invalid for the reason code indicated:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The period name was specified more than once for the table reference.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The SYSTEM_TIME period was specified, but the table is not a system-period temporal table.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The specified expression is unsupported for one of the following reasons:</p>
+
+<ul>
+<li>The expression contains an invalid operand</li>
+
+<li>The expression returns an unsupported data type</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>For a DB2 for LUW server, the period specification was specified with a view where the view definition  includes a compiled function or external function with a data indication other than NO SQL.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>For a DB2 for z/OS server, an expression must not include a time zone and must not have a precision  greater than the precision of the columns of the period.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>FOR SYSTEM_TIME was specified but the value of the CURRENT TEMPORAL SYSTEM_TIME special register is not  null and the SYSTIMESENSITIVE bind option is set to YES.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>FOR BUSINESS_TIME was specified but the value of the CURRENT TEMPORAL BUSINESS_TIME special register is not  null and the BUSTIMESENSITIVE bind option is set to YES.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The period clause was specified for a table that is not an application-period temporal table, or for  a view for which an application-period temporal table is not referenced in the outermost FROM clause of the  view definition, or an instead of trigger is defined on the view.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>A period specification or period clause was specified for a nickname or a remote object.</p>
+</dd>
+</dl>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20524N: User response"><h2 class="sectiontitle" id="d80536e2241">User response</h2><p>Correct the syntax and resubmit the statement.</p>
+
+<p><strong>sqlcode</strong>:  -20524</p>
+
+<p><strong>sqlstate</strong>:  428HY</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2262" lang="en-us" id="sql20525n">
+<h1 class="msghead" id="d80536e2262"><span class="title title msgId"><span class="ph ph msgNumber">SQL20525N</span></span>  <span class="shortdesc shortdesc msgText">The requested action is not valid for table <var class="keyword varname vartype=quotedString varnumber=1">table-name</var> because the table is of the wrong type. 
+Reason code <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20525N: Explanation"><h2 class="sectiontitle" id="d80536e2292">Explanation</h2><p>The table cannot be used as specified for the reason code indicated:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement was specified with an ADD PERIOD clause, but the table is a history table and a period cannot be defined for a history table.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement was specified with a DROP PERIOD clause, but the table is a system-period temporal table and the period cannot be dropped.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement was specified with an ALTER VERSIONING clause, but the table is not a system-period temporal table.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement was specified with a DROP VERSIONING clause, but the table is not a system-period temporal table.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement was specified with a DROP VERSIONING clause with the RESTRICT keyword, but system data versioning cannot be dropped if there are any triggers, functions, procedures, views, or materialized query tables that reference historical versions of rows in the table.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement was specified with a DROP PARTITION clause for a system-period temporal table or history table.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>For DB2 for z/OS, an ALTER TABLE statement was specified with a ROTATE PARTITION clause for a system-period temporal table or h istory table.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>For DB2 for z/OS, an ALTER TABLE statement was specified with an ADD CLONE clause was specified for a table that is a  system-period temporal table or a history table.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>A TRUNCATE statement attempted to truncate a table, but the table is a system-period temporal table.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>For DB2 for z/OS, an ALTER TABLESPACE statement attempted to alter the CCSID of a table space that contains a system-period  temporal table or history table.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>A CREATE or ALTER TABLE statement attempted to define a referential constraint where either the parent or child table is a history table.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>For DB2 for Linux, UNIX, and Windows, an ALTER TABLE statement with a DETACH PARTITION clause was specified for a system-period temporal table.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement with an ADD COLUMN clause was specified for a history table.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>An ALTER TABLE statement was specified to add a generated column to a system-period temporal table.</p>
+</dd>
+
+
+<dt class="dlterm">17</dt>
+
+<dd class="dlentry"><p>For DB2 for Linux, UNIX, and Windows, an ALTER TABLE statement was specified  with ACTIVATE NOT LOGGED INITIALLY for a system-period temporal table or a history table.</p>
+</dd>
+
+
+<dt class="dlterm">18</dt>
+
+<dd class="dlentry"><p>For DB2 for Linux, UNIX, and Windows, an ALTER TABLE statement was specified  with ADD SECURITY POLICY for a system-period temporal table or a history table.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20525N: User response"><h2 class="sectiontitle" id="d80536e2446">User response</h2><p>Change the statement to specify the name of table for which the action is valid, or specify a different action for the table.</p>
+
+<p><strong>sqlcode</strong>:  -20525</p>
+
+<p><strong>sqlstate</strong>:  428HZ</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2468" lang="en-us" id="sql20526n">
+<h1 class="msghead" id="d80536e2468"><span class="title title msgId"><span class="ph ph msgNumber">SQL20526N</span></span>  <span class="shortdesc shortdesc msgText">The variable <var class="keyword varname vartype=quotedString varnumber=1">variable-name</var> is the target of two or more assignments with no defined order of assignment.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20526N: Explanation"><h2 class="sectiontitle" id="d80536e2495">Explanation</h2><p>A variable is the target of two or more assignments with no defined order of assignment.  Multiple assignments of a variable can occur when  a variable on the left hand side of a SET variable statement is also used as an output parameter to a function on the right hand side of the SET variable statement.</p>
+
+<p>In the following example, assume that the function my_function was declared with one OUT parameter.  The variable called my_variable is the target of two assignments in the example:</p>
+
+<p>CREATE VARIABLE my_variable INTEGER;</p>
+
+<p>SET my_variable = my_function( my_variable );</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20526N: User response"><h2 class="sectiontitle" id="d80536e2510">User response</h2><p>Change one or more of the variable references to a different variable.</p>
+
+<p><strong>sqlcode</strong>:  -20526</p>
+
+<p><strong>sqlstate</strong>:  42810</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2531" lang="en-us" id="sql20527n">
+<h1 class="msghead" id="d80536e2531"><span class="title title msgId"><span class="ph ph msgNumber">SQL20527N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because referenced period <var class="keyword varname vartype=quotedString varnumber=1">period-name</var> is not a period in table <var class="keyword varname vartype=quotedString varnumber=2">table-name</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20527N: Explanation"><h2 class="sectiontitle" id="d80536e2560">Explanation</h2><p>No period with the specified <var class="keyword varname">period-name</var> occurs in the table <var class="keyword varname">table-name</var>.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20527N: User response"><h2 class="sectiontitle" id="d80536e2575">User response</h2><p>Verify that the period and table names are specified correctly (including any required qualifiers) in the  SQL statement. Resubmit the statement.</p>
+
+<p><strong>sqlcode</strong>:  -20527</p>
+
+<p><strong>sqlstate</strong>:  4274M</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2597" lang="en-us" id="sql20528n">
+<h1 class="msghead" id="d80536e2597"><span class="title title msgId"><span class="ph ph msgNumber">SQL20528N</span></span>  <span class="shortdesc shortdesc msgText">The target of the data change operation is a table <var class="keyword varname vartype=quotedString varnumber=1">table-name</var>, which includes a 
+period <var class="keyword varname vartype=quotedString varnumber=2">period-name</var>. The data change operation failed because a row that it attempted to modify was also modified by another transaction.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20528N: Explanation"><h2 class="sectiontitle" id="d80536e2627">Explanation</h2><p>Table <var class="keyword varname">table-name</var> is a system-period temporal table. The table includes a period <var class="keyword varname">period-name</var>.  The requested data change operation attempted to change a row that has been modified by another transaction, and would result in a situation where the row-begin column value of the associated row in the history table is greater than the end column value. This can occur for one of the following reasons:</p>
+
+<ul>
+<li>Another transaction updated or inserted a row after the transaction of the failing statement had started. This resulted in a later timestamp value in the row begin column than the failing statement would use when it updated or deleted that same row.</li>
+
+<li>Data has been loaded into the system-period temporal table with values for the row begin column that override the generated values. The row begin column value that was loaded is in the future relative to the timestamp that the failing transaction would use.</li>
+</ul>
+
+<p>The requested operation cannot be performed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20528N: User response"><h2 class="sectiontitle" id="d80536e2650">User response</h2><p>Retry the statement. The systime_period_adj configuration parameter can be set to allow the affected values to be adjusted so that they are unique. Contact the system administrator.</p>
+
+<p><strong>sqlcode</strong>:  -20528</p>
+
+<p><strong>sqlstate</strong>:  57062</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2671" lang="en-us" id="sql20529n">
+<h1 class="msghead" id="d80536e2671"><span class="title title msgId"><span class="ph ph msgNumber">SQL20529N</span></span>  <span class="shortdesc shortdesc msgText">The argument to the WRAP function or to the CREATE_WRAPPED procedure is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20529N: Explanation"><h2 class="sectiontitle" id="d80536e2695">Explanation</h2><p>The argument to the WRAP function or to the CREATE_WRAPPED procedure is not a valid SQL PL or PL/SQL statement.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20529N: User response"><h2 class="sectiontitle" id="d80536e2701">User response</h2><p>Ensure that the argument to the WRAP function or to the CREATE_WRAPPED procedure is valid. If the statement is already wrapped by an unsupported application server, it cannot be processed using this version of DB2.</p>
+
+<p><strong>sqlcode</strong>:  -20529</p>
+
+<p><strong>sqlstate</strong>:  5UA0O</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2723" lang="en-us" id="sql20530n">
+<h1 class="msghead" id="d80536e2723"><span class="title title msgId"><span class="ph ph msgNumber">SQL20530N</span></span>  <span class="shortdesc shortdesc msgText">An obfuscated statement is not valid. Reason code= <var class="keyword varname vartype=quotedString varnumber=1">rc</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20530N: Explanation"><h2 class="sectiontitle" id="d80536e2750">Explanation</h2><p>An error occurred processing a data definition statement that includes the WRAPPED clause. Possible reasons are:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The statement was wrapped on a platform or version that is not supported.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The obfuscated portion of the statement is corrupted.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20530N: User response"><h2 class="sectiontitle" id="d80536e2776">User response</h2><p>Ensure that the statement was wrapped on a supported platform, and that the statement is not corrupted.</p>
+
+<p><strong>sqlcode</strong>:  -20530</p>
+
+<p><strong>sqlstate</strong>:  42638</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2797" lang="en-us" id="sql20531n">
+<h1 class="msghead" id="d80536e2797"><span class="title title msgId"><span class="ph ph msgNumber">SQL20531N</span></span>  <span class="shortdesc shortdesc msgText">The version number <var class="keyword varname vartype=quotedString varnumber=1">flowed-version</var> specified in a binary XML value is not supported. The highest supported version is <var class="keyword varname vartype=quotedString varnumber=2">highest-version</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20531N: Explanation"><h2 class="sectiontitle" id="d80536e2827">Explanation</h2><p>The version specified does not support binary XML format.  A value of 0 (zero) for the highest supported version indicates that the platform does not support binary XML format. A value of *N for the version number specified indicates that the version cannot be determined, because the server could not read binary XML format.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20531N: User response"><h2 class="sectiontitle" id="d80536e2833">User response</h2><p>Use a server that supports binary XML format.</p>
+
+<p><strong>sqlcode</strong>:  -20531</p>
+
+<p><strong>sqlstate</strong>:  22544</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2855" lang="en-us" id="sql20532n">
+<h1 class="msghead" id="d80536e2855"><span class="title title msgId"><span class="ph ph msgNumber">SQL20532N</span></span>  <span class="shortdesc shortdesc msgText">The command or API function call failed because the command or API function is discontinued.  Command or API function name: <var class="keyword varname vartype=quotedString varnumber=1">command-or-function-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20532N: Explanation"><h2 class="sectiontitle" id="d80536e2882">Explanation</h2><p>This message is returned when an attempt is made to run a command or call an API function that has been discontinued.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20532N: User response"><h2 class="sectiontitle" id="d80536e2888">User response</h2><p>Use other commands or API functions to accomplish the same task.</p>
+
+<p>Update automated scripts and applications to use different commands or API functions to accomplish the same task.</p>
+
+<p><strong>sqlcode</strong>:  -20532</p>
+
+<p><strong>sqlstate</strong>:  560CZ</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2912" lang="en-us" id="sql20533n">
+<h1 class="msghead" id="d80536e2912"><span class="title title msgId"><span class="ph ph msgNumber">SQL20533N</span></span>  <span class="shortdesc shortdesc msgText">The SELECT statement failed because an unsupported data type was specified in the typed-correlation clause.  Column with unsupported data type: <var class="keyword varname vartype=quotedString varnumber=1">column-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20533N: Explanation"><h2 class="sectiontitle" id="d80536e2939">Explanation</h2><p>The typed-correlation clause in the sub-select of a SELECT statement is used to define the appearance and contents of the table generated by a generic table function.</p>
+
+<p>This message is returned when the data type specified in the typed-correlation clause is not supported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20533N: User response"><h2 class="sectiontitle" id="d80536e2948">User response</h2><p>Execute the SELECT statement again, specifying only supported data types in the typed-correlation clause.</p>
+
+<p><strong>sqlcode</strong>:  -20533</p>
+
+<p><strong>sqlstate</strong>:  429BB</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e2970" lang="en-us" id="sql20534w">
+<h1 class="msghead" id="d80536e2970"><span class="title title msgId"><span class="ph ph msgNumber">SQL20534W</span></span>  <span class="shortdesc shortdesc msgText">The schema <var class="keyword varname vartype=quotedString varnumber=1">schema-name</var> includes one or more tables with the attribute <var class="keyword varname vartype=quotedString varnumber=2">data-capture-option1</var> which is different from the schema attribute <var class="keyword varname vartype=quotedString varnumber=3">data-capture-option2</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20534W: Explanation"><h2 class="sectiontitle" id="d80536e3003">Explanation</h2><p>The DATA CAPTURE setting for one or more tables in the schema are different from the schema-level setting.</p>
+
+<p>You can set different DATA CAPTURE attribute at the table and schema levels because the setting of the DATA CAPTURE attribute for a table is independent of the setting at the schema level.</p>
+
+<p>After the DATA CAPTURE attribute is set at the schema level, newly created tables inherit the schema-level setting if one is not specified at the table level.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20534W: User response"><h2 class="sectiontitle" id="d80536e3015">User response</h2><p>To find the list of tables that have DATA CAPTURE attribute set to CHANGES, issue the following query:</p>
+
+<pre class="codeblock"><code>SELECT TABNAME, TABSCHEMA FROM SYSCAT.TABLES
+  WHERE TYPE IN ('T','S','L') 
+    AND DATACAPTURE &lt;&gt; 'N'</code></pre>
+<p>To find the list of tables that have DATA CAPTURE attribute set to NONE, issue the following query:</p>
+
+<pre class="codeblock"><code>SELECT TABNAME, TABSCHEMA FROM SYSCAT.TABLES
+  WHERE TYPE IN ('T','S','L')
+    AND DATACAPTURE = 'N'</code></pre>
+
+<p><strong>sqlcode</strong>:  +20534</p>
+
+<p><strong>sqlstate</strong>:  01696</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3046" lang="en-us" id="sql20535n">
+<h1 class="msghead" id="d80536e3046"><span class="title title msgId"><span class="ph ph msgNumber">SQL20535N</span></span>  <span class="shortdesc shortdesc msgText">The data change operation <var class="keyword varname vartype=quotedString varnumber=1">operation</var> is not supported for the target object <var class="keyword varname vartype=quotedString varnumber=2">object-name</var> because of an implicit or explicit period specification involving <var class="keyword varname vartype=quotedString varnumber=3">period-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=4">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20535N: Explanation"><h2 class="sectiontitle" id="d80536e3082">Explanation</h2><p>The data change operation is not supported because the target of the operation references a temporal table and a period specification was specified. The period specification was either implicitly specified by using a special register, or explicitly specified in the fullselect specified as the target. More information is provided by the reason code indicated:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The CURRENT TEMPORAL SYSTEM_TIME special register contains a non-null value and the target of the data change operation is a system-period temporal table (directly or indirectly). The data in a system-period temporal table cannot be changed when a period specification is in effect. The target of the data change statement is one of the following:</p>
+
+<ul>
+<li>a system-period temporal table</li>
+
+<li>a view that is defined with an outer fullselect that references a system-period temporal table in the FROM clause (directly or indirectly) and that does not have an INSTEAD OF trigger defined for the data change operation</li>
+
+<li>a fullselect that references a system-period temporal table in the FROM clause (directly or indirectly)</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The CURRENT TEMPORAL SYSTEM_TIME special register contains a non-null value and the target of the data change statement is a view defined with the WITH CHECK OPTION. The data change statement cannot be processed because the view definition includes a WHERE clause containing one of the following syntax elements:</p>
+
+<ul>
+<li>a subquery that references a system-period temporal table (directly or indirectly)</li>
+
+<li>an invocation of an SQL routine that has a package associated with it</li>
+
+<li>an invocation of an external routine with data access indication other than NO SQL</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The target of the data change statement is specified as a fullselect that references a view in the FROM clause which is followed by a period specification for SYSTEM_TIME. The referenced view is defined with the WITH CHECK OPTION. The data change statement cannot be processed because the view definition includes a WHERE clause containing one of the following syntax elements:</p>
+
+<ul>
+<li>a subquery that references a system-period temporal table (directly or indirectly)</li>
+
+<li>an invocation of an SQL routine that has a package associated with it</li>
+
+<li>an invocation of an external routine with data access indication other than NO SQL</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The CURRENT TEMPORAL BUSINESS_TIME special register contains a non-null value and the target of the data change statement is a view defined with the WITH CHECK option.  The data change statement cannot be processed because the view definition includes a WHERE clause containing one of the following syntax elements:</p>
+
+<ul>
+<li>a subquery that references an application-period temporal table (directly or indirectly)</li>
+
+<li>an invocation of an SQL routine that has a package associated with it</li>
+
+<li>an invocation of an external routine with data access indication other than NO SQL</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The target of the data change statement is specified as a fullselect that references a view in the FROM clause which is followed by a period specification for BUSINESS_TIME. The referenced view is defined with the WITH CHECK OPTION. The data change statement cannot be processed because the view definition includes a WHERE clause containing one of the following syntax elements:</p>
+
+<ul>
+<li>a subquery that references an application-period temporal table (directly or indirectly)</li>
+
+<li>an invocation of an SQL routine that has a package associated with it</li>
+
+<li>an invocation of an external routine with data access indication other than NO SQL</li>
+</ul>
+</dd>
+</dl>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20535N: User response"><h2 class="sectiontitle" id="d80536e3193">User response</h2><p>Take an appropriate action for the reason-code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Set the CURRENT TEMPORAL SYSTEM_TIME special register to the null value and try the data change operation again. If the statement is included in an application package that should not be sensitive to the setting of the CURRENT TEMPORAL SYSTEM_TIME special register, then bind the package using SYSTIMESENSITIVE NO.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Set the CURRENT TEMPORAL SYSTEM_TIME special register to the null value and try the data change operation again. If the statement is included in an application package that should not be sensitive to the setting of the CURRENT TEMPORAL SYSTEM_TIME special register, then bind the package using SYSTIMESENSITIVE NO. Another possible alternative could be to replace the reference to the view with another view that is defined without the WITH CHECK OPTION if the associated checking of data changes is not required.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Remove the period specification in the target fullselect of the data change operation. Another possible alternative could be to replace the reference to the view with another view that is defined without the WITH CHECK OPTION if the associated checking of data changes is not required.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Set the CURRENT TEMPORAL BUSINESS_TIME special register to the null value and try the data change operation again. If the statement is included in an application package that should not be sensitive to the setting of the CURRENT TEMPORAL BUSINESS_TIME special register, then bind the package using BUSTIMESENSITIVE NO.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Remove the period specification in the target fullselect of the data change operation and use explicit predicates in the WHERE clause of the fullselect to specify the target rows for the data change operation.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20535</p>
+
+<p><strong>sqlstate</strong>:  51046</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3262" lang="en-us" id="sql20536n">
+<h1 class="msghead" id="d80536e3262"><span class="title title msgId"><span class="ph ph msgNumber">SQL20536N</span></span>  <span class="shortdesc shortdesc msgText">The operation cannot be processed because it involves a text index. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20536N: Explanation"><h2 class="sectiontitle" id="d80536e3289">Explanation</h2><p>The operation either targets a text index directly or has a text index that depends on the result of the operation. The operation cannot proceed because of the text index. The specific reason is indicated by the reason code.</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>A text index exists on the table that the operation requested to drop.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>A text index is the target of a RUNSTATS command.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>A text index is the target of a REORG command.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+
+<dd class="dlentry"><p>A text index exists on the nickname that the operation requested to drop.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20536N: User response"><h2 class="sectiontitle" id="d80536e3333">User response</h2><dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>If the table must be dropped, then first drop the text indexes on the table.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Remove the reference to the text index from the RUNSTATS command. Statistics cannot be collected on text indexes.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Remove the reference to the text index from the REORG command. Text indexes cannot be reorganized.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>If the nickname must be dropped, then first drop the text indexes on the nickname.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3379" lang="en-us" id="sql20537w">
+<h1 class="msghead" id="d80536e3379"><span class="title title msgId"><span class="ph ph msgNumber">SQL20537W</span></span>  <span class="shortdesc shortdesc msgText">The precompiler detected a combination of arrays with different cardinalities in the same SQL statement.  The application was compiled to populate all arrays in the applicable statement with the minimum cardinality:  <var class="keyword varname vartype=quotedString varnumber=1">minimum_cardinality</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20537W: Explanation"><h2 class="sectiontitle" id="d80536e3405">Explanation</h2><p>The COMPATIBILITY_MODE ORA precompiler option allows the use of host variable arrays, indicator arrays, or a structure array in an embedded SQL statement.   When multiple arrays that are declared with different cardinalities are used in the same SQL statement, all the arrays are precompiled with the same cardinality.</p>
+
+<p>This warning message is returned when the COMPATIBILITY_MODE ORA precompile option is specified and there are arrays in an SQL statement that are declared with different cardinalities.  The statement was successfully compiled, but all the arrays were precompiled with the same cardinality.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20537W: User response"><h2 class="sectiontitle" id="d80536e3414">User response</h2><p>To avoid this warning during the precompile process, use the same cardinality for all arrays that are used in the same SQL statement.</p>
+
+<p><strong>sqlcode</strong>:  +20537</p>
+
+<p><strong>sqlstate</strong>:  01697</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3436" lang="en-us" id="sql20538w">
+<h1 class="msghead" id="d80536e3436"><span class="title title msgId"><span class="ph ph msgNumber">SQL20538W</span></span>  <span class="shortdesc shortdesc msgText">A permission or mask was changed for the table named <var class="keyword varname vartype=quotedString varnumber=1">table-name</var>. This change might require a change to the permissions or masks of a materialized query table (MQT) based on this table to maintain the security of the data.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20538W: Explanation"><h2 class="sectiontitle" id="d80536e3463">Explanation</h2><p>A permission or mask was created, altered, or dropped for table <var class="keyword varname">table-name</var>. At least one MQT is based on this table that has access controlled using masks or permissions, other than the default permission. The MQT includes data from the base table <var class="keyword varname">table-name</var>. In order to maintain data security, the access control change made to the base table of the MQT must be reflected in the permissions and masks of the MQT.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20538W: User response"><h2 class="sectiontitle" id="d80536e3475">User response</h2><p>Verify the permissions and masks of each MQT that is based on table <var class="keyword varname">table-name</var> is consistent with the access control on the base table <var class="keyword varname">table-name</var>.</p>
+
+<p><strong>sqlcode</strong>:  +20538</p>
+
+<p><strong>sqlstate</strong>:  01698</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3502" lang="en-us" id="sql20539n">
+<h1 class="msghead" id="d80536e3502"><span class="title title msgId"><span class="ph ph msgNumber">SQL20539N</span></span>  <span class="shortdesc shortdesc msgText">The query failed because a negative value or the null value is used in the clause keywords.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20539N: Explanation"><h2 class="sectiontitle" id="d80536e3526">Explanation</h2><p>A query can include a FETCH FIRST clause or a LIMIT clause to control the number of rows that are returned from a query. A query can also include an OFFSET clause to begin fetching rows starting at a specified row number. The row count value for these clauses can be specified as an expression that is evaluated at query open time and must result in a positive numeric constant value for the query.</p>
+
+<p>The expression specified for the indicated clause returns a negative value or the null value.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20539N: User response"><h2 class="sectiontitle" id="d80536e3535">User response</h2><p>Change the expression so that it returns a positive number and reissue the query.</p>
+
+<p><strong>sqlcode</strong>:  -20539</p>
+
+<p><strong>sqlstate</strong>:  2201W, 2201X</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3557" lang="en-us" id="sql20540n">
+<h1 class="msghead" id="d80536e3557"><span class="title title msgId"><span class="ph ph msgNumber">SQL20540N</span></span>  <span class="shortdesc shortdesc msgText">An autonomous transaction executing a procedure has been terminated abnormally. Routine name: <var class="keyword varname vartype=quotedString varnumber=1">routine-name</var>. Specific name: <var class="keyword varname vartype=quotedString varnumber=2">specific-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20540N: Explanation"><h2 class="sectiontitle" id="d80536e3590">Explanation</h2><p>A procedure can be defined as AUTONOMOUS, to make its execution occur within a separate autonomous transaction. The execution of the procedure may encounter an error that required the procedure to terminate and the autonomous transaction to be rolled back without rolling back the parent or calling transaction. This message is returned when the autonomous procedure terminated with an error that normally causes a transaction to roll back. In this case, the autonomous transaction for the autonomous procedure is rolled back but without affecting the calling transaction. Possible reason codes for this message are the SQLCODEs that terminated the autonomous procedure.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20540N: User response"><h2 class="sectiontitle" id="d80536e3596">User response</h2><p>Check the message associated with the SQLCODE in the reason code and use the information there to determine the reason that the autonomous procedure was terminated. Correct any problems in the autonomous procedure or the calling application and run the procedure again.</p>
+
+<p><strong>sqlcode</strong>:  -20540</p>
+
+<p><strong>sqlstate</strong>:  560D2</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3617" lang="en-us" id="sql20541n">
+<h1 class="msghead" id="d80536e3617"><span class="title title msgId"><span class="ph ph msgNumber">SQL20541N</span></span>  <span class="shortdesc shortdesc msgText">An error code was received from an in-database analytics provider. Error code: <var class="keyword varname vartype=quotedString varnumber=1">error-code</var>. Provider name: <var class="keyword varname vartype=quotedString varnumber=2">provider-name</var>. Associated text and tokens: <var class="keyword varname vartype=quotedString varnumber=3">tokens</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20541N: Explanation"><h2 class="sectiontitle" id="d80536e3650">Explanation</h2><p>You can perform in-database analytics using an embedded analytics provider.</p>
+
+<p>While referencing an in-database analytics provider, an unexpected error code was received from the specified provider.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20541N: User response"><h2 class="sectiontitle" id="d80536e3659">User response</h2><p>Respond to this error by performing the following troubleshooting steps:</p>
+
+<ul>
+<li>Ensure that the process for the provider is available.</li>
+
+<li>Identify and correct the root cause of the problem by locating the appropriate message text and corrective action for the specified error at the provider.</li>
+
+<li>Check any appropriate diagnostic logs that are generated by the provider.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20541</p>
+
+<p><strong>sqlstate</strong>:  560D4</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3692" lang="en-us" id="sql20542n">
+<h1 class="msghead" id="d80536e3692"><span class="title title msgId"><span class="ph ph msgNumber">SQL20542N</span></span>  <span class="shortdesc shortdesc msgText">The statement was not executed because the connection to the database server was dropped, and the automatic client reroute (ACR) feature failed to successfully re-execute the statement.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20542N: Explanation"><h2 class="sectiontitle" id="d80536e3716">Explanation</h2><p>The ACR feature attempts to reconnect to the database when a connection to a database server is dropped.  This message is returned when the ACR feature is unable to seamlessly re-execute the statement after a successful reconnect.</p>
+
+<p>When this message is returned, the database connection is in an open state.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20542N: User response"><h2 class="sectiontitle" id="d80536e3725">User response</h2><p>Execute the statement again.</p>
+
+<p>If the error persists, perform the following troubleshooting steps:</p>
+
+<ol>
+<li>Collect information from diagnostic logs on the client and the server.</li>
+
+<li>Investigate why the connection to the database server is being lost.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -20542</p>
+
+<p><strong>sqlstate</strong>:  54068</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3757" lang="en-us" id="sql20544n">
+<h1 class="msghead" id="d80536e3757"><span class="title title msgId"><span class="ph ph msgNumber">SQL20544N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because an error was encountered while the ANALYZE_TABLE expression was being processed. Analytics provider name: <var class="keyword varname vartype=quotedString varnumber=1">provider-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20544N: Explanation"><h2 class="sectiontitle" id="d80536e3787">Explanation</h2><p>You can use the ANALYZE_TABLE expression to invoke an analytics routine from the provider. The routine performs analytics processing based on the input table and returns a set of rows as output. Details about routine implementation, such as information about the analytics provider, the name of the routine to use, and the table in which the routine source is located, are specified in an implementation string. The IMPLEMENTATION parameter passes the implementation string to the ANALYZE_TABLE expression.</p>
+
+<p>This message is returned when the specified routine cannot be found or loaded for the ANALYZE_TABLE expression. In general, this message is returned when there is a problem with the routine source table or with the routine source. The reason code indicates the cause of the problem more specifically:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The format or content of the implementation string is not valid. It must begin with PROVIDER=xxx, where xxx identifies a supported provider. This must be followed by name=value pairs for the specified provider, each pair ending with a semicolon.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The specified routine source table does not contain the minimum required columns, correctly defined for the provider. If PROVIDER=SAS is specified, there are four minimum required columns:</p>
+
+<ul>
+<li>"MODELNAME"</li>
+
+<li>"MODELDS2"</li>
+
+<li>"MODELFORMATS"</li>
+
+<li>"MODELMETADATA"</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The specified routine source table is not a base table. The name of the routine source table must not identify a global temporary table, a view, a common table expression, or a nickname.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The combined, total length of a set of the columns is too long in a row of the specified routine source table. If PROVIDER=SAS is specified, the columns in the set are named "MODELDS2", "MODELFORMATS", and "MODELMETADATA".</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>In one or more rows of the specified routine source table, the contents of one or more of the columns are empty, but not null. If PROVIDER=SAS is specified, it could be the column named "MODELDS2".</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The specified routine source name could not be found in the specified routine source table.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The routine source table does not include a required primary key constraint. If PROVIDER=SAS is specified, the MODELNAME column must be defined as the primary key.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The specified provider is not supported.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20544N: User response"><h2 class="sectiontitle" id="d80536e3885">User response</h2><p>Respond to this message according to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Specify a correctly formatted implementation string with content that is required by the specified provider.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Modify the definition of the routine source table so that the table contains the minimum required columns.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Correct the implementation string to specify a routine source table name that identifies a base table.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Modify the definition of the routine source table so that the combined total length of the set of columns does not exceed the maximum length permitted in a routine source table.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Review the contents of the columns that cannot have empty string values in all rows of the routine source table. If PROVIDER=SAS is specified, correct any rows that contain empty (zero-length) strings in the column named "MODELDS2".</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Correct the implementation string to specify a valid routine source table and routine source name.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Modify the routine source table to include the required primary key constraint.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>Specify a supported provider in the implementation string.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20544</p>
+
+<p><strong>sqlstate</strong>:  5507A</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e3982" lang="en-us" id="sql20545n">
+<h1 class="msghead" id="d80536e3982"><span class="title title msgId"><span class="ph ph msgNumber">SQL20545N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because a connection to the in-database analytics provider could not be established or maintained.  Analytics provider name: <var class="keyword varname vartype=quotedString varnumber=1">provider-name</var>.  Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20545N: Explanation"><h2 class="sectiontitle" id="d80536e4012">Explanation</h2><p>You can perform in-database analytics using an embedded analytics provider.  To successfully perform analytics using an embedded provider, the database manager must establish and maintain a connection with the provider.</p>
+
+<p>This message is returned when the database manager encounters an error while attempting to communicate with an embedded provider.  The reason code indicates the source of the problem:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The embedded provider process is not up and running.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>An attempt to connect to the embedded provider timed out.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The database manager is unable to allocate enough shared memory from the FMP memory set to communicate with the embedded provider.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20545N: User response"><h2 class="sectiontitle" id="d80536e4050">User response</h2><p>In general, respond to this message by taking the following actions:</p>
+
+<ol>
+<li>Collect diagnostic information from the db2diag log files.</li>
+
+<li>Troubleshoot the installation and configuration of the embedded analytics provider.</li>
+</ol>
+
+<p>More specifically, when the provider name is 'SAS', respond to this message according to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Respond to reason code 1 according to the value of the ENABLE_SAS_EP parameter of the DB2_SAS_SETTINGS registry variable:</p>
+
+<ul>
+<li>If ENABLE_SAS_EP is set to TRUE, wait for the instance to automatically restart the embedded process.  If the process does not restart after approximately 10 seconds, collect the following diagnostic information and troubleshoot the embedded analytics provider: 
+<ul>
+<li>The values of the parameters of the DB2_SAS_SETTINGS registry variable.</li>
+
+<li>Related information in the db2diag diagnostic log files.</li>
+</ul>
+</li>
+
+<li>If ENABLE_SAS_EP is not set or if ENABLE_SAS_EP is set to FALSE, manually start up the embedded process by running the db2ida command.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Respond to reason code 2 by performing the following steps:</p>
+
+<ol>
+<li>Wait until the embedded process is restarted.</li>
+
+<li>Rerun the query.</li>
+
+<li>If the same error occurs again, collect the following diagnostic information and troubleshoot the embedded analytics provider: 
+<ul>
+<li>The values of the parameters of the DB2_SAS_SETTINGS registry variable.</li>
+
+<li>Related information in the db2diag diagnostic log files.</li>
+</ul>
+</li>
+</ol>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Respond to reason code 3 by performing one of the following actions:</p>
+
+<ul>
+<li>Wait for some queries to finish processing and then rerun the failed query.</li>
+
+<li>Increase the amount of memory in the FMP memory set by increasing the DB2_FMP_COMM_HEAPSZ registry variable.</li>
+</ul>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20545</p>
+
+<p><strong>sqlstate</strong>:  57065</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4153" lang="en-us" id="sql20546n">
+<h1 class="msghead" id="d80536e4153"><span class="title title msgId"><span class="ph ph msgNumber">SQL20546N</span></span>  <span class="shortdesc shortdesc msgText">The statement cannot be processed because it violates one of the restrictions for using the ANALYZE_TABLE expression.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20546N: Explanation"><h2 class="sectiontitle" id="d80536e4177">Explanation</h2><p>You can use the ANALYZE_TABLE expression to invoke an analytics routine from the provider. The routine performs analytics processing based on the input table and returns a set of rows as output. Details about routine implementation, such as information about the analytics provider, the name of the routine to use, and the table in which the routine source is located, are specified in an implementation string. The IMPLEMENTATION parameter passes the implementation string to the ANALYZE_TABLE expression.</p>
+
+<p>This message is returned when an attempt is made to run a statement that uses the ANALYZE_TABLE expression in a way that is not supported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20546N: User response"><h2 class="sectiontitle" id="d80536e4186">User response</h2><p>Rewrite the application so that none of the ANALYZE_TABLE expression restrictions is violated.</p>
+
+<p><strong>sqlcode</strong>:  -20546</p>
+
+<p><strong>sqlstate</strong>:  429CA</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4208" lang="en-us" id="sql20547n">
+<h1 class="msghead" id="d80536e4208"><span class="title title msgId"><span class="ph ph msgNumber">SQL20547N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because the target of an assignment is a read-only variable. Variable name: <var class="keyword varname vartype=quotedString varnumber=1">variable-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20547N: Explanation"><h2 class="sectiontitle" id="d80536e4235">Explanation</h2><p>Global variables can generally be used as the target of an assignment in various SQL statement with the appropriate write access. However, the definition of some global variables makes them read only. This applies to some built-in global variables and also to user-defined variables that are defined using the CONSTANT clause,</p>
+
+<p>A variable that is read only cannot be used in an SQL statement as the target of an assignment.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20547N: User response"><h2 class="sectiontitle" id="d80536e4244">User response</h2><p>Change the name of the target variable so that it does not refer to a read-only variable.</p>
+
+<p><strong>sqlcode</strong>:  -20547</p>
+
+<p><strong>sqlstate</strong>:  428I3</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4265" lang="en-us" id="sql20548n">
+<h1 class="msghead" id="d80536e4265"><span class="title title msgId"><span class="ph ph msgNumber">SQL20548N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because a column of the input table of an ANALYZE_TABLE expression has an unsupported data type. Unsupported type: <var class="keyword varname vartype=quotedString varnumber=1">type-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20548N: Explanation"><h2 class="sectiontitle" id="d80536e4292">Explanation</h2><p>You can use the ANALYZE_TABLE expression to invoke an analytics routine from the provider. The routine performs analytics processing based on the input table and returns a set of rows as output. Details about routine implementation, such as information about the analytics provider, the name of the routine to use, and the table in which the routine source is located, are specified in an implementation string. The IMPLEMENTATION parameter passes the implementation string to the ANALYZE_TABLE expression.</p>
+
+<p>The input table of an ANALYZE_TABLE expression can be specified using a table name, a view name or the name of a common table expression specified at the beginning of the query. This message is returned when a column of the specified input table is of a type that is not supported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20548N: User response"><h2 class="sectiontitle" id="d80536e4301">User response</h2><p>Respond to this error in one of the following ways:</p>
+
+<ul>
+<li>Change the input table to remove the column with the unsupported data type or cast the column to a valid data type.</li>
+
+<li>If the input table is specified with a table name or a view name, a column can be removed or cast to another data type by specifying a common table expression at the beginning of the query and using the name of the common table expression as the input table to the ANALYZE_TABLE expression.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20548</p>
+
+<p><strong>sqlstate</strong>:  428H2</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4331" lang="en-us" id="sql20549n">
+<h1 class="msghead" id="d80536e4331"><span class="title title msgId"><span class="ph ph msgNumber">SQL20549N</span></span>  <span class="shortdesc shortdesc msgText">The statement cannot be precompiled  because an indicator variable array contains fewer elements than its the corresponding host variable array. Indicator variable array name: <var class="keyword varname vartype=quotedString varnumber=1">var_name1</var>. Required array size: <var class="keyword varname vartype=quotedString varnumber=2">cardinality_of_array2</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20549N: Explanation"><h2 class="sectiontitle" id="d80536e4361">Explanation</h2><p>An indicator variable contains a small integer value that indicates some information about an associated host variable.  For example you can use an indicator variable to indicate that the associated host variable contains a null value. In embedded SQL applications, when parameters of type array are passed to CALL statements, information about the contents of those arrays can be stored in corresponding indicator variable arrays.  When an indicator variable array is specified for an array parameter, the size of the indicator variable array must be greater than or equal to the size of the corresponding host variable array.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20549N: User response"><h2 class="sectiontitle" id="d80536e4367">User response</h2><ol>
+<li>Modify the embedded SQL application to declare any indicator variable array as the same size as, or larger than, the associated host variable array size.</li>
+
+<li>Recompile and rerun the embedded SQL application.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4383" lang="en-us" id="sql20551n">
+<h1 class="msghead" id="d80536e4383"><span class="title title msgId"><span class="ph ph msgNumber">SQL20551N</span></span>  <span class="shortdesc shortdesc msgText">Constructing an associative array failed because the input data includes at least one duplicate array index value. Duplicated index value:  <var class="keyword varname vartype=quotedString varnumber=1">value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20551N: Explanation"><h2 class="sectiontitle" id="d80536e4410">Explanation</h2><p>In an associative array, each element is associated with a unique index value. When constructing an array using an ARRAY_AGG aggregate function, if more than one element is associated with the same array index value, only one of the element values can be included in the array. This potential loss of element data is the reason that index values must be unique within the input data used to construct an associative array.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20551N: User response"><h2 class="sectiontitle" id="d80536e4416">User response</h2><p>Change the input data so that there are no duplicate array index values. When using an ARRAY_AGG aggregate function, this might require adding predicates to the query that produces the aggregation grouping sets to ensure that none of the rows include duplicate values for the array index expression argument of the ARRAY_AGG.</p>
+
+<p><strong>sqlcode</strong>:  -20551</p>
+
+<p><strong>sqlstate</strong>:  22545</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4438" lang="en-us" id="sql20552n">
+<h1 class="msghead" id="d80536e4438"><span class="title title msgId"><span class="ph ph msgNumber">SQL20552N</span></span>  <span class="shortdesc shortdesc msgText">The cast or assignment failed because the value does not conform to the data type constraint of the user-defined type.  User-defined type: <var class="keyword varname vartype=quotedString varnumber=1">type-name</var>.  Value: <var class="keyword varname vartype=quotedString varnumber=2">value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20552N: Explanation"><h2 class="sectiontitle" id="d80536e4468">Explanation</h2><p>A user-defined distinct type can include a NOT NULL constraint and a CHECK constraint that limit the valid values for the data type. These data type constraints can be violated when a value is cast to the user-defined type or a value is assigned to a variable, parameter, or column defined with that user-defined type. An assignment can also happen implicitly using the default for the variable, parameter, or column.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20552N: User response"><h2 class="sectiontitle" id="d80536e4474">User response</h2><p>Ensure that the values being assigned or cast are valid for the data type constraints of the user-defined type by taking actions such as the following actions:</p>
+
+<ul>
+<li>Change the value to conform to the data type constraints.</li>
+
+<li>Change the data type to a different data type. This might be most applicable when performing an explicit cast to a user-defined type.</li>
+
+<li>If the invalid value is the result of using a default, change the definition of the variable, parameter, or column to use a default value that is valid for the user-defined type.</li>
+
+<li>Change the definition of the user-defined type by dropping the type and creating it with different data type constraints that would allow the value.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20552</p>
+
+<p><strong>sqlstate</strong>:  23528</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4509" lang="en-us" id="sql20556n">
+<h1 class="msghead" id="d80536e4509"><span class="title title msgId"><span class="ph ph msgNumber">SQL20556N</span></span>  <span class="shortdesc shortdesc msgText">The operation failed because multiple result values cannot be returned from a scalar function <var class="keyword varname vartype=quotedString varnumber=1">function-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20556N: Explanation"><h2 class="sectiontitle" id="d80536e4536">Explanation</h2><p>A scalar function was invoked with arguments that disallow the return of multiple result values for a single invocation.  The processing of the scalar function determined a result that consisted of multiple values.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20556N: User response"><h2 class="sectiontitle" id="d80536e4542">User response</h2><p>One of the following options can be used to avoid the error:</p>
+
+<ul>
+<li>Change the values of the input arguments to the scalar function to return a single value from the multiple value result.</li>
+
+<li>If possible, as an alternative to the scalar function invocation, create a user-defined table function to return multi-valued results.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20556</p>
+
+<p><strong>sqlstate</strong>:  22547</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4572" lang="en-us" id="sql20557n">
+<h1 class="msghead" id="d80536e4572"><span class="title title msgId"><span class="ph ph msgNumber">SQL20557N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because of an error in the Hive metastore. Log entry identifier: <var class="keyword varname vartype=quotedString varnumber=1">log-entry-identifier</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20557N: Explanation"><h2 class="sectiontitle" id="d80536e4602">Explanation</h2><p>In IBM Big SQL, you can use standard DDL and SQL to create and query tables for which data is stored in a Hadoop Distributed File System (HDFS). The DDL and SQL processing is handled  by both a processing engine in Big SQL as well as the Hive metastore.</p>
+
+<p>The reason code indicates the type of problem:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The Hive metastore encountered an error processing the DDL or SQL.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Data in the hive metastore is missing or incorrect. For example, a table property might be missing or contain an invalid value.</p>
+</dd>
+</dl>
+
+<p>The log identifier in the token <var class="keyword varname">log-entry-identifier</var> is composed of three parts:</p>
+
+<ol>
+<li>A three-letter prefix that indicates which log file includes diagnostic details.</li>
+
+<li>A three-digit number that indicates on which database partition the log file resides.</li>
+
+<li>An identifier that is printed in the log file near the related diagnostic details.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20557N: User response"><h2 class="sectiontitle" id="d80536e4648">User response</h2><ol>
+<li>Locate the diagnostic details in the appropriate log file by using the information in the <var class="keyword varname">log-entry-identifier</var> runtime token.</li>
+
+<li>Resolve the cause of the problem.</li>
+
+<li>Submit the statement again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -20557</p>
+
+<p><strong>sqlstate</strong>:  58039</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4680" lang="en-us" id="sql20558n">
+<h1 class="msghead" id="d80536e4680"><span class="title title msgId"><span class="ph ph msgNumber">SQL20558N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because the regular expression string is not valid. Reason code: <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.  Function name: <var class="keyword varname vartype=quotedString varnumber=2">function-name</var>. Position in regular expression string: <var class="keyword varname vartype=quotedString varnumber=3">position</var>. Regular expression string: <var class="keyword varname vartype=quotedString varnumber=4">string</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20558N: Explanation"><h2 class="sectiontitle" id="d80536e4716">Explanation</h2><p>This message is returned when the regular expression string specified as the argument of a regular expression function is not a valid regular expression. The position in the string provides and indication of where the regular expression is not correct. If the position could not be determined, a value of 0 is returned. The reason code provides additional information about the error in the pattern.</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Syntax error in regular expression pattern.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Unrecognized backslash escape sequence in pattern.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Incorrect Unicode property name.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Use of regular expression feature that is not supported.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Incorrectly nested parentheses in regular expresion pattern.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Decimal number is too large.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Error in {min,max} interval.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>Maximum is less than minimum in {min,max} interval.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>Back-reference is made to a non-existent capture group.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>Look-behind pattern matches must have a bounded maximum length.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>Regular expressions cannot have UnicodeSets containing strings.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>Octal character constants must be less than or equal to 0377.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>Missing a closing bracket on a bracket expression.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>In a character range [x-y], x is greater than y.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20558N: User response"><h2 class="sectiontitle" id="d80536e4852">User response</h2><p>Determine what is incorrect about the regular expression argument of the regular expression function using the position and the reason code. Invoke the function again with a valid regular expression.</p>
+
+<p><strong>sqlcode</strong>:  -20558</p>
+
+<p><strong>sqlstate</strong>:  2201S</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4874" lang="en-us" id="sql20559w">
+<h1 class="msghead" id="d80536e4874"><span class="title title msgId"><span class="ph ph msgNumber">SQL20559W</span></span>  <span class="shortdesc shortdesc msgText">The analytics operation succeeded with a warning.  Routine name: <var class="keyword varname vartype=quotedString varnumber=1">routine-name</var>. Analytics message identifier: <var class="keyword varname vartype=quotedString varnumber=2">message-ID</var>.  Diagnostic details: <var class="keyword varname vartype=quotedString varnumber=3">runtime-details</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20559W: Explanation"><h2 class="sectiontitle" id="d80536e4907">Explanation</h2><p>You can perform analytics on data stored in databases by calling IBM in-database analytics routines:</p>
+
+<ul>
+<li>You can build analytics models for input data</li>
+
+<li>You can perform classification, clustering, regression, and other analytics operations by applying generated models</li>
+
+<li>You can manage analytics meta data</li>
+</ul>
+
+<p>This message is returned when an IBM in-database analytics routine has completed successfully, but encountered a minor error or warning at run time.</p>
+
+<p>The runtime tokens provide more information about the problem:</p>
+
+<ul>
+<li>The runtime token <var class="keyword varname">routine-name</var> identifies the routine.</li>
+
+<li>The token <var class="keyword varname">message-ID</var> provides a unique identifier for an analytics error message that explains the problem in detail.</li>
+
+<li>Depending on the nature of the problem, the token <var class="keyword varname">runtime-details</var> might be empty, or might contain addition details that clarify the source of the problem.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20559W: User response"><h2 class="sectiontitle" id="d80536e4950">User response</h2><ol>
+<li>Learn the details of the problem by reading the text of the message identified by <var class="keyword varname">message-ID</var>.</li>
+
+<li>If necessary, take action to address the cause of the underlying error or warning and then call the routine again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  +20559</p>
+
+<p><strong>sqlstate</strong>:  01H58</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e4979" lang="en-us" id="sql20560n">
+<h1 class="msghead" id="d80536e4979"><span class="title title msgId"><span class="ph ph msgNumber">SQL20560N</span></span>  <span class="shortdesc shortdesc msgText">The routine did not run because the formatting or content of the specified string argument is invalid.  Routine name: <var class="keyword varname vartype=quotedString varnumber=1">routine-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.  Sub-string: <var class="keyword varname vartype=quotedString varnumber=3">sub-string</var>.  Analytics message identifier: <var class="keyword varname vartype=quotedString varnumber=4">message-ID</var>.  Diagnostic details: <var class="keyword varname vartype=quotedString varnumber=5">runtime-details</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20560N: Explanation"><h2 class="sectiontitle" id="d80536e5018">Explanation</h2><p>The IBM in-database analytics routines take one argument: a string containing a list of parameter-value pairs, separated by a comma.  This message is returned when an analytics routine is unable to successfully process a given string argument.</p>
+
+<p>The runtime tokens provide more information about the problem:</p>
+
+<ul>
+<li>The runtime token <var class="keyword varname">routine-name</var> identifies the routine.</li>
+
+<li>The source of the problem in the string is in or near to the sub-string shown in the runtime token <var class="keyword varname">sub-string</var>.</li>
+
+<li>Depending on the nature of the problem, the token <var class="keyword varname">message-ID</var> might be empty, or might contain a unique identifier for an analytics error message that explains the problem in detail.</li>
+
+<li>Depending on the nature of the problem, the token <var class="keyword varname">runtime-details</var> might be empty, or might contain addition details that clarify the source of the problem.</li>
+</ul>
+
+<p>The runtime token <var class="keyword varname">reason-code</var> indicates more specifically the type of the problem:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The string argument is not in the expected format: &lt;parameter&gt;=&lt;value&gt; pairs, separated by a comma.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>An unsupported parameter was specified.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>A parameter was specified more than once.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Mutually exclusive parameters were specified.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Only one parameter was specified of a pair of parameters that must be specified together.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The value specified with a parameter is not in the expected format.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>An unsupported value was specified with a parameter for which only one of a specific list of values may be specified.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>A value of the wrong data type was specified with a parameter.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>An out-of-range numeric value was specified with a parameter.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>A string value was specified that is longer than the maximum-allowed length for that parameter value.</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>A string value was specified that contains an unsupported control character, such as a horizontal tab, line-feed, or carriage-return character.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>An empty value was specified for a parameter.</p>
+</dd>
+
+
+<dt class="dlterm">20</dt>
+
+<dd class="dlentry"><p>In the value specified with the incolumn parameter, a column was specified more than once.</p>
+</dd>
+
+
+<dt class="dlterm">21</dt>
+
+<dd class="dlentry"><p>In the value specified with the incolumn parameter, the properties string that was specified for a column is not in the expected format.</p>
+</dd>
+
+
+<dt class="dlterm">22</dt>
+
+<dd class="dlentry"><p>In the value specified with the incolumn parameter, an unsupported property was specified for a column.</p>
+</dd>
+
+
+<dt class="dlterm">23</dt>
+
+<dd class="dlentry"><p>In the value specified with the incolumn parameter, a value of the wrong data type was specified for the weight property.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20560N: User response"><h2 class="sectiontitle" id="d80536e5207">User response</h2><p>Call the routine again, specifying a valid parameter string.</p>
+
+<p><strong>sqlcode</strong>:  -20560</p>
+
+<p><strong>sqlstate</strong>:  22548</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e5229" lang="en-us" id="sql20561n">
+<h1 class="msghead" id="d80536e5229"><span class="title title msgId"><span class="ph ph msgNumber">SQL20561N</span></span>  <span class="shortdesc shortdesc msgText">The analytics operation could not be performed because of a problem with a table.  Routine name: <var class="keyword varname vartype=quotedString varnumber=1">routine-name</var>. Table name: <var class="keyword varname vartype=quotedString varnumber=2">table-name</var>.  Analytics message identifier: <var class="keyword varname vartype=quotedString varnumber=3">message-ID</var>.  Diagnostic details: <var class="keyword varname vartype=quotedString varnumber=4">runtime-details</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20561N: Explanation"><h2 class="sectiontitle" id="d80536e5265">Explanation</h2><p>When you call IBM in-database analytics routines, you specify input tables such as:</p>
+
+<ul>
+<li>The table containing the data upon which the analytics will be performed</li>
+
+<li>A column properties table</li>
+
+<li>A table indicating weighting that should be applied to instance or class data</li>
+
+<li>A table containing sample data with which to validate a generated analytical model</li>
+
+<li>A table containing the meta data for an analytical model</li>
+</ul>
+
+<p>This message is returned when there is a problem with an input table that has been specified with an analytics routine.</p>
+
+<p>The runtime tokens provide more information about the problem:</p>
+
+<ul>
+<li>The runtime token <var class="keyword varname">routine-name</var> identifies the routine.</li>
+
+<li>The token <var class="keyword varname">table-name</var> indicates which table has a problem.</li>
+
+<li>The token <var class="keyword varname">message-ID</var> provides a unique identifier for an analytics error message that explains the problem in detail.</li>
+
+<li>Depending on the nature of the problem, the token <var class="keyword varname">runtime-details</var> might be empty, or might contain addition details that clarify the source of the problem.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20561N: User response"><h2 class="sectiontitle" id="d80536e5320">User response</h2><ol>
+<li>Learn the details of the problem by reading the text of the message identified by <var class="keyword varname">message-ID</var>.</li>
+
+<li>Correct the table.</li>
+
+<li>Call the routine again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -20561</p>
+
+<p><strong>sqlstate</strong>:  22549</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e5352" lang="en-us" id="sql20562n">
+<h1 class="msghead" id="d80536e5352"><span class="title title msgId"><span class="ph ph msgNumber">SQL20562N</span></span>  <span class="shortdesc shortdesc msgText">The analytics operation could not be performed because the specified options are not valid.  Routine name: <var class="keyword varname vartype=quotedString varnumber=1">routine-name</var>. Analytics message identifier: <var class="keyword varname vartype=quotedString varnumber=2">message-ID</var>.  Diagnostic details: <var class="keyword varname vartype=quotedString varnumber=3">runtime-details</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20562N: Explanation"><h2 class="sectiontitle" id="d80536e5385">Explanation</h2><p>You can perform analytics on data stored in databases by calling IBM in-database analytics routines.  To perform analytics, you must specify options that control the behavior of the analytics, such as the following examples:</p>
+
+<ul>
+<li>The name of an input table containing input data</li>
+
+<li>A collection of analytics-related properties that are to be applied to the columns of the input table</li>
+
+<li>Information about weighting to be applied to data points</li>
+
+<li>Metrics to be used for scoring the quality of the generated analytics model</li>
+</ul>
+
+<p>This message is returned when a collection of options that is unsupported, inconsistent, or otherwise invalid has been specified with an IBM in-database analytics routine.</p>
+
+<p>The runtime tokens provide more information about the problem:</p>
+
+<ul>
+<li>The runtime token <var class="keyword varname">routine-name</var> identifies the routine.</li>
+
+<li>The token <var class="keyword varname">message-ID</var> provides a unique identifier for an analytics error message that explains the problem in detail.</li>
+
+<li>Depending on the nature of the problem, the token <var class="keyword varname">runtime-details</var> might be empty, or might contain addition details that clarify the source of the problem.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20562N: User response"><h2 class="sectiontitle" id="d80536e5431">User response</h2><ol>
+<li>Learn the details of the problem by reading the text of the message identified by <var class="keyword varname">message-ID</var>.</li>
+
+<li>Call the routine again, specifying valid options.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -20562</p>
+
+<p><strong>sqlstate</strong>:  22550</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e5461" lang="en-us" id="sql20563n">
+<h1 class="msghead" id="d80536e5461"><span class="title title msgId"><span class="ph ph msgNumber">SQL20563N</span></span>  <span class="shortdesc shortdesc msgText">The analytics operation failed.  Routine name: <var class="keyword varname vartype=quotedString varnumber=1">routine-name</var>. Analytics message identifier: <var class="keyword varname vartype=quotedString varnumber=2">message-ID</var>.  Diagnostic details: <var class="keyword varname vartype=quotedString varnumber=3">runtime-details</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20563N: Explanation"><h2 class="sectiontitle" id="d80536e5494">Explanation</h2><p>You can perform analytics on data stored in databases by calling IBM in-database analytics routines:</p>
+
+<ul>
+<li>You can build analytics models for input data</li>
+
+<li>You can perform classification, clustering, regression, and other analytics operations by applying generated models</li>
+
+<li>You can manage analytics meta data</li>
+</ul>
+
+<p>This message is returned when an IBM in-database analytics routine fails because of a runtime error.</p>
+
+<p>The runtime tokens provide more information about the problem:</p>
+
+<ul>
+<li>The runtime token <var class="keyword varname">routine-name</var> identifies the routine.</li>
+
+<li>The token <var class="keyword varname">message-ID</var> provides a unique identifier for an analytics error message that explains the problem in detail.</li>
+
+<li>Depending on the nature of the problem, the token <var class="keyword varname">runtime-details</var> might be empty, or might contain addition details that clarify the source of the problem.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20563N: User response"><h2 class="sectiontitle" id="d80536e5537">User response</h2><ol>
+<li>Learn the details of the problem by reading the text of the message identified by <var class="keyword varname">message-ID</var>.</li>
+
+<li>Resolve the problem.</li>
+
+<li>Call the routine again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -20563</p>
+
+<p><strong>sqlstate</strong>:  560DA</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e5569" lang="en-us" id="sql20564n">
+<h1 class="msghead" id="d80536e5569"><span class="title title msgId"><span class="ph ph msgNumber">SQL20564N</span></span>  <span class="shortdesc shortdesc msgText">The analytics operation could not be performed because the authorization ID <var class="keyword varname vartype=quotedString varnumber=1">authorization-ID</var> does not have the required privilege to perform the operation.  Operation: <var class="keyword varname vartype=quotedString varnumber=2">operation</var>.  Analytics message identifier: <var class="keyword varname vartype=quotedString varnumber=3">message-ID</var>.  Diagnostic details: <var class="keyword varname vartype=quotedString varnumber=4">runtime-details</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20564N: Explanation"><h2 class="sectiontitle" id="d80536e5605">Explanation</h2><p>To call IBM in-database analytics routines requires appropriate privileges. This message is returned when a user attempts to call a routine (such as LIST_PRIVILEGES or DROP_MODEL, for example) and the authorization ID does not have the required privilege to call that routine.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20564N: User response"><h2 class="sectiontitle" id="d80536e5611">User response</h2><p>Call the routine as an authorization ID with the required privilege.</p>
+
+<p><strong>sqlcode</strong>:  -20564</p>
+
+<p><strong>sqlstate</strong>:  42526</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e5633" lang="en-us" id="sql20566n">
+<h1 class="msghead" id="d80536e5633"><span class="title title msgId"><span class="ph ph msgNumber">SQL20566N</span></span>  <span class="shortdesc shortdesc msgText">The CREATE FUNCTION or ALTER MODULE statement used to define <var class="keyword varname vartype=quotedString varnumber=1">routine-name</var> failed because the identified component routine is not valid. Component routine clause: <var class="keyword varname vartype=quotedString varnumber=2">component-routine-clause</var>. Specific name: <var class="keyword varname vartype=quotedString varnumber=3">specific-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=4">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20566N: Explanation"><h2 class="sectiontitle" id="d80536e5669">Explanation</h2><p>The identified component routine for the clause <var class="keyword varname">component-routine-clause</var> with specific name <var class="keyword varname">specific-name</var> when creating an aggregate interface function is not valid for the reason specified by the reason code as follows:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The data types of one or more parameters of the identified component routine are incorrect.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The mode of one or more parameters of the identified component routine are incorrect.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The data type of the return value of the identified component routine is incorrect.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The number of parameters of the identified component routine is incorrect.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>One or more options of the identified component routine are incorrect.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20566N: User response"><h2 class="sectiontitle" id="d80536e5728">User response</h2><p>Determine what is incorrect about the identified component routine and either correct the definition of that routine or specify a different routine for that component routine that does have the valid characteristics based on the reason by the <var class="keyword varname">reason-code</var> as follows.</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Ensure the data types of all parameters of the identified component routine are correct.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Ensure the modes of all parameters of the identified component routine are correct.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Ensure the data type of the return value of the identified component routine is correct.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Ensure the number of parameters of the identified component routine is correct.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Ensure that all options of the identified component routine are correct.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20566</p>
+
+<p><strong>sqlstate</strong>:  428IA</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e5799" lang="en-us" id="sql20568w">
+<h1 class="msghead" id="d80536e5799"><span class="title title msgId"><span class="ph ph msgNumber">SQL20568W</span></span>  <span class="shortdesc shortdesc msgText">The table was successfully created with random distribution.  However, since the distribution key that was chosen by the database manager may not guarantee unique values, the data distribution of this table might be sub-optimal.  Columns in the distribution key: <var class="keyword varname vartype=quotedString varnumber=1">column-name-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20568W: Explanation"><h2 class="sectiontitle" id="d80536e5826">Explanation</h2><p>When a random distribution table is created with multiple unique or primary keys, the database manager uses the set of overlapping columns from all unique and primary keys as the distribution key.  If the distribution key contains duplicate values, this could end up skewing data to a subset of the members.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20568W: User response"><h2 class="sectiontitle" id="d80536e5832">User response</h2><p>The distribution key that was selected by the database manager was <var class="keyword varname">column-name-list</var>.  If the values for these columns contain duplicate values you may experience skew with data in the table.  To avoid this, recreate the table and explicitly set a different distribution key. The distribution key can be explicitly set using the DISTRIBUTE BY HASH clause.</p>
+
+<p><strong>sqlcode</strong>:  +20568</p>
+
+<p><strong>sqlstate</strong>:  0169C</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e5857" lang="en-us" id="sql20569n">
+<h1 class="msghead" id="d80536e5857"><span class="title title msgId"><span class="ph ph msgNumber">SQL20569N</span></span>  <span class="shortdesc shortdesc msgText">The external table operation failed due to a problem with the corresponding data file or diagnostic files. File name: <var class="keyword varname vartype=quotedString varnumber=1">file-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20569N: Explanation"><h2 class="sectiontitle" id="d80536e5887">Explanation</h2><p>The data for an external table is stored in a file that can be located locally or remotely.</p>
+
+<p>This message is returned when a statement attempts to create, insert into, or select from an external table, but the corresponding operation failed due to a problem with the corresponding data file or log/bad files.</p>
+
+<p>The reason code identifies the specific problem:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Either data file could not be reached or log/bad files could not be written.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The user ID that issued the statement is not authorized to access the data file.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The attempt to process the data file ended unexpectedly. Probably, the contents of the data file are corrupt. For example, data fields may have delimiters or nullvalue as part of data and requires an escape character.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The data file met with operating system level size limitations, I/O issues or insufficient memory issues.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20569N: User response"><h2 class="sectiontitle" id="d80536e5937">User response</h2><p>Take action that corresponds to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Perform the following troubleshooting steps:</p>
+
+<ul>
+<li>Verify that the data file was specified correctly.</li>
+
+<li>Verify that the data file exists in the specified location.</li>
+
+<li>For a remote data file, verify that the network connection is open.</li>
+
+<li>For log/bad files, verify if filesystem has enough space.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Set the access permissions of the data file so that the user ID that issued the statement can read from and write to the data file.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Correct the field data in data file containing delimiters or nullvalue as part of data using proper escape character.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Make sure that the external table operation with data file is limited to operating system constraints.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -20569</p>
+
+<p><strong>sqlstate</strong>:  428IB</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e6010" lang="en-us" id="sql20570n">
+<h1 class="msghead" id="d80536e6010"><span class="title title msgId"><span class="ph ph msgNumber">SQL20570N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because the number of rejected rows exceeds the limit set in the MaxErrors option value. Log file name: <var class="keyword varname vartype=quotedString varnumber=1">log-file-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20570N: Explanation"><h2 class="sectiontitle" id="d80536e6037">Explanation</h2><p>The data for an external table is stored in a file that can be located locally or remotely.</p>
+
+<p>The data in the file might not perfectly match the column definitions of the external table. When you select data from an external table, the database manager might need to alter or convert the data to enable the SELECT statement to return a result set. However, sometimes the data from a particular row of data cannot be altered or converted successfully. When that happens, the row is rejected and is not included in the result set.</p>
+
+<p>You can use the MaxErrors external table option to specify a threshold for the number of rejected rows. When that threshold is exceeded, the attempt to process the SELECT statement is canceled.</p>
+
+<p>This message is returned when a SELECT statement is issued for data in an external table and the attempt to process the statement fails because more rows have been rejected than the threshold set by the MaxErrors option.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20570N: User response"><h2 class="sectiontitle" id="d80536e6052">User response</h2><p>Address this error in one or more of the following ways:</p>
+
+<ul>
+<li>To reduce the number of rejected rows, alter the data in the file so that it matches the column definitions of the external table.</li>
+
+<li>To reduce the number of rejected rows, alter the column definitions of the external table so it better matches the data in the file.</li>
+
+<li>To allow the statement to be processed despite the mismatches between the column definitions of the external table and the data in the file, increase the value of the MaxErrors option.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -20570</p>
+
+<p><strong>sqlstate</strong>:  22551</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e6085" lang="en-us" id="sql20571n">
+<h1 class="msghead" id="d80536e6085"><span class="title title msgId"><span class="ph ph msgNumber">
+SQL20571N
+</span></span>  <span class="shortdesc shortdesc msgText">
+An error occurred in a spatial routine: <var class="keyword varname vartype=quotedString varnumber=1">spatial-error-msg</var>.
+</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20571N: Explanation"><h2 class="sectiontitle" id="d80536e6112">Explanation</h2>
+<p>A spatial operation failed with an error message <var class="keyword varname">spatial-error-msg</var>.</p>
+
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20571N: User response"><h2 class="sectiontitle" id="d80536e6123">User response</h2>
+<p>Use the error message <var class="keyword varname">spatial-error-msg</var> to determine the cause of the error. If the message is truncated, you can see the full text in the db2diag log file.</p>
+
+<p>The first word in <var class="keyword varname">spatial-error-msg</var> is an error identifier. You can obtain more details about the error in the Spatial documentation or with the 'db2 help' command. </p>
+
+<p><strong>sqlcode</strong>:  -20571</p>
+
+<p><strong>sqlstate</strong>:  38H15</p>
+
+</section>
+
+</div>
+
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e6157" lang="en-us" id="sql20573n">
+<h1 class="msghead" id="d80536e6157"><span class="title title msgId"><span class="ph ph msgNumber">
+SQL20573N
+</span></span>  <span class="shortdesc shortdesc msgText">
+Operation not allowed on object <var class="keyword varname vartype=quotedString varnumber=1">object-name</var> of type <var class="keyword varname vartype=quotedString varnumber=2">type-name</var> because schema <var class="keyword varname vartype=quotedString varnumber=3">schema-name</var> is not accessible. Reason code = <var class="keyword varname vartype=quotedString varnumber=4">reason-code</var>.
+</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20573N: Explanation"><h2 class="sectiontitle" id="d80536e6193">Explanation</h2>
+<p>Access to schema <var class="keyword varname">schema-name</var> is restricted as indicated by the reason code:</p>
+
+<p>The specific reason this message was returned is indicated by <var class="keyword varname">reason-code</var>:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">
+<p>A schema restore operation is in progress.</p>
+
+</dd>
+
+
+</dl>
+
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20573N: User response"><h2 class="sectiontitle" id="d80536e6225">User response</h2>
+<p>Respond to this message according to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">
+<p>Wait for the restore to complete successfully then retry the command.</p>
+
+</dd>
+
+
+</dl>
+
+<p><strong>sqlcode</strong>:  -20573</p>
+
+<p><strong>sqlstate</strong>:  57007</p>
+
+</section>
+
+</div>
+
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d80536e6266" lang="en-us" id="sql20576n">
+<h1 class="msghead" id="d80536e6266"><span class="title title msgId"><span class="ph ph msgNumber">SQL20576N</span></span>  <span class="shortdesc shortdesc msgText">The command or operation failed because a TLS connection could not be established with
+reason <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var> and additional
+information <var class="keyword varname vartype=quotedString varnumber=2">additional-info</var>. </span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL20576N: Explanation"><h2 class="sectiontitle" id="d80536e6296">Explanation</h2>
+<p>The client in this context is the application or <span class="keyword">Db2®</span> CLP and the server is
+the Db2 database server.</p>
+
+<p>The specific reason this message was returned is indicated by <var class="keyword varname">reason-code</var>:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">
+<p>The connection has been configured to use TLS hostname validation. When connecting to the
+specified server, hostname validation failed because the server's TLS certificate does not contain a
+hostname or IP address that matches the value configured by the client. Details about the server's
+certificate have been logged to the db2diag.log file. In addition, the hostnames or IP addresses
+that the client used to match against the certificate have also been logged to this file.</p>
+
+</dd>
+
+
+</dl>
+
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL20576N: User response"><h2 class="sectiontitle" id="d80536e6329">User response</h2>
+<p>In db2diag.log, examine the common name and subject alternate name (SAN) fields of the server's
+certificate. These fields contain the hostnames or IP addresses for which the server's certificate
+is issued. Please make sure that the database administrator has set up the correct certificate on
+this server. Consult the <a href="../com.ibm.db2.luw.admin.sec.doc/doc/c_sec_hostname_val_home.html">TLS
+Hostname Validation</a> documentation for information about how to create correct server
+certificates for the different <span class="keyword">Db2</span> server topologies. </p>
+
+<p>If the server is using the correct certificate and the client is also configured to connect with
+the correct hostname, this error suggests that there is a security risk. The communication might
+have been intercepted by a malicious host. </p>
+
+<p>Note that if the specified hostname does not match the value configured on the client, then the
+client has attempted to route to another host and hostname validation failed for this routed
+connection. These connections can happen on the client due to Automatic Client Reroute and Workload
+Balancing.</p>
+
+<p><strong>sqlcode</strong>: -20576</p>
+
+<p><strong>sqlstate</strong>: 08001</p>
+
+</section>
+
+</div>
+
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

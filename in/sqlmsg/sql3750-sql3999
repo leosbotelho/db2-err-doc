@@ -1,0 +1,961 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL3750 - SQL3999</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d303922e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic16">
+   <h1 class="topictitle1" id="d303922e14">SQL3750 - SQL3999</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d303922e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e64" lang="en-us" id="sql3783n">
+<h1 class="msghead" id="d303922e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL3783N</span></span>  <span class="shortdesc shortdesc msgText">An error was encountered while opening the copy
+location file. Open file error code is <var class="keyword varname vartype=quotedString varnumber=1">errcode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3783N: Explanation"><h2 class="sectiontitle" id="d303922e91">Explanation</h2><p>During load recovery, an error was encountered while opening the
+copy location file.  The operating system file open return code is
+returned.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3783N: User response"><h2 class="sectiontitle" id="d303922e97">User response</h2><p>Look at the error code in the message for more information.
+Correct the error, if possible, and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e108" lang="en-us" id="sql3784w">
+<h1 class="msghead" id="d303922e108"><span class="title title msgId"><span class="ph ph msgNumber">SQL3784W</span></span>  <span class="shortdesc shortdesc msgText">Invalid data was encountered while reading from
+the copy location file. Failure occurred at line <var class="keyword varname vartype=quotedString varnumber=1">line-no</var> with error type
+<var class="keyword varname vartype=quotedString varnumber=2">errtype</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3784W: Explanation"><h2 class="sectiontitle" id="d303922e138">Explanation</h2><p>During load recovery, invalid data was encountered while reading
+from the copy location file.  The line number and error type are
+returned. The utility waits for a response to continue.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3784W: User response"><h2 class="sectiontitle" id="d303922e144">User response</h2><p>Correct the data in the copy location file and return to the
+utility with the correct caller action parameter to indicate if
+processing should continue or terminate.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e156" lang="en-us" id="sql3785n">
+<h1 class="msghead" id="d303922e156"><span class="title title msgId"><span class="ph ph msgNumber">SQL3785N</span></span>  <span class="shortdesc shortdesc msgText">Load recovery for table <var class="keyword varname vartype=quotedString varnumber=1">schema.tablename</var> at time
+<var class="keyword varname vartype=quotedString varnumber=2">timestamp</var> on node <var class="keyword varname vartype=quotedString varnumber=3">node-number</var> failed due to error <var class="keyword varname vartype=quotedString varnumber=4">sqlcode</var>
+with additional information <var class="keyword varname vartype=quotedString varnumber=5">additional-info</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3785N: Explanation"><h2 class="sectiontitle" id="d303922e195">Explanation</h2><p>A severe error occurred during load recovery.  The utility stops
+processing.</p>
+
+<p>(Note : if you are using a partitioned database server, the
+node number indicates which node the error occurred
+on.  Otherwise, it is not pertinent and should be ignored.)</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3785N: User response"><h2 class="sectiontitle" id="d303922e204">User response</h2><p>Examine the error code in the message for more information.
+Take corrective action and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e215" lang="en-us" id="sql3798w">
+<h1 class="msghead" id="d303922e215"><span class="title title msgId"><span class="ph ph msgNumber">SQL3798W</span></span>  <span class="shortdesc shortdesc msgText">An invalid value was used for parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var>
+to invoke the roll-forward recovery API to continue load recovery.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3798W: Explanation"><h2 class="sectiontitle" id="d303922e242">Explanation</h2><p>Load recovery is in progress and one of the parameters passed in
+is not valid for the current state of load recovery.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3798W: User response"><h2 class="sectiontitle" id="d303922e248">User response</h2><p>Correct the value in error and return to the utility with the
+correct caller action parameter to indicate if processing should
+continue or terminate.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e260" lang="en-us" id="sql3799w">
+<h1 class="msghead" id="d303922e260"><span class="title title msgId"><span class="ph ph msgNumber">SQL3799W</span></span>  <span class="shortdesc shortdesc msgText">Load recovery for table <var class="keyword varname vartype=quotedString varnumber=1">schema.tablename</var> at time
+<var class="keyword varname vartype=quotedString varnumber=2">timestamp</var> on node <var class="keyword varname vartype=quotedString varnumber=3">node-number</var> is pending due to warning <var class="keyword varname vartype=quotedString varnumber=4">sqlcode</var>
+with additional information <var class="keyword varname vartype=quotedString varnumber=5">additional-info</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3799W: Explanation"><h2 class="sectiontitle" id="d303922e299">Explanation</h2><p>A warning condition is encountered during load recovery.
+The utility waits for a response to continue.</p>
+
+<p>(Note : if you are using a partitioned database server, the
+node number indicates which node the error occurred
+on.  Otherwise, it is not pertinent and should be ignored.)</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3799W: User response"><h2 class="sectiontitle" id="d303922e308">User response</h2><p>Examine the error code in the message for more information.
+Take corrective action and return to the utility with the correct
+caller action parameter to indicate if processing should continue or
+terminate.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e319" lang="en-us" id="sql3802n">
+<h1 class="msghead" id="d303922e319"><span class="title title msgId"><span class="ph ph msgNumber">SQL3802N</span></span>  <span class="shortdesc shortdesc msgText">An invalid quiesce mode <var class="keyword varname vartype=quotedString varnumber=1">quiesce-mode</var> was encountered.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3802N: Explanation"><h2 class="sectiontitle" id="d303922e346">Explanation</h2><p>An invalid quiesce mode was passed to the quiesce API.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3802N: User response"><h2 class="sectiontitle" id="d303922e352">User response</h2><p>Resubmit the command with the correct parameters.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e364" lang="en-us" id="sql3804n">
+<h1 class="msghead" id="d303922e364"><span class="title title msgId"><span class="ph ph msgNumber">SQL3804N</span></span>  <span class="shortdesc shortdesc msgText">The index is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3804N: Explanation"><h2 class="sectiontitle" id="d303922e388">Explanation</h2><p>An invalid index was encountered during the processing of a
+utility command.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3804N: User response"><h2 class="sectiontitle" id="d303922e394">User response</h2><p>Check in the
+<cite>Administration Guide</cite>
+to determine the appropriate
+way to revalidate the index and resubmit the command after the
+condition is corrected.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e408" lang="en-us" id="sql3805n">
+<h1 class="msghead" id="d303922e408"><span class="title title msgId"><span class="ph ph msgNumber">SQL3805N</span></span>  <span class="shortdesc shortdesc msgText">The state of the application or of one or more
+table spaces for the table specified prohibits the loadapi action or
+quiescemode <var class="keyword varname vartype=quotedString varnumber=1">action</var>. Reason code = <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3805N: Explanation"><h2 class="sectiontitle" id="d303922e438">Explanation</h2><p>The loadapi action (either quiescemode or callerac) passed to the load API is in conflict with either the state of the application or the state of one or more table spaces for the table.</p>
+
+<p>The possible reason codes are as follows:</p>
+
+<dl>
+
+<dt class="dlterm">01</dt>
+
+<dd class="dlentry"><p>The state of one of the table spaces for the table specified prohibits the loadapi action or quiescemode.</p>
+</dd>
+
+
+<dt class="dlterm">02</dt>
+
+<dd class="dlentry"><p>The application is not at the start of its logical unit of work. This condition prohibits the load action specified.</p>
+</dd>
+
+
+<dt class="dlterm">03</dt>
+
+<dd class="dlentry"><p>The state of the application prohibits the load action specified.</p>
+</dd>
+
+
+<dt class="dlterm">04</dt>
+
+<dd class="dlentry"><p>One or more of the table spaces for the table is already quiesced by the maximum number of quiescers.</p>
+</dd>
+
+
+<dt class="dlterm">05</dt>
+
+<dd class="dlentry"><p>The system catalog table space cannot be quiesced.</p>
+</dd>
+
+
+<dt class="dlterm">06</dt>
+
+<dd class="dlentry"><p>A LOAD command with the COPY option is not allowed when a table space is in backup pending state.</p>
+</dd>
+
+
+<dt class="dlterm">07</dt>
+
+<dd class="dlentry"><p>Attempt to restart a load at an incorrect phase.</p>
+</dd>
+
+
+<dt class="dlterm">08</dt>
+
+<dd class="dlentry"><p>Attempt to restart a load into a table whose partitioning key depends on an identity column and where not all of the table partitions are restarting from the load phase. Such a load is not allowed as hashing of rows during the restarted load may be different from the hashing in the initial load due to the dependence on the identity column.</p>
+</dd>
+
+
+<dt class="dlterm">09</dt>
+
+<dd class="dlentry"><p>The QUIESCE TABLESPACES FOR TABLE command failed because the database is in WRITE SUSPEND state.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>Attempt to restart a load against a random distribution table using the random by generation method.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3805N: User response"><h2 class="sectiontitle" id="d303922e540">User response</h2><p>The user response corresponding to the reason code is as follows:</p>
+
+<dl>
+
+<dt class="dlterm">01</dt>
+
+<dd class="dlentry"><p>Resubmit the command with the correct loadapi action or quiescemode, or correct the state of the table spaces for the table.</p>
+</dd>
+
+
+<dt class="dlterm">02</dt>
+
+<dd class="dlentry"><p>Resubmit the command with the correct load action or complete the current logical unit of work by issuing either a COMMIT or ROLLBACK.</p>
+</dd>
+
+
+<dt class="dlterm">03</dt>
+
+<dd class="dlentry"><p>Resubmit the command with the correct load action.</p>
+</dd>
+
+
+<dt class="dlterm">04</dt>
+
+<dd class="dlentry"><p>Determine which table spaces for the table have reached the maximum number of quiescers.  QUIESCE RESET these table spaces.</p>
+</dd>
+
+
+<dt class="dlterm">05</dt>
+
+<dd class="dlentry"><p>Resubmit the command with a table which is not in the system catalog table space.</p>
+</dd>
+
+
+<dt class="dlterm">06</dt>
+
+<dd class="dlentry"><p>Resubmit the command omitting the copy parameter</p>
+</dd>
+
+
+<dt class="dlterm">07</dt>
+
+<dd class="dlentry"><p>Determine at which phase the load should be restarted and resubmit the command with the correct phase.</p>
+</dd>
+
+
+<dt class="dlterm">08</dt>
+
+<dd class="dlentry"><p>Terminate the load operation using the TERMINATE action then resubmit the original load command.</p>
+</dd>
+
+
+<dt class="dlterm">09</dt>
+
+<dd class="dlentry"><p>Resume I/O write operations for the database, and resubmit the QUIESCE TABLESPACES FOR TABLE command.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>Terminate the load operation using the TERMINATE action then resubmit the original load command.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e645" lang="en-us" id="sql3806n">
+<h1 class="msghead" id="d303922e645"><span class="title title msgId"><span class="ph ph msgNumber">SQL3806N</span></span>  <span class="shortdesc shortdesc msgText">Not all table constraints are off for the table
+to be loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3806N: Explanation"><h2 class="sectiontitle" id="d303922e669">Explanation</h2><p>One or more constraints for the table to be loaded are still on
+when the load API is invoked.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3806N: User response"><h2 class="sectiontitle" id="d303922e675">User response</h2><p>Resubmit the command after all table constraints are turned
+off.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e686" lang="en-us" id="sql3807n">
+<h1 class="msghead" id="d303922e686"><span class="title title msgId"><span class="ph ph msgNumber">SQL3807N</span></span>  <span class="shortdesc shortdesc msgText">Instance or database <var class="keyword varname vartype=quotedString varnumber=1">name</var> quiesce is pending.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3807N: Explanation"><h2 class="sectiontitle" id="d303922e713">Explanation</h2><p>Another user has submitted the quiesce command and it has not
+yet completed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3807N: User response"><h2 class="sectiontitle" id="d303922e719">User response</h2><p>Wait for the quiesce to complete.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e731" lang="en-us" id="sql3808n">
+<h1 class="msghead" id="d303922e731"><span class="title title msgId"><span class="ph ph msgNumber">SQL3808N</span></span>  <span class="shortdesc shortdesc msgText">Instance or database <var class="keyword varname vartype=quotedString varnumber=1">name</var> unquiesce is pending.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3808N: Explanation"><h2 class="sectiontitle" id="d303922e758">Explanation</h2><p>Another user has submitted the unquiesce command and it has not
+yet completed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3808N: User response"><h2 class="sectiontitle" id="d303922e764">User response</h2><p>Wait for the unquiesce to complete.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e775" lang="en-us" id="sql3901n">
+<h1 class="msghead" id="d303922e775"><span class="title title msgId"><span class="ph ph msgNumber">SQL3901N</span></span>  <span class="shortdesc shortdesc msgText">A non-severe system error occurred.
+Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3901N: Explanation"><h2 class="sectiontitle" id="d303922e802">Explanation</h2><p>Processing ended because of a non-severe system error.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3901N: User response"><h2 class="sectiontitle" id="d303922e808">User response</h2><div class="p">If trace was active, invoke the Independent Trace Facility at the 
+operating system command prompt. 
+Then contact your technical service representative 
+with the following information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and embedded reason code</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e833" lang="en-us" id="sql3902c">
+<h1 class="msghead" id="d303922e833"><span class="title title msgId"><span class="ph ph msgNumber">SQL3902C</span></span>  <span class="shortdesc shortdesc msgText">A system error occurred. Further processing is
+not possible. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3902C: Explanation"><h2 class="sectiontitle" id="d303922e860">Explanation</h2><p>A system error occurred.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3902C: User response"><h2 class="sectiontitle" id="d303922e866">User response</h2><div class="p">If trace was active,
+invoke the Independent Trace Facility at the operating system command prompt.
+Then contact your technical service representative with the following
+information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and embedded reason code</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e890" lang="en-us" id="sql3910i">
+<h1 class="msghead" id="d303922e890"><span class="title title msgId"><span class="ph ph msgNumber">SQL3910I</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session completed successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3910I: Explanation"><h2 class="sectiontitle" id="d303922e914">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3910I: User response"><h2 class="sectiontitle" id="d303922e919">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e930" lang="en-us" id="sql3911i">
+<h1 class="msghead" id="d303922e930"><span class="title title msgId"><span class="ph ph msgNumber">SQL3911I</span></span>  <span class="shortdesc shortdesc msgText">Test synchronization session completed successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3911I: Explanation"><h2 class="sectiontitle" id="d303922e954">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3911I: User response"><h2 class="sectiontitle" id="d303922e959">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e969" lang="en-us" id="sql3912i">
+<h1 class="msghead" id="d303922e969"><span class="title title msgId"><span class="ph ph msgNumber">SQL3912I</span></span>  <span class="shortdesc shortdesc msgText">STOP completed successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3912I: Explanation"><h2 class="sectiontitle" id="d303922e993">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3912I: User response"><h2 class="sectiontitle" id="d303922e998">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1009" lang="en-us" id="sql3913i">
+<h1 class="msghead" id="d303922e1009"><span class="title title msgId"><span class="ph ph msgNumber">SQL3913I</span></span>  <span class="shortdesc shortdesc msgText">STOP issued, but no synchronization session is
+currently active.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3913I: Explanation"><h2 class="sectiontitle" id="d303922e1033">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3913I: User response"><h2 class="sectiontitle" id="d303922e1038">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1048" lang="en-us" id="sql3914i">
+<h1 class="msghead" id="d303922e1048"><span class="title title msgId"><span class="ph ph msgNumber">SQL3914I</span></span>  <span class="shortdesc shortdesc msgText">A user interrupt was issued. The synchronization
+session stopped successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3914I: Explanation"><h2 class="sectiontitle" id="d303922e1072">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3914I: User response"><h2 class="sectiontitle" id="d303922e1077">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1088" lang="en-us" id="sql3915i">
+<h1 class="msghead" id="d303922e1088"><span class="title title msgId"><span class="ph ph msgNumber">SQL3915I</span></span>  <span class="shortdesc shortdesc msgText">A user interrupt was issued before the results were
+uploaded to the satellite control server. The results will be uploaded
+during the next synchronization session.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3915I: Explanation"><h2 class="sectiontitle" id="d303922e1112">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3915I: User response"><h2 class="sectiontitle" id="d303922e1117">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1127" lang="en-us" id="sql3916i">
+<h1 class="msghead" id="d303922e1127"><span class="title title msgId"><span class="ph ph msgNumber">SQL3916I</span></span>  <span class="shortdesc shortdesc msgText">A STOP request was received. Synchronization session
+stopped successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3916I: Explanation"><h2 class="sectiontitle" id="d303922e1151">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3916I: User response"><h2 class="sectiontitle" id="d303922e1156">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1167" lang="en-us" id="sql3917i">
+<h1 class="msghead" id="d303922e1167"><span class="title title msgId"><span class="ph ph msgNumber">SQL3917I</span></span>  <span class="shortdesc shortdesc msgText">A STOP request was received before the results were
+uploaded to the satellite control server. The results will be uploaded during the
+next synchronization session.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3917I: Explanation"><h2 class="sectiontitle" id="d303922e1191">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3917I: User response"><h2 class="sectiontitle" id="d303922e1196">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1206" lang="en-us" id="sql3918i">
+<h1 class="msghead" id="d303922e1206"><span class="title title msgId"><span class="ph ph msgNumber">SQL3918I</span></span>  <span class="shortdesc shortdesc msgText">Synchronization progress information was obtained
+successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3918I: Explanation"><h2 class="sectiontitle" id="d303922e1230">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3918I: User response"><h2 class="sectiontitle" id="d303922e1235">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1246" lang="en-us" id="sql3919i">
+<h1 class="msghead" id="d303922e1246"><span class="title title msgId"><span class="ph ph msgNumber">SQL3919I</span></span>  <span class="shortdesc shortdesc msgText">A STOP request was received before the satellite
+could contact the satellite control server. Synchronization stopped
+successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3919I: Explanation"><h2 class="sectiontitle" id="d303922e1270">Explanation</h2><p></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3919I: User response"><h2 class="sectiontitle" id="d303922e1275">User response</h2><p></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1285" lang="en-us" id="sql3920i">
+<h1 class="msghead" id="d303922e1285"><span class="title title msgId"><span class="ph ph msgNumber">SQL3920I</span></span>  <span class="shortdesc shortdesc msgText">The application version on this satellite does not
+match one that is available for the group of this satellite.
+Synchronization cannot occur.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3920I: Explanation"><h2 class="sectiontitle" id="d303922e1309">Explanation</h2><p>The application version reported by the satellite does not exist at 
+the satellite control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3920I: User response"><h2 class="sectiontitle" id="d303922e1315">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1327" lang="en-us" id="sql3921i">
+<h1 class="msghead" id="d303922e1327"><span class="title title msgId"><span class="ph ph msgNumber">SQL3921I</span></span>  <span class="shortdesc shortdesc msgText">This satellite is disabled at the satellite control
+server. Synchronization cannot occur.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3921I: Explanation"><h2 class="sectiontitle" id="d303922e1351">Explanation</h2><p>When disabled, the satellite cannot synchronize.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3921I: User response"><h2 class="sectiontitle" id="d303922e1357">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1368" lang="en-us" id="sql3930w">
+<h1 class="msghead" id="d303922e1368"><span class="title title msgId"><span class="ph ph msgNumber">SQL3930W</span></span>  <span class="shortdesc shortdesc msgText">There are no synchronization scripts to execute.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3930W: Explanation"><h2 class="sectiontitle" id="d303922e1392">Explanation</h2><p>No synchronization scripts were downloaded to the
+satellite for execution.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3930W: User response"><h2 class="sectiontitle" id="d303922e1398">User response</h2><p>Contact the help desk or your system administrator to ensure
+that synchronization scripts are available on the satellite 
+control database for this satellite.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1410" lang="en-us" id="sql3931w">
+<h1 class="msghead" id="d303922e1410"><span class="title title msgId"><span class="ph ph msgNumber">SQL3931W</span></span>  <span class="shortdesc shortdesc msgText">The test synchronization session completed successfully.
+The satellite ID, however, could not be found in the satellite control database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3931W: Explanation"><h2 class="sectiontitle" id="d303922e1434">Explanation</h2><p> Either the satellite ID is not defined correctly on the satellite
+or this satellite has not been defined in the satellite control database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3931W: User response"><h2 class="sectiontitle" id="d303922e1440">User response</h2><p>If you use the DB2SATELLITEID registry variable, ensure that it is set
+to the unique ID for the satellite. If you are using the operating system
+logon ID as the satellite ID, ensure you log on using it.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1451" lang="en-us" id="sql3932w">
+<h1 class="msghead" id="d303922e1451"><span class="title title msgId"><span class="ph ph msgNumber">SQL3932W</span></span>  <span class="shortdesc shortdesc msgText">The test synchronization session completed successfully.
+The satellite application version, however, is not set locally, or does not
+exist for this satellite's group at the satellite control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3932W: Explanation"><h2 class="sectiontitle" id="d303922e1475">Explanation</h2><p>The application version on the satellite is different from
+any that are available for this satellite's group.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3932W: User response"><h2 class="sectiontitle" id="d303922e1481">User response</h2><p>Ensure that the application version on the satellite is set to the correct 
+value.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1493" lang="en-us" id="sql3933w">
+<h1 class="msghead" id="d303922e1493"><span class="title title msgId"><span class="ph ph msgNumber">SQL3933W</span></span>  <span class="shortdesc shortdesc msgText">The test synchronization session completed
+successfully. The release level of the satellite, however, is not supported by the
+release level of the satellite control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3933W: Explanation"><h2 class="sectiontitle" id="d303922e1517">Explanation</h2><p>The release level of the satellite must be within the range of one level 
+above to two levels below that of the satellite control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3933W: User response"><h2 class="sectiontitle" id="d303922e1523">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1534" lang="en-us" id="sql3934w">
+<h1 class="msghead" id="d303922e1534"><span class="title title msgId"><span class="ph ph msgNumber">SQL3934W</span></span>  <span class="shortdesc shortdesc msgText">The test synchronization session completed
+successfully. This satellite, however, is disabled at the satellite control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3934W: Explanation"><h2 class="sectiontitle" id="d303922e1558">Explanation</h2><p>The satellite has been placed in the disabled state at the satellite 
+control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3934W: User response"><h2 class="sectiontitle" id="d303922e1564">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1576" lang="en-us" id="sql3935w">
+<h1 class="msghead" id="d303922e1576"><span class="title title msgId"><span class="ph ph msgNumber">SQL3935W</span></span>  <span class="shortdesc shortdesc msgText">The test synchronization session completed
+successfully. This satellite, however, is in the failed state at the satellite control
+server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3935W: Explanation"><h2 class="sectiontitle" id="d303922e1600">Explanation</h2><p>The satellite is in the failed state at the control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3935W: User response"><h2 class="sectiontitle" id="d303922e1606">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1617" lang="en-us" id="sql3936w">
+<h1 class="msghead" id="d303922e1617"><span class="title title msgId"><span class="ph ph msgNumber">SQL3936W</span></span>  <span class="shortdesc shortdesc msgText">No progress information is available.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3936W: Explanation"><h2 class="sectiontitle" id="d303922e1641">Explanation</h2><p>The synchronization session has not reached a stage where
+the progress information has been logged, or there is no active
+synchronization session for this satellite.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3936W: User response"><h2 class="sectiontitle" id="d303922e1647">User response</h2><p>Ensure the synchronization session is active, or try querying
+for progress information later.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1659" lang="en-us" id="sql3937w">
+<h1 class="msghead" id="d303922e1659"><span class="title title msgId"><span class="ph ph msgNumber">SQL3937W</span></span>  <span class="shortdesc shortdesc msgText">The application version for this satellite does not
+match one that is available for this satellite's group.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3937W: Explanation"><h2 class="sectiontitle" id="d303922e1683">Explanation</h2><p>A satellite can only synchronize with a particular application
+version for its group. The application version for this satellite
+is not available for the satellite's group at the control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3937W: User response"><h2 class="sectiontitle" id="d303922e1689">User response</h2><p>Ensure that the application version on the satellite is set to the correct 
+value.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1700" lang="en-us" id="sql3938w">
+<h1 class="msghead" id="d303922e1700"><span class="title title msgId"><span class="ph ph msgNumber">SQL3938W</span></span>  <span class="shortdesc shortdesc msgText">An interrupt was issued during script execution.
+The synchronization session was stopped, but the satellite may be in an
+inconsistent state.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3938W: Explanation"><h2 class="sectiontitle" id="d303922e1724">Explanation</h2><p>An interrupt was issued while the script execution phase of the
+synchronization process was being performed. The synchronization session
+was stopped but the satellite may be in an inconsistent state because
+a script may have been halted at an inappropriate place.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3938W: User response"><h2 class="sectiontitle" id="d303922e1730">User response</h2><p> Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1742" lang="en-us" id="sql3942i">
+<h1 class="msghead" id="d303922e1742"><span class="title title msgId"><span class="ph ph msgNumber">SQL3942I</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session identifier was set
+successfully for the satellite.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3942I: Explanation"><h2 class="sectiontitle" id="d303922e1766">Explanation</h2><p>The session identifier was set successfully for the satellite.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3942I: User response"><h2 class="sectiontitle" id="d303922e1772">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1783" lang="en-us" id="sql3943n">
+<h1 class="msghead" id="d303922e1783"><span class="title title msgId"><span class="ph ph msgNumber">SQL3943N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session identifier exceeds the
+maximum length of <var class="keyword varname vartype=quotedString varnumber=1">length</var> characters.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3943N: Explanation"><h2 class="sectiontitle" id="d303922e1810">Explanation</h2><p>The specified synchronization session identifier is longer than the allowed 
+length of <var class="keyword varname">length</var> characters.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3943N: User response"><h2 class="sectiontitle" id="d303922e1819">User response</h2><p>Ensure that the identifier is no more than nnn characters.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1831" lang="en-us" id="sql3944i">
+<h1 class="msghead" id="d303922e1831"><span class="title title msgId"><span class="ph ph msgNumber">SQL3944I</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session identifier was reset
+successfully for the satellite.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3944I: Explanation"><h2 class="sectiontitle" id="d303922e1855">Explanation</h2><p>The session identifier was reset successfully for the satellite.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3944I: User response"><h2 class="sectiontitle" id="d303922e1861">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1872" lang="en-us" id="sql3945i">
+<h1 class="msghead" id="d303922e1872"><span class="title title msgId"><span class="ph ph msgNumber">SQL3945I</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session identifier for the satellite
+was retrieved successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3945I: Explanation"><h2 class="sectiontitle" id="d303922e1896">Explanation</h2><p>The session identifier for this satellite was found and returned 
+successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3945I: User response"><h2 class="sectiontitle" id="d303922e1902">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1914" lang="en-us" id="sql3946n">
+<h1 class="msghead" id="d303922e1914"><span class="title title msgId"><span class="ph ph msgNumber">SQL3946N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session identifier operation failed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3946N: Explanation"><h2 class="sectiontitle" id="d303922e1938">Explanation</h2><p>The synchronization session identifier operation has failed for an
+unknown reason.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3946N: User response"><h2 class="sectiontitle" id="d303922e1944">User response</h2><p>Ensure that the product is installed correctly. If the failure persists,
+contact DB2 service.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1955" lang="en-us" id="sql3950n">
+<h1 class="msghead" id="d303922e1955"><span class="title title msgId"><span class="ph ph msgNumber">SQL3950N</span></span>  <span class="shortdesc shortdesc msgText">A synchronization session is active. At
+most one synchronization session can be active.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3950N: Explanation"><h2 class="sectiontitle" id="d303922e1979">Explanation</h2><p>Only one synchronization session can be active at a time.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3950N: User response"><h2 class="sectiontitle" id="d303922e1985">User response</h2><p>Wait until the current synchronization session completes successfully
+before initiating another session.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e1997" lang="en-us" id="sql3951n">
+<h1 class="msghead" id="d303922e1997"><span class="title title msgId"><span class="ph ph msgNumber">SQL3951N</span></span>  <span class="shortdesc shortdesc msgText">The satellite ID cannot be found locally.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3951N: Explanation"><h2 class="sectiontitle" id="d303922e2021">Explanation</h2><p>Either the operating system logon was bypassed or the
+DB2SATELLITEID registry variable was not set.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3951N: User response"><h2 class="sectiontitle" id="d303922e2027">User response</h2><p>If you are using the operating system logon ID as the satellite ID,
+log on to the operating system. If you use the DB2SATELLITEID registry
+variable, ensure that it is set to the unique ID for the satellite.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2038" lang="en-us" id="sql3952n">
+<h1 class="msghead" id="d303922e2038"><span class="title title msgId"><span class="ph ph msgNumber">SQL3952N</span></span>  <span class="shortdesc shortdesc msgText">The satellite ID cannot be found at the satellite
+control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3952N: Explanation"><h2 class="sectiontitle" id="d303922e2062">Explanation</h2><p>Either the satellite ID is not defined correctly on this satellite
+or this satellite has not been defined at the satellite control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3952N: User response"><h2 class="sectiontitle" id="d303922e2068">User response</h2><p>If you use the DB2SATELLITEID registry variable, ensure that it is set to
+the unique ID for the satellite. If you are using the operating system logon
+ID as the satellite ID, ensure you log on using it. Otherwise, contact the help 
+desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2080" lang="en-us" id="sql3953n">
+<h1 class="msghead" id="d303922e2080"><span class="title title msgId"><span class="ph ph msgNumber">SQL3953N</span></span>  <span class="shortdesc shortdesc msgText">This satellite has been disabled at the satellite
+control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3953N: Explanation"><h2 class="sectiontitle" id="d303922e2104">Explanation</h2><p>The satellite ID has been disabled at the satellite control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3953N: User response"><h2 class="sectiontitle" id="d303922e2110">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2121" lang="en-us" id="sql3954n">
+<h1 class="msghead" id="d303922e2121"><span class="title title msgId"><span class="ph ph msgNumber">SQL3954N</span></span>  <span class="shortdesc shortdesc msgText">This satellite is in the failed state at the
+satellite control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3954N: Explanation"><h2 class="sectiontitle" id="d303922e2145">Explanation</h2><p>The satellite is in the failed state because a previous
+synchronization session failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3954N: User response"><h2 class="sectiontitle" id="d303922e2151">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2163" lang="en-us" id="sql3955n">
+<h1 class="msghead" id="d303922e2163"><span class="title title msgId"><span class="ph ph msgNumber">SQL3955N</span></span>  <span class="shortdesc shortdesc msgText">The satellite control database name or its alias
+could not be found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3955N: Explanation"><h2 class="sectiontitle" id="d303922e2187">Explanation</h2><p>The satellite control database is not cataloged correctly.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3955N: User response"><h2 class="sectiontitle" id="d303922e2193">User response</h2><p>Contact the help desk or you system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2204" lang="en-us" id="sql3956n">
+<h1 class="msghead" id="d303922e2204"><span class="title title msgId"><span class="ph ph msgNumber">SQL3956N</span></span>  <span class="shortdesc shortdesc msgText">The application version for this satellite is not
+defined locally.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3956N: Explanation"><h2 class="sectiontitle" id="d303922e2228">Explanation</h2><p>The application version is not defined locally on this satellite or is not 
+defined correctly.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3956N: User response"><h2 class="sectiontitle" id="d303922e2234">User response</h2><p>Ensure that the application version is set to the correct value.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2246" lang="en-us" id="sql3957n">
+<h1 class="msghead" id="d303922e2246"><span class="title title msgId"><span class="ph ph msgNumber">SQL3957N</span></span>  <span class="shortdesc shortdesc msgText">Cannot connect to the satellite control database
+because of a communication failure:
+SQLCODE=<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATES=<var class="keyword varname vartype=quotedString varnumber=2">sqlstate</var>, Tokens =<var class="keyword varname vartype=quotedString varnumber=3">token1</var>, <var class="keyword varname vartype=quotedString varnumber=4">token2</var>, <var class="keyword varname vartype=quotedString varnumber=5">token3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3957N: Explanation"><h2 class="sectiontitle" id="d303922e2285">Explanation</h2><p>An error has been detected by the communication subsystem.
+Refer to <var class="keyword varname">sqlcode</var> for more details.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3957N: User response"><h2 class="sectiontitle" id="d303922e2294">User response</h2><p> Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2305" lang="en-us" id="sql3958n">
+<h1 class="msghead" id="d303922e2305"><span class="title title msgId"><span class="ph ph msgNumber">SQL3958N</span></span>  <span class="shortdesc shortdesc msgText">Error occurred during synchronization session:
+SQLCODE=<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATES=<var class="keyword varname vartype=quotedString varnumber=2">sqlstate</var>, Tokens =<var class="keyword varname vartype=quotedString varnumber=3">token1</var>, <var class="keyword varname vartype=quotedString varnumber=4">token2</var>, <var class="keyword varname vartype=quotedString varnumber=5">token3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3958N: Explanation"><h2 class="sectiontitle" id="d303922e2344">Explanation</h2><p>An unknown error has been detected by the communication subsystem.
+Refer to <var class="keyword varname">sqlcode</var> for more details.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3958N: User response"><h2 class="sectiontitle" id="d303922e2353">User response</h2><p> Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2365" lang="en-us" id="sql3959n">
+<h1 class="msghead" id="d303922e2365"><span class="title title msgId"><span class="ph ph msgNumber">SQL3959N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session cannot start because of a
+communication failure:
+SQLCODE=<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATES=<var class="keyword varname vartype=quotedString varnumber=2">sqlstate</var>, Tokens =<var class="keyword varname vartype=quotedString varnumber=3">token1</var>, <var class="keyword varname vartype=quotedString varnumber=4">token2</var>, <var class="keyword varname vartype=quotedString varnumber=5">token3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3959N: Explanation"><h2 class="sectiontitle" id="d303922e2404">Explanation</h2><p>An error has been detected by the communication subsystem.
+Refer to <var class="keyword varname">sqlcode</var> for more details.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3959N: User response"><h2 class="sectiontitle" id="d303922e2413">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2424" lang="en-us" id="sql3960n">
+<h1 class="msghead" id="d303922e2424"><span class="title title msgId"><span class="ph ph msgNumber">SQL3960N</span></span>  <span class="shortdesc shortdesc msgText">Cannot upload results to the satellite control server
+because of a communication failure:
+SQLCODE=<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATES=<var class="keyword varname vartype=quotedString varnumber=2">sqlstate</var>, Tokens =<var class="keyword varname vartype=quotedString varnumber=3">token1</var>, <var class="keyword varname vartype=quotedString varnumber=4">token2</var>, <var class="keyword varname vartype=quotedString varnumber=5">token3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3960N: Explanation"><h2 class="sectiontitle" id="d303922e2463">Explanation</h2><p>An error has been detected by the communication subsystem.
+Refer to <var class="keyword varname">sqlcode</var> for more details.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3960N: User response"><h2 class="sectiontitle" id="d303922e2472">User response</h2><p> Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2484" lang="en-us" id="sql3961n">
+<h1 class="msghead" id="d303922e2484"><span class="title title msgId"><span class="ph ph msgNumber">SQL3961N</span></span>  <span class="shortdesc shortdesc msgText">Cannot authenticate with the satellite control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3961N: Explanation"><h2 class="sectiontitle" id="d303922e2508">Explanation</h2><p>An authentication error was detected while trying to connect to the
+satellite control database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3961N: User response"><h2 class="sectiontitle" id="d303922e2514">User response</h2><p>Either the remote administrative user ID or the password required to
+connect to the satellite control database was not correct, or both. Either
+provide the correct user ID and password, or contact the help desk or
+your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2525" lang="en-us" id="sql3962n">
+<h1 class="msghead" id="d303922e2525"><span class="title title msgId"><span class="ph ph msgNumber">SQL3962N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization could not be started because of a
+database error:
+SQLCODE=<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATES=<var class="keyword varname vartype=quotedString varnumber=2">sqlstate</var>, Tokens =<var class="keyword varname vartype=quotedString varnumber=3">token1</var>, <var class="keyword varname vartype=quotedString varnumber=4">token2</var>, <var class="keyword varname vartype=quotedString varnumber=5">token3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3962N: Explanation"><h2 class="sectiontitle" id="d303922e2564">Explanation</h2><p>An error preventing synchronization occurred at the satellite control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3962N: User response"><h2 class="sectiontitle" id="d303922e2570">User response</h2><p>Attempt to synchronize again. If failure persists, contact the
+help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2582" lang="en-us" id="sql3963n">
+<h1 class="msghead" id="d303922e2582"><span class="title title msgId"><span class="ph ph msgNumber">SQL3963N</span></span>  <span class="shortdesc shortdesc msgText">Results cannot be uploaded because of a database error:
+SQLCODE=<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATES=<var class="keyword varname vartype=quotedString varnumber=2">sqlstate</var>, Tokens =<var class="keyword varname vartype=quotedString varnumber=3">token1</var>, <var class="keyword varname vartype=quotedString varnumber=4">token2</var>, <var class="keyword varname vartype=quotedString varnumber=5">token3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3963N: Explanation"><h2 class="sectiontitle" id="d303922e2621">Explanation</h2><p>An error occurred while uploading results to the satellite control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3963N: User response"><h2 class="sectiontitle" id="d303922e2627">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2638" lang="en-us" id="sql3964n">
+<h1 class="msghead" id="d303922e2638"><span class="title title msgId"><span class="ph ph msgNumber">SQL3964N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization failed because the release level of
+the satellite is not supported by the satellite control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3964N: Explanation"><h2 class="sectiontitle" id="d303922e2662">Explanation</h2><p>The release level of the satellite must be within the range of one level 
+above to two levels below that of the satellite control server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3964N: User response"><h2 class="sectiontitle" id="d303922e2668">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2680" lang="en-us" id="sql3965n">
+<h1 class="msghead" id="d303922e2680"><span class="title title msgId"><span class="ph ph msgNumber">SQL3965N</span></span>  <span class="shortdesc shortdesc msgText">Cannot download synchronization scripts because of a
+satellite control server failure:
+SQLCODE=<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATES=<var class="keyword varname vartype=quotedString varnumber=2">sqlstate</var>, Tokens =<var class="keyword varname vartype=quotedString varnumber=3">token1</var>, <var class="keyword varname vartype=quotedString varnumber=4">token2</var>, <var class="keyword varname vartype=quotedString varnumber=5">token3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3965N: Explanation"><h2 class="sectiontitle" id="d303922e2719">Explanation</h2><p>The satellite cannot download  the scripts that are required to 
+synchronize the satellite. One possible reason for this failure is 
+that the control server cannot instantiate parameterized scripts 
+with the attributes of the satellite. Another reason is that the 
+satellite control server was temporarily unable to complete
+the request because of resource constraints.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3965N: User response"><h2 class="sectiontitle" id="d303922e2725">User response</h2><p>Try the request again. If the failure persists, contact the
+help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2736" lang="en-us" id="sql3966n">
+<h1 class="msghead" id="d303922e2736"><span class="title title msgId"><span class="ph ph msgNumber">SQL3966N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session failed. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3966N: Explanation"><h2 class="sectiontitle" id="d303922e2763">Explanation</h2><div class="p">The synchronization session failed to complete for one of the following reasons:
+<ul>
+<li>(01) Missing authentication information.</li>
+
+<li>(02) Some scripts required for synchronization are missing.</li>
+
+<li>(03) System files are corrupted or missing.</li>
+
+<li>(04) A system error prevented scripts from executing.</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3966N: User response"><h2 class="sectiontitle" id="d303922e2782">User response</h2><p>Try the request again. If failure persists, contact the
+help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2794" lang="en-us" id="sql3967n">
+<h1 class="msghead" id="d303922e2794"><span class="title title msgId"><span class="ph ph msgNumber">SQL3967N</span></span>  <span class="shortdesc shortdesc msgText">Progress information cannot be retrieved.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3967N: Explanation"><h2 class="sectiontitle" id="d303922e2818">Explanation</h2><p>Progress on this satellite's synchronization session cannot be
+retrieved. Either the data is corrupt, or it does not exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3967N: User response"><h2 class="sectiontitle" id="d303922e2824">User response</h2><p>If a synchronization session is active and no progress
+information is available, contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2835" lang="en-us" id="sql3968n">
+<h1 class="msghead" id="d303922e2835"><span class="title title msgId"><span class="ph ph msgNumber">SQL3968N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization failed to complete successfully
+because of a script failure. The results, however, were successfully
+sent to the satellite control server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3968N: Explanation"><h2 class="sectiontitle" id="d303922e2859">Explanation</h2><p>One of the synchronization scripts failed during execution. Either
+a return code was not in the defined success code set, or the script
+failed to execute.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3968N: User response"><h2 class="sectiontitle" id="d303922e2865">User response</h2><p>Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2877" lang="en-us" id="sql3969n">
+<h1 class="msghead" id="d303922e2877"><span class="title title msgId"><span class="ph ph msgNumber">SQL3969N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization failed because an interrupt was
+received during script execution.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3969N: Explanation"><h2 class="sectiontitle" id="d303922e2901">Explanation</h2><p>Script execution fails when an interrupt is received. An abnormal 
+termination of this type will cause the synchronization session to 
+fail because the system may be in an inconsistent state.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3969N: User response"><h2 class="sectiontitle" id="d303922e2907">User response</h2><p> Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d303922e2918" lang="en-us" id="sql3970n">
+<h1 class="msghead" id="d303922e2918"><span class="title title msgId"><span class="ph ph msgNumber">SQL3970N</span></span>  <span class="shortdesc shortdesc msgText">Synchronization session failed:
+SQLCODE <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>, SQLSTATE <var class="keyword varname vartype=quotedString varnumber=2">sqlatate</var>. The error was detected at the location <var class="keyword varname vartype=quotedString varnumber=3">location</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3970N: Explanation"><h2 class="sectiontitle" id="d303922e2951">Explanation</h2><p>Script execution failed because of an unknown error.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3970N: User response"><h2 class="sectiontitle" id="d303922e2957">User response</h2><p> Contact the help desk or your system administrator.</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

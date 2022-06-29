@@ -1,0 +1,2509 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL2750 - SQL2999</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d245361e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic12">
+   <h1 class="topictitle1" id="d245361e14">SQL2750 - SQL2999</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d245361e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e64" lang="en-us" id="sql2750n">
+<h1 class="msghead" id="d245361e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL2750N</span></span>  <span class="shortdesc shortdesc msgText">The length of line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> in the configuration was more
+than 255 bytes.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2750N: Explanation"><h2 class="sectiontitle" id="d245361e91">Explanation</h2><p>The maximum length of a line in the configuration file must be
+less than 255 bytes.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2750N: User response"><h2 class="sectiontitle" id="d245361e97">User response</h2><p>Check your configuration file and make sure all lines are less
+than 255 bytes.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e108" lang="en-us" id="sql2751n">
+<h1 class="msghead" id="d245361e108"><span class="title title msgId"><span class="ph ph msgNumber">SQL2751N</span></span>  <span class="shortdesc shortdesc msgText">The actual length <var class="keyword varname vartype=quotedString varnumber=1">actual-reclen</var> of record <var class="keyword varname vartype=quotedString varnumber=2">rec-no</var> did not
+match the expected length <var class="keyword varname vartype=quotedString varnumber=3">exp-reclen</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2751N: Explanation"><h2 class="sectiontitle" id="d245361e141">Explanation</h2><p>If new line checking is required for a fixed length ASC data file
+(NEWLINE parameter is YES and RECLEN parameter is not zero), the actual
+length of each record has to match the expected record.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2751N: User response"><h2 class="sectiontitle" id="d245361e147">User response</h2><p>Check record <var class="keyword varname">rec-no</var> in the input data file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e162" lang="en-us" id="sql2752n">
+<h1 class="msghead" id="d245361e162"><span class="title title msgId"><span class="ph ph msgNumber">SQL2752N</span></span>  <span class="shortdesc shortdesc msgText">Invalid codepage specification <var class="keyword varname vartype=quotedString varnumber=1">codepage</var> at line <var class="keyword varname vartype=quotedString varnumber=2">line</var> of
+the configuration file.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2752N: Explanation"><h2 class="sectiontitle" id="d245361e192">Explanation</h2><p>The codepage specification is not valid. It must be a positive
+integer.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2752N: User response"><h2 class="sectiontitle" id="d245361e198">User response</h2><p>Correct the codepage specification in the configuration file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e209" lang="en-us" id="sql2753n">
+<h1 class="msghead" id="d245361e209"><span class="title title msgId"><span class="ph ph msgNumber">SQL2753N</span></span>  <span class="shortdesc shortdesc msgText">Failed to get the territory code and codepage for
+the application. Return code from function <var class="keyword varname vartype=quotedString varnumber=1">function-name</var> is <var class="keyword varname vartype=quotedString varnumber=2">rc</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2753N: Explanation"><h2 class="sectiontitle" id="d245361e239">Explanation</h2><p>The program failed to get the territory code and codepage of its
+environment.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2753N: User response"><h2 class="sectiontitle" id="d245361e245">User response</h2><p>Check with your database system administrator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e257" lang="en-us" id="sql2754n">
+<h1 class="msghead" id="d245361e257"><span class="title title msgId"><span class="ph ph msgNumber">SQL2754N</span></span>  <span class="shortdesc shortdesc msgText">Codepage <var class="keyword varname vartype=quotedString varnumber=1">source-cp</var> cannot be converted to codepage <var class="keyword varname vartype=quotedString varnumber=2">target-cp</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2754N: Explanation"><h2 class="sectiontitle" id="d245361e287">Explanation</h2><p>The database does not support codepage conversion between those
+two codepages.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2754N: User response"><h2 class="sectiontitle" id="d245361e293">User response</h2><p>Please ensure your data is in a convertible codepage.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e304" lang="en-us" id="sql2755n">
+<h1 class="msghead" id="d245361e304"><span class="title title msgId"><span class="ph ph msgNumber">SQL2755N</span></span>  <span class="shortdesc shortdesc msgText">Decimal data can not be in both IMPLIEDDECIMAL
+and PACKEDDECIMAL format.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2755N: Explanation"><h2 class="sectiontitle" id="d245361e328">Explanation</h2><p>Valid format of decimal data is SQL_PACKEDDECIMAL_FORMAT,
+SQL_CHARSTRING_FORMAT, or SQL_IMPLIEDDECIMAL_FORMAT, mutually exclusive.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2755N: User response"><h2 class="sectiontitle" id="d245361e334">User response</h2><p>Verify the format of your decimal data, correct the format value, and
+resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e346" lang="en-us" id="sql2756n">
+<h1 class="msghead" id="d245361e346"><span class="title title msgId"><span class="ph ph msgNumber">SQL2756N</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter named <var class="keyword varname vartype=quotedString varnumber=1">parameter-name</var> could not be updated because another request to update the same configuration parameter is currently in progress.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2756N: Explanation"><h2 class="sectiontitle" id="d245361e373">Explanation</h2><p>A cluster caching facility (CF) structure is a memory resource for a database in a DB2 pureScale environment. The CF structures include Group Buffer Pool (GBP), Shared Communication Area (SCA), and Lock (LOCK). The corresponding configuration parameters for CF structures are CF_GBP_SZ, CF_SCA_SZ, and CF_LOCK_SZ, respectively.</p>
+
+<p>The database configuration parameter named CF_DB_MEM_SZ controls the total CF memory limit for this database. All CF structure memory is included within this limit.</p>
+
+<p>If the value of the database configuration parameter named <var class="keyword varname">parameter-name</var> exceeds the parameter value of CF_DB_MEM_SZ, the request cannot be completed and the operation will time-out.</p>
+
+<p>This message is returned when an update to CF structure memory has not completed and another request is made to update the memory for the same CF structure.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2756N: User response"><h2 class="sectiontitle" id="d245361e391">User response</h2><p>View the update request that is pending for the CF structure using the GET DB CFG command with the SHOW DETAIL clause.</p>
+
+<p>Ensure the values for memory of all CF structures are lower than the value of CF_DB_MEM_SZ.</p>
+
+<p>Wait for the update request that is pending to complete or time-out.</p>
+
+<p><strong>sqlcode</strong>:  -2756</p>
+
+<p><strong>sqlstate</strong>:  5U052</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e418" lang="en-us" id="sql2761n">
+<h1 class="msghead" id="d245361e418"><span class="title title msgId"><span class="ph ph msgNumber">SQL2761N</span></span>  <span class="shortdesc shortdesc msgText">Only one of table name or database partition group can be specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2761N: Explanation"><h2 class="sectiontitle" id="d245361e442">Explanation</h2><p>Specify either the table name or the database partition group name, but not both.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2761N: User response"><h2 class="sectiontitle" id="d245361e448">User response</h2><p>Check your command line options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e460" lang="en-us" id="sql2762n">
+<h1 class="msghead" id="d245361e460"><span class="title title msgId"><span class="ph ph msgNumber">SQL2762N</span></span>  <span class="shortdesc shortdesc msgText">The utility failed to find the database installation path.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2762N: Explanation"><h2 class="sectiontitle" id="d245361e484">Explanation</h2><p>The utility needs to know where the database manager is installed,
+then it can find its bind file.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2762N: User response"><h2 class="sectiontitle" id="d245361e490">User response</h2><p>Make sure your database manager is properly installed.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e501" lang="en-us" id="sql2763n">
+<h1 class="msghead" id="d245361e501"><span class="title title msgId"><span class="ph ph msgNumber">SQL2763N</span></span>  <span class="shortdesc shortdesc msgText">The table <var class="keyword varname vartype=quotedString varnumber=1">tbl-name</var> was not found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2763N: Explanation"><h2 class="sectiontitle" id="d245361e528">Explanation</h2><p>The table <var class="keyword varname">tbl-name</var> cannot be located in sysibm.systables.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2763N: User response"><h2 class="sectiontitle" id="d245361e537">User response</h2><p>Make sure the table exists in the database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e549" lang="en-us" id="sql2764n">
+<h1 class="msghead" id="d245361e549"><span class="title title msgId"><span class="ph ph msgNumber">SQL2764N</span></span>  <span class="shortdesc shortdesc msgText">The database partition group <var class="keyword varname vartype=quotedString varnumber=1">db-partition-group</var> was not found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2764N: Explanation"><h2 class="sectiontitle" id="d245361e576">Explanation</h2><p>The database partition group <var class="keyword varname">db-partition-group</var> cannot be located in SYSCAT.DBPARTITIONGROUPDEF.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2764N: User response"><h2 class="sectiontitle" id="d245361e585">User response</h2><p>Make sure the database partition group exists in the database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e596" lang="en-us" id="sql2765w">
+<h1 class="msghead" id="d245361e596"><span class="title title msgId"><span class="ph ph msgNumber">SQL2765W</span></span>  <span class="shortdesc shortdesc msgText">The utility failed to open output partition map file <var class="keyword varname vartype=quotedString varnumber=1">out-map-file</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2765W: Explanation"><h2 class="sectiontitle" id="d245361e623">Explanation</h2><p>The utility cannot open the output partition map file for writing. It
+will write the output to stdout.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2765W: User response"><h2 class="sectiontitle" id="d245361e629">User response</h2><p>Check your file access permissions.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e641" lang="en-us" id="sql2766n">
+<h1 class="msghead" id="d245361e641"><span class="title title msgId"><span class="ph ph msgNumber">SQL2766N</span></span>  <span class="shortdesc shortdesc msgText">The partition map is not of the correct size <var class="keyword varname vartype=quotedString varnumber=1">map-size</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2766N: Explanation"><h2 class="sectiontitle" id="d245361e668">Explanation</h2><p>The size of the partition map is not correct.
+Data is corrupted in the database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2766N: User response"><h2 class="sectiontitle" id="d245361e674">User response</h2><p>Contact the Database Administrator to resolve the problem.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e685" lang="en-us" id="sql2767n">
+<h1 class="msghead" id="d245361e685"><span class="title title msgId"><span class="ph ph msgNumber">SQL2767N</span></span>  <span class="shortdesc shortdesc msgText">A command line option is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2767N: Explanation"><h2 class="sectiontitle" id="d245361e709">Explanation</h2><p>There is an invalid command line option.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2767N: User response"><h2 class="sectiontitle" id="d245361e715">User response</h2><p>Make sure to specify the correct command line options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e727" lang="en-us" id="sql2768n">
+<h1 class="msghead" id="d245361e727"><span class="title title msgId"><span class="ph ph msgNumber">SQL2768N</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=quotedString varnumber=1">deprecated-API</var> API is deprecated and is replaced by the <var class="keyword varname vartype=quotedString varnumber=2">replacement-API</var> API.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2768N: Explanation"><h2 class="sectiontitle" id="d245361e757">Explanation</h2><p>The distribution map has been expanded from 4096 entries to 32768 entries, and cannot be returned by the deprecated API.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2768N: User response"><h2 class="sectiontitle" id="d245361e763">User response</h2><p>Use the replacement API instead of the deprecated API.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e774" lang="en-us" id="sql2796n">
+<h1 class="msghead" id="d245361e774"><span class="title title msgId"><span class="ph ph msgNumber">SQL2796N</span></span>  <span class="shortdesc shortdesc msgText">An incorrectly partitioned record was found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2796N: Explanation"><h2 class="sectiontitle" id="d245361e798">Explanation</h2><p>While running the load utility in the LOAD_ONLY partitioning mode, data file records were found that do not match the database partition that the records were being loaded into.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2796N: User response"><h2 class="sectiontitle" id="d245361e804">User response</h2><p>Verify the records in the data file for each database partition and ensure that each record is being loaded in the intended database partition. You can accomplish this task by placing the records in a separate file and invoking the load utility against it using the PARTITION_ONLY partitioning mode. By doing this, records will be grouped by their destination database partition.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e816" lang="en-us" id="sql2800n">
+<h1 class="msghead" id="d245361e816"><span class="title title msgId"><span class="ph ph msgNumber">SQL2800N</span></span>  <span class="shortdesc shortdesc msgText">CREATE, DROP, or CHANGE NODE failed. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2800N: Explanation"><h2 class="sectiontitle" id="d245361e843">Explanation</h2><p>The utility failed to add, drop, or change the database partition because the input parameters specified are invalid as indicated by the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The database partition number is not specified</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The TCP/IP host name is not specified</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The computer name is not specified</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The database partition number is invalid.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The port number is invalid.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The TCP/IP host name is invalid.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The port value is not defined for your instance in the services file.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The port value is not in the valid range defined for your instance in the services file.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The database partition number is not unique.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The host name/port couple is not unique.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>The host name value has no corresponding port 0.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2800N: User response"><h2 class="sectiontitle" id="d245361e951">User response</h2><p>The action corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Ensure that the database partition number is specified</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Ensure that the TCP/IP host name is specified</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Ensure that the computer name is specified</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Ensure that the database partition number is between 0 and 999.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Ensure that the port number is between 0 and 999.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Ensure that the host name specified is both defined on the system and is operational</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Ensure that the TCP/IP services on your system contains an entry for your instance</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>Ensure that you only use port values that are specified in the services file on your system</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>Ensure that the database partition number specified is unique.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>Ensure that the new host name/port is not already defined in the db2nodes.cfg file.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>Ensure that the port value 0 has been defined for host name specified.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1064" lang="en-us" id="sql2801n">
+<h1 class="msghead" id="d245361e1064"><span class="title title msgId"><span class="ph ph msgNumber">SQL2801N</span></span>  <span class="shortdesc shortdesc msgText">The syntax of the DB2NCRT command is incorrect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2801N: Explanation"><h2 class="sectiontitle" id="d245361e1088">Explanation</h2><div class="p">The DB2NCRT utility creates a new node in a partitioned database
+system.
+<pre class="codeblock"><code>DB2NCRT /n:node
+        /u:username,password
+        [/i:instance]
+        [/h:host]
+        [/m:machine]
+        [/p:port]
+        [/o:instance owning
+          machine]
+        [/g:netname]</code></pre></div>
+
+<div class="p">The command arguments are:
+<ul>
+<li>/n  Specify the node number</li>
+
+<li>/u  to specify the account name and password for
+the DB2 service.</li>
+</ul>
+</div>
+
+<div class="p">The command options are:
+<ul>
+<li>/i  Specify the instance if different from the
+default/current instance</li>
+
+<li>/h  Specify the TCP/IP host name if the host name
+is not the machine default TCP/IP host name</li>
+
+<li>/m  Specify the workstation name if the node
+is created on a remote machine</li>
+
+<li>/p  Specify the logical port number if this is
+not the first node on the machine</li>
+
+<li>/o  Specify the computer name of the instance owning
+machine when creating the first node on a machine.</li>
+
+<li>/g  Specify the network name or IP Address.</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2801N: User response"><h2 class="sectiontitle" id="d245361e1129">User response</h2><p>Enter the command again using valid parameters.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1141" lang="en-us" id="sql2802n">
+<h1 class="msghead" id="d245361e1141"><span class="title title msgId"><span class="ph ph msgNumber">SQL2802N</span></span>  <span class="shortdesc shortdesc msgText">The syntax of the DB2NCHG command is incorrect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2802N: Explanation"><h2 class="sectiontitle" id="d245361e1165">Explanation</h2><div class="p">The DB2NCHG utility changes or updates node configuration for
+a given node in a partitioned database system.
+<pre class="codeblock"><code>DB2NCHG /n:node
+        [/h:host]
+        [/m:machine]
+        [/p:port]
+        [/i:instance]
+        [/u:username,
+          password]
+        [/g:netname]</code></pre></div>
+
+<div class="p">The command options are:
+<ul>
+<li>/h  Change the TCP/IP host name</li>
+
+<li>/m  Change the workstation name</li>
+
+<li>/p  Change the logical port number</li>
+
+<li>/i  Specify the instance if different from the default/current instance</li>
+
+<li>/u  Change the Logon Account name and password</li>
+
+<li>/g  Specify the network name or IP Address</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2802N: User response"><h2 class="sectiontitle" id="d245361e1196">User response</h2><p>Issue the DB2NCHG command with one of the valid command
+options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1207" lang="en-us" id="sql2803n">
+<h1 class="msghead" id="d245361e1207"><span class="title title msgId"><span class="ph ph msgNumber">SQL2803N</span></span>  <span class="shortdesc shortdesc msgText">The syntax of the DB2NDROP command is incorrect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2803N: Explanation"><h2 class="sectiontitle" id="d245361e1231">Explanation</h2><div class="p">The DB2NDROP utility drops a node from a partitioned system.
+<pre class="codeblock"><code>DB2NDROP /n:node
+         [/i:instance]</code></pre></div>
+
+<div class="p">The command options are:
+<ul>
+<li>/i  Specify the instance if different from the default/current instance</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2803N: User response"><h2 class="sectiontitle" id="d245361e1246">User response</h2><p>Issue the DB2NDROP command with one of the valid command
+options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1258" lang="en-us" id="sql2804n">
+<h1 class="msghead" id="d245361e1258"><span class="title title msgId"><span class="ph ph msgNumber">SQL2804N</span></span>  <span class="shortdesc shortdesc msgText">The syntax of the DB2NLIST command is incorrect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2804N: Explanation"><h2 class="sectiontitle" id="d245361e1282">Explanation</h2><div class="p">The DB2NLIST utility list all nodes in a partitioned system.
+<pre class="codeblock"><code>DB2NLIST [/i:instance]
+         [/s]</code></pre></div>
+
+<div class="p">The command options are:
+<ul>
+<li>/i  Specify the instance if different from the default/current instance</li>
+
+<li>/s  Display node status</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2804N: User response"><h2 class="sectiontitle" id="d245361e1300">User response</h2><p>Issue the DB2NLIST command with one of the valid command
+options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1311" lang="en-us" id="sql2805n">
+<h1 class="msghead" id="d245361e1311"><span class="title title msgId"><span class="ph ph msgNumber">SQL2805N</span></span>  <span class="shortdesc shortdesc msgText">A service error has occurred.  Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2805N: Explanation"><h2 class="sectiontitle" id="d245361e1338">Explanation</h2><p>An error has occurred during an attempt to create, drop, or add a database partition.  The reason code indicates the reason for the error:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Unable to register the service</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Unable to set the required User Rights Policy</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Unable to set the Logon Account for the service</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Unable to delete the service</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2805N: User response"><h2 class="sectiontitle" id="d245361e1382">User response</h2><p>The action corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>If the workstation name is specified during DB2NCRT, ensure that the workstation name is correct.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Ensure that the user name specified is valid.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Ensure that the user name and the password specified are valid.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>If the database partition resides on another machine, ensure that the machine is running.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1432" lang="en-us" id="sql2806n">
+<h1 class="msghead" id="d245361e1432"><span class="title title msgId"><span class="ph ph msgNumber">SQL2806N</span></span>  <span class="shortdesc shortdesc msgText">Node <var class="keyword varname vartype=quotedString varnumber=1">node</var> not found for instance <var class="keyword varname vartype=quotedString varnumber=2">instance</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2806N: Explanation"><h2 class="sectiontitle" id="d245361e1462">Explanation</h2><p>DB2NDROP failed because the node does not exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2806N: User response"><h2 class="sectiontitle" id="d245361e1468">User response</h2><p> Ensure the node number is correct and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1479" lang="en-us" id="sql2807n">
+<h1 class="msghead" id="d245361e1479"><span class="title title msgId"><span class="ph ph msgNumber">SQL2807N</span></span>  <span class="shortdesc shortdesc msgText">Node <var class="keyword varname vartype=quotedString varnumber=1">node</var> already exists for instance <var class="keyword varname vartype=quotedString varnumber=2">instance</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2807N: Explanation"><h2 class="sectiontitle" id="d245361e1509">Explanation</h2><p>DB2NCRT failed because the node already exists.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2807N: User response"><h2 class="sectiontitle" id="d245361e1515">User response</h2><p> Ensure the node number is correct and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1527" lang="en-us" id="sql2808w">
+<h1 class="msghead" id="d245361e1527"><span class="title title msgId"><span class="ph ph msgNumber">SQL2808W</span></span>  <span class="shortdesc shortdesc msgText">Node <var class="keyword varname vartype=quotedString varnumber=1">node</var> for instance <var class="keyword varname vartype=quotedString varnumber=2">instance</var> has been deleted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2808W: Explanation"><h2 class="sectiontitle" id="d245361e1557">Explanation</h2><p>The DB2NDROP processing has completed successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2808W: User response"><h2 class="sectiontitle" id="d245361e1563">User response</h2><p>No further action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1574" lang="en-us" id="sql2809w">
+<h1 class="msghead" id="d245361e1574"><span class="title title msgId"><span class="ph ph msgNumber">SQL2809W</span></span>  <span class="shortdesc shortdesc msgText">Node: <var class="keyword varname vartype=quotedString varnumber=1">node</var> added to instance: <var class="keyword varname vartype=quotedString varnumber=2">instance</var>
+{Host: <var class="keyword varname vartype=quotedString varnumber=3">host-name</var> Machine: <var class="keyword varname vartype=quotedString varnumber=4">machine-name</var> Port: <var class="keyword varname vartype=quotedString varnumber=5">port-num</var>}</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2809W: Explanation"><h2 class="sectiontitle" id="d245361e1613">Explanation</h2><p>The DB2NCRT processing has completed successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2809W: User response"><h2 class="sectiontitle" id="d245361e1619">User response</h2><p>No further action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1631" lang="en-us" id="sql2810w">
+<h1 class="msghead" id="d245361e1631"><span class="title title msgId"><span class="ph ph msgNumber">SQL2810W</span></span>  <span class="shortdesc shortdesc msgText">Node: <var class="keyword varname vartype=quotedString varnumber=1">node</var> changed in instance: <var class="keyword varname vartype=quotedString varnumber=2">instance</var>
+{Host: <var class="keyword varname vartype=quotedString varnumber=3">host-name</var> Machine: <var class="keyword varname vartype=quotedString varnumber=4">machine-name</var> Port: <var class="keyword varname vartype=quotedString varnumber=5">port-num</var>}</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2810W: Explanation"><h2 class="sectiontitle" id="d245361e1670">Explanation</h2><p>The DB2NCHG processing has completed successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2810W: User response"><h2 class="sectiontitle" id="d245361e1676">User response</h2><p>No further action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1687" lang="en-us" id="sql2811n">
+<h1 class="msghead" id="d245361e1687"><span class="title title msgId"><span class="ph ph msgNumber">SQL2811N</span></span>  <span class="shortdesc shortdesc msgText">The command is invalid because the instance is not a partitioned
+database instance.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2811N: Explanation"><h2 class="sectiontitle" id="d245361e1711">Explanation</h2><p>The command is only valid if the instance is a partitioned
+database instance.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2811N: User response"><h2 class="sectiontitle" id="d245361e1717">User response</h2><p>Ensure that the specified instance name is valid.  If the
+instance name is not specified on the command line, ensure that
+the DB2INSTANCE environment is set to a valid partitioned database instance.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1729" lang="en-us" id="sql2812n">
+<h1 class="msghead" id="d245361e1729"><span class="title title msgId"><span class="ph ph msgNumber">SQL2812N</span></span>  <span class="shortdesc shortdesc msgText">An invalid argument was entered for the db2drvmp command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2812N: Explanation"><h2 class="sectiontitle" id="d245361e1753">Explanation</h2><div class="p">Usage:
+<pre class="codeblock"><code>db2drvmp add     node_number
+                 from_drive to_drive
+       drop      node_number
+                 from_drive
+       query     [node_number]
+                 [from_drive]
+       reconcile [node_number]
+                 [from_drive]</code></pre></div>
+
+<div class="p">Valid arguments for this command are:
+<dl>
+
+<dt class="dlterm">add</dt>
+
+<dd class="dlentry">assign a new database drive map.</dd>
+
+
+<dt class="dlterm">drop</dt>
+
+<dd class="dlentry">remove an existing database drive map.</dd>
+
+
+<dt class="dlterm">query</dt>
+
+<dd class="dlentry">query a database map.</dd>
+
+
+<dt class="dlterm">reconcile</dt>
+
+<dd class="dlentry">repair a database map drive when the registry
+contents are damaged.</dd>
+
+
+<dt class="dlterm">node_number</dt>
+
+<dd class="dlentry">the node number.  The parameter is required
+for add and drop operations.</dd>
+
+
+<dt class="dlterm">from_drive</dt>
+
+<dd class="dlentry">the drive letter to map from.  This parameter is
+required for add and drop operations.</dd>
+
+
+<dt class="dlterm">to_drive</dt>
+
+<dd class="dlentry">to drive letter to map to.  This parameter is
+required only for add operation.  It is not
+applicable for any other operations.</dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2812N: User response"><h2 class="sectiontitle" id="d245361e1822">User response</h2><p>Enter the command again using valid arguments.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1833" lang="en-us" id="sql2813i">
+<h1 class="msghead" id="d245361e1833"><span class="title title msgId"><span class="ph ph msgNumber">SQL2813I</span></span>  <span class="shortdesc shortdesc msgText">The drive mapping from drive <var class="keyword varname vartype=quotedString varnumber=1">drive-1</var> to drive <var class="keyword varname vartype=quotedString varnumber=2">drive-2</var> was
+added for node <var class="keyword varname vartype=quotedString varnumber=3">node</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2813I: Explanation"><h2 class="sectiontitle" id="d245361e1866">Explanation</h2><p>The drive mapping was added successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2813I: User response"><h2 class="sectiontitle" id="d245361e1872">User response</h2><p>No action necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1884" lang="en-us" id="sql2814i">
+<h1 class="msghead" id="d245361e1884"><span class="title title msgId"><span class="ph ph msgNumber">SQL2814I</span></span>  <span class="shortdesc shortdesc msgText">The drive mapping from drive <var class="keyword varname vartype=quotedString varnumber=1">drive</var> was deleted for
+node <var class="keyword varname vartype=quotedString varnumber=2">node</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2814I: Explanation"><h2 class="sectiontitle" id="d245361e1914">Explanation</h2><p>The drive mapping was deleted successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2814I: User response"><h2 class="sectiontitle" id="d245361e1920">User response</h2><p>No action necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1931" lang="en-us" id="sql2815i">
+<h1 class="msghead" id="d245361e1931"><span class="title title msgId"><span class="ph ph msgNumber">SQL2815I</span></span>  <span class="shortdesc shortdesc msgText">The drive mapping for node <var class="keyword varname vartype=quotedString varnumber=1">node</var> is: <var class="keyword varname vartype=quotedString varnumber=2">drive-1</var> - <var class="keyword varname vartype=quotedString varnumber=3">drive-2</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2815I: Explanation"><h2 class="sectiontitle" id="d245361e1964">Explanation</h2><p>Informational message.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2815I: User response"><h2 class="sectiontitle" id="d245361e1970">User response</h2><p>No action necessary</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e1982" lang="en-us" id="sql2900w">
+<h1 class="msghead" id="d245361e1982"><span class="title title msgId"><span class="ph ph msgNumber">SQL2900W</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility will not be able to pre-partition the input records.  Reason code: <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2900W: Explanation"><h2 class="sectiontitle" id="d245361e2008">Explanation</h2><p>The ingest utility uses the distribution key to determine the partition number and routes input records to one of that partition's flushers.  Because of the condition that the reason code specifies, the ingest utility will route records to a random flusher.  The reason codes are:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The NUM_FLUSHERS_PER_PARTITION configuration parameter was set to 0, so there is only 1 flusher for all partitions.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The target table is a type that does not have a distribution key.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>At least one of the distribution key columns has a type that is a user-defined type (UDT) or a DB2SECURITYLABEL.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>If the SQL statement is INSERT or REPLACE, the column list does not specify all the distribution key columns. If the SQL statement is UPDATE, DELETE, or MERGE, the WHERE or ON clause does not specify all the distribution key columns.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>If the SQL statement is INSERT or REPLACE, a value in the VALUES list is not a field name or constant. If the SQL statement is UPDATE, DELETE, or MERGE, one or more of the following is true:</p>
+
+<ul>
+<li>The comparison to a distribution key column is not an equality comparison.</li>
+
+<li>The value compared to a distribution key column is not a field name or constant.</li>
+
+<li>The distribution key column corresponds to more than one field name or constant.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The SQL statement is UPDATE, DELETE, or MERGE and the WHERE or ON clause is not of the form:</p>
+
+<p>(dist-key-col1 = value1) AND (dist-key-col2 = value2) AND ... (dist-key-colN = valueN)</p>
+
+<p>where dist-key-col1 to dist-key-colN includes all the distribution key columns and each value is a field name or constant.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>There is at least one distribution key column that has a numeric type, but its corresponding field does not have the exact same numeric type, including the same precision and scale.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2900W: User response"><h2 class="sectiontitle" id="d245361e2097">User response</h2><p>If this has a negative performance impact, modify the configuration parameter or INGEST command, depending on the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Set the NUM_FLUSHERS_PER_PARTITION configuration parameter to 1 or greater.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Specify a target table that has a distribution key.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Specify a table whose distribution key does not contain a column whose type is a user-defined type (UDT) or a DB2SECURITYLABEL.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Ensure that all distribution keys are specified on the SQL statement and that each distribution key corresponds to exactly one field.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Ensure that all of the following are true:</p>
+
+<ul>
+<li>For INSERT or REPLACE statements, all value in the VALUES list are field names or constants.</li>
+
+<li>For UPDATE, DELETE, or MERGE statements: 
+<ul>
+<li>Any comparison to a distribution key column is an equality comparison.</li>
+
+<li>Any value compared to a distribution key column is a field name or constant.</li>
+
+<li>Any distribution key column corresponds to one field name or constant.</li>
+</ul>
+</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Change the WHERE predicate or the ON predicate that it specifies all distribution key columns and it is of the form:</p>
+
+<p>(dist-key-col1 = value1) AND (dist-key-col2 = value2) AND ... (dist-key-colN = valueN)</p>
+
+<p>where dist-key-col1 to dist-key-colN includes all the distribution key columns and each value is a field name or constant.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Change the field definitions so that each field that corresponds to a numeric distribution key column has the exact same type as the distribution key column, including the same precision and scale.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2198" lang="en-us" id="sql2901i">
+<h1 class="msghead" id="d245361e2198"><span class="title title msgId"><span class="ph ph msgNumber">SQL2901I</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility completed at timestamp <var class="keyword varname vartype=quotedString varnumber=1">timestamp</var>. Number of errors: <var class="keyword varname vartype=quotedString varnumber=2">number</var>. Number of warnings: <var class="keyword varname vartype=quotedString varnumber=3">number</var>.    Message file: <var class="keyword varname vartype=quotedString varnumber=4">file-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2901I: Explanation"><h2 class="sectiontitle" id="d245361e2234">Explanation</h2><p>The ingest utility completed successfully, but returned some errors or warnings. Refer to the specified messages file to determine what those errors or warnings are.</p>
+
+<p>The number of errors includes errors from which the utility could not recover, but does not include errors from which the utility recovered.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2901I: User response"><h2 class="sectiontitle" id="d245361e2243">User response</h2><p>If you do not want to receive this message in the future, correct the cause of the errors or warnings.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2255" lang="en-us" id="sql2902i">
+<h1 class="msghead" id="d245361e2255"><span class="title title msgId"><span class="ph ph msgNumber">SQL2902I</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility completed at timestamp <var class="keyword varname vartype=quotedString varnumber=1">timestamp</var>. Number of errors: <var class="keyword varname vartype=quotedString varnumber=2">number</var>. Number of warnings: <var class="keyword varname vartype=quotedString varnumber=3">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2902I: Explanation"><h2 class="sectiontitle" id="d245361e2288">Explanation</h2><p>The ingest utility completed successfully, but returned some errors or warnings.</p>
+
+<p>The number of errors includes errors from which the utility could not recover, but does not include errors from which the utility recovered.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2902I: User response"><h2 class="sectiontitle" id="d245361e2297">User response</h2><p>If you do not want to receive this message in the future, correct the cause of the errors or warnings.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2308" lang="en-us" id="sql2903w">
+<h1 class="msghead" id="d245361e2308"><span class="title title msgId"><span class="ph ph msgNumber">SQL2903W</span></span>  <span class="shortdesc shortdesc msgText">Configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> has been automatically adjusted to the following value: <var class="keyword varname vartype=quotedString varnumber=2">value</var>. Reason code= <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2903W: Explanation"><h2 class="sectiontitle" id="d245361e2340">Explanation</h2><p>The INGEST SET or INGEST command completed successfully, but a user-specified configuration parameter was overridden.   If this message is issued for an INGEST SET command, the overriding value remains in effect for the remainder of the CLP session.   If this message is issued for an INGEST command, the overriding value remains in effect only for the INGEST DATA command.</p>
+
+<p>The explanation corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The commit_count and commit_period configuration parameters cannot be set to 0 on the same INGEST command. commit_period has been set to 1.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The commit_count configuration parameter must be set to a multiple of 1000, so it has been rounded to the nearest multiple of 1000.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The commit_count configuration parameter has been reduced because either the lock list or the transaction log ran out of space. The new value is the number of rows that had been committed right before the lock list or transaction log ran out of space.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The commit_period configuration parameter has been has been reduced because either the lock list or the transaction log ran out of space. The new value is the number of seconds between the time of the last commit and the time when the lock list or transaction log ran out of space.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The num_flushers_per_partition configuration parameter has been adjusted to 0 because one of the following is true:</p>
+
+<ul>
+<li>For an UPDATE operation, there are no appropriate columns in the search key, or all columns in the search key are also in the update key (specified on the SET clause).</li>
+
+<li>For a DELETE operation, there are no appropriate columns in the search key.</li>
+</ul>
+
+<p>The search key is the set of all columns c1, c2, ... specified on a WHERE or ON clause of the form:</p>
+
+<pre class="codeblock"><code>(c1 = $field_1) AND (c2 = $field_2) 
+    AND ... (cn = $field_n)
+   [AND (&lt;any other conditions&lt;)]</code></pre>
+<p>(The last AND condition enclosed in square brackets is optional.)</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>The num_flushers_per_partition configuration parameter has been adjusted to 0 in a partitioned database environment because at least one column in the table's distribution key is also in the update key (specified on the SET clause).</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>The num_flushers_per_partition configuration parameter has been adjusted to 1 because there is no index that contains at least one column that is in the search key (specified on the WHERE clause) but not in the update key (specified on the SET clause).</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>The num_flushers_per_partition configuration parameter has been adjusted to the value of the max_connections database manager configuration parameter because it cannot be greater than max_connections.</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>The num_flushers_per_partition configuration parameter has been adjusted to floor(128/(number of members)) because the target table is a column-organized table. Column-organized tables are structured such that the maximum ingest performance is achieved when a total of 128 parallel insert threads are employed over all members.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>The num_flushers_per_partition configuration parameter has been adjusted to 50 because the target table is a column-organized table. Column-organized tables are structured such that the maximum ingest performance is achieved when 50 parallel insert threads are employed.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2903W: User response"><h2 class="sectiontitle" id="d245361e2459">User response</h2><p>The user response corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do not set commit_period to 0 if you are leaving commit_count at its default value of 0.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, set commit_count to a multiple of 1000.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do one or more of the following:</p>
+
+<ul>
+<li>If the warning occurred because the lock list ran out of space, increase the locklist or maxlocks database configuration parameters.</li>
+
+<li>If the warning occurred because the transaction log ran out of space, increase the logfilsiz, logprimary, or logsecond database configuration parameters.</li>
+
+<li>Reduce the commit_count configuration parameter to the new value or a lower value</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do one or more of the following:</p>
+
+<ul>
+<li>If the warning occurred because the lock list ran out of space, increase the locklist or maxlocks database configuration parameters.</li>
+
+<li>If the warning occurred because the transaction log ran out of space, increase the logfilsiz, logprimary, or logsecond database configuration parameters.</li>
+
+<li>Reduce the commit_period configuration parameter to the new value or a lower value</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do one of the following:</p>
+
+<ul>
+<li>Before issuing the INGEST command, set the ingest configuration parameter num_flushers_per_partition to 0.</li>
+
+<li>If there are no appropriate columns in the search key, change the SQL statement on the INGEST command to specify a search key of the form:
+<pre class="codeblock"><code>(c1 = $field_1) AND (c2 = $field_2)
+     AND ... (cn = $field_n)</code></pre></li>
+
+<li>If all columns in the search key are also in the update key, change the search key or the update key so that the search key does not contain all the columns in the update key.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do one of the following:</p>
+
+<ul>
+<li>Before issuing the INGEST command, set the ingest configuration parameter num_flushers_per_partition to 0.</li>
+
+<li>Change the SQL statement on the INGEST command so that it does not update any of the columns in the table's distribution key.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do one of the following:</p>
+
+<ul>
+<li>Before issuing the INGEST command, set the ingest configuration parameter num_flushers_per_partition to 1.</li>
+
+<li>Define an index that includes at least one column that is in the search key but not in the update key.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do one of the following:</p>
+
+<ul>
+<li>Before issuing the INGEST command, issue the INGEST SET command to set the num_flushers_per_partition configuration parameter to a value that is less than or equal to the max_connections database manager configuration parameter.</li>
+
+<li>Set the max_connections database manager configuration parameter to AUTOMATIC or a value that is greater than or equal to the num_flushers_per_partition configuration parameter.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, do one of the following:</p>
+
+<ul>
+<li>Before issuing the INGEST command, issue the INGEST SET command to set the num_flushers_per_partition configuration parameter to a value that is less than or equal to the max_coordagents database manager configuration parameter.</li>
+
+<li>Set the max_coordagents database manager configuration parameter to AUTOMATIC or a value that is greater than or equal to the num_flushers_per_partition configuration parameter.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>To avoid receiving this message, before issuing the INGEST command, issue the INGEST SET command to set the num_flushers_per_partition configuration parameter to floor(128/(number of members)) or lower.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2631" lang="en-us" id="sql2904w">
+<h1 class="msghead" id="d245361e2631"><span class="title title msgId"><span class="ph ph msgNumber">SQL2904W</span></span>  <span class="shortdesc shortdesc msgText">The field value at line number <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> and byte position <var class="keyword varname vartype=quotedString varnumber=2">byte-position</var> was truncated because the data is longer than the field length.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2904W: Explanation"><h2 class="sectiontitle" id="d245361e2661">Explanation</h2><p>The specified field has a value that is longer than the field's length.  The value has been truncated.   For example, if the field is defined as CHAR(3) but the value is "ABCDEF", the value is truncated to "ABC".</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2904W: User response"><h2 class="sectiontitle" id="d245361e2667">User response</h2><p>If the truncation is acceptable, no further action is required.  To avoid this message, specify a longer field length  on the INGEST command or edit the input data so that the length of the field value is less than or equal to the length of the field.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2678" lang="en-us" id="sql2905i">
+<h1 class="msghead" id="d245361e2678"><span class="title title msgId"><span class="ph ph msgNumber">SQL2905I</span></span>  <span class="shortdesc shortdesc msgText">The following error occurred issuing the SQL <var class="keyword varname vartype=quotedString varnumber=1">sql-statement</var> statement on table <var class="keyword varname vartype=quotedString varnumber=2">table-name</var> using data from line <var class="keyword varname vartype=quotedString varnumber=3">line-number</var> of input file <var class="keyword varname vartype=quotedString varnumber=4">file-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2905I: Explanation"><h2 class="sectiontitle" id="d245361e2714">Explanation</h2><p>This message provides the identification of the line and input file where the error occurred for the following message listed.</p>
+
+<p>The table is either the one specified on the SQL statement of the INGEST command or the exception table. If the table is the one specified on the SQL statement, and the SQL statement is INSERT or REPLACE, and the INGEST command specified an exception table, the ingest utility attempts to insert the record into the exception table. Otherwise, the ingest utility discards the record.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2905I: User response"><h2 class="sectiontitle" id="d245361e2723">User response</h2><p>If the error occurred issuing the SQL statement on the target table of the INGEST command and the ingest utility successfully inserted the row into the exception table, correct the data in the exception table and copy it from the exception table to the target table.  Otherwise, verify that the data on the specified line in the input file is correct. If needed, correct the data in the input file and re-run the ingest utility using an input file with only the corrected lines.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2735" lang="en-us" id="sql2906i">
+<h1 class="msghead" id="d245361e2735"><span class="title title msgId"><span class="ph ph msgNumber">SQL2906I</span></span>  <span class="shortdesc shortdesc msgText">The following error occurred  issuing the SQL <var class="keyword varname vartype=quotedString varnumber=1">sql-statement</var> statement on table <var class="keyword varname vartype=quotedString varnumber=2">table-name</var> using data from line <var class="keyword varname vartype=quotedString varnumber=3">line-number</var> of pipe <var class="keyword varname vartype=quotedString varnumber=4">pipe-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2906I: Explanation"><h2 class="sectiontitle" id="d245361e2771">Explanation</h2><p>This message provides the identification of the line and input pipe where the error occurred for the following message listed.</p>
+
+<p>The table is either the one specified on the SQL statement of the INGEST command or the exception table.  If the table is the one specified on the SQL statement, and the SQL statement is INSERT or REPLACE, and the INGEST command specified an exception table, the ingest utility will attempt to insert the record into the exception table.  Otherwise, the ingest utility will discard the record.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2906I: User response"><h2 class="sectiontitle" id="d245361e2780">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2791" lang="en-us" id="sql2907i">
+<h1 class="msghead" id="d245361e2791"><span class="title title msgId"><span class="ph ph msgNumber">SQL2907I</span></span>  <span class="shortdesc shortdesc msgText">The following error occurred  issuing the SQL <var class="keyword varname vartype=quotedString varnumber=1">sql-statement</var> statement on table <var class="keyword varname vartype=quotedString varnumber=2">table-name</var> using data from line <var class="keyword varname vartype=quotedString varnumber=3">line-number</var> of TCP/IP port <var class="keyword varname vartype=quotedString varnumber=4">port-number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2907I: Explanation"><h2 class="sectiontitle" id="d245361e2827">Explanation</h2><p>This message provides the identification of the line and input TCP/IP port where the error occurred for the following message listed.</p>
+
+<p>The table is either the one specified on the SQL statement of the INGEST command or the exception table.  If the table is the one specified on the SQL statement, and the SQL statement is INSERT or REPLACE, and the INGEST command specified an exception table, the ingest utility will attempt to insert the record into the exception table.  Otherwise, the ingest utility will discard the record.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2907I: User response"><h2 class="sectiontitle" id="d245361e2836">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2848" lang="en-us" id="sql2908i">
+<h1 class="msghead" id="d245361e2848"><span class="title title msgId"><span class="ph ph msgNumber">SQL2908I</span></span>  <span class="shortdesc shortdesc msgText">The following warning or error occurred while formatting data from line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> received from pipe <var class="keyword varname vartype=quotedString varnumber=2">pipe-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2908I: Explanation"><h2 class="sectiontitle" id="d245361e2878">Explanation</h2><p>This message provides the identification of the input pipe where the error occurred for the following message listed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2908I: User response"><h2 class="sectiontitle" id="d245361e2884">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2895" lang="en-us" id="sql2909i">
+<h1 class="msghead" id="d245361e2895"><span class="title title msgId"><span class="ph ph msgNumber">SQL2909I</span></span>  <span class="shortdesc shortdesc msgText">The following warning or error occurred while formatting data from line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> received from TCP/IP port <var class="keyword varname vartype=quotedString varnumber=2">port-number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2909I: Explanation"><h2 class="sectiontitle" id="d245361e2925">Explanation</h2><p>This message provides the identification of the input TCP/IP port where the error occurred for the following message listed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2909I: User response"><h2 class="sectiontitle" id="d245361e2931">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2943" lang="en-us" id="sql2910n">
+<h1 class="msghead" id="d245361e2943"><span class="title title msgId"><span class="ph ph msgNumber">SQL2910N</span></span>  <span class="shortdesc shortdesc msgText">The use of modifier <var class="keyword varname vartype=quotedString varnumber=1">modifier</var> is not consistent across all fields of type <var class="keyword varname vartype=quotedString varnumber=2">field-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2910N: Explanation"><h2 class="sectiontitle" id="d245361e2973">Explanation</h2><p>When modifiers are specified on a field, they must be specified on all fields that have a similar type.  For example: If a decimal field specifies RADIX POINT, the same RADIX POINT character must be specified on all other INTEGER, DECIMAL, DECLFOAT, and FLOAT fields. If a format string is specified on a DATE field, the same format string must be specified on all other DATE fields. If an INTEGER field specifies EXTERNAL, then EXTERNAL must be specified on all other INTEGER, DECFLOAT, and FLOAT fields.  (Fields of type DECIMAL, however, can specify PACKED or ZONED.  But all fields of type DECIMAL must specify the same EXTERNAL, PACKED, or ZONED modifier as all other DECIMAL fields.)</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2910N: User response"><h2 class="sectiontitle" id="d245361e2979">User response</h2><p>Reissue the INGEST command, specifying the modifiers on all fields of a similar type.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e2990" lang="en-us" id="sql2911n">
+<h1 class="msghead" id="d245361e2990"><span class="title title msgId"><span class="ph ph msgNumber">SQL2911N</span></span>  <span class="shortdesc shortdesc msgText">Binary field types can be specified only when the format is POSITIONAL.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2911N: Explanation"><h2 class="sectiontitle" id="d245361e3014">Explanation</h2><p>The INGEST command specified a binary field type, but the input file format is not POSITIONAL.  The command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2911N: User response"><h2 class="sectiontitle" id="d245361e3020">User response</h2><p>One of the following:</p>
+
+<ul>
+<li>If the input data is in delimited format, change the field type to one that specifies character data.  For example, if the field type is INTEGER, change it to INTEGER EXTERNAL.  If the field type is DB2SECURITYLABEL, change it to DB2SECURITYLABEL NAME or DB2SECURITYLABEL STRING.</li>
+
+<li>If the input data is in positional format, change the INGEST command to specify FORMAT POSITIONAL.  If needed, add the POSITION clause to each field definition.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3040" lang="en-us" id="sql2912n">
+<h1 class="msghead" id="d245361e3040"><span class="title title msgId"><span class="ph ph msgNumber">SQL2912N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because one or more fields are binary type but the length of those binary fields was not specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2912N: Explanation"><h2 class="sectiontitle" id="d245361e3064">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  If any input fields are a binary data type, the length of those binary fields must be specified with the INGEST command or db2Ingest API call.</p>
+
+<p>This message is returned when an attempt is made to ingest data that contains binary fields and the length of those binary fields is not specified.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2912N: User response"><h2 class="sectiontitle" id="d245361e3073">User response</h2><p>Perform the ingest operation again, specifying the length of any binary fields.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3084" lang="en-us" id="sql2913n">
+<h1 class="msghead" id="d245361e3084"><span class="title title msgId"><span class="ph ph msgNumber">SQL2913N</span></span>  <span class="shortdesc shortdesc msgText">Field <var class="keyword varname vartype=quotedString varnumber=1">field-name</var> does not specify the end position or the length.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2913N: Explanation"><h2 class="sectiontitle" id="d245361e3111">Explanation</h2><p>INGEST commands that specify FORMAT POSITIONAL must specify or imply the field length, or the POSITION parameter must specify the end position. The command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2913N: User response"><h2 class="sectiontitle" id="d245361e3117">User response</h2><p>Reissue the INGEST command and specify either the end position of the field or the field length.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3129" lang="en-us" id="sql2914i">
+<h1 class="msghead" id="d245361e3129"><span class="title title msgId"><span class="ph ph msgNumber">SQL2914I</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility has started the following ingest job: <var class="keyword varname vartype=quotedString varnumber=1">job-ID</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2914I: Explanation"><h2 class="sectiontitle" id="d245361e3156">Explanation</h2><p>The ingest utility is starting. The job ID is the one specified on the RESTART parameter or if none was specified, a default job ID that the utility generated. The job ID can be used on the INGEST GET STATS command while the INGEST command is running. If the INGEST command fails, the job ID can be used on a later INGEST command with the RESTART CONTINUE or RESTART TERMINATE parameter.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2914I: User response"><h2 class="sectiontitle" id="d245361e3162">User response</h2><p>Save the job ID in case it is needed for a later command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3173" lang="en-us" id="sql2915n">
+<h1 class="msghead" id="d245361e3173"><span class="title title msgId"><span class="ph ph msgNumber">SQL2915N</span></span>  <span class="shortdesc shortdesc msgText">The sum of all the field lengths is <var class="keyword varname vartype=quotedString varnumber=1">number</var>, but the specified record length is only <var class="keyword varname vartype=quotedString varnumber=2">length</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2915N: Explanation"><h2 class="sectiontitle" id="d245361e3203">Explanation</h2><p>The length specified by RECORDLEN on the INGEST command must be greater than or equal to the sum of the field lengths specified on each field definition. The command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2915N: User response"><h2 class="sectiontitle" id="d245361e3209">User response</h2><p>Correct the field lengths or the RECORDLEN parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3221" lang="en-us" id="sql2916n">
+<h1 class="msghead" id="d245361e3221"><span class="title title msgId"><span class="ph ph msgNumber">SQL2916N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because the specified SQL statement does not reference any fields.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2916N: Explanation"><h2 class="sectiontitle" id="d245361e3245">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  How the ingest utility modifies the target table is controlled by specifying an SQL statement with the INGEST command or db2Ingest API call.</p>
+
+<p>This message is returned when an attempt is made to perform an ingest operation with an SQL statement that references no fields.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2916N: User response"><h2 class="sectiontitle" id="d245361e3254">User response</h2><p>Modify the SQL statement to include at least one field, and then perform the ingest operation again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3265" lang="en-us" id="sql2917n">
+<h1 class="msghead" id="d245361e3265"><span class="title title msgId"><span class="ph ph msgNumber">SQL2917N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because the SHM_MAX_SIZE configuration parameter is too small.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2917N: Explanation"><h2 class="sectiontitle" id="d245361e3289">Explanation</h2><p>You can specify the maximum size of Inter Process Communication (IPC) shared memory by setting the SHM_MAX_SIZE ingest utility configuration parameter.</p>
+
+<p>This message is returned when the ingest operation fails because the SHM_MAX_SIZE configuration parameter is not large enough.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2917N: User response"><h2 class="sectiontitle" id="d245361e3298">User response</h2><ol>
+<li>Set the SHM_MAX_SIZE configuration parameter to a larger value (by issuing the INGEST SET command, for example.)</li>
+
+<li>Run the ingest operation again.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3315" lang="en-us" id="sql2918n">
+<h1 class="msghead" id="d245361e3315"><span class="title title msgId"><span class="ph ph msgNumber">SQL2918N</span></span>  <span class="shortdesc shortdesc msgText">Invalid combination of keywords, <var class="keyword varname vartype=quotedString varnumber=1">keyword1</var> and <var class="keyword varname vartype=quotedString varnumber=2">keyword2</var>, specified in the INGEST command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2918N: Explanation"><h2 class="sectiontitle" id="d245361e3345">Explanation</h2><p>The INGEST command failed because of an invalid combination of keywords.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2918N: User response"><h2 class="sectiontitle" id="d245361e3351">User response</h2><p>Remove the conflicting keywords and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3362" lang="en-us" id="sql2919n">
+<h1 class="msghead" id="d245361e3362"><span class="title title msgId"><span class="ph ph msgNumber">SQL2919N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because the following unsupported table type was specified: <var class="keyword varname vartype=quotedString varnumber=1">table-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2919N: Explanation"><h2 class="sectiontitle" id="d245361e3389">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can stream data into multiple types of tables, including the following examples:</p>
+
+<ul>
+<li>Multidimentional clustering tables</li>
+
+<li>Materialized query tables</li>
+
+<li>Partitioned tables</li>
+
+<li>Others</li>
+</ul>
+
+<p>This message is returned when an attempt is made to ingest data into a type of table that the ingest utility does not support.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2919N: User response"><h2 class="sectiontitle" id="d245361e3412">User response</h2><p>Perform the ingest operation again, specifying a supported table type.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3424" lang="en-us" id="sql2920n">
+<h1 class="msghead" id="d245361e3424"><span class="title title msgId"><span class="ph ph msgNumber">SQL2920N</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=quotedString varnumber=1">clause</var> clause does not reference any fields.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2920N: Explanation"><h2 class="sectiontitle" id="d245361e3451">Explanation</h2><p>An INGEST command that specifies an SQL statement that uses a WHERE or ON clause must include a search condition that specifies at least one field. The command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2920N: User response"><h2 class="sectiontitle" id="d245361e3457">User response</h2><p>Reissue the INGEST command specifying a search condition.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3468" lang="en-us" id="sql2921n">
+<h1 class="msghead" id="d245361e3468"><span class="title title msgId"><span class="ph ph msgNumber">SQL2921N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because a specified field name is not defined in the input source. Field name: <var class="keyword varname vartype=quotedString varnumber=1">field-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2921N: Explanation"><h2 class="sectiontitle" id="d245361e3495">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can specify to the ingest utility how the data is defined in the input stream by describing the fields into which the data is separated.</p>
+
+<p>This message is returned when an attempt is made to perform an ingest operation with an SQL statement that references a data field that does not exist in the input source data.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2921N: User response"><h2 class="sectiontitle" id="d245361e3504">User response</h2><p>Perform the ingest operation again, specifying fields that correspond to the fields in the input data stream.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3516" lang="en-us" id="sql2922i">
+<h1 class="msghead" id="d245361e3516"><span class="title title msgId"><span class="ph ph msgNumber">SQL2922I</span></span>  <span class="shortdesc shortdesc msgText">The following warning or error occurred while formatting data from line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> of input file <var class="keyword varname vartype=quotedString varnumber=2">file-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2922I: Explanation"><h2 class="sectiontitle" id="d245361e3546">Explanation</h2><p>This message provides the identification of the input file where the error occurred for the following message listed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2922I: User response"><h2 class="sectiontitle" id="d245361e3552">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3563" lang="en-us" id="sql2923n">
+<h1 class="msghead" id="d245361e3563"><span class="title title msgId"><span class="ph ph msgNumber">SQL2923N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because the following invalid field type was specified: <var class="keyword varname vartype=quotedString varnumber=1">invalid-type</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2923N: Explanation"><h2 class="sectiontitle" id="d245361e3589">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can specify the data type of input fields when you invoke the ingest operation.</p>
+
+<p>This message is returned when an invalid field type is specified.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2923N: User response"><h2 class="sectiontitle" id="d245361e3598">User response</h2><p>Perform the ingest operation again, specifying a supported field type.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3610" lang="en-us" id="sql2924n">
+<h1 class="msghead" id="d245361e3610"><span class="title title msgId"><span class="ph ph msgNumber">SQL2924N</span></span>  <span class="shortdesc shortdesc msgText">Field <var class="keyword varname vartype=quotedString varnumber=1">field-name</var> specifies the DEFAULTIF parameter, but its corresponding column <var class="keyword varname vartype=quotedString varnumber=2">column-name</var> is a generated column.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2924N: Explanation"><h2 class="sectiontitle" id="d245361e3640">Explanation</h2><p>Fields that specify the DEFAULTIF parameter cannot be used in a predicate or in an expression. The command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2924N: User response"><h2 class="sectiontitle" id="d245361e3646">User response</h2><p>Change how the field is used in the SQL statement or remove the DEFAULTIF parameter, and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3657" lang="en-us" id="sql2925n">
+<h1 class="msghead" id="d245361e3657"><span class="title title msgId"><span class="ph ph msgNumber">SQL2925N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because the field <var class="keyword varname vartype=quotedString varnumber=1">field-name</var> specifies the DEFAULTIF parameter, but the corresponding column <var class="keyword varname vartype=quotedString varnumber=2">column-name</var> does not have a default value.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2925N: Explanation"><h2 class="sectiontitle" id="d245361e3687">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can cause the ingest utility to insert a default value into the target table whenever a certain character appears in the input data by using the DEFAULTIF parameter.</p>
+
+<p>If the DEFAULTIF parameter is specified with a field definition, the column that corresponds to that field must have a default value.</p>
+
+<p>This message is returned when the DEFAULTIF parameter is specified but the corresponding target table column does not have a default value.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2925N: User response"><h2 class="sectiontitle" id="d245361e3699">User response</h2><p>Respond to this message in one of the following ways:</p>
+
+<ul>
+<li>If inserting a default value is not required, remove the DEFAULTIF parameter from the field definition and then perform the ingest operation again.</li>
+
+<li>If inserting a default value is required, change the SQL statement so that the field corresponds to a column that has a default value, and then perform the ingest operation again.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3719" lang="en-us" id="sql2926n">
+<h1 class="msghead" id="d245361e3719"><span class="title title msgId"><span class="ph ph msgNumber">SQL2926N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because the field <var class="keyword varname vartype=quotedString varnumber=1">field-name</var> specifies the DEFAULTIF parameter, but the corresponding column <var class="keyword varname vartype=quotedString varnumber=2">column-name</var> has a default value that is not a constant or NULL.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2926N: Explanation"><h2 class="sectiontitle" id="d245361e3749">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can cause the ingest utility to insert a default value into the target table whenever a certain character appears in the input data by using the DEFAULTIF parameter.</p>
+
+<p>If the DEFAULTIF parameter is specified with the ingest utility, the default value of the corresponding target table column must be a constant or NULL.</p>
+
+<p>This message is returned when the DEFAULTIF parameter is specified but the default value of the corresponding target table column is neither constant nor NULL.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2926N: User response"><h2 class="sectiontitle" id="d245361e3761">User response</h2><p>Change how the field is used in the SQL statement or remove the DEFAULTIF parameter, and resubmit the ingest operation.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3772" lang="en-us" id="sql2927n">
+<h1 class="msghead" id="d245361e3772"><span class="title title msgId"><span class="ph ph msgNumber">SQL2927N</span></span>  <span class="shortdesc shortdesc msgText">The field value in line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> and field <var class="keyword varname vartype=quotedString varnumber=2">field-number</var> cannot be converted to the value type: <var class="keyword varname vartype=quotedString varnumber=3">value-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2927N: Explanation"><h2 class="sectiontitle" id="d245361e3805">Explanation</h2><p>There might be a data type mismatch because the value in the specified field cannot be converted to the field's data type.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2927N: User response"><h2 class="sectiontitle" id="d245361e3811">User response</h2><p>Correct the input file or change the field's type, and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3823" lang="en-us" id="sql2928n">
+<h1 class="msghead" id="d245361e3823"><span class="title title msgId"><span class="ph ph msgNumber">SQL2928N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because the specified input source is not a named pipe.  Specified input source: <var class="keyword varname vartype=quotedString varnumber=1">input-source</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2928N: Explanation"><h2 class="sectiontitle" id="d245361e3850">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.</p>
+
+<p>This message is returned when an attempt is made to invoke the ingest utility, but the specified input source is not a file or named pipe.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2928N: User response"><h2 class="sectiontitle" id="d245361e3859">User response</h2><p>Perform the ingest operation again, specifying a valid input source.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3870" lang="en-us" id="sql2931n">
+<h1 class="msghead" id="d245361e3870"><span class="title title msgId"><span class="ph ph msgNumber">SQL2931N</span></span>  <span class="shortdesc shortdesc msgText">An error occurred opening, reading, or closing the following named pipe: <var class="keyword varname vartype=quotedString varnumber=1">pipe-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2931N: Explanation"><h2 class="sectiontitle" id="d245361e3897">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.</p>
+
+<p>This message is returned when the ingest utility could not open, read from, or close the specified input file or named pipe.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2931N: User response"><h2 class="sectiontitle" id="d245361e3906">User response</h2><p>Verify the input source and then perform the ingest operation again, specifying a valid input source.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3918" lang="en-us" id="sql2932n">
+<h1 class="msghead" id="d245361e3918"><span class="title title msgId"><span class="ph ph msgNumber">SQL2932N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed to allocate an interprocess communication (IPC) resource after <var class="keyword varname vartype=quotedString varnumber=1">number</var> attempts. Resource type <var class="keyword varname vartype=quotedString varnumber=2">resource-type-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2932N: Explanation"><h2 class="sectiontitle" id="d245361e3948">Explanation</h2><p>The ingest utility failed to allocate an interprocess IPC resource after the specified number of attempts. The resource type can be one of the following:</p>
+
+<ol>
+<li>Shared memory</li>
+
+<li>Listener queue</li>
+
+<li>Semaphore</li>
+</ol>
+
+<p>This message normally follows earlier messages that indicate the error or errors that occurred when trying to allocate the resource.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2932N: User response"><h2 class="sectiontitle" id="d245361e3968">User response</h2><p>Examine previous error messages to determine the errors that occurred.  Correct the errors and re-run the INGEST command.  On Linux and UNIX, if there are not enough system resources to allocate the IPC resource, use the ipcrm command to remove existing IPC resources.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e3979" lang="en-us" id="sql2933n">
+<h1 class="msghead" id="d245361e3979"><span class="title title msgId"><span class="ph ph msgNumber">SQL2933N</span></span>  <span class="shortdesc shortdesc msgText">The INGEST command has not received any data within <var class="keyword varname vartype=quotedString varnumber=1">seconds</var> seconds as required by the configuration parameter <var class="keyword varname vartype=quotedString varnumber=2">parameter</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2933N: Explanation"><h2 class="sectiontitle" id="d245361e4009">Explanation</h2><p>The INGEST command failed.</p>
+
+<p>If the parameter is PIPE_TIMEOUT, the INGEST command did not receive any data from the pipe for at least the specified number of seconds after the command opened the pipe.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2933N: User response"><h2 class="sectiontitle" id="d245361e4018">User response</h2><p>Verify there is not a problem with the data source that is preventing it from sending data within the specified time. If the data source needs more time to send data, increase the value of the relevant configuration parameter, or set it to 0 so there is no timeout.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4030" lang="en-us" id="sql2934n">
+<h1 class="msghead" id="d245361e4030"><span class="title title msgId"><span class="ph ph msgNumber">SQL2934N</span></span>  <span class="shortdesc shortdesc msgText">Port number <var class="keyword varname vartype=quotedString varnumber=1">port-number</var> to which service name <var class="keyword varname vartype=quotedString varnumber=2">service-name</var> maps is outside the following range of allowable values: <var class="keyword varname vartype=quotedString varnumber=3">start-of-range</var> to <var class="keyword varname vartype=quotedString varnumber=4">end-of-range</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2934N: Explanation"><h2 class="sectiontitle" id="d245361e4066">Explanation</h2><p>The port number specified (or resolved to) in the INGEST command must be within the allowable range. The INGEST command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2934N: User response"><h2 class="sectiontitle" id="d245361e4072">User response</h2><p>Reissue the INGEST command, specifying a port within the allowable range or a service name that maps to a port number that is within the range.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4083" lang="en-us" id="sql2935w">
+<h1 class="msghead" id="d245361e4083"><span class="title title msgId"><span class="ph ph msgNumber">SQL2935W</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation did not fail.  However, the field value at line number <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> and field number <var class="keyword varname vartype=quotedString varnumber=2">field-number</var> was truncated because the data is longer than the field length.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2935W: Explanation"><h2 class="sectiontitle" id="d245361e4113">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can specify the properties such as data type or length of input fields when you invoke the ingest operation.</p>
+
+<p>When a field has a value that is longer than the defined length of the field, the value will be truncated. For example, if the field is defined as CHAR(3) but the value is "ABCDEF", the value is truncated to "ABC".</p>
+
+<p>This message is returned when an input field has a value that is longer than the defined length of the field.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2935W: User response"><h2 class="sectiontitle" id="d245361e4125">User response</h2><p>If the truncation is acceptable, no further action is required.</p>
+
+<p>To avoid this message, take one of the following actions:</p>
+
+<ul>
+<li>Specify a longer field length with the INGEST command or the db2Ingest API call.</li>
+
+<li>Edit the input data so that the length of the field value is less than or equal to the length of the field.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4148" lang="en-us" id="sql2936n">
+<h1 class="msghead" id="d245361e4148"><span class="title title msgId"><span class="ph ph msgNumber">SQL2936N</span></span>  <span class="shortdesc shortdesc msgText">Port number <var class="keyword varname vartype=quotedString varnumber=1">port-number</var> at host <var class="keyword varname vartype=quotedString varnumber=2">host-name</var> is already in use.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2936N: Explanation"><h2 class="sectiontitle" id="d245361e4178">Explanation</h2><p>The INGEST command cannot use that port because it is being used by another running application. The INGEST command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2936N: User response"><h2 class="sectiontitle" id="d245361e4184">User response</h2><p>Reissue the INGEST command, specifying a port that is not in use.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4195" lang="en-us" id="sql2937n">
+<h1 class="msghead" id="d245361e4195"><span class="title title msgId"><span class="ph ph msgNumber">SQL2937N</span></span>  <span class="shortdesc shortdesc msgText">The DEFAULTIF clause on field <var class="keyword varname vartype=quotedString varnumber=1">field-name</var> specifies a position but the format is not positional.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2937N: Explanation"><h2 class="sectiontitle" id="d245361e4222">Explanation</h2><p>The INGEST command specified the DEFAULTIF clause, but the input file format is not POSITIONAL. The command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2937N: User response"><h2 class="sectiontitle" id="d245361e4228">User response</h2><p>One of the following:</p>
+
+<ul>
+<li>If the input data is in delimited format, remove the position specification from the DEFAULTIF clause.</li>
+
+<li>If the input data is in positional format, change the INGEST command to specify FORMAT POSITIONAL. If needed, add the POSITION clause to each field definition</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4248" lang="en-us" id="sql2938n">
+<h1 class="msghead" id="d245361e4248"><span class="title title msgId"><span class="ph ph msgNumber">SQL2938N</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair <var class="keyword varname vartype=quotedString varnumber=1">begin</var>, <var class="keyword varname vartype=quotedString varnumber=2">end</var> for field <var class="keyword varname vartype=quotedString varnumber=3">field-name</var> is not valid. Reason code <var class="keyword varname vartype=quotedString varnumber=4">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2938N: Explanation"><h2 class="sectiontitle" id="d245361e4284">Explanation</h2><p>The field specification for locating the input data for the indicated database column within the input  non-delimited ASCII file is not valid for the reason indicated by the following reason codes:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The start position is 0.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The end position is less than the start position.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The end position is greater than 32 767.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Fields of type SMALLINT, INTEGER, BIGINT, DECIMAL, REAL, FLOAT, and DECFLOAT with the EXTERNAL modifier have a maximum length of 50.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>If a format string is specified for fields of type DATE, TIME, and TIMESTAMP(p), the field length must be greater than or equal to length of the shortest value that matches the format string.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>If a format string is not specified:</p>
+
+<ul>
+<li>For DATE fields, the field length must be between 8 and 10, inclusive.</li>
+
+<li>For TIME fields, the field length must be between 4 and 8, inclusive.</li>
+
+<li>For TIMESTAMP fields, the field length must be between 19 and 32, inclusive.</li>
+</ul>
+</dd>
+</dl>
+
+<p>The INGEST command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2938N: User response"><h2 class="sectiontitle" id="d245361e4361">User response</h2><p>Follow the action indicated by the reason code and resubmit the command:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Specify a start position that is greater than 0.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Specify an end position that is greater than the start position.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Specify an end position that is less than or equal to 32 767.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Change the field length to a value less than or equal to 50.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+
+<dd class="dlentry"><p>Shorten the format string so that the length of shortest value that matches the format string is
+less than or equal the field length, or change the field length to a value greater than or equal to
+the length of shortest value that matches the format string.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Change the field length to a value within the ranges given in the explanation of reason code 6.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4429" lang="en-us" id="sql2939n">
+<h1 class="msghead" id="d245361e4429"><span class="title title msgId"><span class="ph ph msgNumber">SQL2939N</span></span>  <span class="shortdesc shortdesc msgText">The value <var class="keyword varname vartype=quotedString varnumber=1">value</var> for command parameter <var class="keyword varname vartype=quotedString varnumber=2">parameter</var> is outside the following range of allowable values: <var class="keyword varname vartype=quotedString varnumber=3">start-of-range</var> to <var class="keyword varname vartype=quotedString varnumber=4">end-of-range</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2939N: Explanation"><h2 class="sectiontitle" id="d245361e4465">Explanation</h2><p>The current value for the indicated command parameter is not valid because it is outside the allowable range.</p>
+
+<p>The command failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2939N: User response"><h2 class="sectiontitle" id="d245361e4474">User response</h2><p>Reissue the command, specifying a value for the command parameter that is within the allowable range.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4486" lang="en-us" id="sql2940n">
+<h1 class="msghead" id="d245361e4486"><span class="title title msgId"><span class="ph ph msgNumber">SQL2940N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility does not support database server versions earlier than version <var class="keyword varname vartype=quotedString varnumber=1">version</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2940N: Explanation"><h2 class="sectiontitle" id="d245361e4513">Explanation</h2><p>The ingest utility does not support ingesting data into tables that are on versions of the database server earlier than the version shown in the message.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2940N: User response"><h2 class="sectiontitle" id="d245361e4519">User response</h2><p>Connect to a database server whose version is the same as or later than the version shown in the message and re-run the utility.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4530" lang="en-us" id="sql2941n">
+<h1 class="msghead" id="d245361e4530"><span class="title title msgId"><span class="ph ph msgNumber">SQL2941N</span></span>  <span class="shortdesc shortdesc msgText">The length, precision, or scale <var class="keyword varname vartype=quotedString varnumber=1">value</var> for field <var class="keyword varname vartype=quotedString varnumber=2">field-name</var> is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2941N: Explanation"><h2 class="sectiontitle" id="d245361e4560">Explanation</h2><p>The field type on the field definition specifies a length, precision, or scale that is not valid. Examples of this error are:</p>
+
+<ul>
+<li>A field definition that specifies CHAR(70000) is not valid because the maximum length of a field is 32767.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2941N: User response"><h2 class="sectiontitle" id="d245361e4571">User response</h2><p>Correct the length, precision, or scale on the field definition.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4583" lang="en-us" id="sql2942n">
+<h1 class="msghead" id="d245361e4583"><span class="title title msgId"><span class="ph ph msgNumber">SQL2942N</span></span>  <span class="shortdesc shortdesc msgText">Field <var class="keyword varname vartype=quotedString varnumber=1">field-name</var> specifies the DEFAULTIF clause, but is associated with multiple columns or used in an expression.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2942N: Explanation"><h2 class="sectiontitle" id="d245361e4610">Explanation</h2><p>When a field definition specifies DEFAULTIF, the field must be assigned to one and only one column and cannot be part of an expression that is assigned to that column.  For example, consider the following INGEST command:</p>
+
+<pre class="codeblock"><code>INGEST FROM FILE my_file.txt FORMAT DELIMITED
+  ...
+  UPDATE my_table
+  SET (c1, c2, c3, c4, c5) =
+      ($field1, $field2, $field2, 
+          $field3, $field4+$field5) 
+  WHERE $field3 = 1;</code></pre>
+<p>Only $field1 can specify DEFAULTIF. $field2 cannot because it is assigned to multiple columns. $field3 cannot because it is also used in a predicate. $field4 and $field5 cannot because they are used in an expression.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2942N: User response"><h2 class="sectiontitle" id="d245361e4622">User response</h2><p>Remove the DEFAULTIF modifier or change the SQL statement so that the field is assigned to one and only one column and is not part of an expression assigned to that column.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4633" lang="en-us" id="sql2943n">
+<h1 class="msghead" id="d245361e4633"><span class="title title msgId"><span class="ph ph msgNumber">SQL2943N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility cannot update the table because all updated columns in the SQL statement are defined as GENERATED ALWAYS.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2943N: Explanation"><h2 class="sectiontitle" id="d245361e4657">Explanation</h2><p>When either of the following is true, the ingest utility cannot insert into or update the table:</p>
+
+<ul>
+<li>The SQL statement on the INGEST command is INSERT (including as part of a MERGE statement) and one of the following is true: 
+<ul>
+<li>All the columns specified after the table name are defined as GENERATED ALWAYS.</li>
+
+<li>No columns are specified after the table name, but all the table's non-hidden columns are defined as GENERATED ALWAYS.</li>
+</ul>
+</li>
+
+<li>The SQL statement on the INGEST command is UPDATE (including as part of a MERGE statement) and all the columns specified on the SET clause are defined as GENERATED ALWAYS.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2943N: User response"><h2 class="sectiontitle" id="d245361e4678">User response</h2><p>Change the command to specify at least column that is not defined as GENERATED ALWAYS.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4690" lang="en-us" id="sql2944n">
+<h1 class="msghead" id="d245361e4690"><span class="title title msgId"><span class="ph ph msgNumber">SQL2944N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because the number of fields is not the same as the number of specified or implied target table columns.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2944N: Explanation"><h2 class="sectiontitle" id="d245361e4714">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  How the ingest utility modifies the target table is controlled by specifying an SQL statement with the INGEST command or db2Ingest API call.</p>
+
+<p>When the ingest utility is used with an INSERT statement that does not have a VALUES clause, the number of fields must be the same as the number of specified or implied table columns. (The number of implied columns is the number of non-hidden columns in the table.)</p>
+
+<p>For example, the following INGEST command is not valid because two fields are specified but there are three columns:</p>
+
+<pre class="codeblock"><code>INGEST FROM FILE my_file.del FORMAT DELIMITED
+  ($field1 INTEGER EXTERNAL, $field2 CHAR(32))
+  INSERT INTO my_table(col1, col2, col3);</code></pre></section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2944N: User response"><h2 class="sectiontitle" id="d245361e4729">User response</h2><p>Perform the insert operation again, specifying the same number of fields as the number of specified or implied table columns, or add the VALUES clause to the INSERT statement.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4740" lang="en-us" id="sql2945n">
+<h1 class="msghead" id="d245361e4740"><span class="title title msgId"><span class="ph ph msgNumber">SQL2945N</span></span>  <span class="shortdesc shortdesc msgText">Fields of type DB2SECURITYLABEL must specify NAME or STRING for delimited files.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2945N: Explanation"><h2 class="sectiontitle" id="d245361e4764">Explanation</h2><p>When the INGEST command specifies FORMAT DELIMITED, every field of type DB2SECURITYLABEL must specify the NAME or STRING modifier.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2945N: User response"><h2 class="sectiontitle" id="d245361e4770">User response</h2><p>Add the NAME or STRING modifier to every field of type DB2SECURITYLABEL.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4782" lang="en-us" id="sql2946n">
+<h1 class="msghead" id="d245361e4782"><span class="title title msgId"><span class="ph ph msgNumber">SQL2946N</span></span>  <span class="shortdesc shortdesc msgText">The INGEST command must include the field list for this file format.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2946N: Explanation"><h2 class="sectiontitle" id="d245361e4806">Explanation</h2><p>The INGEST command can omit the field list only when the format is delimited. If the format is positional, you must specify the field list.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2946N: User response"><h2 class="sectiontitle" id="d245361e4812">User response</h2><p>Add the field list to the INGEST command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4823" lang="en-us" id="sql2947n">
+<h1 class="msghead" id="d245361e4823"><span class="title title msgId"><span class="ph ph msgNumber">SQL2947N</span></span>  <span class="shortdesc shortdesc msgText">Ingest job with identifier <var class="keyword varname vartype=quotedString varnumber=1">job-id</var> not found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2947N: Explanation"><h2 class="sectiontitle" id="d245361e4850">Explanation</h2><p>The command failed because the ingest job with the specified identifier was not found.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2947N: User response"><h2 class="sectiontitle" id="d245361e4856">User response</h2><ul>
+<li>If you are issuing the INGEST GET STATS command, specify the identifier of an ingest job that is still running. To display these identifiers, issue the INGEST LIST command.</li>
+
+<li>If you are issuing the INGEST command with the RESTART parameter, specify the identifier of an ingest job whose restart data is still in the ingest restart table. To display these identifiers, issue the following query: <pre class="pre">SELECT jobid FROM systools.ingestrestart</pre>
+</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4875" lang="en-us" id="sql2948n">
+<h1 class="msghead" id="d245361e4875"><span class="title title msgId"><span class="ph ph msgNumber">SQL2948N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because the data type of a column in the target table is not supported with the ingest operation.  Data type: <var class="keyword varname vartype=quotedString varnumber=1">data-type</var>. Column name: <var class="keyword varname vartype=quotedString varnumber=2">column-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2948N: Explanation"><h2 class="sectiontitle" id="d245361e4905">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  There are some restrictions on the data types that are supported with the ingest utility.</p>
+
+<p>This message is returned when an attempt is made to ingest data into a column that is an unsupported data type.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2948N: User response"><h2 class="sectiontitle" id="d245361e4914">User response</h2><p>Alter the INGEST command or db2Ingest API call so that the unsupported column is not included in the ingest operation, and then perform the ingest operation again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4925" lang="en-us" id="sql2949n">
+<h1 class="msghead" id="d245361e4925"><span class="title title msgId"><span class="ph ph msgNumber">SQL2949N</span></span>  <span class="shortdesc shortdesc msgText">The value assigned to a column or used in a predicate is too long or out of range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2949N: Explanation"><h2 class="sectiontitle" id="d245361e4949">Explanation</h2><p>This message is preceded by a message that identifies the input source name and line number. One of the fields in the specified input record is too long or out of range for the table column.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2949N: User response"><h2 class="sectiontitle" id="d245361e4955">User response</h2><p>Specify a different table or edit the input data so that:</p>
+
+<ul>
+<li>All field values that correspond to a numeric table column are within the range of the column's data type.</li>
+
+<li>All field values that correspond to a character table column have a length that is less than or equal to the column's length.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e4975" lang="en-us" id="sql2950n">
+<h1 class="msghead" id="d245361e4975"><span class="title title msgId"><span class="ph ph msgNumber">SQL2950N</span></span>  <span class="shortdesc shortdesc msgText">The base tables of view <var class="keyword varname vartype=quotedString varnumber=1">view-name</var> are protected by more than one security policy.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2950N: Explanation"><h2 class="sectiontitle" id="d245361e5002">Explanation</h2><p>When you ingest into an updateable view and the view has multiple base tables, all the base tables that are protected by a security policy must be protected by the same security policy.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2950N: User response"><h2 class="sectiontitle" id="d245361e5008">User response</h2><p>One of the following:</p>
+
+<ul>
+<li>Specify a different table or view.</li>
+
+<li>Alter the base tables so that all the base tables that are protected by a security policy are protected by the same security policy.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5027" lang="en-us" id="sql2951n">
+<h1 class="msghead" id="d245361e5027"><span class="title title msgId"><span class="ph ph msgNumber">SQL2951N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because the following security policy was not found: <var class="keyword varname vartype=quotedString varnumber=1">security-policy-ID</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2951N: Explanation"><h2 class="sectiontitle" id="d245361e5054">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  A security administrator can use security policies to define criteria that determine who has write access and who has read access to individual rows and individual columns of tables.</p>
+
+<p>This message is returned when an attempt is made to ingest data into a table that is protected by a security policy but catalog view SYSCAT.SECURITYPOLICIES has no security policy with that ID.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2951N: User response"><h2 class="sectiontitle" id="d245361e5063">User response</h2><p>Alter the table so that it is protected by a valid security policy and then run the ingest operation again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5075" lang="en-us" id="sql2952n">
+<h1 class="msghead" id="d245361e5075"><span class="title title msgId"><span class="ph ph msgNumber">SQL2952N</span></span>  <span class="shortdesc shortdesc msgText">Code page <var class="keyword varname vartype=quotedString varnumber=1">code-page</var> is not a valid code page, not compatible with the client code page, or not supported by the INGEST command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2952N: Explanation"><h2 class="sectiontitle" id="d245361e5102">Explanation</h2><p>The INPUT CODEPAGE parameter on the INGEST command specifies a code page number that is not valid for one of the following reasons:</p>
+
+<ul>
+<li>The number is not a valid code page.</li>
+
+<li>DB2 or the INGEST command does not support the code page.</li>
+
+<li>The code page is not compatible with the client code page.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2952N: User response"><h2 class="sectiontitle" id="d245361e5119">User response</h2><p>Correct the code page number on the INPUT CODEPAGE parameter and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5130" lang="en-us" id="sql2953n">
+<h1 class="msghead" id="d245361e5130"><span class="title title msgId"><span class="ph ph msgNumber">SQL2953N</span></span>  <span class="shortdesc shortdesc msgText">The field value in line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> starting at byte position <var class="keyword varname vartype=quotedString varnumber=2">number</var> cannot be converted to the value type: <var class="keyword varname vartype=quotedString varnumber=3">field-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2953N: Explanation"><h2 class="sectiontitle" id="d245361e5163">Explanation</h2><p>There might be a data type mismatch because the field value at the specified byte position cannot be converted to the field's data type.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2953N: User response"><h2 class="sectiontitle" id="d245361e5169">User response</h2><p>Correct the input file or change the field's type and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5181" lang="en-us" id="sql2954n">
+<h1 class="msghead" id="d245361e5181"><span class="title title msgId"><span class="ph ph msgNumber">SQL2954N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because more than the allowable number of field definitions were specified.  Allowable number of field definitions:  <var class="keyword varname vartype=quotedString varnumber=1">maximum-number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2954N: Explanation"><h2 class="sectiontitle" id="d245361e5208">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can specify a list of field definitions for the ingested data, but there is an upper limit to the number of field definitions that you can specify.  The maximum allowable number of field definitions is given in the runtime token <var class="keyword varname">maximum-number</var>.</p>
+
+<p>This message is returned when an attempt is made to specify more field definitions than the ingest utility can support.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2954N: User response"><h2 class="sectiontitle" id="d245361e5220">User response</h2><p>Perform the ingest operation again, specifying no more than the given maximum allowable number of field definitions.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5231" lang="en-us" id="sql2955n">
+<h1 class="msghead" id="d245361e5231"><span class="title title msgId"><span class="ph ph msgNumber">SQL2955N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility could not find file <var class="keyword varname vartype=quotedString varnumber=1">filename</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2955N: Explanation"><h2 class="sectiontitle" id="d245361e5258">Explanation</h2><p>A file that the ingest utility requires could not be found. The installation of the DB2 Data Server Client or DB2 Data Server Runtime client might be incomplete or damaged.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2955N: User response"><h2 class="sectiontitle" id="d245361e5264">User response</h2><p>Reinstall the DB2 Data Server client or the DB2 Data Server Runtime client.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5276" lang="en-us" id="sql2956n">
+<h1 class="msghead" id="d245361e5276"><span class="title title msgId"><span class="ph ph msgNumber">SQL2956N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because invalid input was specified.  Structure: <var class="keyword varname vartype=quotedString varnumber=1">structure-name</var>.  Field: <var class="keyword varname vartype=quotedString varnumber=2">field-name</var>.  Value: <var class="keyword varname vartype=quotedString varnumber=3">value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2956N: Explanation"><h2 class="sectiontitle" id="d245361e5309">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can specify to the ingest utility how the data is defined in the input stream by passing data structures such as db2IngestStruct, db2IngestCfgList, and db2IngestFormat to the db2Ingest API call.</p>
+
+<p>This message is returned when an invalid value is specified for a field in one of the input data structures.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2956N: User response"><h2 class="sectiontitle" id="d245361e5318">User response</h2><p>Call the db2Ingest API again, specifying valid values for the input data structures.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5329" lang="en-us" id="sql2957n">
+<h1 class="msghead" id="d245361e5329"><span class="title title msgId"><span class="ph ph msgNumber">SQL2957N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed to restart because the ingest utility could not find the restart log table. Restart log table name: <var class="keyword varname vartype=quotedString varnumber=1">table-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2957N: Explanation"><h2 class="sectiontitle" id="d245361e5356">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  If the ingest utility fails before completing, you can restart the ingest operation from the last commit point.  To make an ingest operation restartable, a restart log table must be created before the ingest operation is initiated.</p>
+
+<p>This message is returned when an attempt is made to restart the ingest utility but the ingest utility could not find the restart log table.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2957N: User response"><h2 class="sectiontitle" id="d245361e5365">User response</h2><ul>
+<li>To run the ingest operation as not restartable, reissue the command specifying RESTART OFF.</li>
+
+<li>To perform a restartable ingest operation, create the restart log table and then run the ingest utility again</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5382" lang="en-us" id="sql2958n">
+<h1 class="msghead" id="d245361e5382"><span class="title title msgId"><span class="ph ph msgNumber">SQL2958N</span></span>  <span class="shortdesc shortdesc msgText">The INGEST command cannot restart because one of the following does not match the original INGEST command: the number of input sources, or the setting of NUM_FLUSHERS_PER_PARTITION. Original number of input sources: <var class="keyword varname vartype=quotedString varnumber=1">number-of-input-sources</var>.  Original value of NUM_FLUSHERS_PER_PARTITION: <var class="keyword varname vartype=quotedString varnumber=2">number-of-flushers</var>.  Current number of input sources: <var class="keyword varname vartype=quotedString varnumber=3">number-of-input-sources</var>.  Current value of NUM_FLUSHERS_PER_PARTITION: <var class="keyword varname vartype=quotedString varnumber=4">number-of-flushers</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2958N: Explanation"><h2 class="sectiontitle" id="d245361e5418">Explanation</h2><p>The INGEST command specified RESTART CONTINUE. In order to restart a failed INGEST command, the restarted command must meet the following requirements:</p>
+
+<ul>
+<li>The NUM_FLUSHERS_PER_PARTITION configuration parameter must be the same as on the original command.</li>
+
+<li>If the input is from files or pipes, the number of input files or pipes must be the same as on the original command.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2958N: User response"><h2 class="sectiontitle" id="d245361e5432">User response</h2><p>One of the following:</p>
+
+<ul>
+<li>Set the NUM_FLUSHERS_PER_PARTITION configuration parameter to the value it had when the original INGEST command was run.</li>
+
+<li>Modify the restarted INGEST command to specify the same number of files or pipes as on the original command.</li>
+
+<li>Remove the RESTART CONTINUE parameter. In this case, the command starts from the beginning instead of resuming from where the failed command left off.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5454" lang="en-us" id="sql2959w">
+<h1 class="msghead" id="d245361e5454"><span class="title title msgId"><span class="ph ph msgNumber">SQL2959W</span></span>  <span class="shortdesc shortdesc msgText">The utility recovered from the following error. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>. Number of reconnects: <var class="keyword varname vartype=quotedString varnumber=2">number</var>. Number of retries: <var class="keyword varname vartype=quotedString varnumber=3">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2959W: Explanation"><h2 class="sectiontitle" id="d245361e5487">Explanation</h2><p>The ingest utility received the error that followed this message, but recovered from the error by issuing a COMMIT or issuing a ROLLBACK and reissuing the SQL statements. The utility reissued the statements the number of times specified in the message.  The reason code indicates how the utility recovered from the error:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The utility recovered by issuing a commit earlier than requested by ingest configuration parameters COMMIT_PERIOD or COMMIT_COUNT. For this reason code, the number of reconnects and number of retires is "0".</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The utility recovered by issuing a ROLLBACK and reconnecting or retrying the specified number of times.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2959W: User response"><h2 class="sectiontitle" id="d245361e5513">User response</h2><p>To avoid receiving this message, refer to the explanation of the error message that follows this message and take any corrective action that is needed.</p>
+
+<p>If the error message is SQL0911N, you can also do one of the following depending on the reason code:</p>
+
+<ul>
+<li>Reason code 2: Reduce the COMMIT_COUNT, COMMIT_PERIOD, or NUM_FLUSHERS_PER_PARTITION ingest configuration parameters.</li>
+
+<li>Reason code 68: Reduce the COMMIT_COUNT or COMMIT_PERIOD ingest configuration parameters, or increase the locklist or maxlocks database configuration parameters.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5536" lang="en-us" id="sql2960n">
+<h1 class="msghead" id="d245361e5536"><span class="title title msgId"><span class="ph ph msgNumber">SQL2960N</span></span>  <span class="shortdesc shortdesc msgText">Row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> contains an invalid security label string for the target table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2960N: Explanation"><h2 class="sectiontitle" id="d245361e5563">Explanation</h2><p>A field definition specifies DB2SECURITYLABEL STRING, but the value of the corresponding field in the input source is not a valid security label string.  The row is not loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2960N: User response"><h2 class="sectiontitle" id="d245361e5569">User response</h2><p>One of the following:</p>
+
+<ul>
+<li>If the field definition is correct, modify the field values in the input source to specify a valid security label string.</li>
+
+<li>If the field values in the input source are security labels in binary, remove the STRING keyword from the field definition.</li>
+
+<li>If the field values in the input source are security label names, modify the field definition to specify DB2SECURITYLABEL NAME.</li>
+</ul>
+
+<p>.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5594" lang="en-us" id="sql2961n">
+<h1 class="msghead" id="d245361e5594"><span class="title title msgId"><span class="ph ph msgNumber">SQL2961N</span></span>  <span class="shortdesc shortdesc msgText">The INGEST command can specify at most <var class="keyword varname vartype=quotedString varnumber=1">number</var> input file names or pipe names.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2961N: Explanation"><h2 class="sectiontitle" id="d245361e5621">Explanation</h2><p>The INGEST command failed because it has more than the allowable number of input file names or pipe names.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2961N: User response"><h2 class="sectiontitle" id="d245361e5627">User response</h2><p>Remove input file names or pipe names from the command so the number is less than or equal to than the maximum number  specified in the message.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5639" lang="en-us" id="sql2962n">
+<h1 class="msghead" id="d245361e5639"><span class="title title msgId"><span class="ph ph msgNumber">SQL2962N</span></span>  <span class="shortdesc shortdesc msgText">When restart is on, the nickname specified on the INGEST command must have server option DB2_TWO_PHASE_COMMIT set to 'Y'.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2962N: Explanation"><h2 class="sectiontitle" id="d245361e5663">Explanation</h2><p>The ingest utility issues this message when all of the following are true:</p>
+
+<ul>
+<li>The INGEST command omits the RESTART parameter or specifies RESTART NEW or RESTART CONTINUE.</li>
+
+<li>The target table is a nickname.</li>
+
+<li>When trying to insert into or update the nickname, the utility receives message SQL30090N with reason code 18.</li>
+</ul>
+
+<p>The SQL30090N error occurs because the utility needs to update both the remote table that the nickname refers to and the restart log table,  which is local.  This requires the two-phase commit protocol, but the server definition that contains the nickname is not defined with server  option DB2_TWO_PHASE_COMMIT set to 'Y'.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2962N: User response"><h2 class="sectiontitle" id="d245361e5683">User response</h2><p>Any one of the following:</p>
+
+<ul>
+
+<li>Alter the server definition that contains the nickname so it specifies server option
+DB2_TWO_PHASE_COMMIT 'Y'. <p>Note that you cannot use command SET SERVER OPTION to set the
+DB2_TWO_PHASE_COMMIT option for the ingest utility because the SET SERVER OPTION command affects
+only the CLP connection, whereas the ingest utility establishes its own connection. You must set the
+server option in the server definition in the catalog.</p>
+</li>
+
+<li>Specify a nickname that has server option DB2_TWO_PHASE_COMMIT set to 'Y'.</li>
+
+<li>Specify RESTART OFF so that the ingest utility does not maintain restart information in the restart log table.</li>
+
+<li>Specify a target table that is not a nickname.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5710" lang="en-us" id="sql2963n">
+<h1 class="msghead" id="d245361e5710"><span class="title title msgId"><span class="ph ph msgNumber">SQL2963N</span></span>  <span class="shortdesc shortdesc msgText">The starting or ending position that was specified in the POSITION clause of the following field is not valid: <var class="keyword varname vartype=quotedString varnumber=1">field-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2963N: Explanation"><h2 class="sectiontitle" id="d245361e5737">Explanation</h2><p>You can ingest data to a database table from an input file or pipe by using the INGEST command.  You can specify that each input record is a sequence of text or binary fields by using the POSITIONAL parameter with the INGEST command.  You can specify the starting position and ending position of each field within a record by using the POSITION clause in the field definition.</p>
+
+<p>This message is returned when an invalid starting or ending position is specified with the POSITION clause.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2963N: User response"><h2 class="sectiontitle" id="d245361e5746">User response</h2><ul>
+<li>For a numeric field, correct the field length or the end position.</li>
+
+<li>For a DATE, TIME, or TIMESTAMP field, correct the format string or the end position.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5763" lang="en-us" id="sql2964n">
+<h1 class="msghead" id="d245361e5763"><span class="title title msgId"><span class="ph ph msgNumber">SQL2964N</span></span>  <span class="shortdesc shortdesc msgText">The INGEST command cannot restart because the ingest job <var class="keyword varname vartype=quotedString varnumber=1">job-ID</var> is still active. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2964N: Explanation"><h2 class="sectiontitle" id="d245361e5793">Explanation</h2><p>The INGEST command specifies a job ID that is currently in use, as indicated by the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The command specifies RESTART NEW, RESTART CONTINUE, or RESTART TERMINATE, but an INGEST command with the specified job ID is already running.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The command specifies RESTART NEW, but the restart table (SYSTOOLS.INGESTRESTART) already contains an INGEST command with the specified job ID.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2964N: User response"><h2 class="sectiontitle" id="d245361e5819">User response</h2><p>The user response corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>If the intention was to start a new INGEST job, do one of the following:</p>
+
+<ul>
+<li>Specify a different job ID.</li>
+
+<li>Wait until the job that is already running completes.</li>
+
+<li>Cancel the job that is already running.</li>
+</ul>
+
+<p>If the intention was to restart the ingest job with the specified job ID, no action is needed because that job is still running. If the job fails, it can be restarted using the specified job ID.  If the intention was to restart an ingest job with a different job ID, specify the ID of that job.</p>
+
+<p>If the intention was to start a new INGEST job, do one of the following:</p>
+
+<ul>
+<li>Wait until the job that is already running ends.</li>
+
+<li>Cancel the job that is already running.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>If you do not plan to restart the job with the specified job ID, run the INGEST command with RESTART TERMINATE to clean up the restart table for the specified job.  Then re-run the INGEST command with RESTART NEW.  If you plan to restart the failed job, specify a different ID for the new job.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5875" lang="en-us" id="sql2965i">
+<h1 class="msghead" id="d245361e5875"><span class="title title msgId"><span class="ph ph msgNumber">SQL2965I</span></span>  <span class="shortdesc shortdesc msgText">The following warning or error occurred issuing the SQL <var class="keyword varname vartype=quotedString varnumber=1">sql-statement</var> statement on table <var class="keyword varname vartype=quotedString varnumber=2">table-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2965I: Explanation"><h2 class="sectiontitle" id="d245361e5905">Explanation</h2><p>This message identifies the table being operated on when the error in the following message occurred. If the table is the restart table (systools.ingestrestart), the restart table might be corrupted, damaged, or missing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2965I: User response"><h2 class="sectiontitle" id="d245361e5911">User response</h2><p>If the table is the restart table (systools.ingestrestart):</p>
+
+<ul>
+<li>If the INGEST command gets no other errors and completes successfully, no action is needed.  If you do not want to receive this message in the future, correct the error that caused the SQL operation to fail.</li>
+
+<li>If the INGEST command fails due to additional errors, do the following: 
+<ol>
+<li>Correct the error that caused the SQL operation to fail.</li>
+
+<li>Run the INGEST command with RESTART TERMINATE '<em>jobID</em>' to remove the entries for this job from the restart table.  ('<em>jobID</em>' is the job ID for the failing INGEST command.  This is either the ID that you specified on the RESTART NEW parameter of the INGEST command or the job ID that the INGEST command generated.)</li>
+
+<li>Run the original INGEST command from the beginning.  (Do not specify RESTART CONTINUE.)</li>
+
+<li>If the problem still occurs and the restart table does not contain any information about other ingest jobs, run the SYSPROC.SYSINSTALLOBJECTS procedure to drop and re-create the restart table. After you have created the restart table, repeat step 3.</li>
+
+<li>If the problem still occurs, contact IBM Technical Support.</li>
+</ol>
+</li>
+</ul>
+
+<p>If the table is not the restart table, contact IBM Technical Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e5956" lang="en-us" id="sql2966i">
+<h1 class="msghead" id="d245361e5956"><span class="title title msgId"><span class="ph ph msgNumber">SQL2966I</span></span>  <span class="shortdesc shortdesc msgText">The following warning or error occurred connecting to the database.  Database name or local alias: <var class="keyword varname vartype=quotedString varnumber=1">dbname</var>.  User ID: <var class="keyword varname vartype=quotedString varnumber=2">user-ID</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2966I: Explanation"><h2 class="sectiontitle" id="d245361e5985">Explanation</h2><p>When the ingest utility connects to the database and gets a warning or error, the utility issues this message followed by the warning or error message. If you connected without explicitly specifying the user ID, the <var class="keyword varname">user-ID</var> field is empty.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2966I: User response"><h2 class="sectiontitle" id="d245361e5994">User response</h2><p>Refer to the user response for the message that follows this message.  If the problem still occurs, verify the following:</p>
+
+<ul>
+<li>The database or alias exists and is cataloged correctly on the machine where INGEST is running.  If the database directory entry specifies a node name, verify that the node is cataloged correctly: 
+<ul>
+<li>If the node definition specifies a service name, verify: 
+<ul>
+<li>The service name maps to the correct port number on the machine where INGEST is running.</li>
+
+<li>The database server is listening on that port number.</li>
+</ul>
+</li>
+
+<li>If the node definition specifies a port number, verify that the database server is listening on the specified port number.</li>
+</ul>
+</li>
+
+<li>Verify that the specified user ID and its corresponding DB2 authorization ID have authority to connect to the database server.</li>
+</ul>
+
+<p>In order to determine whether the problem is with the ingest utility or somewhere else, try connecting directly to the database server using the parameters indicated in the message, as follows:</p>
+
+<pre class="codeblock"><code>db2 "CONNECT TO &lt;db&gt; USER &lt;ID&gt; USING &lt;pwd&gt;"</code></pre></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6033" lang="en-us" id="sql2967i">
+<h1 class="msghead" id="d245361e6033"><span class="title title msgId"><span class="ph ph msgNumber">SQL2967I</span></span>  <span class="shortdesc shortdesc msgText">The following warning or error occurred connecting to a database partition. Partition number: <var class="keyword varname vartype=quotedString varnumber=1">number</var>. Database name on the server: <var class="keyword varname vartype=quotedString varnumber=2">dbname</var>. Host name: <var class="keyword varname vartype=quotedString varnumber=3">hostname</var>. Service name or port number: <var class="keyword varname vartype=quotedString varnumber=4">service-name-or-port-number</var>. User ID: <var class="keyword varname vartype=quotedString varnumber=5">user-ID</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2967I: Explanation"><h2 class="sectiontitle" id="d245361e6072">Explanation</h2><p>When the ingest utility runs in a DPF environment and it can determine values for each of the target table's distribution keys, it connects directly to each database partition. When the utility connects to the database partition and gets a warning or error, the utility issues this message followed by the warning or error message.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2967I: User response"><h2 class="sectiontitle" id="d245361e6078">User response</h2><p>Refer to the user response for the message that follows this message. If the problem still occurs, verify the following:</p>
+
+<ul>
+<li>The database to which you are connected in the CLP is cataloged correctly on the machine where INGEST is running. If the database directory entry specifies a node name, verify that the node is cataloged correctly.</li>
+
+<li>The specified host is accessible from the machine where INGEST is running.</li>
+
+<li>If the message specifies a service name, verify: 
+<ul>
+<li>The service name maps to the correct port number on the machine where INGEST is running.</li>
+
+<li>The database server is listening on that port number.</li>
+</ul>
+</li>
+
+<li>If the message specifies a port number, verify that the database server partition is listening on the specified port number.</li>
+
+<li>Verify that the specified user ID and its corresponding DB2 authorization ID have authority to connect to the database server partition.</li>
+</ul>
+
+<p>In order to determine whether the problem is with the ingest utility or somewhere else, try connecting directly to the database server partition using the parameters shown in the message, for example:</p>
+
+<pre class="codeblock"><code>db2 "SET CLIENT CONNECT_DBPARTITIONNUM &lt;num&gt;"
+db2 "CONNECT TO &lt;db&gt; USER &lt;ID&gt; USING &lt;pwd&gt;"</code></pre></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6120" lang="en-us" id="sql2968n">
+<h1 class="msghead" id="d245361e6120"><span class="title title msgId"><span class="ph ph msgNumber">SQL2968N</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility failed because a non-numeric field value is used where a numeric value is expected.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2968N: Explanation"><h2 class="sectiontitle" id="d245361e6144">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can specify to the ingest utility how the data is defined in the input stream by describing the fields into which the data is separated.</p>
+
+<p>This message is returned when one of the fields in the specified input record has a non-numeric value, but is used where a numeric value is expected.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2968N: User response"><h2 class="sectiontitle" id="d245361e6153">User response</h2><p>Respond to this message by performing one of the following actions:</p>
+
+<ul>
+<li>Modify the SQL statement that is specified with the INGEST command or the db2Ingest API call so that fields which can be non-numeric are not used where a numeric value is required.</li>
+
+<li>Modify the input data so that all fields that are used where a numeric value is expected have a numeric value.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6172" lang="en-us" id="sql2969n">
+<h1 class="msghead" id="d245361e6172"><span class="title title msgId"><span class="ph ph msgNumber">SQL2969N</span></span>  <span class="shortdesc shortdesc msgText">A field that maps to a distribution key column contains a value that is invalid or out of range 
+for the column type. The utility cannot pre-partition the input record. Field value: <var class="keyword varname vartype=quotedString varnumber=1">field-value</var>. 
+Column type: <var class="keyword varname vartype=quotedString varnumber=2">column-type</var>. Column length: <var class="keyword varname vartype=quotedString varnumber=3">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2969N: Explanation"><h2 class="sectiontitle" id="d245361e6205">Explanation</h2><p>In a partitioned database environment, the utility examines the values of fields that map to distribution key  columns and uses those values to determine the partition to send the record to.  The utility issues this message when the field  value is invalid or out of range for the corresponding distribution key column type. For example, the utility  issues this message if the distribution key column type is INTEGER, but the field contains "ABC".   The column type is the type of the distribution key column that corresponds to the field. The column length is  the length of the column in bytes.</p>
+
+<p>The utility will not send the record to DB2. If the DUMPFILE parameter is specified, the utility will write the record to the dump file.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2969N: User response"><h2 class="sectiontitle" id="d245361e6214">User response</h2><p>To avoid receiving this message, correct the field value in the input data.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6226" lang="en-us" id="sql2970n">
+<h1 class="msghead" id="d245361e6226"><span class="title title msgId"><span class="ph ph msgNumber">SQL2970N</span></span>  <span class="shortdesc shortdesc msgText">Database <var class="keyword varname vartype=quotedString varnumber=1">db-name</var> uses node <var class="keyword varname vartype=quotedString varnumber=2">node-name</var>, but the utility cannot find the node in the node directory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2970N: Explanation"><h2 class="sectiontitle" id="d245361e6256">Explanation</h2><p>The database directory contains an entry for the specified database and the entry specifies  a node that does not exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2970N: User response"><h2 class="sectiontitle" id="d245361e6262">User response</h2><p>Define the node or modify the entry in the database directory to specify an existing node.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6273" lang="en-us" id="sql2971n">
+<h1 class="msghead" id="d245361e6273"><span class="title title msgId"><span class="ph ph msgNumber">SQL2971N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because invalid input was specified.  Outer structure: <var class="keyword varname vartype=quotedString varnumber=1">outer-structure-name</var>.  Inner structure: <var class="keyword varname vartype=quotedString varnumber=2">inner-structure-name</var>.  Index: <var class="keyword varname vartype=quotedString varnumber=3">index-number</var>.  Field: <var class="keyword varname vartype=quotedString varnumber=4">field-name</var>.  Value: <var class="keyword varname vartype=quotedString varnumber=5">value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2971N: Explanation"><h2 class="sectiontitle" id="d245361e6312">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  You can specify to the ingest utility how the data is defined in the input stream by passing data structures such as db2IngestStruct, db2IngestCfgList, and db2IngestFormat to the db2Ingest API call.</p>
+
+<p>The fields of some db2Ingest input structures contain an array of objects:</p>
+
+<ul>
+<li>The first field of the db2IngestFormat structure is an array of db2IngestFieldDefn objects.</li>
+
+<li>The first field of the db2IngestCfgList structure is an array of db2IngestCfgParam objects.</li>
+</ul>
+
+<p>This message is returned when one object in an array of objects contains an invalid field value. The runtime token <var class="keyword varname">index-number</var> indicates which element in the array of objects has a problem.  The index starts at zero.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2971N: User response"><h2 class="sectiontitle" id="d245361e6335">User response</h2><p>Call the db2Ingest API again, specifying valid values for the input data structures.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6347" lang="en-us" id="sql2972n">
+<h1 class="msghead" id="d245361e6347"><span class="title title msgId"><span class="ph ph msgNumber">SQL2972N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed to restart because one or more command parameters or the input data is inconsistent with the original command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2972N: Explanation"><h2 class="sectiontitle" id="d245361e6371">Explanation</h2><p>This message is returned when an attempt is made to restart an ingest operation, but one or more of the following is true:</p>
+
+<p>Scenario 1: The target table and the restart log table (SYSTOOLS.INGESTRESTART) are in different table spaces, but the two table spaces are at different product code levels.</p>
+
+<p>Scenario 2: The records in the restart log table that belong to the specified ingest job ID have been modified outside of the ingest utility.</p>
+
+<p>Scenario 3: The input files or pipes for the restarted ingest operation do not provide the same records in the same order as the input files or pipes for the original command.</p>
+
+<p>Scenario 4: One of more of the following parameters are different from the original ingest operation:</p>
+
+<ul>
+<li>The SQL statement.</li>
+
+<li>The field definition list, including the number of fields and all field attributes.</li>
+</ul>
+
+<p>Scenario 5: One or more of the target table columns that the SQL command updates have a different definition than they had at the time of the original ingest operation.</p>
+
+<p>Scenario 6: In a multiple database partition environment:</p>
+
+<ul>
+<li>Database partitions were added or removed since the original ingest operation was run.</li>
+
+<li>Data was redistributed across the partitions since the original ingest operation was run.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2972N: User response"><h2 class="sectiontitle" id="d245361e6412">User response</h2><p>The user response depends on which restriction was violated: Respond to this message according to the scenario in which this message was returned:</p>
+
+<p>Scenario 1: If the target table and the restart log table are in table spaces at different product code levels, restore the table spaces containing the target table and the restart table so they are at the same level.</p>
+
+<p>Scenario 2: If the records in the restart log table have been modified, restore the contents of the restart table.</p>
+
+<p>Scenario 3: If the format of the input files or pipes is not the same as the format of the input files or pipes specified for the original ingest operation, specify input files or pipes that provide the same records and in the same order as on the original ingest operation.</p>
+
+<p>Scenario 4: If the parameters that were specified when the ingest operation was being restarted are not the same as the parameters that were specified with the original ingest operation, modify the SQL statement and the field definition list to match the original ingest operation.</p>
+
+<p>Scenario 5: If the target table has been altered since the original ingest operation, restart the ingest operation from the beginning.</p>
+
+<p>Scenario 6: If database partitions have been added or removed, or if data has been redistributed since the original ingest operation, restart the ingest operation from the beginning.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6442" lang="en-us" id="sql2973n">
+<h1 class="msghead" id="d245361e6442"><span class="title title msgId"><span class="ph ph msgNumber">SQL2973N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation failed because a field specifies an invalid format string.  Field name: <var class="keyword varname vartype=quotedString varnumber=1">field-name</var>. Field type: <var class="keyword varname vartype=quotedString varnumber=2">field-type</var>. Specified format string: <var class="keyword varname vartype=quotedString varnumber=3">format-string</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2973N: Explanation"><h2 class="sectiontitle" id="d245361e6475">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility.  When a field in the input stream is a date, time, or timestamp, you can specify the format of the field by providing a format string.</p>
+
+<p>This message is returned when a field definition specifies a date, time, or timestamp format string that is not valid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2973N: User response"><h2 class="sectiontitle" id="d245361e6484">User response</h2><p>Perform the ingest operation again, specifying a valid format string, surrounded by single quotes, for the given field.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6496" lang="en-us" id="sql2974n">
+<h1 class="msghead" id="d245361e6496"><span class="title title msgId"><span class="ph ph msgNumber">SQL2974N</span></span>  <span class="shortdesc shortdesc msgText">The ingest operation did not complete successfully because the primary database connection was lost before the ingest operation finished.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2974N: Explanation"><h2 class="sectiontitle" id="d245361e6520">Explanation</h2><p>You can stream data from files and pipes into DB2 database tables by using the ingest utility. If the ingest utility fails before completing, you can restart the ingest operation from the last commit point.</p>
+
+<p>This message is returned when the primary database connection was lost during the initialization of the ingest operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2974N: User response"><h2 class="sectiontitle" id="d245361e6529">User response</h2><ol>
+<li>Review the db2diag diagnostic log files for additional diagnostic details.</li>
+
+<li>Resolve the problem that caused the lost connection.</li>
+
+<li>Re-establish the connection and perform the ingest operation again.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6548" lang="en-us" id="sql2975n">
+<h1 class="msghead" id="d245361e6548"><span class="title title msgId"><span class="ph ph msgNumber">SQL2975N</span></span>  <span class="shortdesc shortdesc msgText">When the INGEST command is restartable, the RECONNECT_COUNT ingest configuration parameter must be set to 0.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2975N: Explanation"><h2 class="sectiontitle" id="d245361e6572">Explanation</h2><p>The RECONNECT_COUNT ingest configuration parameter is set to a value greater than 0 and the INGEST command omits the  RESTART parameter (so it defaults to NEW) or specifies RESTART NEW or RESTART CONTINUE.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2975N: User response"><h2 class="sectiontitle" id="d245361e6578">User response</h2><p>Set the RECONNECT_COUNT ingest configuration parameterto 0 or specify RESTART OFF on the INGEST command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6590" lang="en-us" id="sql2976w">
+<h1 class="msghead" id="d245361e6590"><span class="title title msgId"><span class="ph ph msgNumber">SQL2976W</span></span>  <span class="shortdesc shortdesc msgText">Field <var class="keyword varname vartype=quotedString varnumber=1">field-name</var> specifies conflicting values for the length and end position.  Reason code <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2976W: Explanation"><h2 class="sectiontitle" id="d245361e6620">Explanation</h2><p>There is a conflict between the field length and the field end position. The indicated reason code describes the conflict and how the utility resolves it:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The field type is SMALLINT, INTEGER, or BIGINT in binary. The length specified by (end position) - (start position) + 1  is 2, 4, or 8, but does not match the length of the field type. The utility will use the specified end position.</p>
+
+<p>For example, if the field definition is SMALLINT POSITION(1:4), the utility will read 4 bytes even though a SMALLINT is 2 bytes. If the field contains a value outside the range of a SMALLINT, the utility will  issue an error when it tries to convert the field value to a SMALLINT.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The field type is SMALLINT, INTEGER, or BIGINT in binary, but the length specified by (end position) - (start position) + 1 is not 2, 4, or 8. The utility will adjust the end position to match the length of the field type.</p>
+
+<p>For example, if the field definition is SMALLINT POSITION(1:3), the utility will adjust the end position to 2 (because a SMALLINT is 2 bytes).</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The field type is DECIMAL, REAL, FLOAT, or DECFLOAT in binary, but the length specified by (end position) - (start position) + 1 conflicts with the length of the field type. The utility will adjust the end position to match the length of the field type.</p>
+
+<p>For example, if the field definition is REAL POSITION(1:5), the utility will adjust the end position to 4 (because a REAL is 4 bytes).</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The field length specified on the field type conflicts with  (end position) - (start position) + 1. If the specified length exceeds (end position) - (start position) + 1, the utility will adjust the length to (end position) - (start position) + 1.  If the specified length is less than (end position) - (start position) + 1, the utility will adjust the  end position to (start position) + length - 1.</p>
+
+<p>For example, if the field definition is CHAR(10) POSITION(1:8), the utility will adjust the length to 8.   If the field definition is CHAR(8) POSITION(1:10), the utility will adjust the end position to 8.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2976W: User response"><h2 class="sectiontitle" id="d245361e6676">User response</h2><p>To avoid receiving this message, do one of the following, depending on the reason code and the format of  the data in the input source:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Change the field type or end position.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Change the field type or end position.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Change the field type, precision, scale, or end position.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Change the field end position or length.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6725" lang="en-us" id="sql2977i">
+<h1 class="msghead" id="d245361e6725"><span class="title title msgId"><span class="ph ph msgNumber">SQL2977I</span></span>  <span class="shortdesc shortdesc msgText">Because of the previous error, the ingest utility will exit.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2977I: Explanation"><h2 class="sectiontitle" id="d245361e6749">Explanation</h2><p>The utility received an error that prevents it from continuing. The utility will exit.</p>
+
+<p>Rows that were committed prior to the error remain in the table.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2977I: User response"><h2 class="sectiontitle" id="d245361e6758">User response</h2><p>Refer to the explanation and user response of the previous error message.</p>
+
+<p>If the INGEST command specified RESTART NEW or omitted the RESTART option (in which case it defaults to NEW),  correct the error and re-run the same INGEST command, specifying RESTART CONTINUE.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6773" lang="en-us" id="sql2978i">
+<h1 class="msghead" id="d245361e6773"><span class="title title msgId"><span class="ph ph msgNumber">SQL2978I</span></span>  <span class="shortdesc shortdesc msgText">The following error occurred and the ingest utility could not recover after <var class="keyword varname vartype=quotedString varnumber=1">number</var> reconnects and <var class="keyword varname vartype=quotedString varnumber=2">number</var> 
+retries.  Reason code: <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2978I: Explanation"><h2 class="sectiontitle" id="d245361e6805">Explanation</h2><p>Ingest configuration parameter RECONNECT_COUNT or RETRY_COUNT has a value greater than 0 and the utility received a  recoverable error. The utility attempted to recover from the error but could not for the reason indicated by the  reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The number of reconnect attempts reached the value of the RECONNECT_COUNT ingest configuration parameter.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The number of retries reached the value of the RETRY_COUNT ingest configuration parameter.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The utility was interrupted or a terminating error occurred.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2978I: User response"><h2 class="sectiontitle" id="d245361e6840">User response</h2><p>Refer to the explanation of the error message that follows this message and take any needed corrective action.</p>
+
+<p>If the error message is SQL0911N, you can also do one of the following depending on the SQL0911N reason code:</p>
+
+<ul>
+<li>Reason code 2: Reduce the value for the COMMIT_COUNT, COMMIT_PERIOD, or NUM_FLUSHERS_PER_PARTITION ingest configuration  parameters.</li>
+
+<li>Reason code 68: Reduce the value for the COMMIT_COUNT or COMMIT_PERIOD ingest configuration parameters, or  increase the locklist or maxlocks database configuration parameters.</li>
+</ul>
+
+<p>If the error cannot be easily avoided and you want the utility to recover, increase the setting of one or more of the following ingest configuration parameters, depending on the reason code you received for the current message (SQL2978I):</p>
+
+<ul>
+<li>For reason code 1: 
+<ul>
+<li>RECONNECT_COUNT</li>
+
+<li>RECONNECT_PERIOD</li>
+</ul>
+</li>
+
+<li>For reason code 2: 
+<ul>
+<li>RETRY_COUNT</li>
+
+<li>RETRY_PERIOD</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6887" lang="en-us" id="sql2979i">
+<h1 class="msghead" id="d245361e6887"><span class="title title msgId"><span class="ph ph msgNumber">SQL2979I</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility is starting at <var class="keyword varname vartype=quotedString varnumber=1">timestamp</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2979I: Explanation"><h2 class="sectiontitle" id="d245361e6914">Explanation</h2><p>The ingest utility is starting at the indicated timestamp. The utility will also issue a message indicating the job ID.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2979I: User response"><h2 class="sectiontitle" id="d245361e6920">User response</h2><p>No user response is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6932" lang="en-us" id="sql2980i">
+<h1 class="msghead" id="d245361e6932"><span class="title title msgId"><span class="ph ph msgNumber">SQL2980I</span></span>  <span class="shortdesc shortdesc msgText">The ingest utility completed successfully at timestamp <var class="keyword varname vartype=quotedString varnumber=1">timestamp</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2980I: Explanation"><h2 class="sectiontitle" id="d245361e6958">Explanation</h2><p>The ingest utility completed with no warnings or errors.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2980I: User response"><h2 class="sectiontitle" id="d245361e6964">User response</h2><p>No user response required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e6975" lang="en-us" id="sql2981n">
+<h1 class="msghead" id="d245361e6975"><span class="title title msgId"><span class="ph ph msgNumber">SQL2981N</span></span>  <span class="shortdesc shortdesc msgText">An error occurred calling a system function or system command.  Function or command: <var class="keyword varname vartype=quotedString varnumber=1">function-or-command-name</var>.  Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.  Additional tokens: <var class="keyword varname vartype=quotedString varnumber=3">additional-tokens</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2981N: Explanation"><h2 class="sectiontitle" id="d245361e7008">Explanation</h2><p>An unexpected error occurred calling an operating system function or command.  The reason codes are:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The command was not found in /usr/bin or /bin. For this reason code, the "Additional tokens" field in the message is blank.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The function or command failed with the system error code shown in the "Additional tokens" field of the message.  On UNIX, error codes are defined in system header file errno.h. For information on Windows error codes, consult Microsoft documentation.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The function or command did not return output in the expected format. The "Additional tokens" field of the message shows the last line of output.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2981N: User response"><h2 class="sectiontitle" id="d245361e7043">User response</h2><p>The user response depends on the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Verify that the specified command is installed in /usr/bin or /bin and is executable. If this is not the problem, contact IBM Technical Support.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>If you cannot resolve the problem using the system error code, contact IBM Technical Support.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Verify that the command or function is the version that shipped with the operating system and not a version tailored to your installation. If this is not the problem, contact IBM Technical Support.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d245361e7084" lang="en-us" id="sql2982w">
+<h1 class="msghead" id="d245361e7084"><span class="title title msgId"><span class="ph ph msgNumber">SQL2982W</span></span>  <span class="shortdesc shortdesc msgText">The INGEST LIST command or INGEST GET STATS command did not return any information for the authorization ID that is currently connected to the database, because that authorization ID is not currently running any ingest operations on the current machine. Authorization ID: <var class="keyword varname vartype=quotedString varnumber=1">auth-ID</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2982W: Explanation"><h2 class="sectiontitle" id="d245361e7110">Explanation</h2><p>You can monitor the progress of ingest operations being run by the authorization ID that is connected to the database by using the INGEST LIST command or the INGEST GET STATS command.</p>
+
+<p>This message is returned when either the INGEST LIST command or the INGEST GET STATS command was issued, but the authorization ID that is currently connected to the database is not running any ingest operations on the current machine. If the authorization ID recently started an ingest operation from another session, the command might not have completed initialization or might have already finished.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2982W: User response"><h2 class="sectiontitle" id="d245361e7119">User response</h2><p>Ensure that you are running the INGEST LIST or INGEST GET STATS command on the same machine where you issued the INGEST command. If the authorization ID recently started an ingest operation from another session and the command has not yet completed, wait a few seconds for the command to complete initialization. Then run the INGEST LIST command or the INGEST GET STATS command again.</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

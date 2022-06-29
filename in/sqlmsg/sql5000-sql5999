@@ -1,0 +1,2643 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL5000 - SQL5999</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d174823e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic18">
+   <h1 class="topictitle1" id="d174823e14">SQL5000 - SQL5999</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d174823e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e64" lang="en-us" id="sql5001n">
+<h1 class="msghead" id="d174823e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL5001N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">authorization-ID</var> does not have the authority to change the
+database manager configuration file.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5001N: Explanation"><h2 class="sectiontitle" id="d174823e90">Explanation</h2><p>The user attempted to update or reset the database manager configuration file without having SYSADM authority.</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5001N: User response"><h2 class="sectiontitle" id="d174823e99">User response</h2><p>Do not attempt to change the database manager configuration file without appropriate authorization.  Contact a user with SYSADM authority if a change is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e110" lang="en-us" id="sql5005c">
+<h1 class="msghead" id="d174823e110"><span class="title title msgId"><span class="ph ph msgNumber">SQL5005C</span></span>  <span class="shortdesc shortdesc msgText">The operation failed because the database manager failed to access either the database manager configuration file or the database configuration file.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5005C: Explanation"><h2 class="sectiontitle" id="d174823e134">Explanation</h2><p>The database product uses two types of configuration files:</p>
+
+<dl>
+
+<dt class="dlterm">Database manager configuration file</dt>
+
+<dd class="dlentry"><p>Created when a database manager instance is created, the database manager configuration file contains parameters that affect system resources at the instance level. There is also one database manager configuration file for each client installation, which contains information about the client enabler for a specific workstation. The database manager configuration file is named db2systm and is located in the instance directory.</p>
+</dd>
+
+
+<dt class="dlterm">Database configuration file</dt>
+
+<dd class="dlentry"><p>Created when a database is created, the database configuration file contains parameters that affect the use of that database.  The database configuration file for each database is named SQLDBCONF, and stored along with other control files for that database in the directory named "SQLnnnnn" (where nnnnn is a number assigned when the database was created.)</p>
+</dd>
+</dl>
+
+<p>This message is returned when a database utility (such as db2start, db2icrt, restore, or many others) requires that the database manager write to or read from either the database manager configuration file or the database configuration file, and the database manager was unable to access the configuration file.</p>
+
+<p>There can be several reasons that the database manager was unable to access the configuration file, including the following reasons:</p>
+
+<ul>
+<li>After the database product installation has been upgraded or otherwise changed, some database applications are still trying to link to libraries from the previous installation</li>
+
+<li>After the database product installation has been upgraded or otherwise changed, operating system environment variables such as PATH, LIBPATH, or LD_LIBRARY_PATH still refer to paths from the previous installation</li>
+
+<li>The configuration file does not exist in the location where the database manager expects to find the file Operating system file permissions prevent the database manager from accessing the directory in which the configuration file is located</li>
+
+<li>Operating system file permissions prevent the database manager from writing to or reading from the configuration file or the directory in which the configuration file is located</li>
+</ul>
+
+<p>In a DB2 pureScale environment, following a connect to database command, member database directory or database configuration file is not found or the member does not exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5005C: User response"><h2 class="sectiontitle" id="d174823e184">User response</h2><ol>
+<li>Determine the specific configuration file that the database manager attempted to access by reviewing diagnostic information in the db2diag log files.
+<p>For example, search in the db2diag log files for the following strings:</p>
+
+<ul>
+<li>SQLDBCONF</li>
+
+<li>db2systm</li>
+</ul>
+</li>
+
+<li>Systematically eliminate possible reasons that the database manager was unable to access either the database manager configuration file or the database configuration file: 
+<ul>
+<li>Ensure that operating system environment variables such as PATH, LIBPATH, and LD_LIBRARY_PATH include the correct paths for the current installation of the database product.</li>
+
+<li>Locate the database manager configuration file and the database configuration files, and verify that the database manager has read and write permissions for the configuration files themselves as well as the directories in which those configuration files are located.</li>
+</ul>
+</li>
+</ol>
+
+<p>In a DB2 pureScale environment, either:</p>
+
+<ul>
+<li>Restore a database backup, or</li>
+
+<li>For members that do not exist re-create the configuration file by uncataloging the database and catalog the database again.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e229" lang="en-us" id="sql5010n">
+<h1 class="msghead" id="d174823e229"><span class="title title msgId"><span class="ph ph msgNumber">SQL5010N</span></span>  <span class="shortdesc shortdesc msgText">The path name to the database manager
+configuration file is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5010N: Explanation"><h2 class="sectiontitle" id="d174823e253">Explanation</h2><p>An error occurred while determining the path for the
+database manager
+configuration file.
+The database manager directory structure may have been altered.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5010N: User response"><h2 class="sectiontitle" id="d174823e262">User response</h2><p>Resubmit the command.
+If the error continues, reinstall the database manager.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e273" lang="en-us" id="sql5012n">
+<h1 class="msghead" id="d174823e273"><span class="title title msgId"><span class="ph ph msgNumber">SQL5012N</span></span>  <span class="shortdesc shortdesc msgText">Host variable <var class="keyword varname vartype=quotedString varnumber=1">host-variable</var> is not an exact numeric data type.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5012N: Explanation"><h2 class="sectiontitle" id="d174823e300">Explanation</h2><div class="p">A host variable <var class="keyword varname">host-variable</var> was specified, 
+but it is not valid in the context in which it was used. Host variable 
+<var class="keyword varname">host-variable</var> was specified as part of ABSOLUTE or RELATIVE in a 
+FETCH statement, or in a ROWS clause of a FETCH or INSERT statement. 
+The host variable was not usable for one of the following reasons:
+<ul>
+<li>The host variable is not an exact numeric data type. Decimal data types with a scale of zero and integer data types are exact numeric data types.</li>
+
+<li>The host variable is a decimal data type, but the scale is not zero. Decimal data types must have zero decimal digits to have a scale of zero.</li>
+</ul>
+</div>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5012N: User response"><h2 class="sectiontitle" id="d174823e322">User response</h2><p>Change the host variable to be an exact numeric data type. </p>
+
+<p> 
+<strong>sqlcode</strong>:   -5012</p>
+
+<p> 
+<strong>sqlstate</strong>:  42618</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e346" lang="en-us" id="sql5018n">
+<h1 class="msghead" id="d174823e346"><span class="title title msgId"><span class="ph ph msgNumber">SQL5018N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration
+file for the maximum number of remote connections to the workstation
+(numrc) is not in the valid range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5018N: Explanation"><h2 class="sectiontitle" id="d174823e370">Explanation</h2><p>The value for the maximum number of remote connections to the
+workstation must be between 1 and 255.</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5018N: User response"><h2 class="sectiontitle" id="d174823e379">User response</h2><p>Resubmit the command with a valid value for the maximum number
+of remote connections to the workstation.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e390" lang="en-us" id="sql5020n">
+<h1 class="msghead" id="d174823e390"><span class="title title msgId"><span class="ph ph msgNumber">SQL5020N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration
+file for the node name for the workstation (nname) is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5020N: Explanation"><h2 class="sectiontitle" id="d174823e414">Explanation</h2><p>The node name specified in the configuration command is not
+valid.  The node name may be 1 to 8 characters.  All the characters
+must be chosen from the database manager base character set.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5020N: User response"><h2 class="sectiontitle" id="d174823e423">User response</h2><p>Resubmit the command with a valid node name.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e435" lang="en-us" id="sql5021n">
+<h1 class="msghead" id="d174823e435"><span class="title title msgId"><span class="ph ph msgNumber">SQL5021N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration
+file for the index recreation parameter (INDEXREC) is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5021N: Explanation"><h2 class="sectiontitle" id="d174823e459">Explanation</h2><p>An invalid value was passed to Configuration Services
+for the Index Recreation parameter (INDEXREC) in the database
+manager configuration file.
+The invalid value may have been entered through the Command Line
+Processor or through a program API call.
+The valid values for the API call and for the command line processor are
+1 (ACCESS), 2 (RESTART), 3 (RESTART_NO_REDO) and 4 (ACCESS_NO_REDO).</p>
+
+<p>The update to the database manager configuration file is rejected.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5021N: User response"><h2 class="sectiontitle" id="d174823e468">User response</h2><p>Repeat the update request, entering one of the possible values.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e479" lang="en-us" id="sql5022n">
+<h1 class="msghead" id="d174823e479"><span class="title title msgId"><span class="ph ph msgNumber">SQL5022N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database configuration file for
+the index recreation parameter (INDEXREC) is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5022N: Explanation"><h2 class="sectiontitle" id="d174823e503">Explanation</h2><p>An invalid value was passed to Configuration Services
+for the Index Recreation parameter (INDEXREC) in a database
+configuration file.
+The invalid value may have been entered through the Command Line
+Processor
+or through a program API call.
+The valid values for the API call and for the command line processor
+are 0 (SYSTEM), 1 (ACCESS), 2 (RESTART), 3 (RESTART_NO_REDO) and 
+4 (ACCESS_NO_REDO).</p>
+
+<p>The update to the database configuration file is rejected.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5022N: User response"><h2 class="sectiontitle" id="d174823e512">User response</h2><p>Repeat the update request, entering one of the possible values.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e524" lang="en-us" id="sql5025c">
+<h1 class="msghead" id="d174823e524"><span class="title title msgId"><span class="ph ph msgNumber">SQL5025C</span></span>  <span class="shortdesc shortdesc msgText">The database manager configuration file is not
+current.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5025C: Explanation"><h2 class="sectiontitle" id="d174823e548">Explanation</h2><p>The database manager configuration file has been updated since you
+connected to the database.  It is not compatible with the configuration
+for the database to which you are connected.</p>
+
+<p>No access is allowed to the database manager configuration file.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5025C: User response"><h2 class="sectiontitle" id="d174823e557">User response</h2><p>Wait until all applications disconnect from the databases.  Issue
+the stop database manager command, and then issue the
+start database manager command.</p>
+
+<p>If installing the sample database, drop it and install the
+sample database again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e571" lang="en-us" id="sql5030c">
+<h1 class="msghead" id="d174823e571"><span class="title title msgId"><span class="ph ph msgNumber">SQL5030C</span></span>  <span class="shortdesc shortdesc msgText">Command processing failed because of release number mismatch.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5030C: Explanation"><h2 class="sectiontitle" id="d174823e595">Explanation</h2><p>The release number in the database manager or database configuration file does not match the release number of the DB2 copy from which you issue the command.</p>
+
+<p>If you are upgrading an instance or a database, the release number of the database manager or database is not supported for upgrade.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5030C: User response"><h2 class="sectiontitle" id="d174823e607">User response</h2><p>Verify that the release levels of your database or database manager and the DB2 copy from which you issue the command match by using:</p>
+
+<ul>
+<li>The GET DB CFG or GET DBM CFG command to determine the release configuration parameter value of the database or database manager.</li>
+
+<li>The db2level command to determine the release number of your DB2 copy.</li>
+</ul>
+
+<p>If the release levels do not match, you can try one of the following actions:</p>
+
+<ul>
+<li>Issue the db2iupdt command to update the release level of the database manager.</li>
+
+<li>Restore the database from a backup.</li>
+</ul>
+
+<p>If you are upgrading an instance or a database, the release number of the database or database manager is not supported for upgrade. You must upgrade to a release level that is supported for upgrade prior to upgrading to the release number of your DB2 copy.</p>
+
+<p>If the error occurred with the sample database, drop it and recreate it using the db2sampl command.</p>
+
+<p><strong>sqlcode</strong>:  -5030</p>
+
+<p><strong>sqlstate</strong>:  58031</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e655" lang="en-us" id="sql5035n">
+<h1 class="msghead" id="d174823e655"><span class="title title msgId"><span class="ph ph msgNumber">SQL5035N</span></span>  <span class="shortdesc shortdesc msgText">The connection failed because the database product has been updated and the database needs to be upgraded</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5035N: Explanation"><h2 class="sectiontitle" id="d174823e679">Explanation</h2><p>After you update the database product, sometimes databases must be upgraded before you can connect to them. This message is returned when the database product has been updated, and then an attempt is made to connect to a database that needs to be upgraded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5035N: User response"><h2 class="sectiontitle" id="d174823e685">User response</h2><p>Issue the UPGRADE DATABASE command before attempting to access the database.</p>
+
+<p>If you receive this message when you issued a database restore, drop the existing database before proceeding.</p>
+
+<p><strong>sqlcode</strong>:  -5035</p>
+
+<p><strong>sqlstate</strong>:  55001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e709" lang="en-us" id="sql5040n">
+<h1 class="msghead" id="d174823e709"><span class="title title msgId"><span class="ph ph msgNumber">SQL5040N</span></span>  <span class="shortdesc shortdesc msgText">One of the socket addresses required by the
+TCP/IP server support is being used by another process.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5040N: Explanation"><h2 class="sectiontitle" id="d174823e733">Explanation</h2><p>One of the socket addresses required by the server either is in use by
+another program, or has not been freed completely by the TCP/IP
+subsystem after the database manager has been stopped.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5040N: User response"><h2 class="sectiontitle" id="d174823e739">User response</h2><p>If you have just issued db2stop, wait for a couple of minutes so that
+the TCP/IP subsystem has enough time to clean up its resources.
+Otherwise, make sure no other programs on your workstation are
+using the port numbers reserved for your service name
+in the /etc/services file.  The port number is a component of a
+socket address.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e751" lang="en-us" id="sql5042n">
+<h1 class="msghead" id="d174823e751"><span class="title title msgId"><span class="ph ph msgNumber">SQL5042N</span></span>  <span class="shortdesc shortdesc msgText">One of the communication protocol server support
+processes failed to start up.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5042N: Explanation"><h2 class="sectiontitle" id="d174823e775">Explanation</h2><p>Due to system call failure, or a communication subsystem call failure,
+one
+of the communication protocol server support processes did not start
+up successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5042N: User response"><h2 class="sectiontitle" id="d174823e781">User response</h2><div class="p">You can investigate the problem by either:
+<ul>
+<li>examine the system log records;</li>
+
+<li>turning on trace, run db2start again, then examine the trace record.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e799" lang="en-us" id="sql5043n">
+<h1 class="msghead" id="d174823e799"><span class="title title msgId"><span class="ph ph msgNumber">SQL5043N</span></span>  <span class="shortdesc shortdesc msgText">Support for one or more communications protocols specified in the DB2COMM environment variable failed to start successfully. However, core database manager functionality started successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5043N: Explanation"><h2 class="sectiontitle" id="d174823e823">Explanation</h2><p>This message can be returned for the following types of reasons:</p>
+
+<ul>
+<li>Communication subsystem configuration error.</li>
+
+<li>Communication subsystem call failure.</li>
+
+<li>Database manager configuration error.</li>
+
+<li>System call failure.</li>
+
+<li>Database manager licensing error.</li>
+
+<li>Cluster manager call failure.</li>
+</ul>
+
+<p>For example, one reason this message can be returned is that the SVCENAME database manager configuration parameter is not set correctly.</p>
+
+<p>You can still connect to the server with communication protocols that did start successfully. Local clients can also connect to the server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5043N: User response"><h2 class="sectiontitle" id="d174823e856">User response</h2><p>Perform the following troubleshooting steps:</p>
+
+<ul>
+<li>Verify that the SVCENAME database manager configuration parameter is set correctly by listing the settings for all database manager configuration parameters by using the following command:
+<pre class="codeblock"><code>db2 get dbm cfg</code></pre></li>
+
+<li>Look in the administration notification log for details on this error.  The log will contain more information on the cause of the error and also which communication protocols did not start successfully.</li>
+
+<li>If the nicbinding.cfg file is in use, ensure that any specified host name or IP address is valid and that the port on any specified NICs is not owned by another process.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e881" lang="en-us" id="sql5047c">
+<h1 class="msghead" id="d174823e881"><span class="title title msgId"><span class="ph ph msgNumber">SQL5047C</span></span>  <span class="shortdesc shortdesc msgText">Insufficient memory to execute this function.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5047C: Explanation"><h2 class="sectiontitle" id="d174823e905">Explanation</h2><p>There is not enough memory
+available to execute this function.</p>
+
+<p>The function cannot be completed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5047C: User response"><h2 class="sectiontitle" id="d174823e914">User response</h2><div class="p">Stop the application.  Possible solutions include:
+<ul>
+<li>Terminate other processes.</li>
+
+<li>Decrease the values of the configuration parameters that define
+allocation of memory.</li>
+
+<li>Ensure that your system has sufficient real and virtual memory.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e935" lang="en-us" id="sql5048n">
+<h1 class="msghead" id="d174823e935"><span class="title title msgId"><span class="ph ph msgNumber">SQL5048N</span></span>  <span class="shortdesc shortdesc msgText">The release level of the database client is not
+supported by the release level of the database server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5048N: Explanation"><h2 class="sectiontitle" id="d174823e959">Explanation</h2><p>Database clients can only access database servers with a
+release level which is in the range of one level lower than the
+client to two levels higher than the client.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5048N: User response"><h2 class="sectiontitle" id="d174823e965">User response</h2><div class="p">One or more of the following:
+<ul>
+<li>Upgrade the client release level to fall within the range of
+releases supported by the current server release level.</li>
+
+<li>Upgrade the server release level to a level supported by the
+current client release level.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e984" lang="en-us" id="sql5050c">
+<h1 class="msghead" id="d174823e984"><span class="title title msgId"><span class="ph ph msgNumber">SQL5050C</span></span>  <span class="shortdesc shortdesc msgText">The database manager encountered an error while processing the contents of the database manager configuration file.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5050C: Explanation"><h2 class="sectiontitle" id="d174823e1008">Explanation</h2><p>The database manager configuration file, db2systm, is created when a database manager instance is created. The parameters in the database manager configuration file affect system resources at the instance level.</p>
+
+<p>This message is returned when the database manager encounters an error reading information from or updating information in the database manager configuration file.</p>
+
+<p>This error can be caused by different reasons, including the following examples:</p>
+
+<ul>
+<li>The database manager configuration file might have been altered by a text editor or a program other than the database manager.</li>
+
+<li>Environment variables (such as LIBPATH or LD_LIBRARY_PATH) might be set incorrectly, and that is preventing the database manager from finding the proper versions of libraries or other files.</li>
+
+<li>After the database product has been upgraded, processes (such as the monitoring process called kuddb2 or db2fmcd) or resources (such as old directories) that were associated with the previous version might be interfering with files the current database manager is accessing.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5050C: User response"><h2 class="sectiontitle" id="d174823e1031">User response</h2><p>Perform one or more of the following troubleshooting steps:</p>
+
+<ul>
+<li>Verify that DB2 database-related environment variables are set correctly.</li>
+
+<li>Stop all database manager processes.</li>
+
+<li>Drop and recreate the database manager instance.</li>
+
+<li>Reinstall the database product.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1056" lang="en-us" id="sql5051n">
+<h1 class="msghead" id="d174823e1056"><span class="title title msgId"><span class="ph ph msgNumber">SQL5051N</span></span>  <span class="shortdesc shortdesc msgText">An object qualified by <var class="keyword varname vartype=quotedString varnumber=1">qualifier</var> cannot
+be created in schema <var class="keyword varname vartype=quotedString varnumber=2">schema-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5051N: Explanation"><h2 class="sectiontitle" id="d174823e1086">Explanation</h2><p>An object created in a CREATE SCHEMA statement is
+qualified by <var class="keyword varname">qualifier</var> which is different from the
+schema name.
+All objects created in a CREATE SCHEMA statement must be
+either qualified by the schema name <var class="keyword varname">schema-name</var>
+or not qualified.
+Unqualified objects are implicitly qualified by the schema name.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5051N: User response"><h2 class="sectiontitle" id="d174823e1101">User response</h2><p>Explicitly qualify the object in the schema with
+<var class="keyword varname">schema-name</var> or
+remove <var class="keyword varname">qualifier</var> from the object name.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -5051</p>
+
+<p> 
+<strong>sqlstate</strong>:  42875</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1131" lang="en-us" id="sql5055c">
+<h1 class="msghead" id="d174823e1131"><span class="title title msgId"><span class="ph ph msgNumber">SQL5055C</span></span>  <span class="shortdesc shortdesc msgText">The content of the local or global database configuration file is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5055C: Explanation"><h2 class="sectiontitle" id="d174823e1155">Explanation</h2><p>There is a database configuration file called SQLDBCONF.  There can be two types of database configuration file:</p>
+
+<ul>
+<li>The global database configuration file in the partition-global directory contains configuration details that pertain to resources that must be consistent across the database.</li>
+
+<li>The local database configuration file in the DB2 member-specific directory contains configuration details that pertain to one DB2 member.</li>
+</ul>
+
+<p>These database configuration files must not be altered by any programs other than the database manager.</p>
+
+<p>This message is returned when either the global database configuration file or the DB2 member-specific database configuration file is invalid.  This message can also be returned when there is an inconsistency between the global database configuration file and one or more of the DB2 member-specific database configuration files.  The files might be invalid because they were altered by a text editor or a program other than the database manager.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5055C: User response"><h2 class="sectiontitle" id="d174823e1175">User response</h2><p>Recreate the database or restore the database from a backup image.</p>
+
+<p><strong>sqlcode</strong>:  -5055</p>
+
+<p><strong>sqlstate</strong>:  58031</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1196" lang="en-us" id="sql5060n">
+<h1 class="msghead" id="d174823e1196"><span class="title title msgId"><span class="ph ph msgNumber">SQL5060N</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter token specified is
+invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5060N: Explanation"><h2 class="sectiontitle" id="d174823e1220">Explanation</h2><p>A token number specified in the sqlfupd structure passed to a Configuration Services API is not valid.  It does not represent any of the supported configuration parameters. Alternatively, if an UPDATE was attempted, the token specified may be that of an unmodifiable configuration parameter.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5060N: User response"><h2 class="sectiontitle" id="d174823e1226">User response</h2><p>Correct the sqlfupd structure and then rerun the program.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1238" lang="en-us" id="sql5061n">
+<h1 class="msghead" id="d174823e1238"><span class="title title msgId"><span class="ph ph msgNumber">SQL5061N</span></span>  <span class="shortdesc shortdesc msgText">An invalid pointer to structure sqlfupd was passed
+to Configuration Services.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5061N: Explanation"><h2 class="sectiontitle" id="d174823e1262">Explanation</h2><p>The pointer to structure sqlfupd passed as a parameter
+to one of the Configuration Services APIs was invalid.  It is either
+NULL, or
+does not point to an allocated block of memory of the size
+indicated by the count parameter.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5061N: User response"><h2 class="sectiontitle" id="d174823e1268">User response</h2><p>Correct the code which invokes the Configuration Services API,
+and retry
+the API call.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1279" lang="en-us" id="sql5062n">
+<h1 class="msghead" id="d174823e1279"><span class="title title msgId"><span class="ph ph msgNumber">SQL5062N</span></span>  <span class="shortdesc shortdesc msgText">An invalid pointer was passed within the sqlfupd
+structure to Configuration Services.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5062N: Explanation"><h2 class="sectiontitle" id="d174823e1303">Explanation</h2><p>The structure sqlfupd passed as a parameter to one of the
+Configuration Services APIs contained an invalid pointer.
+The pointer is
+either NULL, or does not point to an allocated block of memory.
+Each token passed in the structure must have a corresponding
+pointer to a field that is either passed in or out of the API.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5062N: User response"><h2 class="sectiontitle" id="d174823e1309">User response</h2><p>Correct the code which invokes Configuration Services,
+and rerun
+the program.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1321" lang="en-us" id="sql5065c">
+<h1 class="msghead" id="d174823e1321"><span class="title title msgId"><span class="ph ph msgNumber">SQL5065C</span></span>  <span class="shortdesc shortdesc msgText">The nodetype value in the database manager
+configuration file is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5065C: Explanation"><h2 class="sectiontitle" id="d174823e1345">Explanation</h2><p>The 
+<em>nodetype</em> parameter in the
+database manager configuration file is not valid.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5065C: User response"><h2 class="sectiontitle" id="d174823e1357">User response</h2><p>Reinstall the database manager.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1368" lang="en-us" id="sql5066w">
+<h1 class="msghead" id="d174823e1368"><span class="title title msgId"><span class="ph ph msgNumber">SQL5066W</span></span>  <span class="shortdesc shortdesc msgText">The database configuration parameter value
+for token <var class="keyword varname vartype=quotedString varnumber=1">token-name</var> has been truncated.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5066W: Explanation"><h2 class="sectiontitle" id="d174823e1395">Explanation</h2><p>The database configuration parameter value is larger than
+the specified token can contain.</p>
+
+<p>A new token now represents this database configuration parameter
+value and should be used if the value is larger than can be
+contained by the old token.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5066W: User response"><h2 class="sectiontitle" id="d174823e1404">User response</h2><p>Use the new token for this database configuration parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1416" lang="en-us" id="sql5070n">
+<h1 class="msghead" id="d174823e1416"><span class="title title msgId"><span class="ph ph msgNumber">SQL5070N</span></span>  <span class="shortdesc shortdesc msgText">The count parameter in the configuration command
+is not valid.  It must be greater than 0.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5070N: Explanation"><h2 class="sectiontitle" id="d174823e1440">Explanation</h2><p>The count value passed as a parameter to a Configuration Services
+API must be greater than 0.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5070N: User response"><h2 class="sectiontitle" id="d174823e1449">User response</h2><p>Correct the code which invokes Configuration Services,
+and rerun the program.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1460" lang="en-us" id="sql5075n">
+<h1 class="msghead" id="d174823e1460"><span class="title title msgId"><span class="ph ph msgNumber">SQL5075N</span></span>  <span class="shortdesc shortdesc msgText">The configuration utility was interrupted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5075N: Explanation"><h2 class="sectiontitle" id="d174823e1484">Explanation</h2><p>An interrupt was received by the configuration utility.
+The user may have pressed the interrupt key sequence.</p>
+
+<p>The command was not processed.
+Any requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5075N: User response"><h2 class="sectiontitle" id="d174823e1493">User response</h2><p>Resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1505" lang="en-us" id="sql5076w">
+<h1 class="msghead" id="d174823e1505"><span class="title title msgId"><span class="ph ph msgNumber">SQL5076W</span></span>  <span class="shortdesc shortdesc msgText">The update completed successfully. The current value
+of NOTIFYLEVEL will cause some health monitor notifications not to be
+issued to the notification log.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5076W: Explanation"><h2 class="sectiontitle" id="d174823e1529">Explanation</h2><p>Health Monitor issues notifications to the notification log and to specified e-mail
+and page contacts. The current value of NOTIFYLEVEL is set too low to have
+notifications be issued for alarms and warnings.
+NOTIFYLEVEL must be set to 2 or higher for alarm notifications and 3 or
+higher for warning notifications.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5076W: User response"><h2 class="sectiontitle" id="d174823e1535">User response</h2><p>Increase the value of the database manager configuration parameter
+NOTIFYLEVEL. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1546" lang="en-us" id="sql5077n">
+<h1 class="msghead" id="d174823e1546"><span class="title title msgId"><span class="ph ph msgNumber">SQL5077N</span></span>  <span class="shortdesc shortdesc msgText">The parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> is not supported by
+the Configuration Advisor for this server release.
+Supported parameters include <var class="keyword varname vartype=quotedString varnumber=2">supported-parameters</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5077N: Explanation"><h2 class="sectiontitle" id="d174823e1576">Explanation</h2><p>The parameter specified is not supported by this server
+release.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5077N: User response"><h2 class="sectiontitle" id="d174823e1582">User response</h2><p>Reissue the command without the parameter or replace it
+with another supported parameter.  </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1594" lang="en-us" id="sql5081n">
+<h1 class="msghead" id="d174823e1594"><span class="title title msgId"><span class="ph ph msgNumber">SQL5081N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database configuration file for
+the size of the buffer pool (buffpage) is not in the valid range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5081N: Explanation"><h2 class="sectiontitle" id="d174823e1618">Explanation</h2><p>The minimum value for
+the size of the buffer pool
+is two times the maximum number of active processes (maxappls).
+The maximum value for
+the size of the buffer pool
+is 524288 (number of 4KB pages) and is operating system dependent.
+The maximum value under AIX is 51000
+(204000 for Extended Server Edition) 
+(4KB pages).
+Under HP-UX, the value must be between 16 and 150000 (4KB pages).</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5081N: User response"><h2 class="sectiontitle" id="d174823e1627">User response</h2><p>Resubmit the command with a valid value for
+the size of the buffer pool.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1638" lang="en-us" id="sql5083n">
+<h1 class="msghead" id="d174823e1638"><span class="title title msgId"><span class="ph ph msgNumber">SQL5083N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database configuration file for
+the initial log file size (logfile) is not in the valid range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5083N: Explanation"><h2 class="sectiontitle" id="d174823e1662">Explanation</h2><p>The value for the initial log file size
+must be between 12 and (2**32 - 1).</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5083N: User response"><h2 class="sectiontitle" id="d174823e1671">User response</h2><p>Resubmit the command with a valid value for
+the initial log file size.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1683" lang="en-us" id="sql5091n">
+<h1 class="msghead" id="d174823e1683"><span class="title title msgId"><span class="ph ph msgNumber">SQL5091N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database configuration file for
+the size of one log file extension (logext) is not in the valid range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5091N: Explanation"><h2 class="sectiontitle" id="d174823e1707">Explanation</h2><p>The value for the size of one log file extension
+must be between 4 and 256.</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5091N: User response"><h2 class="sectiontitle" id="d174823e1716">User response</h2><p>Resubmit the command with a valid value for
+the size of one log file extension.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1727" lang="en-us" id="sql5092n">
+<h1 class="msghead" id="d174823e1727"><span class="title title msgId"><span class="ph ph msgNumber">SQL5092N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database configuration file for
+the maximum allowable number of log file extensions (logmaxext) is not
+in the valid range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5092N: Explanation"><h2 class="sectiontitle" id="d174823e1751">Explanation</h2><p>The value for the maximum allowable number of log file extensions
+must be between 0 and (2 * 10**6).</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5092N: User response"><h2 class="sectiontitle" id="d174823e1760">User response</h2><p>Resubmit the command with a valid value for
+the maximum allowable number of log file extensions.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1772" lang="en-us" id="sql5093n">
+<h1 class="msghead" id="d174823e1772"><span class="title title msgId"><span class="ph ph msgNumber">SQL5093N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration
+file for the size of the agent heap is not in the valid range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5093N: Explanation"><h2 class="sectiontitle" id="d174823e1796">Explanation</h2><p>The value for the size of the agent heap must be between
+2 and 85.</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5093N: User response"><h2 class="sectiontitle" id="d174823e1805">User response</h2><p>Resubmit the command with a valid value for the agent heap size.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1816" lang="en-us" id="sql5098w">
+<h1 class="msghead" id="d174823e1816"><span class="title title msgId"><span class="ph ph msgNumber">SQL5098W</span></span>  <span class="shortdesc shortdesc msgText">The default log file path has been changed to <var class="keyword varname vartype=quotedString varnumber=1">logfilepath</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5098W: Explanation"><h2 class="sectiontitle" id="d174823e1843">Explanation</h2><p>The default log file path has been changed from the database directory to the global database directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5098W: User response"><h2 class="sectiontitle" id="d174823e1849">User response</h2><p>Ensure that there is enough disk space in the new default log file path for the log files. If a disk or partition was mounted for the old default log file path, consider changing the mount point to the new default log file path.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e1861" lang="en-us" id="sql5099n">
+<h1 class="msghead" id="d174823e1861"><span class="title title msgId"><span class="ph ph msgNumber">SQL5099N</span></span>  <span class="shortdesc shortdesc msgText">The value <var class="keyword varname vartype=quotedString varnumber=1">value</var> indicated by the database configuration parameter <var class="keyword varname vartype=quotedString varnumber=2">parameter</var> is not valid, reason code <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5099N: Explanation"><h2 class="sectiontitle" id="d174823e1894">Explanation</h2><p>The value of the named parameter is not valid for one of the following reasons:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The path string is longer than 242 bytes.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The path does not exist.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The first directory in the path has a name in the form SQLNNNNN, where NNNNN is a value from 00001 to 99999.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>A file with the correct name was found in the specified path, but is not a log file for this database.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The path is currently being used by another database.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The path is currently being used by the same database for another purpose.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The device specified by the path is not big enough to hold the log files.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>A raw device cannot be specified as a NEWLOGPATH, MIRRORLOGPATH, OVERFLOWLOGPATH, FAILARCHPATH, LOGARCHMETH1, or LOGARCHMETH2.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The path cannot be accessed.</p>
+</dd>
+
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The path string is longer than <span class="ph" data-hd-otherprops="dbg2019">192</span> bytes.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>When specifying DISK for a method, the target must be a directory.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>When specifying VENDOR for a method, the target must be a directory.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>LOGARCHMETH2 must be set to OFF if LOGARCHMETH1 is set to USEREXIT or LOGRETAIN.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>When specifying DISK <span class="ph" data-hd-otherprops="dbg2019">,
+VENDOR, or DB2REMOTE</span>, a target value must be specified.</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>A target value cannot be specified when setting the LOGARCHMETH1 configuration parameter to LOGRETAIN or USEREXIT.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>Invalid method specified. Valid values include DISK, TSM, VENDOR, <span class="ph" data-hd-otherprops="dbg2019">DB2REMOTE, </span>USEREXIT, LOGRETAIN, and OFF.</p>
+</dd>
+
+
+<dt class="dlterm">17</dt>
+
+<dd class="dlentry"><p>Cannot switch to circular logging when database is rollforward pending.</p>
+</dd>
+
+
+<dt class="dlterm">19</dt>
+
+<dd class="dlentry"><p>The specified value for the configuration parameter is not valid.  Neither USEREXIT nor LOGRETAIN are valid values for the database configuration parameter LOGARCHMETH2.</p>
+</dd>
+</dl>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5099N: User response"><h2 class="sectiontitle" id="d174823e2079">User response</h2><p>Resubmit the command with a valid value for the named parameter.</p>
+
+<p><strong>sqlcode</strong>:  -5099</p>
+
+<p><strong>sqlstate</strong>:  08004</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2100" lang="en-us" id="sql5100n">
+<h1 class="msghead" id="d174823e2100"><span class="title title msgId"><span class="ph ph msgNumber">SQL5100N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration
+file for the number of allowed concurrent databases is too large.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5100N: Explanation"><h2 class="sectiontitle" id="d174823e2124">Explanation</h2><p>The requested change would cause (1) the number of allowed
+concurrent databases to be too large or (2) the number of segments
+allowed for the database manager to be too small.</p>
+
+<div class="p">The number of allowed concurrent databases is restricted by
+the maximum number of segments allowed for DB2.
+The following condition must always be true:
+<pre class="codeblock"><code>segments &gt;=
+  ((number of databases * 5) + 1)</code></pre></div>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5100N: User response"><h2 class="sectiontitle" id="d174823e2138">User response</h2><div class="p">Do one of the following:
+<ul>
+<li>Increase the maximum number of segments allowed for DB2.</li>
+
+<li>Decrease the number of allowed concurrent databases.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2157" lang="en-us" id="sql5102c">
+<h1 class="msghead" id="d174823e2157"><span class="title title msgId"><span class="ph ph msgNumber">SQL5102C</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=quotedString varnumber=1">edition-name</var> edition of the product  does not support the DB2 workload manager (WLM).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5102C: Explanation"><h2 class="sectiontitle" id="d174823e2184">Explanation</h2><p>This edition of DB2 does not offer the WLM utility.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5102C: User response"><h2 class="sectiontitle" id="d174823e2190">User response</h2><p>Purchase the license key for the DB2 Performance Optimization Feature from your IBM representative or authorized dealer. Then update your license using the db2licm command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2201" lang="en-us" id="sql5103n">
+<h1 class="msghead" id="d174823e2201"><span class="title title msgId"><span class="ph ph msgNumber">SQL5103N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database configuration file for
+the size of the buffer pool (buffpage) is too small for the maximum
+number of active applications (maxappls).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5103N: Explanation"><h2 class="sectiontitle" id="d174823e2225">Explanation</h2><div class="p">The requested change would cause the maximum number of
+active applications to be too large for the size of the buffer pool.
+The following condition must always be true:
+<pre class="codeblock"><code>  bufferpool_size &gt; 
+    (number of active_processes * 2)</code></pre></div>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5103N: User response"><h2 class="sectiontitle" id="d174823e2236">User response</h2><div class="p">Do one or both of the following:
+<ul>
+<li>Increase the size of the buffer pool.</li>
+
+<li>Decrease the maximum number of active processes allowed.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2255" lang="en-us" id="sql5104n">
+<h1 class="msghead" id="d174823e2255"><span class="title title msgId"><span class="ph ph msgNumber">SQL5104N</span></span>  <span class="shortdesc shortdesc msgText">The query failed because the data in HDFS cannot be mapped to the Hadoop table definition.  Hadoop table name: <var class="keyword varname vartype=quotedString varnumber=1">table-name</var>.  Column index: <var class="keyword varname vartype=quotedString varnumber=2">column-index</var>.  Log entry identifier: <var class="keyword varname vartype=quotedString varnumber=3">log-entry-identifier</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5104N: Explanation"><h2 class="sectiontitle" id="d174823e2288">Explanation</h2><p>A Hadoop table is one that references a Hadoop Distributed File System (HDFS).  You can create an empty Hadoop table by issuing the CREATE HADOOP TABLE statement.  You can create and populate a Hadoop table using a query by issuing the CREATE HADOOP TABLE ... AS statement.</p>
+
+<p>When a query is issued against an empty Hadoop table, the data in HDFS is mapped to the table definition in the CREATE HADOOP TABLE statement that was used to create the Hadoop table.  This message is returned when the data in HDFS cannot be mapped to the table definition.</p>
+
+<p>The token <var class="keyword varname">column-index</var> specifies the ordinal position in the table definition of the column for which there is a data type mismatch.</p>
+
+<p>The log identifier in the token <var class="keyword varname">log-entry-identifier</var> is composed of three parts:</p>
+
+<ol>
+<li>A three-letter prefix that indicates which log file includes diagnostic details.</li>
+
+<li>A three-digit number that indicates on which database partition the log file resides.</li>
+
+<li>An identifier that is printed in the log file near the related diagnostic details.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5104N: User response"><h2 class="sectiontitle" id="d174823e2320">User response</h2><ol>
+<li>Compare the data in HDFS with the table definition.</li>
+
+<li>Change the data in HDFS or change the table definition so the data in HDFS can be mapped to the table definition.</li>
+
+<li>Issue the statement again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -5104</p>
+
+<p><strong>sqlstate</strong>:  530AC</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2349" lang="en-us" id="sql5105n">
+<h1 class="msghead" id="d174823e2349"><span class="title title msgId"><span class="ph ph msgNumber">SQL5105N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because a Big SQL component encountered an error. Component receiving the error: <var class="keyword varname vartype=quotedString varnumber=1">component-name</var>. Component returning the error: <var class="keyword varname vartype=quotedString varnumber=2">component-name</var>. Log entry identifier: <var class="keyword varname vartype=quotedString varnumber=3">log-entry-identifier</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5105N: Explanation"><h2 class="sectiontitle" id="d174823e2382">Explanation</h2><p>The log identifier in the token <var class="keyword varname">log-entry-identifier</var> is composed of three parts:</p>
+
+<ol>
+<li>A three-letter prefix that indicates which log file includes diagnostic details.</li>
+
+<li>A three-digit number that indicates on which database partition the log file resides.</li>
+
+<li>An identifier that is printed in the log file near the related diagnostic details.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5105N: User response"><h2 class="sectiontitle" id="d174823e2402">User response</h2><ol>
+<li>Locate the diagnostic details in the appropriate log file by using the information in the <var class="keyword varname">log-entry-identifier</var> runtime token.</li>
+
+<li>Resolve the cause of the problem.</li>
+
+<li>Submit the statement again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -5105</p>
+
+<p><strong>sqlstate</strong>:  58040</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2435" lang="en-us" id="sql5106n">
+<h1 class="msghead" id="d174823e2435"><span class="title title msgId"><span class="ph ph msgNumber">SQL5106N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because of a mismatch between meta data in the Hive metastore and the Hadoop table definition in the Big SQL catalogs.  Hadoop table name: <var class="keyword varname vartype=quotedString varnumber=1">table-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5106N: Explanation"><h2 class="sectiontitle" id="d174823e2462">Explanation</h2><p>A Hadoop table is one that references a Hadoop Distributed File System (HDFS).  You can create an empty Hadoop table by issuing the CREATE HADOOP TABLE statement.  You can create and populate a Hadoop table using a query by issuing the CREATE HADOOP TABLE ... AS statement.</p>
+
+<p>The meta data in the Big SQL catalogs must be kept synchronized with the Hive metastore in order for objects in the Hive to be available for Big SQL queries.  Normally, this is done automatically, depending on the setting of the CATALOG_SYNCH_MODE global variable.</p>
+
+<p>This message is returned when there are changes to either the Hive metastore or the Big SQL catalogs which causes them to become unsynchronized.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5106N: User response"><h2 class="sectiontitle" id="d174823e2474">User response</h2><p>Synchronize the Hive metastore and the Big SQL catalogs by performing one of the following methods:</p>
+
+<ul>
+<li>Update the Big SQL catalogs with information from the Hive metastore by using the HCAT_SYNC_OBJECTS procedure.</li>
+
+<li>Manually alter the Big SQL catalogs by disabling automatic synchronizing with the CATALOG_SYNC_MODE variable and then issuing an ALTER TABLE statement.</li>
+
+<li>Cause the Big SQL catalogs to be refreshed by using the HCAT_CACHE_SYNCH function.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -5106</p>
+
+<p><strong>sqlstate</strong>:  530AD</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2506" lang="en-us" id="sql5107n">
+<h1 class="msghead" id="d174823e2506"><span class="title title msgId"><span class="ph ph msgNumber">SQL5107N</span></span>  <span class="shortdesc shortdesc msgText">A configuration file contains an invalid value for a property.  Configuration file name: <var class="keyword varname vartype=quotedString varnumber=1">configuration-file-name</var>.  Property which has an invalid value: <var class="keyword varname vartype=quotedString varnumber=2">property</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5107N: Explanation"><h2 class="sectiontitle" id="d174823e2536">Explanation</h2><p>You can configure components in your IBM InfoSphere BigInsights environment, such as the IBM Big SQL server, the Hadoop Distributed File System (HDFS), the IBM InfoSphere BigInsights Scheduler, or other components, by using configuration files.  For example, you can configure IBM Big SQL server by using a configuration file called bigsql-conf.xml.</p>
+
+<p>This message is returned when a component encounters an invalid configuration setting in the associated configuration file, given in the runtime token <var class="keyword varname">configuration-file-name</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5107N: User response"><h2 class="sectiontitle" id="d174823e2548">User response</h2><p>Correct any invalid configuration properties in the given configuration file, and then synchronize the configuration of the component.</p>
+
+<p><strong>sqlcode</strong>:  -5107</p>
+
+<p><strong>sqlstate</strong>:  560D9</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2570" lang="en-us" id="sql5108w">
+<h1 class="msghead" id="d174823e2570"><span class="title title msgId"><span class="ph ph msgNumber">SQL5108W</span></span>  <span class="shortdesc shortdesc msgText">Loading of data to a Hadoop table or processing of data in an external table completed. Number of rows processed: <var class="keyword varname vartype=quotedString varnumber=1">processed-row-count</var>. Number of source records: <var class="keyword varname vartype=quotedString varnumber=2">total-record-count</var>. If the source was a file, number of skipped lines: <var class="keyword varname vartype=quotedString varnumber=3">line-count</var>. Number of rejected source records: <var class="keyword varname vartype=quotedString varnumber=4">rejected-record-count</var>. Job or file identifier: <var class="keyword varname vartype=quotedString varnumber=5">job-id</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5108W: Explanation"><h2 class="sectiontitle" id="d174823e2609">Explanation</h2><p>You can issue a LOAD HADOOP statement to extract data from an external data source (such as a relational database or delimited file in an external or local file system) and load that data into a Hadoop table. You can issue SQL statements that reference an external table, which is based on a delimited file in an external or local file system.</p>
+
+<p>When you do either of these things, the source data is processed one record at a time. This message is issued when data in at least one source record is invalid. Data is invalid when:</p>
+
+<ul>
+<li>The type of the data does not match the data type of the target column.</li>
+
+<li>The value of the data is not valid for the target column.</li>
+
+<li>The data is malformed.</li>
+</ul>
+
+<p>If a record contains invalid data, the load utility or external table operation rejects the record.</p>
+
+<p>If a LOAD HADOOP statement:</p>
+
+<ul>
+<li>Specifies the 'rejected.records.files.dir' property, rejected records are saved in the specified location</li>
+
+<li>Does not specify the 'rejected.records.files.dir' property, rejected records are saved in the bigsql.log log file</li>
+</ul>
+
+<p>For an external table, a LOG file (containing information about the processing of the original statement) and a BAD file (containing the rejected records) are generated in the specified LOGDIR directory or in the default db2dump directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5108W: User response"><h2 class="sectiontitle" id="d174823e2647">User response</h2><p><strong>sqlcode</strong>:  +5108</p>
+
+<p><strong>sqlstate</strong>:  01HN2</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2665" lang="en-us" id="sql5109n">
+<h1 class="msghead" id="d174823e2665"><span class="title title msgId"><span class="ph ph msgNumber">SQL5109N</span></span>  <span class="shortdesc shortdesc msgText">The LOAD HADOOP statement was aborted and no data was loaded into the target table because the number of rejected source records exceeded the limit.  Number of rejected source records: <var class="keyword varname vartype=quotedString varnumber=1">rejected-records-count</var>. Rejection limit: <var class="keyword varname vartype=quotedString varnumber=2">rejected-records-limit</var>. Job identifier:<var class="keyword varname vartype=quotedString varnumber=3">job-id</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5109N: Explanation"><h2 class="sectiontitle" id="d174823e2698">Explanation</h2><p>You can extract data from external data sources, such relational databases or delimited files that are in an external or local file system, and load that data into a Hadoop table by using the LOAD HADOOP statement.</p>
+
+<p>The source data is loaded one record at a time into the target table.  If the data in a source record are invalid for the corresponding target columns, the load utility will reject the record.  A value can be invalid for the corresponding target column for different reasons:</p>
+
+<ul>
+<li>The type of the data does not match the data type of the target column</li>
+
+<li>The value of the data is not valid for the target column</li>
+
+<li>The data is malformed</li>
+</ul>
+
+<p>When a source record is rejected, the data in that record are not loaded into the target table:</p>
+
+<ul>
+<li>If the 'rejected.records.files.dir' property is specified with the LOAD HADOOP statement, rejected records are saved in the specified location.</li>
+
+<li>If the 'rejected.records.files.dir' property is not specified with the LOAD HADOOP statement, rejected records are saved in the bigsql.log log file.</li>
+</ul>
+
+<p>This message is returned when the load operation fails and no data is loaded into the target table because too many source records were rejected:</p>
+
+<ul>
+<li>The number of rejected records exceeded the number that was specified with the 'max.rejected.records' property.</li>
+
+<li>The number of rejected records exceeded the default maximum number of rejected records allowed.</li>
+</ul>
+
+<p>Details about rejected records are in the Hadoop task logs.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5109N: User response"><h2 class="sectiontitle" id="d174823e2744">User response</h2><p>Resolve the reason that caused the records to be rejected and then perform the load operation again.</p>
+
+<p>Optional: Increase the value given with the 'max.rejected.records' property.</p>
+
+<p><strong>sqlcode</strong>:  -5109</p>
+
+<p><strong>sqlstate</strong>:  5U060</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2769" lang="en-us" id="sql5110n">
+<h1 class="msghead" id="d174823e2769"><span class="title title msgId"><span class="ph ph msgNumber">SQL5110N</span></span>  <span class="shortdesc shortdesc msgText">The LOAD HADOOP statement was not processed because the load utility was unable to determine which column to use for splitting the source data.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5110N: Explanation"><h2 class="sectiontitle" id="d174823e2793">Explanation</h2><p>You can extract data from external data sources, such relational databases or delimited files that are in an external or local file system, and load that data into a Hadoop table by using the LOAD HADOOP statement.</p>
+
+<p>If the load utility is using more than one map task, the load utility distributes the work between the map tasks by splitting the source data into subsets and loading the data in parallel:</p>
+
+<ul>
+<li>If a column name is specified with the SPLIT COLUMN clause in the LOAD HADOOP statement, the load utility splits the data according to the specified column name.</li>
+
+<li>If the SPLIT COLUMN clause is not specified with the LOAD HADOOP statement, the load utility will attempt to select a column to split the source data: 
+<ul>
+<li>If the source is an SQL query, the load utility will select one of the columns in the query.</li>
+
+<li>If the source is a database table, the load utility will use the primary key of the source table.</li>
+</ul>
+</li>
+</ul>
+
+<p>This message is returned when the load utility cannot determine which column to use for splitting the source data.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5110N: User response"><h2 class="sectiontitle" id="d174823e2820">User response</h2><p>To load the source data in parallel, specify which column to use for splitting the data in one of the following ways:</p>
+
+<ul>
+<li>Specify the SPLIT COLUMN clause in the LOAD HADOOP statement.</li>
+
+<li>If the source is a database table, define a primary key on the source table.</li>
+</ul>
+
+<p>To load the data sequentially, set the 'num.map.tasks' property to 1.</p>
+
+<p><strong>sqlcode</strong>:  -5110</p>
+
+<p><strong>sqlstate</strong>:  5U060</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e2852" lang="en-us" id="sql5111n">
+<h1 class="msghead" id="d174823e2852"><span class="title title msgId"><span class="ph ph msgNumber">SQL5111N</span></span>  <span class="shortdesc shortdesc msgText">The LOAD HADOOP statement failed because of an error with a component. Component name: <var class="keyword varname vartype=quotedString varnumber=1">component-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>. Log entry identifier: <var class="keyword varname vartype=quotedString varnumber=3">log-entry-identifier</var>. Job identifier: <var class="keyword varname vartype=quotedString varnumber=4">job-id</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5111N: Explanation"><h2 class="sectiontitle" id="d174823e2888">Explanation</h2><p>You can extract data from external data sources, such relational databases or delimited files that are in an external or local file system, and load that data into a Hadoop table by using the LOAD HADOOP statement.</p>
+
+<p>The reason code indicates the type of problem:</p>
+
+<dl>
+
+<dt class="dlterm">Reason code 1</dt>
+
+<dd class="dlentry"><p>Connection to the data source failed for one of the following reasons:</p>
+
+<ul>
+<li>Authentication failed for the given credentials</li>
+
+<li>The source database JDBC driver JAR files are not installed in the Sqoop directory</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">Reason code 2</dt>
+
+<dd class="dlentry"><p>The SQL query failed:</p>
+
+<ul>
+<li>If the FROM QUERY clause was specified, this message can be returned with reason code 2 if the specified query has a syntax error.</li>
+
+<li>If the FROM TABLE clause was specified, this message can be returned with reason code 2 when the load utility generates an invalid SQL query because of a problem with what was specified with the FROM TABLE clause: 
+<ul>
+<li>The specified table name, or any column name is incorrect</li>
+
+<li>The WHERE clause has a syntax error</li>
+</ul>
+</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">Reason code 3</dt>
+
+<dd class="dlentry"><p>The data in the source does not match the target table definition.</p>
+</dd>
+
+
+<dt class="dlterm">Reason code 4</dt>
+
+<dd class="dlentry"><p>The job with identifier <var class="keyword varname">job-id</var> failed to execute.</p>
+</dd>
+</dl>
+
+<p>The log identifier in the token <var class="keyword varname">log-entry-identifier</var> is composed of three parts:</p>
+
+<ol>
+<li>A three-letter prefix that indicates which log file includes diagnostic details.</li>
+
+<li>A three-digit number that indicates on which database partition the log file resides.</li>
+
+<li>An identifier that is printed in the log file near the related diagnostic details.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5111N: User response"><h2 class="sectiontitle" id="d174823e2978">User response</h2><p>Resolve the cause of the problem according to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">Reason code 1</dt>
+
+<dd class="dlentry"><ul>
+<li>Correct the user or password in the URL string specified in the LOAD HADOOP statement.</li>
+
+<li>Copy the source database JDBC driver JAR files into the Sqoop directory.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">Reason code 2</dt>
+
+<dd class="dlentry"><ul>
+<li>If the FROM QUERY clause is being used, correct the syntax of the query.</li>
+
+<li>If the FROM TABLE clause is being used, correct the details specified: the table name, the column names, the WHERE clause.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">Reason code 3</dt>
+
+<dd class="dlentry"><ul>
+<li>Drop and recreate the target table to match the source data.</li>
+
+<li>Specify additional LOAD HADOOP options, such as the 'field.index' property, to map the source data to the target columns.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">Reason code 4</dt>
+
+<dd class="dlentry"><p>Locate the diagnostic details in the appropriate log file by using the information in the <var class="keyword varname">log-entry-identifier</var> runtime token, and then troubleshoot the cause of the failure.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -5111</p>
+
+<p><strong>sqlstate</strong>:  5U060</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3056" lang="en-us" id="sql5112n">
+<h1 class="msghead" id="d174823e3056"><span class="title title msgId"><span class="ph ph msgNumber">SQL5112N</span></span>  <span class="shortdesc shortdesc msgText">The value of the configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var>
+must be either 0 or 1.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5112N: Explanation"><h2 class="sectiontitle" id="d174823e3083">Explanation</h2><p>The request is not completed because the value given for
+<var class="keyword varname">parameter</var> is invalid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5112N: User response"><h2 class="sectiontitle" id="d174823e3092">User response</h2><p>Ensure that the value specified for <var class="keyword varname">parameter</var> is
+either 0 or 1, then try the request again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3106" lang="en-us" id="sql5113n">
+<h1 class="msghead" id="d174823e3106"><span class="title title msgId"><span class="ph ph msgNumber">SQL5113N</span></span>  <span class="shortdesc shortdesc msgText">ALT_COLLATE cannot be updated for a Unicode database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5113N: Explanation"><h2 class="sectiontitle" id="d174823e3130">Explanation</h2><p>The alternate collating sequence (ALT_COLLATE) database configuration parameter
+can only be updated for a non-Unicode database. In a Unicode database, all
+tables must be collated using the collating sequence specified when the
+database was created.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5113N: User response"><h2 class="sectiontitle" id="d174823e3136">User response</h2><p>Do not update the ALT_COLLATE database configuration parameter for a
+Unicode database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3148" lang="en-us" id="sql5114n">
+<h1 class="msghead" id="d174823e3148"><span class="title title msgId"><span class="ph ph msgNumber">SQL5114N</span></span>  <span class="shortdesc shortdesc msgText">The LOAD HADOOP statement was not processed because the specified source URL is invalid.  Specified source URL: <var class="keyword varname vartype=quotedString varnumber=1">source-url</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5114N: Explanation"><h2 class="sectiontitle" id="d174823e3175">Explanation</h2><p>You can extract data from external data sources, such relational databases or delimited files that are in an external or local file system, and load that data into a Hadoop table by using the LOAD HADOOP statement.</p>
+
+<p>To load data from a file, you must specify a URL indicating the location of the file with the USING FILE clause in the LOAD HADOOP statement.  The composition of the string that is specified as the URL must conform to one of four supported formats:</p>
+
+<ul>
+<li>FTP</li>
+
+<li>SFTP (secure FTP, enables using a credentials file)</li>
+
+<li>HDFS (for use with Hadoop Distributed File Systems)</li>
+
+<li>WEBHDFS (for use with remote HDFS sources)</li>
+</ul>
+
+<p>This message is returned when a file URL is specified as a data source, and the specified URL does not conform to one of the supported formats.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5114N: User response"><h2 class="sectiontitle" id="d174823e3201">User response</h2><p>Issue the LOAD HADOOP statement again, specifying a valid source URL.</p>
+
+<p><strong>sqlcode</strong>:  -5114</p>
+
+<p><strong>sqlstate</strong>:  5U060</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3222" lang="en-us" id="sql5115n">
+<h1 class="msghead" id="d174823e3222"><span class="title title msgId"><span class="ph ph msgNumber">SQL5115N</span></span>  <span class="shortdesc shortdesc msgText">The command or statement was not executed because the following functionality is not supported in the current environment: <var class="keyword varname vartype=quotedString varnumber=1">keyword</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5115N: Explanation"><h2 class="sectiontitle" id="d174823e3249">Explanation</h2><p>In IBM Big SQL, there is a database manager underlying the SQL processing engine.</p>
+
+<p>This message is returned when an attempt is made to perform an action directly against the database manager underlying the Big SQL processing engine, and that action is not supported in a Big SQL environment.  The token <var class="keyword varname">keyword</var> indicates which functionality is the source of the problem.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5115N: User response"><h2 class="sectiontitle" id="d174823e3261">User response</h2><p>Remove the unsupported piece from the command or statement, and then issue the command or statement again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3273" lang="en-us" id="sql5120n">
+<h1 class="msghead" id="d174823e3273"><span class="title title msgId"><span class="ph ph msgNumber">SQL5120N</span></span>  <span class="shortdesc shortdesc msgText">Old and new log parameters cannot both be modified
+at the same time.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5120N: Explanation"><h2 class="sectiontitle" id="d174823e3297">Explanation</h2><p>The user is attempting to modify both the previous log parameters
+and the new parameters.  The application should only support the
+parameters of the current release.</p>
+
+<p>The request is denied.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5120N: User response"><h2 class="sectiontitle" id="d174823e3306">User response</h2><p>Modify only the parameters of the current release and retry the
+command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3317" lang="en-us" id="sql5121n">
+<h1 class="msghead" id="d174823e3317"><span class="title title msgId"><span class="ph ph msgNumber">SQL5121N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database configuration file for
+configuration options is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5121N: Explanation"><h2 class="sectiontitle" id="d174823e3341">Explanation</h2><p>The value set for database options (SQLF_DETS)
+is not valid.  Valid settings are between 0 and 15.  The requested
+change is not made.</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5121N: User response"><h2 class="sectiontitle" id="d174823e3350">User response</h2><p>Resubmit the command with a valid database options value.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3362" lang="en-us" id="sql5122n">
+<h1 class="msghead" id="d174823e3362"><span class="title title msgId"><span class="ph ph msgNumber">SQL5122N</span></span>  <span class="shortdesc shortdesc msgText">Access to the database was denied because of a machine dependent check.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5122N: Explanation"><h2 class="sectiontitle" id="d174823e3386">Explanation</h2><p>The database and database configuration file cannot be accessed because of copy protection.</p>
+
+<p>The user request is denied.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5122N: User response"><h2 class="sectiontitle" id="d174823e3395">User response</h2><p>Have a user with SYSADM authority return to the original database, modify the configuration file to turn off the copy protection, and create a new backup, which can be used to restore the database. If the original database is no longer available, contact your service representative.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3406" lang="en-us" id="sql5123n">
+<h1 class="msghead" id="d174823e3406"><span class="title title msgId"><span class="ph ph msgNumber">SQL5123N</span></span>  <span class="shortdesc shortdesc msgText">Database <var class="keyword varname vartype=quotedString varnumber=1">name</var> cannot be configured because an I/O error occurred while accessing the log control file.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5123N: Explanation"><h2 class="sectiontitle" id="d174823e3433">Explanation</h2><p>There are two log control files:</p>
+
+<ul>
+<li>Primary log control file SQLOGCTL1.LFH</li>
+
+<li>Secondary log control file SQLOGCTL2.LFH
+<p>The secondary log control file is a mirror copy of the primary log control file for use in the event that there is a problem with the primary log control file.</p>
+</li>
+</ul>
+
+<p>This error was returned because the database manager could access neither the primary log control file nor the secondary log control file for the specified database.</p>
+
+<p>If the database manager can access neither of the log control files, you cannot use the database.</p>
+
+<p>The requested change was not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5123N: User response"><h2 class="sectiontitle" id="d174823e3458">User response</h2><p>Restore the database from a backup copy or recreate the database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3470" lang="en-us" id="sql5124n">
+<h1 class="msghead" id="d174823e3470"><span class="title title msgId"><span class="ph ph msgNumber">SQL5124N</span></span>  <span class="shortdesc shortdesc msgText">DB2 failed to update or reset the database configuration on one or more partitions. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5124N: Explanation"><h2 class="sectiontitle" id="d174823e3497">Explanation</h2><p>DB2 uses fast communication manager (FCM) messages to broadcast an update or reset request. FCM communication can fail just after issuing the db2start command when it is not fully initialized.</p>
+
+<p>Possible reason code values are:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The database configuration was not changed because the update or reset failed on at least one partition. See the db2diag log file for more details.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The database configuration is inconsistent among the nodes because the update or reset failed on at least one partition. See the db2diag log file for more details.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5124N: User response"><h2 class="sectiontitle" id="d174823e3526">User response</h2><p>The user response corresponding to the reason code is as follows:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Make sure all partitions are up and running and resubmit the request.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Make sure all partitions are up and running. Resubmit the request or review the configuration updates and apply them manually on all partitions.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3557" lang="en-us" id="sql5125n">
+<h1 class="msghead" id="d174823e3557"><span class="title title msgId"><span class="ph ph msgNumber">SQL5125N</span></span>  <span class="shortdesc shortdesc msgText">The update operation on the global database configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter-name</var> could not be applied on the specified member.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5125N: Explanation"><h2 class="sectiontitle" id="d174823e3584">Explanation</h2><p>The values of global database configuration parameters are shared across an entire DB2 pureScale instance.</p>
+
+<p>Global database configuration parameter values must be the same on all members.  This error message is returned when an attempt is made to apply a value for a global database configuration parameter to a specific member using the UPDATE DB CFG command with the MEMBER clause.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5125N: User response"><h2 class="sectiontitle" id="d174823e3593">User response</h2><p>Issue an update operation using the UPDATE DB CFG command without the MEMBER clause. This value applies to all members in the DB2 pureScale instance.</p>
+
+<p><strong>sqlcode</strong>:  -5125</p>
+
+<p><strong>sqlstate</strong>:  5U053</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3615" lang="en-us" id="sql5126n">
+<h1 class="msghead" id="d174823e3615"><span class="title title msgId"><span class="ph ph msgNumber">SQL5126N</span></span>  <span class="shortdesc shortdesc msgText">The UPDATE DATABASE MANAGER CONFIGURATION command failed because the specified database manager configuration parameter is not supported by the current instance node type. Database manager configuration parameter: <var class="keyword varname vartype=quotedString varnumber=1">parameter-name</var>. Instance node type: <var class="keyword varname vartype=quotedString varnumber=2">instance-node-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5126N: Explanation"><h2 class="sectiontitle" id="d174823e3645">Explanation</h2><p>Different database products are associated with different database manager instance node types.  The current instance node type is indicated by the runtime token <var class="keyword varname">instance-node-type</var>:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Database server with local and remote clients</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Client</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Database server with local clients</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Partitioned database Server with local and remote clients</p>
+</dd>
+</dl>
+
+<p>You can configure DB2 database functionality by setting database manager configuration parameters.  Each instance node type supports only the database manager configuration parameters for the database products that are associated with that instance node type.</p>
+
+<p>This message is returned when an attempt is made to update a database manager configuration parameter that is not supported by the current instance node type.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5126N: User response"><h2 class="sectiontitle" id="d174823e3698">User response</h2><ol>
+<li>List the database manager configuration parameters that are supported by the current instance node type by using the GET DATABASE MANAGER CONFIGURATION command.</li>
+
+<li>Perform one of the following actions: 
+<ul>
+<li>Achieve the desired configuration by updating one or more database manager configuration parameters that are supported with the current instance node type.</li>
+
+<li>If the functionality associated with the failed configuration attempt is supported by a different instance node type, update or upgrade the instance node type to a type that supports the functionality and then reissue the UPDATE DATABASE MANAGER CONFIGURATION command.</li>
+</ul>
+</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -5126</p>
+
+<p><strong>sqlstate</strong>:  5U001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3731" lang="en-us" id="sql5130n">
+<h1 class="msghead" id="d174823e3731"><span class="title title msgId"><span class="ph ph msgNumber">SQL5130N</span></span>  <span class="shortdesc shortdesc msgText">The value specified for the configuration
+parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> is not in the valid range of <var class="keyword varname vartype=quotedString varnumber=2">start-of-range</var> to <var class="keyword varname vartype=quotedString varnumber=3">end-of-range</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5130N: Explanation"><h2 class="sectiontitle" id="d174823e3764">Explanation</h2><p>The request is not done because the value of <var class="keyword varname">parameter</var> is not
+within the valid range.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5130N: User response"><h2 class="sectiontitle" id="d174823e3773">User response</h2><p>Ensure that the value specified for <var class="keyword varname">parameter</var> is within the
+valid range, then try the request again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3788" lang="en-us" id="sql5131n">
+<h1 class="msghead" id="d174823e3788"><span class="title title msgId"><span class="ph ph msgNumber">SQL5131N</span></span>  <span class="shortdesc shortdesc msgText">The value specified for the configuration
+parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> is not in the valid range.  The valid range is "-1", or
+from <var class="keyword varname vartype=quotedString varnumber=2">start-of-range</var> to <var class="keyword varname vartype=quotedString varnumber=3">end-of-range</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5131N: Explanation"><h2 class="sectiontitle" id="d174823e3821">Explanation</h2><p>The request is not done because the value of <var class="keyword varname">parameter</var> is not
+within the valid range.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5131N: User response"><h2 class="sectiontitle" id="d174823e3830">User response</h2><p>Ensure that the value specified for <var class="keyword varname">parameter</var> is within the
+valid range, then try the request again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3844" lang="en-us" id="sql5132n">
+<h1 class="msghead" id="d174823e3844"><span class="title title msgId"><span class="ph ph msgNumber">SQL5132N</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> is
+null or too long.  The maximum length is <var class="keyword varname vartype=quotedString varnumber=2">maximum-length</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5132N: Explanation"><h2 class="sectiontitle" id="d174823e3874">Explanation</h2><p>The configuration parameter is not set or too long.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5132N: User response"><h2 class="sectiontitle" id="d174823e3880">User response</h2><p>Change the value of the configuration parameter to within
+the maximum length given.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3892" lang="en-us" id="sql5133n">
+<h1 class="msghead" id="d174823e3892"><span class="title title msgId"><span class="ph ph msgNumber">SQL5133N</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter was not updated because the specified value is not valid.  Specified value: <var class="keyword varname vartype=quotedString varnumber=1">value</var>.  Configuration parameter name: <var class="keyword varname vartype=quotedString varnumber=2">parm</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5133N: Explanation"><h2 class="sectiontitle" id="d174823e3922">Explanation</h2><p>You can configure the characteristics of your database manager instance or database by setting instance or database configuration parameters.</p>
+
+<p>This message is returned when an attempt is made to set an instance configuration parameter or a database configuration parameter to an unsupported or invalid value.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5133N: User response"><h2 class="sectiontitle" id="d174823e3931">User response</h2><p>Set the configuration parameter to a valid value.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e3942" lang="en-us" id="sql5134n">
+<h1 class="msghead" id="d174823e3942"><span class="title title msgId"><span class="ph ph msgNumber">SQL5134N</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter tpname
+contains invalid characters.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5134N: Explanation"><h2 class="sectiontitle" id="d174823e3966">Explanation</h2><div class="p">One or more characters in the tpname is not in the valid range.
+The characters in the tpname must be one of the following:
+<ul>
+<li>A - Z</li>
+
+<li>a - z</li>
+
+<li>0 - 9</li>
+
+<li>$</li>
+
+<li>#</li>
+
+<li>@</li>
+
+<li>. (period)</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5134N: User response"><h2 class="sectiontitle" id="d174823e3995">User response</h2><p>Change the tpname and retry the command or function call.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4007" lang="en-us" id="sql5135n">
+<h1 class="msghead" id="d174823e4007"><span class="title title msgId"><span class="ph ph msgNumber">SQL5135N</span></span>  <span class="shortdesc shortdesc msgText">The settings of the maxlocks and maxappls
+configuration parameters do not use all of the locklist space.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5135N: Explanation"><h2 class="sectiontitle" id="d174823e4031">Explanation</h2><div class="p">The number of active processes (maxappls)
+times the maximum percentage of lock list space
+for each application (maxlocks) must be greater than or equal
+to 100.  That is:
+<pre class="codeblock"><code>maxappls * maxlocks &gt;= 100</code></pre></div>
+
+<p>This ensures that all of the allocated locklist space can be used.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5135N: User response"><h2 class="sectiontitle" id="d174823e4042">User response</h2><p>Increase the setting for maxappls, maxlocks, or both.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4053" lang="en-us" id="sql5136n">
+<h1 class="msghead" id="d174823e4053"><span class="title title msgId"><span class="ph ph msgNumber">SQL5136N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration
+file for the default database path (dftdbpath) is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5136N: Explanation"><h2 class="sectiontitle" id="d174823e4077">Explanation</h2><div class="p">An invalid value was specified by dftdbpath.  The rules
+for the default database path on UNIX-based systems are:
+<ol>
+<li>the path must follow the operating system's naming conventions</li>
+
+<li>the path must exist</li>
+
+<li>the path must be less than or equal to 215 characters</li>
+</ol>
+</div>
+
+<div class="p">The rules for other platforms are:
+<ol>
+<li>the path must be a drive letter</li>
+
+<li>the drive must exist</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5136N: User response"><h2 class="sectiontitle" id="d174823e4103">User response</h2><p>Change the dftdbpath and retry the command or
+function call.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4115" lang="en-us" id="sql5137n">
+<h1 class="msghead" id="d174823e4115"><span class="title title msgId"><span class="ph ph msgNumber">SQL5137N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration file for the diagnostic directory path (diagpath) is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5137N: Explanation"><h2 class="sectiontitle" id="d174823e4139">Explanation</h2><p>There are a number of reasons why the specified diagnostic directory path might be invalid:</p>
+
+<ul>
+<li>The specified path does not follow the supported operating system naming convention.</li>
+
+<li>The path does not exist.</li>
+
+<li>The path was set to the same path as the alternate diagnostic path.</li>
+
+<li>The path provided is read-only.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5137N: User response"><h2 class="sectiontitle" id="d174823e4159">User response</h2><p>Change the diagpath and retry the command or function call.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4170" lang="en-us" id="sql5140n">
+<h1 class="msghead" id="d174823e4170"><span class="title title msgId"><span class="ph ph msgNumber">SQL5140N</span></span>  <span class="shortdesc shortdesc msgText">The entry in the database manager configuration parameter "authentication" must be one of SERVER, CLIENT, DCE, KERBEROS, SERVER_ENCRYPT, DCE_SERVER_ENCRYPT, or KRB_SERVER_ENCRYPT.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5140N: Explanation"><h2 class="sectiontitle" id="d174823e4194">Explanation</h2><p>The allowed values for the configuration parameter "authentication" are:</p>
+
+<ul>
+<li>SERVER = 0</li>
+
+<li>CLIENT = 1</li>
+
+<li>DCE = 3</li>
+
+<li>SERVER_ENCRYPT = 4</li>
+
+<li>DCE_SERVER_ENCRYPT = 5</li>
+
+<li>KERBEROS = 7</li>
+
+<li>KRB_SERVER_ENCRYPT = 8</li>
+</ul>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5140N: User response"><h2 class="sectiontitle" id="d174823e4227">User response</h2><p>Resubmit the command with a valid value for "authentication".</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4239" lang="en-us" id="sql5141n">
+<h1 class="msghead" id="d174823e4239"><span class="title title msgId"><span class="ph ph msgNumber">SQL5141N</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter avg_appls is out of
+range.  The valid range is from 1 to the value of maxappls.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5141N: Explanation"><h2 class="sectiontitle" id="d174823e4263">Explanation</h2><p>The allowable range for <cite>avg_appls</cite> is from 1 to the
+value of <cite>maxappls</cite>.</p>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5141N: User response"><h2 class="sectiontitle" id="d174823e4278">User response</h2><div class="p">One or more of the following:
+<ul>
+<li>Change the value of <cite>avg_appls</cite> to a value in the valid
+range.</li>
+
+<li>Increase the value of <cite>maxappls</cite> to a higher value, then
+set <cite>avg_appls</cite> again.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4305" lang="en-us" id="sql5142n">
+<h1 class="msghead" id="d174823e4305"><span class="title title msgId"><span class="ph ph msgNumber">SQL5142N</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter agentpri is not in
+the valid range.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5142N: Explanation"><h2 class="sectiontitle" id="d174823e4329">Explanation</h2><div class="p">The valid values for <cite>agentpri</cite> are -1, or a three digit
+number of which the first digit is a priority class ranging from 2
+to 4 and the last two digits are a priority level within the class in
+the range of 00 to 31.  The priority class is defined as follows:
+<dl>
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry">REGULAR</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry">TIMECRITICAL</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry">FOREGROUNDSERVER</dd>
+</dl>
+</div>
+
+<p>For example, the number 304 would correspond to a priority
+class of 3 (TIMECRITICAL), with a priority level of 4.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5142N: User response"><h2 class="sectiontitle" id="d174823e4366">User response</h2><p>Change the value of the configuration parameter to a value
+within the valid range.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4378" lang="en-us" id="sql5144w">
+<h1 class="msghead" id="d174823e4378"><span class="title title msgId"><span class="ph ph msgNumber">SQL5144W</span></span>  <span class="shortdesc shortdesc msgText">The parameter update took effect but self tuning of the automatic parameters will not occur until the database configuration parameter SELF_TUNING_MEM is set to ON.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5144W: Explanation"><h2 class="sectiontitle" id="d174823e4402">Explanation</h2><p>Self tuning of the AUTOMATIC memory parameters is not active when SELF_TUNING_MEM is set to OFF.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5144W: User response"><h2 class="sectiontitle" id="d174823e4408">User response</h2><p>Update the database configuration parameter SELF_TUNING_MEM to ON to enable self tuning of the AUTOMATIC memory parameters.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4419" lang="en-us" id="sql5145w">
+<h1 class="msghead" id="d174823e4419"><span class="title title msgId"><span class="ph ph msgNumber">SQL5145W</span></span>  <span class="shortdesc shortdesc msgText">The parameter update took effect however tuning of the AUTOMATIC memory parameters was deactivated because an insufficient number of parameters or buffer pools are set to AUTOMATIC.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5145W: Explanation"><h2 class="sectiontitle" id="d174823e4443">Explanation</h2><p>Self tuning of the AUTOMATIC memory parameters is active when 2 or more tunable parameters or buffer pools are set to AUTOMATIC and SELF_TUNING_MEM is ON. Self tuning was active but the configuration update caused its deactivation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5145W: User response"><h2 class="sectiontitle" id="d174823e4449">User response</h2><p>Self tuning of the AUTOMATIC memory parameters will resume when one or more tunable parameters or buffer pools are set to AUTOMATIC.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4461" lang="en-us" id="sql5146w">
+<h1 class="msghead" id="d174823e4461"><span class="title title msgId"><span class="ph ph msgNumber">SQL5146W</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">Parameter_1</var> must be set to 
+<var class="keyword varname vartype=quotedString varnumber=3">Parameter_3</var> when 
+<var class="keyword varname vartype=quotedString varnumber=2">Parameter_2</var> is 
+<var class="keyword varname vartype=quotedString varnumber=3">Parameter_3</var>. 
+<var class="keyword varname vartype=quotedString varnumber=1">Parameter_1</var> has been set to 
+<var class="keyword varname vartype=quotedString varnumber=3">Parameter_3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5146W: Explanation"><h2 class="sectiontitle" id="d174823e4502">Explanation</h2><p>If <var class="keyword varname">Parameter_2</var> is AUTOMATIC then <var class="keyword varname">Parameter_1</var> must be set to AUTOMATIC as well. To this end, <var class="keyword varname">Parameter_1</var> was set to AUTOMATIC.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5146W: User response"><h2 class="sectiontitle" id="d174823e4517">User response</h2><p><var class="keyword varname">Parameter_1</var> was set to AUTOMATIC by DB2. To set this parameter to a different value, first set <var class="keyword varname">Parameter_2</var> to a value and then set <var class="keyword varname">Parameter_1</var> to a value using the MANUAL option of  the db2 update database configuration command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4536" lang="en-us" id="sql5147n">
+<h1 class="msghead" id="d174823e4536"><span class="title title msgId"><span class="ph ph msgNumber">SQL5147N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">Parameter_1</var> cannot be set to MANUAL if <var class="keyword varname vartype=quotedString varnumber=2">Parameter_2</var> is AUTOMATIC.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5147N: Explanation"><h2 class="sectiontitle" id="d174823e4565">Explanation</h2><p>If <var class="keyword varname">Parameter_2</var> is AUTOMATIC then <var class="keyword varname">Parameter_1</var> needs to be AUTOMATIC as well.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5147N: User response"><h2 class="sectiontitle" id="d174823e4577">User response</h2><p>To set <var class="keyword varname">Parameter_1</var> to another value, <var class="keyword varname">Parameter_2</var>  must be set to a value other than AUTOMATIC first.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4595" lang="en-us" id="sql5148w">
+<h1 class="msghead" id="d174823e4595"><span class="title title msgId"><span class="ph ph msgNumber">SQL5148W</span></span>  <span class="shortdesc shortdesc msgText">The database configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">config_param</var> 
+was successfully updated to AUTOMATIC but self tuning of <var class="keyword varname vartype=quotedString varnumber=2">config_param</var> 
+will not take effect until the database manager parameter SHEAPTHRES is set to 0.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5148W: Explanation"><h2 class="sectiontitle" id="d174823e4625">Explanation</h2><p>Self tuning of the database configuration parameter <var class="keyword varname">config_param</var>  is only allowed when the database manager configuration parameter SHEAPTHRES is set to 0.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5148W: User response"><h2 class="sectiontitle" id="d174823e4634">User response</h2><p>If you wish to enable self tuning of the database configuration parameter <var class="keyword varname">config_param</var> set the database manager configuration parameter SHEAPTHRES  to 0.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4648" lang="en-us" id="sql5150n">
+<h1 class="msghead" id="d174823e4648"><span class="title title msgId"><span class="ph ph msgNumber">SQL5150N</span></span>  <span class="shortdesc shortdesc msgText">The value specified for the configuration
+parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> is less than the minimum allowable value of <var class="keyword varname vartype=quotedString varnumber=2">minimum-value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5150N: Explanation"><h2 class="sectiontitle" id="d174823e4678">Explanation</h2><p>The request is not completed because the value given for <var class="keyword varname">parameter</var>
+is too low. <var class="keyword varname">parameter</var> may not be less than <var class="keyword varname">minimum value</var></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5150N: User response"><h2 class="sectiontitle" id="d174823e4692">User response</h2><p>Ensure that the value specified for <var class="keyword varname">parameter</var> is within the
+valid range, then try the request again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4707" lang="en-us" id="sql5151n">
+<h1 class="msghead" id="d174823e4707"><span class="title title msgId"><span class="ph ph msgNumber">SQL5151N</span></span>  <span class="shortdesc shortdesc msgText">The value specified for the configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var>
+is less than the minimum allowable value of <var class="keyword varname vartype=quotedString varnumber=2">minimum-value</var> and is not -1.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5151N: Explanation"><h2 class="sectiontitle" id="d174823e4737">Explanation</h2><p>The request is not completed because the value given for <var class="keyword varname">parameter</var>
+is invalid.  Except for an allowable value of -1, <var class="keyword varname">parameter</var> may not be
+less than <var class="keyword varname">minimum value</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5151N: User response"><h2 class="sectiontitle" id="d174823e4752">User response</h2><p>Ensure that the value specified for <var class="keyword varname">parameter</var> is within the
+valid range, then try the request again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4766" lang="en-us" id="sql5152n">
+<h1 class="msghead" id="d174823e4766"><span class="title title msgId"><span class="ph ph msgNumber">SQL5152N</span></span>  <span class="shortdesc shortdesc msgText">The value specified for the configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var>
+is greater than the maximum allowable value of <var class="keyword varname vartype=quotedString varnumber=2">maximum-value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5152N: Explanation"><h2 class="sectiontitle" id="d174823e4796">Explanation</h2><p>The request is not completed because the value given for <var class="keyword varname">parameter</var>
+is too high.  <var class="keyword varname">parameter</var> may not be greater than <var class="keyword varname">maximum value</var></p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5152N: User response"><h2 class="sectiontitle" id="d174823e4810">User response</h2><p>Ensure that the value specified for <var class="keyword varname">parameter</var> is within the
+valid range, then try the request again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4825" lang="en-us" id="sql5153n">
+<h1 class="msghead" id="d174823e4825"><span class="title title msgId"><span class="ph ph msgNumber">SQL5153N</span></span>  <span class="shortdesc shortdesc msgText">The update cannot be completed because the following
+relationship would be violated:
+<var class="keyword varname vartype=quotedString varnumber=1">condition</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5153N: Explanation"><h2 class="sectiontitle" id="d174823e4852">Explanation</h2><p>A valid configuration file must maintain the following relationship:</p>
+
+<p><var class="keyword varname">condition</var>.</p>
+
+<p>The update request could not be completed because the resulting
+configuration would violate that relationship.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5153N: User response"><h2 class="sectiontitle" id="d174823e4866">User response</h2><p>Resubmit the request, ensuring that the relationship is satisfied.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4877" lang="en-us" id="sql5154n">
+<h1 class="msghead" id="d174823e4877"><span class="title title msgId"><span class="ph ph msgNumber">SQL5154N</span></span>  <span class="shortdesc shortdesc msgText">The requested combination of configuration values
+for "authentication" and <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> is not allowed. Reason code = <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5154N: Explanation"><h2 class="sectiontitle" id="d174823e4907">Explanation</h2><div class="p">The explanation corresponding to the reason code is:
+<ol>
+<li>The database manager configuration parameter
+"authentication" must have the value "CLIENT" if the
+value of <var class="keyword varname">parameter</var> is non-default.</li>
+
+<li>Unable to update the database manager configuration parameter AUTHENTICATION or SRVCON_AUTH to GSSPLUGIN or GSS_SERVER_ENCRYPT before the database manager configuration parameter  <var class="keyword varname">parameter</var> is set.</li>
+
+<li>Unable to update the database manager configuration parameter AUTHENTICATION or SRVCON_AUTH to KERBEROS or  KRB_SERVER_ENCRYPT before the database manager configuration parameter <var class="keyword varname">parameter</var> is set.</li>
+</ol>
+</div>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5154N: User response"><h2 class="sectiontitle" id="d174823e4935">User response</h2><div class="p">The user response corresponding to the reason code is:
+<ol>
+<li>Resubmit the command with a valid combination of configuration parameter values.</li>
+
+<li>Set the database manager configuration parameter  <var class="keyword varname">parameter</var> and then resubmit the statement.</li>
+
+<li>Set the database manager configuration parameter  <var class="keyword varname">parameter</var> and then re
+submit the statement.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e4963" lang="en-us" id="sql5155w">
+<h1 class="msghead" id="d174823e4963"><span class="title title msgId"><span class="ph ph msgNumber">SQL5155W</span></span>  <span class="shortdesc shortdesc msgText">The update completed successfully.  The current
+value of SORTHEAP may adversely affect performance.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5155W: Explanation"><h2 class="sectiontitle" id="d174823e4987">Explanation</h2><p>The value of SORTHEAP is currently greater than half the value of the 
+sort threshold. The sort threshold is the value of the database manager
+configuration parameter SHEAPTHRES or, if SHEAPTHRES is set to 0, it is 
+the value of the database configuration parameter SHEAPTHRES_SHR. This 
+may cause performance to be less than optimal.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5155W: User response"><h2 class="sectiontitle" id="d174823e4993">User response</h2><p>Increase the value of the sort threshold and/or decrease the
+value of SORTHEAP so that the sort threshold is at least twice as
+large as SORTHEAP.</p>
+
+<p>A larger ratio is desirable in most cases.  See
+the <cite>Administration Guide</cite> for recommendations
+on configuration parameter tuning.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5010" lang="en-us" id="sql5156n">
+<h1 class="msghead" id="d174823e5010"><span class="title title msgId"><span class="ph ph msgNumber">SQL5156N</span></span>  <span class="shortdesc shortdesc msgText">The value of the database manager configuration
+parameter "trust_allclnts" must be one of NO, YES, or DRDAONLY.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5156N: Explanation"><h2 class="sectiontitle" id="d174823e5034">Explanation</h2><div class="p">The allowed values for the configuration parameter
+"trust_allclnts" are:
+<ul>
+<li>NO = 0</li>
+
+<li>YES = 1</li>
+
+<li>DRDAONLY = 2</li>
+</ul>
+</div>
+
+<p>The requested change is not made.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5156N: User response"><h2 class="sectiontitle" id="d174823e5053">User response</h2><p>Resubmit the command with a valid value for
+"trust_allclnts".</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5065" lang="en-us" id="sql5160n">
+<h1 class="msghead" id="d174823e5065"><span class="title title msgId"><span class="ph ph msgNumber">SQL5160N</span></span>  <span class="shortdesc shortdesc msgText">Updates to <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> are currently disallowed. An operation is currently pending for this parameter.  All applications must disconnect from the database and the database must be reactivated before new updates to this parameter can be applied.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5160N: Explanation"><h2 class="sectiontitle" id="d174823e5092">Explanation</h2><p>In a cluster environment, this database configuration parameter can have only one pending operation.   Upon database reactivation, cluster resources are updated to ensure consistency between the cluster manager and the database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5160N: User response"><h2 class="sectiontitle" id="d174823e5098">User response</h2><p>To allow another update to the database configuration parameter, ensure that all applications disconnect from the database and issue a DB2 CONNECT TO  command. If the database was explicitly activated, deactivate and reactivate it.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5109" lang="en-us" id="sql5161n">
+<h1 class="msghead" id="d174823e5109"><span class="title title msgId"><span class="ph ph msgNumber">SQL5161N</span></span>  <span class="shortdesc shortdesc msgText">Updates to <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> are disallowed until the next DB2START command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5161N: Explanation"><h2 class="sectiontitle" id="d174823e5136">Explanation</h2><p>In a cluster environment, an update to the database manager configuration parameter can be performed when the previous resource has been deleted.  Cluster resources are deleted when the database manager is restarted in order to maintain consistency.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5161N: User response"><h2 class="sectiontitle" id="d174823e5142">User response</h2><p>To allow updates to the database manager configuration parameter issue DB2STOP and DB2START on the server.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5154" lang="en-us" id="sql5162n">
+<h1 class="msghead" id="d174823e5154"><span class="title title msgId"><span class="ph ph msgNumber">SQL5162N</span></span>  <span class="shortdesc shortdesc msgText">The db2dsdriver.cfg configuration file contains the parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter1</var>, which has the same value as the parameter <var class="keyword varname vartype=quotedString varnumber=2">parameter2</var>, but these parameters cannot have the same value.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5162N: Explanation"><h2 class="sectiontitle" id="d174823e5184">Explanation</h2><p>The db2dsdriver.cfg configuration file contains database information, and is used by the following drivers and clients:</p>
+
+<ul>
+<li>IBM Data Server Driver for ODBC and CLI</li>
+
+<li>IBM Data Server Driver Package</li>
+
+<li>For DB2 Version 9.7: for CLI and open source applications, the IBM Data Server Client and IBM Data Server Runtime Client</li>
+</ul>
+
+<p>The information in the db2dsdriver.cfg file is similar to the information that is in the system database directory on an IBM Data Server Client or IBM Data Server Runtime Client.</p>
+
+<p>The client driver configuration file cannot contain the same value for parameters. If true is specified for one parameter, false must be specified for the other.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5162N: User response"><h2 class="sectiontitle" id="d174823e5207">User response</h2><ol>
+<li>Change the value of one of the parameters in the db2dsdriver.cfg file so that the two parameters do not have the same value.</li>
+
+<li>Stop the application process and start it again for the new db2dsdriver.cfg file settings to take effect.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5223" lang="en-us" id="sql5163n">
+<h1 class="msghead" id="d174823e5223"><span class="title title msgId"><span class="ph ph msgNumber">SQL5163N</span></span>  <span class="shortdesc shortdesc msgText">A required configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> is missing from the db2dsdriver.cfg configuration file.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5163N: Explanation"><h2 class="sectiontitle" id="d174823e5250">Explanation</h2><p>The db2dsdriver.cfg configuration file contains database information, and is used by the following drivers and clients:</p>
+
+<ul>
+<li>IBM Data Server Driver for ODBC and CLI</li>
+
+<li>IBM Data Server Driver Package</li>
+
+<li>For DB2 Version 9.7: for CLI and open source applications, the IBM Data Server Client and IBM Data Server Runtime Client</li>
+</ul>
+
+<p>The information in the db2dsdriver.cfg file is similar to the information that is in the system database directory on an IBM Data Server Client or IBM Data Server Runtime Client.</p>
+
+<p>The client driver configuration file must contain all required parameters.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5163N: User response"><h2 class="sectiontitle" id="d174823e5273">User response</h2><ol>
+<li>Add the required configuration parameter to the db2dsdriver.cfg configuration file.</li>
+
+<li>Stop the application process and start it again for the new db2dsdriver.cfg file settings to take effect.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5290" lang="en-us" id="sql5164n">
+<h1 class="msghead" id="d174823e5290"><span class="title title msgId"><span class="ph ph msgNumber">SQL5164N</span></span>  <span class="shortdesc shortdesc msgText">The db2dsdriver.cfg configuration file contains a configuration group <var class="keyword varname vartype=quotedString varnumber=1">group</var> that requires at least one parameter, but no parameters are present.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5164N: Explanation"><h2 class="sectiontitle" id="d174823e5317">Explanation</h2><p>The db2dsdriver.cfg configuration file contains database information, and is used by the following drivers and clients:</p>
+
+<ul>
+<li>IBM Data Server Driver for ODBC and CLI</li>
+
+<li>IBM Data Server Driver Package</li>
+
+<li>For DB2 Version 9.7: for CLI and open source applications, the IBM Data Server Client and IBM Data Server Runtime Client</li>
+</ul>
+
+<p>The information in the db2dsdriver.cfg file is similar to the information that is in the system database directory on an IBM Data Server Client or IBM Data Server Runtime Client.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5164N: User response"><h2 class="sectiontitle" id="d174823e5337">User response</h2><ol>
+<li>Add parameters to the configuration group in the db2dsdriver.cfg configuration file.</li>
+
+<li>Stop the application process and start it again for the new db2dsdriver.cfg file settings to take effect.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5353" lang="en-us" id="sql5165n">
+<h1 class="msghead" id="d174823e5353"><span class="title title msgId"><span class="ph ph msgNumber">SQL5165N</span></span>  <span class="shortdesc shortdesc msgText">The value <var class="keyword varname vartype=quotedString varnumber=1">value</var> indicated by the database configuration parameter <var class="keyword varname vartype=quotedString varnumber=2">parameter</var> is not valid. Reason code=<var class="keyword varname vartype=quotedString varnumber=3">reason-code</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5165N: Explanation"><h2 class="sectiontitle" id="d174823e5385">Explanation</h2><p>The update of the indicated database configuration parameter failed. The explanation corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The hadr_target_list is invalid for one of the following reasons:</p>
+
+<ul>
+<li>The host entry is longer than 255 characters.</li>
+
+<li>The service entry is longer than 40 characters.</li>
+
+<li>The host entry contains invalid characters. Host entries can contain either alphanumerics, dashes, and underscores, or they can be in a numeric IPv4 or IPv6 address format.</li>
+
+<li>The values were not formatted correctly. The valid delimiters are: ":" "." "[" "]" "{" "}" "|"</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The number of databases specified in hadr_target_list exceeds the maximum allowed (one in a DB2 pureScale environment and three in other environments).</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The entries contained duplicate host:port pairs.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>In a DB2 pureScale environment, each standby cluster specified in hadr_target_list must be enclosed with braces ("{...}"), even if the cluster only has one address listed.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>In an environment other than DB2 pureScale, only one address is allowed for each standby database specified in hadr_target_list.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>In a DB2 pureScale environment, a maximum of 128 addresses are allowed for each standby cluster specified in hadr_target_list.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5165N: User response"><h2 class="sectiontitle" id="d174823e5462">User response</h2><p>The user response corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Update the hadr_target_list configuration parameter using a string with a valid length or set of characters. Check the db2diag.log for more details.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><ul>
+<li>If your HADR setup is in a DB2 pureScale environment, specify no more than one database in hadr_target_list.</li>
+
+<li>If your HADR setup is not in a DB2 pureScale environment, specify no more than three databases in hadr_target_list.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Update the hadr_target_list configuration parameter using unique host:port combinations.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Enclose the address list of each standby cluster with braces ("{...}").</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>List only one address for each standby database specified in hadr_target_list.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>List no more than 128 addresses for each standby cluster specified in hadr_target_list.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5536" lang="en-us" id="sql5180n">
+<h1 class="msghead" id="d174823e5536"><span class="title title msgId"><span class="ph ph msgNumber">SQL5180N</span></span>  <span class="shortdesc shortdesc msgText">The database manager is unable to read the federation configuration file <var class="keyword varname vartype=quotedString varnumber=1">file-name</var>. </span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5180N: Explanation"><h2 class="sectiontitle" id="d174823e5563">Explanation</h2><p>The federated configuration file could not be found, or it could not be opened for reading.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5180N: User response"><h2 class="sectiontitle" id="d174823e5569">User response</h2><p>Specify the federation configuration file in the DB2_DJ_INI registry variable.  Be sure that the file exists and is readable. Ensure a fully qualified path is specified for the location of the file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5580" lang="en-us" id="sql5181n">
+<h1 class="msghead" id="d174823e5580"><span class="title title msgId"><span class="ph ph msgNumber">SQL5181N</span></span>  <span class="shortdesc shortdesc msgText">The format of line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> in the federation configuration file <var class="keyword varname vartype=quotedString varnumber=2">file-name</var> is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5181N: Explanation"><h2 class="sectiontitle" id="d174823e5610">Explanation</h2><p>The specified line is not in the correct format. Entries must follow the format &lt;evname&gt; = &lt;value&gt;, where &lt;evname&gt; is the name of the environment variable and &lt;value&gt; is the corresponding value. </p>
+
+<div class="p">The entries should comply with the following restrictions: 
+<ul>
+<li>The environment variable name has a maximum length of 255 bytes.</li>
+
+<li>The environment variable value has a maximum length of 765 bytes.</li>
+
+<li>The maximum length of any line in the file is 1021 bytes. Data beyond this length will be ignored.</li>
+
+<li>If the environment variable value specifies a file or directory
+name, then the name should be fully qualified and should not
+contain any of the following:
+<ul>
+<li>Filename meta characters such as ~ (tilde).</li>
+
+<li>Environment variables such as $HOME.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5181N: User response"><h2 class="sectiontitle" id="d174823e5639">User response</h2><p>Put the specified line in the format described in the preceding paragraph.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5651" lang="en-us" id="sql5182n">
+<h1 class="msghead" id="d174823e5651"><span class="title title msgId"><span class="ph ph msgNumber">SQL5182N</span></span>  <span class="shortdesc shortdesc msgText">A required environment variable, <var class="keyword varname vartype=quotedString varnumber=1">variable-name</var>, has not been set.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5182N: Explanation"><h2 class="sectiontitle" id="d174823e5678">Explanation</h2><p>In the federated configuration file db2dj.ini, the environment variable <var class="keyword varname">variable-name</var> is unlisted, or it is listed but has no value.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5182N: User response"><h2 class="sectiontitle" id="d174823e5687">User response</h2><p>Refer to the federation documentation for information about updating the federated configuration file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5698" lang="en-us" id="sql5185n">
+<h1 class="msghead" id="d174823e5698"><span class="title title msgId"><span class="ph ph msgNumber">SQL5185N</span></span>  <span class="shortdesc shortdesc msgText">Pass-through to <var class="keyword varname vartype=quotedString varnumber=1">server-type</var> data sources is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5185N: Explanation"><h2 class="sectiontitle" id="d174823e5725">Explanation</h2><p>The Pass-Through facility cannot be used to access 
+<var class="keyword varname">server-type</var> data sources.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5185N: User response"><h2 class="sectiontitle" id="d174823e5734">User response</h2><p>None required.</p>
+
+<p> 
+<strong>sqlcode</strong>:   -5185</p>
+
+<p> 
+<strong>sqlstate</strong>:  428EV</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5758" lang="en-us" id="sql5186n">
+<h1 class="msghead" id="d174823e5758"><span class="title title msgId"><span class="ph ph msgNumber">SQL5186N</span></span>  <span class="shortdesc shortdesc msgText">Configuring the DB2 environment failed because the specified DB2 environment variable, DB2 registry variable, or DB2 configuration parameter is discontinued.  Variable or parameter name: <var class="keyword varname vartype=quotedString varnumber=1">variable-or-parameter-name</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5186N: Explanation"><h2 class="sectiontitle" id="d174823e5784">Explanation</h2><p>This message is returned when an attempt is made to configure the DB2 environment by setting a DB2 environment variable, DB2 registry variable, database manager configuration parameter, or DB2 database configuration parameter that has been discontinued.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5186N: User response"><h2 class="sectiontitle" id="d174823e5790">User response</h2><ol>
+<li>Use other variables or parameters to accomplish the same configuration objectives.</li>
+
+<li>Update automated scripts and applications to use different variables or parameters to accomplish the same configuration objectives.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5806" lang="en-us" id="sql5187n">
+<h1 class="msghead" id="d174823e5806"><span class="title title msgId"><span class="ph ph msgNumber">SQL5187N</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=quotedString varnumber=1">operation-type</var> operation is not allowed for procedure <var class="keyword varname vartype=quotedString varnumber=2">procedure-name</var> because a connection procedure with the same name is defined for the database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5187N: Explanation"><h2 class="sectiontitle" id="d174823e5836">Explanation</h2><p>Operations are restricted on any procedure with the same name as the connect procedure defined for a database using the database configuration parameter CONNECT_PROC. The connect procedure itself cannot be altered or dropped directly or as a result of CREATE OR REPLACE operation. A new procedure with the same name cannot be created, even if it has a different procedure signature.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5187N: User response"><h2 class="sectiontitle" id="d174823e5842">User response</h2><p>If you are creating a new procedure, use a different name for the procedure name or a different schema. If the connect procedure that is currently in use needs to be altered or dropped, the value of CONNECT_PROC database configuration parameter must be changed to another procedure name or the empty string.</p>
+
+<p><strong>sqlcode</strong>:  -5187</p>
+
+<p><strong>sqlstate</strong>:  429C8</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5864" lang="en-us" id="sql5188n">
+<h1 class="msghead" id="d174823e5864"><span class="title title msgId"><span class="ph ph msgNumber">SQL5188N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because object <var class="keyword varname vartype=quotedString varnumber=1">name</var> of type <var class="keyword varname vartype=quotedString varnumber=2">access-control-type</var> is marked invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5188N: Explanation"><h2 class="sectiontitle" id="d174823e5894">Explanation</h2><p>The SQL statement could not be run as it required row or column access control be applied and either a column mask or row permission is currently marked invalid.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5188N: User response"><h2 class="sectiontitle" id="d174823e5903">User response</h2><p>A user with SECADM authority must either:</p>
+
+<ul>
+<li>drop the column mask or row permission then optionally recreate it,</li>
+
+<li>issue a CREATE or REPLACE statement to recreate the invalid object.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -5188</p>
+
+<p><strong>sqlstate</strong>:  560D0</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5932" lang="en-us" id="sql5189n">
+<h1 class="msghead" id="d174823e5932"><span class="title title msgId"><span class="ph ph msgNumber">SQL5189N</span></span>  <span class="shortdesc shortdesc msgText">The alternate diagnostic directory path was not set because the specified path is invalid: <var class="keyword varname vartype=quotedString varnumber=1">alternate-diagpath</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5189N: Explanation"><h2 class="sectiontitle" id="d174823e5958">Explanation</h2><p>You specify an alternate diagnostic directory path with the alt_diagpath configuration parameter, so that diagnostic logging can continue even if the primary diagnostic path specified by the diagpath configuration parameter cannot be used. The alternate diagnostic path is switched to when the primary path is not available; logging resumes in the primary diagnostic path once that path is available again.</p>
+
+<p>There are a number of reasons why the specified alternate diagnostic directory path might be invalid:</p>
+
+<ul>
+<li>The path does not exist.</li>
+
+<li>The path was set to the same path as the primary diagnostic path.</li>
+
+<li>The specified path does not follow the supported operating system naming convention.</li>
+
+<li>The path provided is read-only.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5189N: User response"><h2 class="sectiontitle" id="d174823e5981">User response</h2><p>Verify that the alternate diagnostic directory path you want to use is available and set the path. For greater resiliency, the diagpath and alt_diagpath configuration parameters should always use different file systems.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e5993" lang="en-us" id="sql5190i">
+<h1 class="msghead" id="d174823e5993"><span class="title title msgId"><span class="ph ph msgNumber">SQL5190I</span></span>  <span class="shortdesc shortdesc msgText">The primary diagnostic directory path and the alternate diagnostic directory path use the same file system.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5190I: Explanation"><h2 class="sectiontitle" id="d174823e6017">Explanation</h2><p>You specify an alternate diagnostic directory path with the alt_diagpath configuration parameter, so that diagnostic logging can continue even if the primary diagnostic directory path specified by the diagpath configuration parameter cannot be used.</p>
+
+<p>To avoid a failure scenario where both diagnostic directory paths are affected by a single file system problem, specify primary and alternate diagnostic directory paths that point to different file systems.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5190I: User response"><h2 class="sectiontitle" id="d174823e6026">User response</h2><p>The parameter was set successfully, but you can improve logging resiliency further by using different file systems for the diagpath and alt_diagpath configuration parameters.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6037" lang="en-us" id="sql5191w">
+<h1 class="msghead" id="d174823e6037"><span class="title title msgId"><span class="ph ph msgNumber">SQL5191W</span></span>  <span class="shortdesc shortdesc msgText">The target of the data change operation is a table <var class="keyword varname vartype=quotedString varnumber=1">table-name</var>, which includes a period <var class="keyword varname vartype=quotedString varnumber=2">period-name</var>. The operation caused an adjustment to a recorded time value for the period.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5191W: Explanation"><h2 class="sectiontitle" id="d174823e6067">Explanation</h2><p>Table <var class="keyword varname">table-name</var> is a system-period temporal table. The table includes a period <var class="keyword varname">period-name</var>.  The requested data change operation was performed and resulted in an adjustment to a recorded time value for the  period. This can occur for one of the following reasons:</p>
+
+<ul>
+<li>Two transactions are accessing the same row. The transaction that started first has a statement that is updating or deleting the row after a statement in the second transaction has already changed that row. This results in the timestamp value in the row begin column being the start time of the second transaction. The first transaction cannot update or delete a row if the row begin time stamp on that row is later than when the first transaction started.</li>
+
+<li>Data has been loaded into the system-period temporal table with values for the row begin column that override the generated values. The row begin column value that was loaded is in the future relative to the timestamp that the executing transaction would use.</li>
+</ul>
+
+<p>For an update operation, the adjustment can affect both the begin and end columns for the period. For a delete operation, the adjustment only affects the end column for the period.</p>
+
+<p>The statement was processed with an adjustment to the recorded time for the period.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5191W: User response"><h2 class="sectiontitle" id="d174823e6093">User response</h2><p>If you did not want the adjustment, issue a rollback and retry the transaction.  If data has been loaded into the system-period temporal table with values for the row begin column that override the generated values, clean the data such that the row-begin time values are less than or equal to the value of CURRENT TIMESTAMP. Otherwise, no action is required.</p>
+
+<p>The systime_period_adj configuration parameter can be set to block the adjustment of the affected values.</p>
+
+<p><strong>sqlcode</strong>:  +5191</p>
+
+<p><strong>sqlstate</strong>:  01695</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6118" lang="en-us" id="sql5192w">
+<h1 class="msghead" id="d174823e6118"><span class="title title msgId"><span class="ph ph msgNumber">SQL5192W</span></span>  <span class="shortdesc shortdesc msgText">The ADMIN_SET_INTRA_PARALLEL procedure failed because either shared sort heap memory is not available or the application is assigned to a workload that has a value assigned to MAXIMUM DEGREE. Application name: <var class="keyword varname vartype=quotedString varnumber=1">application-name</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5192W: Explanation"><h2 class="sectiontitle" id="d174823e6144">Explanation</h2><p>There are multiple ways to configure intrapartition parallelism, including by setting the MAXIMUM DEGREE workload attribute or by calling the ADMIN_SET_INTRA_PARALLEL procedure:</p>
+
+<ul>
+<li>You can enable or disable intrapartition parallelism for a specified workload by setting the MAXIMUM DEGREE workload attribute.</li>
+
+<li>You can enable or disable intrapartition parallelism for a database application by calling the ADMIN_SET_INTRA_PARALLEL procedure.</li>
+</ul>
+
+<p>The MAXIMUM DEGREE workload attribute overrides any call to the ADMIN_SET_INTRA_PARALLEL procedure.</p>
+
+<p>This message can be returned when the ADMIN_SET_INTRA_PARALLEL procedure is called in either of the following two scenarios:</p>
+
+<ul>
+<li>The shared sort heap memory is not available</li>
+
+<li>The application is assigned to a workload for which intrapartition parallelism is already configured with the MAXIMUM DEGREE workload attribute</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5192W: User response"><h2 class="sectiontitle" id="d174823e6172">User response</h2><p>Control the degree of intrapartition parallelism either at the workload level or from within the application, but not both.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6183" lang="en-us" id="sql5193n">
+<h1 class="msghead" id="d174823e6183"><span class="title title msgId"><span class="ph ph msgNumber">SQL5193N</span></span>  <span class="shortdesc shortdesc msgText">The current session user does not have usage privilege on any enabled workloads.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5193N: Explanation"><h2 class="sectiontitle" id="d174823e6207">Explanation</h2><p>The current session user does not have usage privilege on any enabled workloads. All connections to a database must be associated with a workload. In order for a connection to be associated with a workload, the connection attributes must match the attributes for the workload, the workload must be enabled, and the session user must have usage privilege on the workload.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5193N: User response"><h2 class="sectiontitle" id="d174823e6213">User response</h2><p>If there are user defined workloads in the database, perform the following steps:</p>
+
+<ol>
+<li>Determine which workload the connection should be mapped to by examining the attributes of the connection and comparing them with the attributes of the workload definitions.</li>
+
+<li>Verify that the workload the connection should be associated with is enabled, and that the current session user has usage privilege on the workload.</li>
+</ol>
+
+<p>If there are no user defined workloads in the database, perform the following steps:</p>
+
+<ol>
+<li>Enable the default user workload, which is named SYSDEFAULTUSERWORKLOAD.</li>
+
+<li>Grant usage privilege on this workload to the current session user.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -5193</p>
+
+<p><strong>sqlstate</strong>:  42524</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6255" lang="en-us" id="sql5195n">
+<h1 class="msghead" id="d174823e6255"><span class="title title msgId"><span class="ph ph msgNumber">SQL5195N</span></span>  <span class="shortdesc shortdesc msgText">The UPDATE DATABASE CONFIGURATION command failed because the specified value is not supported by the current instance node type. Database configuration parameter: <var class="keyword varname vartype=quotedString varnumber=1">parameter-name</var>. Database configuration parameter value: <var class="keyword varname vartype=quotedString varnumber=2">specified-value</var>. Current instance node type: <var class="keyword varname vartype=quotedString varnumber=3">instance-node-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5195N: Explanation"><h2 class="sectiontitle" id="d174823e6288">Explanation</h2><p>Different database products are associated with different database manager instance node types.  The current instance node type is indicated by the runtime token <var class="keyword varname">instance-node-type</var>:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Database server with local and remote clients</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Client</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Database server with local clients</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Partitioned database Server with local and remote clients</p>
+</dd>
+</dl>
+
+<p>You can configure database functionality by setting database manager configuration parameters.  Each instance node type supports only the database manager configuration parameters for the database products that are associated with that instance node type.  For some configuration parameters, certain values for those configuration parameters are supported by only a subset of instance node types.</p>
+
+<p>This message is returned when an attempt is made to update a database manager configuration parameter to a value that is not supported by the current instance node type.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5195N: User response"><h2 class="sectiontitle" id="d174823e6341">User response</h2><p>Perform one of the following actions:</p>
+
+<ul>
+<li>Set the database configuration parameter to a valid value that is supported by the current instance node type.</li>
+
+<li>If the functionality associated with the failed configuration attempt is supported by a different instance node type, update or upgrade the instance node type to a type that supports the functionality and then reissue the UPDATE DATABASE MANAGER CONFIGURATION command.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -5195</p>
+
+<p><strong>sqlstate</strong>:  5U001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6370" lang="en-us" id="sql5196n">
+<h1 class="msghead" id="d174823e6370"><span class="title title msgId"><span class="ph ph msgNumber">SQL5196N</span></span>  <span class="shortdesc shortdesc msgText">The UPDATE DATABASE CONFIGURATION command failed because the specified database configuration parameter is not supported by the instance node type. Database configuration parameter: <var class="keyword varname vartype=quotedString varnumber=1">parameter-name</var>. Current instance node type: <var class="keyword varname vartype=quotedString varnumber=2">instance-node-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5196N: Explanation"><h2 class="sectiontitle" id="d174823e6400">Explanation</h2><p>Different database products are associated with different database manager instance node types.  The current instance node type is indicated by the runtime token <var class="keyword varname">instance-node-type</var>:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Database server with local and remote clients</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Client</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Database server with local clients</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Partitioned database Server with local and remote clients</p>
+</dd>
+</dl>
+
+<p>You can configure database functionality by setting database configuration parameters.  Each instance node type supports only the database configuration parameters for the database products that are associated with that instance node type.</p>
+
+<p>This message is returned when an attempt is made to update a database configuration parameter that is not supported by the current instance node type.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5196N: User response"><h2 class="sectiontitle" id="d174823e6453">User response</h2><ol>
+<li>List the database configuration parameters that are supported by the current instance node type by issuing the GET DATABASE CONFIGURATION command.</li>
+
+<li>Perform one of the following actions: 
+<ul>
+<li>Achieve the desired configuration by updating one or more database configuration parameters that are supported with the current instance node type.</li>
+
+<li>If the functionality associated with the failed configuration attempt is supported by a different instance node type, update or upgrade the instance node type to a type that supports the functionality and then reissue the UPDATE DATABASE CONFIGURATION command.</li>
+</ul>
+</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -5196</p>
+
+<p><strong>sqlstate</strong>:  5U001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6487" lang="en-us" id="sql5197n">
+<h1 class="msghead" id="d174823e6487"><span class="title title msgId"><span class="ph ph msgNumber">SQL5197N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because of a communication error with a Big SQL component. Big SQL component name: <var class="keyword varname vartype=quotedString varnumber=1">component-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>. Log entry identifier: <var class="keyword varname vartype=quotedString varnumber=3">log-entry-identifier</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5197N: Explanation"><h2 class="sectiontitle" id="d174823e6520">Explanation</h2><p>The reason code indicates the type of problem:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Connection refused.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Connection timed out.</p>
+</dd>
+</dl>
+
+<p>The log identifier in the token <var class="keyword varname">log-entry-identifier</var> is composed of three parts:</p>
+
+<ol>
+<li>A three-letter prefix that indicates which log file includes diagnostic details.</li>
+
+<li>A three-digit number that indicates on which database partition the log file resides.</li>
+
+<li>An identifier that is printed in the log file near the related diagnostic details.</li>
+</ol>
+
+<p>When the <var class="keyword varname">log-entry-identifier</var> is 'DB2', you can find the diagnostic details in $BIGSQL_DIST_VAR/diag. Otherwise, you can find them in $BIGSQL_DIST_VAR/logs.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5197N: User response"><h2 class="sectiontitle" id="d174823e6569">User response</h2><ol>
+<li>Locate the diagnostic details in the appropriate log file by using the information in the <var class="keyword varname">log-entry-identifier</var> runtime token.</li>
+
+<li>Resolve the cause of the problem.</li>
+
+<li>Submit the statement again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -5197</p>
+
+<p><strong>sqlstate</strong>:  57066</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6601" lang="en-us" id="sql5198n">
+<h1 class="msghead" id="d174823e6601"><span class="title title msgId"><span class="ph ph msgNumber">SQL5198N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because of an authorization error from a Big SQL component. Big SQL component name: <var class="keyword varname vartype=quotedString varnumber=1">component-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>. Log entry identifier: <var class="keyword varname vartype=quotedString varnumber=3">log-entry-identifier</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5198N: Explanation"><h2 class="sectiontitle" id="d174823e6634">Explanation</h2><p>This message is returned when the user ID of the database manager underlying the Big SQL server does not have authority or permission to perform an operation.  This error might happen in different scenarios, such as if the user ID of the database manager does not have permission to modify the Hive metastore.</p>
+
+<p>The reason code indicates more specifically what happened:</p>
+
+<dl>
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The user ID of the database manager does not have permission to read, write, or delete files or directories on the Hadoop Distributed File System (HDFS).</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The user ID of the database manager does not have permission to read or write to the Hive Mestastore.</p>
+</dd>
+</dl>
+
+<p>The log identifier in the token <var class="keyword varname">log-entry-identifier</var> is composed of three parts:</p>
+
+<ol>
+<li>A three-letter prefix that indicates which log file includes diagnostic details.</li>
+
+<li>A three-digit number that indicates on which database partition the log file resides.</li>
+
+<li>An identifier that is printed in the log file near the related diagnostic details.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5198N: User response"><h2 class="sectiontitle" id="d174823e6680">User response</h2><ol>
+<li>Locate the diagnostic details in the appropriate log file by using the information in the <var class="keyword varname">log-entry-identifier</var> runtime token.</li>
+
+<li>Grant the user ID of the BIG SQL server database manager authority to perform the task.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -5198</p>
+
+<p><strong>sqlstate</strong>:  42525</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6710" lang="en-us" id="sql5199n">
+<h1 class="msghead" id="d174823e6710"><span class="title title msgId"><span class="ph ph msgNumber">SQL5199N</span></span>  <span class="shortdesc shortdesc msgText">The statement failed because a connection to a Hadoop I/O component could not be established or maintained.  Hadoop I/O component name: <var class="keyword varname vartype=quotedString varnumber=1">component-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>. Database partition number: <var class="keyword varname vartype=quotedString varnumber=3">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5199N: Explanation"><h2 class="sectiontitle" id="d174823e6743">Explanation</h2><p>To protect its memory sets and agents, the database manager underlying the Big SQL processing engine uses a fenced-mode process (FMP) to establish and maintain a connection with a Hadoop I/O component.</p>
+
+<p>This message is returned when the database manager encounters an error with an FMP that is hosting a Hadoop I/O component.  The reason code indicates the source of the problem:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The FMP hosting the Hadoop I/O component is not up and running.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The database manager was unable to allocate enough memory from the FMP memory set to communicate with the Hadoop I/O component.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5199N: User response"><h2 class="sectiontitle" id="d174823e6772">User response</h2><p>Respond according to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Rerun the statement.</p>
+
+<p>If the error continues, collect the following diagnostic information and troubleshoot the Hadoop I/O component:</p>
+
+<ul>
+<li>The value of the INSTANCE_MEMORY database manager configuration parameter</li>
+
+<li>Related diagnostic information in the db2diag diagnostic log files</li>
+
+<li>Related diagnostic information collected by First occurrence data capture (FODC)</li>
+
+<li>Related diagnostic information in the Hadoop I/O component log files</li>
+</ul>
+
+<p>Check
+that the authorization ID that has ownership of the external table is an operating system user.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Perform one of the following actions:</p>
+
+<ul>
+<li>Wait for some statements to finish processing and then rerun the failed statement.</li>
+
+<li>Increase the amount of memory in the FMP memory set by increasing the INSTANCE_MEMORY database manager configuration parameter.</li>
+</ul>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -5199</p>
+
+<p><strong>sqlstate</strong>:  57067</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d174823e6841" lang="en-us" id="sql5501n">
+<h1 class="msghead" id="d174823e6841"><span class="title title msgId"><span class="ph ph msgNumber">SQL5501N</span></span>  <span class="shortdesc shortdesc msgText">The format of line <var class="keyword varname vartype=quotedString varnumber=1">line-number</var> in the vendor configuration file <var class="keyword varname vartype=quotedString varnumber=2">file-name</var> is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL5501N: Explanation"><h2 class="sectiontitle" id="d174823e6871">Explanation</h2><p>The specified line is not in the correct format. Entries must follow the
+format &lt;evname&gt; = &lt;value&gt;, where &lt;evname&gt; is the name
+of the environment variable and &lt;value&gt; is the corresponding value.</p>
+
+<div class="p">The entries should comply with the following restrictions:
+<ul>
+<li>The environment variable name has a maximum length of 255 bytes.</li>
+
+<li>The environment variable value has a maximum length of 765 bytes.</li>
+
+<li>The maximum length of any line in the file is 1021 bytes. Data beyond this
+length will be ignored.</li>
+
+<li>If the environment variable value specifies a file or directory 
+name, then the name should be fully qualified and should not 
+contain any of the following:
+<ul>
+<li>Filename meta characters such as ~ (tilde).</li>
+
+<li>Environment variables such as $HOME.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL5501N: User response"><h2 class="sectiontitle" id="d174823e6900">User response</h2><p>Ensure the specified line matches the previously described format.</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

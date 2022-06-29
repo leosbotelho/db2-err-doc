@@ -1,0 +1,1890 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL21000 - SQL27499</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d26851e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic25">
+   <h1 class="topictitle1" id="d26851e14">SQL21000 - SQL27499</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d26851e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e64" lang="en-us" id="sql21000n">
+<h1 class="msghead" id="d26851e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL21000N</span></span>  <span class="shortdesc shortdesc msgText">A text search option is not installed or not properly configured.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL21000N: Explanation"><h2 class="sectiontitle" id="d26851e88">Explanation</h2><ol>
+<li>DB2 Text Search or DB2 Net Search Extender is not installed or not correctly configured on this server. One of the text search features must be correctly configured and started on your system if you want to use a text search function such as CONTAINS, SCORE, or NUMBEROFMATCHES, or the DESCRIBE TEXT SEARCH INDEXES command.</li>
+
+<li>DB2 Text Search is not supported in a DB2 pureScale environment.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL21000N: User response"><h2 class="sectiontitle" id="d26851e99">User response</h2><ol>
+<li>Ensure that either DB2 Text Search or DB2 Net Search Extender is correctly installed and configured and that the database is enabled for text search.</li>
+
+<li>Disable the DB2 pureScale Feature to use DB2 Text Search.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -21000</p>
+
+<p><strong>sqlstate</strong>:  42724</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e125" lang="en-us" id="sql21002n">
+<h1 class="msghead" id="d26851e125"><span class="title title msgId"><span class="ph ph msgNumber">SQL21002N</span></span>  <span class="shortdesc shortdesc msgText">A snapshot backup failed.  The database being backed up is configured to use raw logs, but raw logs are not supported with snapshot backups.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL21002N: Explanation"><h2 class="sectiontitle" id="d26851e149">Explanation</h2><p>You cannot perform a snapshot backup on a database that uses a raw device for database logging.</p>
+
+<p>The snapshot backup failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL21002N: User response"><h2 class="sectiontitle" id="d26851e158">User response</h2><p>You have two choices:</p>
+
+<ul>
+<li>Even though you cannot perform a snapshot backup on a database that uses a raw device for database logging, you can perform a traditional backup on a database that uses a raw device for database logging.</li>
+
+<li>You can reconfigure the database log path to be a file path instead of a raw device and then run a snapshot backup.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e178" lang="en-us" id="sql22000w">
+<h1 class="msghead" id="d26851e178"><span class="title title msgId"><span class="ph ph msgNumber">SQL22000W</span></span>  <span class="shortdesc shortdesc msgText">Cannot find the requested configuration for object
+<var class="keyword varname vartype=quotedString varnumber=1">object-name</var>. Returning default configuration for <var class="keyword varname vartype=quotedString varnumber=2">object-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22000W: Explanation"><h2 class="sectiontitle" id="d26851e208">Explanation</h2><p>The object does not have a specific configuration of its own so the default
+configuration for that object type will be returned.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22000W: User response"><h2 class="sectiontitle" id="d26851e214">User response</h2><p>If the behavior of the default configuration is correct, no action has to be taken.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e225" lang="en-us" id="sql22001w">
+<h1 class="msghead" id="d26851e225"><span class="title title msgId"><span class="ph ph msgNumber">SQL22001W</span></span>  <span class="shortdesc shortdesc msgText">Cannot find the default configuration for object
+<var class="keyword varname vartype=quotedString varnumber=1">object-name</var>. Returning install configuration for <var class="keyword varname vartype=quotedString varnumber=2">object-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22001W: Explanation"><h2 class="sectiontitle" id="d26851e255">Explanation</h2><p>The object does not have a specific configuration of its own so the install 
+configuration for that object type will be returned.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22001W: User response"><h2 class="sectiontitle" id="d26851e261">User response</h2><p>If the behavior of the install configuration is correct, no action has to be taken.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e273" lang="en-us" id="sql22004n">
+<h1 class="msghead" id="d26851e273"><span class="title title msgId"><span class="ph ph msgNumber">SQL22004N</span></span>  <span class="shortdesc shortdesc msgText">Cannot find the requested configuration for the given object. Returning default
+configuration for <var class="keyword varname vartype=quotedString varnumber=1">object-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22004N: Explanation"><h2 class="sectiontitle" id="d26851e300">Explanation</h2><p>The object does not have a specific configuration of its own so the default configuration for that object type will be returned.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22004N: User response"><h2 class="sectiontitle" id="d26851e306">User response</h2><p>If the behavior of the default configuration is correct, no action has to be taken.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e317" lang="en-us" id="sql22005n">
+<h1 class="msghead" id="d26851e317"><span class="title title msgId"><span class="ph ph msgNumber">SQL22005N</span></span>  <span class="shortdesc shortdesc msgText">Cannot find the default configuration for the given object, returning
+install configuration for <var class="keyword varname vartype=quotedString varnumber=1">object-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22005N: Explanation"><h2 class="sectiontitle" id="d26851e344">Explanation</h2><p>The object does not have a specific configuration of its own so the install configuration for that object type will be returned.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22005N: User response"><h2 class="sectiontitle" id="d26851e350">User response</h2><p>If the behavior of the install configuration is correct, no action has to be taken.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e362" lang="en-us" id="sql22006n">
+<h1 class="msghead" id="d26851e362"><span class="title title msgId"><span class="ph ph msgNumber">SQL22006N</span></span>  <span class="shortdesc shortdesc msgText">Cannot update <var class="keyword varname vartype=quotedString varnumber=1">object-action-or-contact-name</var> because it does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22006N: Explanation"><h2 class="sectiontitle" id="d26851e389">Explanation</h2><p>The API was requested to update the configuration of an element which does
+not exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22006N: User response"><h2 class="sectiontitle" id="d26851e395">User response</h2><p>Create the element and then re-issue the API call.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e406" lang="en-us" id="sql22007n">
+<h1 class="msghead" id="d26851e406"><span class="title title msgId"><span class="ph ph msgNumber">SQL22007N</span></span>  <span class="shortdesc shortdesc msgText">The specified Health Indicator identifier or name,
+<var class="keyword varname vartype=quotedString varnumber=1">Health-Indicator-name</var>, is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22007N: Explanation"><h2 class="sectiontitle" id="d26851e433">Explanation</h2><p>The requested action can only be performed against a valid Health Indicator.
+The supplied Health Indicator does not exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22007N: User response"><h2 class="sectiontitle" id="d26851e439">User response</h2><p>Determine the correct the identifier or name, and resubmit the request.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e451" lang="en-us" id="sql22008n">
+<h1 class="msghead" id="d26851e451"><span class="title title msgId"><span class="ph ph msgNumber">SQL22008N</span></span>  <span class="shortdesc shortdesc msgText">The value <var class="keyword varname vartype=quotedString varnumber=1">parameter-value</var> of parameter <var class="keyword varname vartype=quotedString varnumber=2">parameter-name</var> is not of the correct
+format, type, or value.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22008N: Explanation"><h2 class="sectiontitle" id="d26851e481">Explanation</h2><p>The requested action can not be taken because the supplied value for this
+parameter is not of an acceptable format, type, or value.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22008N: User response"><h2 class="sectiontitle" id="d26851e487">User response</h2><p>Determine the correct format and type of, or value for, this parameter,
+and resubmit the request.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e498" lang="en-us" id="sql22009n">
+<h1 class="msghead" id="d26851e498"><span class="title title msgId"><span class="ph ph msgNumber">SQL22009N</span></span>  <span class="shortdesc shortdesc msgText">There is no health contact information for this instance.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22009N: Explanation"><h2 class="sectiontitle" id="d26851e522">Explanation</h2><p>There is no health contact information for this instance.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22009N: User response"><h2 class="sectiontitle" id="d26851e528">User response</h2><p>If the current contact information is correct, no action has to be taken.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e540" lang="en-us" id="sql22010n">
+<h1 class="msghead" id="d26851e540"><span class="title title msgId"><span class="ph ph msgNumber">SQL22010N</span></span>  <span class="shortdesc shortdesc msgText">The value <var class="keyword varname vartype=quotedString varnumber=1">parameter-value</var> of parameter <var class="keyword varname vartype=quotedString varnumber=2">parameter-name</var> is
+not within the acceptable range of values for this parameter, which is greater
+than <var class="keyword varname vartype=quotedString varnumber=3">parameter-max-value</var> and/or less than <var class="keyword varname vartype=quotedString varnumber=4">parameter-min-value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22010N: Explanation"><h2 class="sectiontitle" id="d26851e576">Explanation</h2><p>The requested action can not be taken because the supplied value for this
+parameter is not within the acceptable range of values.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22010N: User response"><h2 class="sectiontitle" id="d26851e582">User response</h2><p>Resubmit the request with an acceptable value for this parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e593" lang="en-us" id="sql22011w">
+<h1 class="msghead" id="d26851e593"><span class="title title msgId"><span class="ph ph msgNumber">SQL22011W</span></span>  <span class="shortdesc shortdesc msgText">Cannot find the configuration for <var class="keyword varname vartype=quotedString varnumber=1">object-name-or-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22011W: Explanation"><h2 class="sectiontitle" id="d26851e620">Explanation</h2><p>The object or object type does not have a specific or default configuration
+of its own.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22011W: User response"><h2 class="sectiontitle" id="d26851e626">User response</h2><p>No action required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e638" lang="en-us" id="sql22012w">
+<h1 class="msghead" id="d26851e638"><span class="title title msgId"><span class="ph ph msgNumber">SQL22012W</span></span>  <span class="shortdesc shortdesc msgText">Implicit instance attach failed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22012W: Explanation"><h2 class="sectiontitle" id="d26851e662">Explanation</h2><p>An explicit instance attachment does not exist and an implicit attachment
+to the default instance failed. The command cannot be executed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22012W: User response"><h2 class="sectiontitle" id="d26851e668">User response</h2><p>Make sure that the database manager is started and that environment variables are set properly.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e679" lang="en-us" id="sql22013n">
+<h1 class="msghead" id="d26851e679"><span class="title title msgId"><span class="ph ph msgNumber">SQL22013N</span></span>  <span class="shortdesc shortdesc msgText">Cannot add <var class="keyword varname vartype=quotedString varnumber=1">obj-act-contact</var> because it already exists.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22013N: Explanation"><h2 class="sectiontitle" id="d26851e706">Explanation</h2><p>The API was requested to add an action or notification which already exists.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22013N: User response"><h2 class="sectiontitle" id="d26851e712">User response</h2><p>Modify or delete the existing actions and notifications.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e724" lang="en-us" id="sql22014w">
+<h1 class="msghead" id="d26851e724"><span class="title title msgId"><span class="ph ph msgNumber">SQL22014W</span></span>  <span class="shortdesc shortdesc msgText">The health monitor returned no health related data.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22014W: Explanation"><h2 class="sectiontitle" id="d26851e748">Explanation</h2><p>There is no health data for this instance or the health monitor
+is off. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22014W: User response"><h2 class="sectiontitle" id="d26851e754">User response</h2><p>Verify that the health monitor is running on this instance.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e765" lang="en-us" id="sql22015n">
+<h1 class="msghead" id="d26851e765"><span class="title title msgId"><span class="ph ph msgNumber">SQL22015N</span></span>  <span class="shortdesc shortdesc msgText">The specified Health Indicator identifier or name,
+<var class="keyword varname vartype=quotedString varnumber=1">Health-Indicator-name</var>, is invalid for this object type.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22015N: Explanation"><h2 class="sectiontitle" id="d26851e792">Explanation</h2><p>The supplied Health Indicator does not exist for this object type.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22015N: User response"><h2 class="sectiontitle" id="d26851e798">User response</h2><p>Verify the object type and identifier or name, and resubmit the request.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e810" lang="en-us" id="sql22016n">
+<h1 class="msghead" id="d26851e810"><span class="title title msgId"><span class="ph ph msgNumber">SQL22016N</span></span>  <span class="shortdesc shortdesc msgText">The health monitor returned no recommendations for health indicator <var class="keyword varname vartype=quotedString varnumber=1">Health-Indicator-name</var>. Reason code = <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22016N: Explanation"><h2 class="sectiontitle" id="d26851e840">Explanation</h2><div class="p">The health monitor was unable to return any recommendations. The explanation corresponding to the reason code is:
+<ol>
+<li>The health indicator is not in an alert state.</li>
+
+<li>The health indicator has not yet been evaluated.</li>
+
+<li>The health indicator is disabled.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22016N: User response"><h2 class="sectiontitle" id="d26851e856">User response</h2><div class="p">The action corresponding to the reason code is:
+<ol>
+<li>Verify that the health indicator is in an alert state. The problem may have already been resolved. It is also possible that the health indicator is fluctuating between alert and normal states. If the indicator is fluctuating, the sensitivity for the health indicator may be set too low and the health indicator may be reacting to changes in system usage. If this is the case, consider increasing the sensitivity using the UPDATE ALERT CONFIGURATION command.</li>
+
+<li>Wait for at least one full refresh interval for the health indicator, to ensure that the health indicator has been evaluated. Resubmit the request.</li>
+
+<li>Enable the health indicator using the UPDATE ALERT CONFIGURATION command. Wait until the health indicator has been evaluated, then resubmit the request.</li>
+</ol>
+</div>
+
+<p>If the problem persists, contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e880" lang="en-us" id="sql22017n">
+<h1 class="msghead" id="d26851e880"><span class="title title msgId"><span class="ph ph msgNumber">SQL22017N</span></span>  <span class="shortdesc shortdesc msgText">A non-severe error occurred while generating recommendations at the health monitor. SQLCODE = <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22017N: Explanation"><h2 class="sectiontitle" id="d26851e907">Explanation</h2><p>The health monitor encountered a non-severe error while trying to retrieve recommendations for the specified health indicator.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22017N: User response"><h2 class="sectiontitle" id="d26851e913">User response</h2><p>Correct the error as indicated in the SQLCODE. Resubmit the recommendation request.</p>
+
+<p>If the problem persists, contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e928" lang="en-us" id="sql22018w">
+<h1 class="msghead" id="d26851e928"><span class="title title msgId"><span class="ph ph msgNumber">SQL22018W</span></span>  <span class="shortdesc shortdesc msgText">The collection data for this health indicator could not be retrieved.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22018W: Explanation"><h2 class="sectiontitle" id="d26851e952">Explanation</h2><p>Collection data is stored in tables in the database. The table data could not be retrieved either because the table could not be accessed or the table has been altered from its original definition and the correct columns no longer exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22018W: User response"><h2 class="sectiontitle" id="d26851e958">User response</h2><p>If the problem persists, contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e969" lang="en-us" id="sql22019n">
+<h1 class="msghead" id="d26851e969"><span class="title title msgId"><span class="ph ph msgNumber">SQL22019N</span></span>  <span class="shortdesc shortdesc msgText">Health monitor processing was halted due to an unexpected error. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL22019N: User response"><h2 class="sectiontitle" id="d26851e996">User response</h2><p>If the problem persists, contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1008" lang="en-us" id="sql22020n">
+<h1 class="msghead" id="d26851e1008"><span class="title title msgId"><span class="ph ph msgNumber">SQL22020N</span></span>  <span class="shortdesc shortdesc msgText">Health monitor processing was halted because its shared memory segment upper limit was reached. The current size is <var class="keyword varname vartype=quotedString varnumber=1">size</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL22020N: User response"><h2 class="sectiontitle" id="d26851e1035">User response</h2><p>If the problem persists, contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1046" lang="en-us" id="sql22021n">
+<h1 class="msghead" id="d26851e1046"><span class="title title msgId"><span class="ph ph msgNumber">SQL22021N</span></span>  <span class="shortdesc shortdesc msgText">Automation is turned off.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22021N: Explanation"><h2 class="sectiontitle" id="d26851e1070">Explanation</h2><p>The required utility cannot be performed because the automation switch is turned off currently.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22021N: User response"><h2 class="sectiontitle" id="d26851e1076">User response</h2><div class="p">Attempt one of the following:
+<ul>
+<li>Resolve the problem according to the recommendation provided by the health monitor.</li>
+
+<li>Turn on the corresponding automation switch.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1095" lang="en-us" id="sql22022n">
+<h1 class="msghead" id="d26851e1095"><span class="title title msgId"><span class="ph ph msgNumber">SQL22022N</span></span>  <span class="shortdesc shortdesc msgText">The duration of the maintenance window is not long enough to run the maintenance activity.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22022N: Explanation"><h2 class="sectiontitle" id="d26851e1119">Explanation</h2><p>The required utility cannot be performed because the maintenance window defined in the automatic maintenance configuration does not have an adequate duration.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22022N: User response"><h2 class="sectiontitle" id="d26851e1125">User response</h2><div class="p">Attempt one of the following:
+<ul>
+<li>Resolve the problem according to the recommendation provided by the health monitor.</li>
+
+<li>Increase the duration of the maintenance window for the corresponding automatic maintenance activity.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1143" lang="en-us" id="sql22025n">
+<h1 class="msghead" id="d26851e1143"><span class="title title msgId"><span class="ph ph msgNumber">SQL22025N</span></span>  <span class="shortdesc shortdesc msgText">An invalid input argument was specified for the reorgchk stored procedure.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22025N: Explanation"><h2 class="sectiontitle" id="d26851e1167">Explanation</h2><p>Only 'T' and 'S' are supported for the first argument of the stored procedure. If 'T' is specified as the first argument, the second argument to the stored procedure must be a fully qualified table name as &lt;schema.table-name&gt;.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22025N: User response"><h2 class="sectiontitle" id="d26851e1173">User response</h2><p>Resubmit with valid input arguments.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1185" lang="en-us" id="sql22200n">
+<h1 class="msghead" id="d26851e1185"><span class="title title msgId"><span class="ph ph msgNumber">SQL22200N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server cannot be stopped.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22200N: Explanation"><h2 class="sectiontitle" id="d26851e1209">Explanation</h2><p>The DB2 Administration Server cannot be stopped because it is currently handling
+at least one request from a client. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22200N: User response"><h2 class="sectiontitle" id="d26851e1215">User response</h2><p>Issue the DB2ADMIN STOP command with the /FORCE option to cancel all current requests
+being handled by the DB2 Administration Server and force the DB2 Administration
+Server to stop. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1226" lang="en-us" id="sql22201n">
+<h1 class="msghead" id="d26851e1226"><span class="title title msgId"><span class="ph ph msgNumber">SQL22201N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server failed to authenticate the user
+<var class="keyword varname vartype=quotedString varnumber=1">authorization-ID</var> on the
+host <var class="keyword varname vartype=quotedString varnumber=2">hostname</var>. Reason code
+<var class="keyword varname vartype=quotedString varnumber=3">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22201N: Explanation"><h2 class="sectiontitle" id="d26851e1259">Explanation</h2><div class="p">The DB2 Administration Server was unable to authenticate the user
+<var class="keyword varname">authorization-ID</var> for the following reason:
+<ol>
+<li>Invalid user ID or password.</li>
+
+<li>Password expired.</li>
+
+<li>User account is disabled.</li>
+
+<li>User account is restricted.</li>
+
+<li>The DB2 Administration Server is unable to process requests submitted as the root user. </li>
+
+<li>Authorization failed.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22201N: User response"><h2 class="sectiontitle" id="d26851e1288">User response</h2><div class="p">Depending on the reason code, try the following:
+<ol>
+<li>Verify that a valid user ID and password were specified for the host <var class="keyword varname">hostname</var>.</li>
+
+<li>Change the password on host <var class="keyword varname">hostname</var> for user <var class="keyword varname">authorization-ID</var>. Contact your 
+system administrator for assistance. Attempt the request again once the password has been changed. </li>
+
+<li>Contact your system administrator to unlock the account.</li>
+
+<li>Contact your system administrator to find out the restrictions placed on the account.</li>
+
+<li>Resubmit the request as a user other than root. </li>
+
+<li>An internal authentication error has occurred.</li>
+</ol>
+</div>
+
+<p>If you continue to receive this message after attempting the suggested solutions, contact
+IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1332" lang="en-us" id="sql22202w">
+<h1 class="msghead" id="d26851e1332"><span class="title title msgId"><span class="ph ph msgNumber">SQL22202W</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server cannot be quiesced. Reason code
+<var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22202W: Explanation"><h2 class="sectiontitle" id="d26851e1359">Explanation</h2><div class="p">The DB2 Administration Server quiesce operation failed for one of the following reasons: 
+<ol>
+<li>The DB2 Administration Server is already quiesced.</li>
+
+<li>The DB2 Administration Server is currently processing requests on behalf of DB2 clients. </li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22202W: User response"><h2 class="sectiontitle" id="d26851e1372">User response</h2><div class="p">Depending on the reason for the failure, attempt one of the following:
+<ol>
+<li>No action required.</li>
+
+<li>Wait until the DB2 Administration Server is not processing any requests, or resubmit the quiesce request and specify the force option. Forcing a quiesce will terminate any requests that are currently being processed. </li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1390" lang="en-us" id="sql22203w">
+<h1 class="msghead" id="d26851e1390"><span class="title title msgId"><span class="ph ph msgNumber">SQL22203W</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server cannot be unquiesced. Reason code
+<var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22203W: Explanation"><h2 class="sectiontitle" id="d26851e1417">Explanation</h2><div class="p">The DB2 Administration Server unquiesce operation failed for one of the following reasons: 
+<ol>
+<li>The DB2 Administration Server is not quiesced.</li>
+
+<li>There is at least one administration request in progress.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22203W: User response"><h2 class="sectiontitle" id="d26851e1430">User response</h2><div class="p">Depending on the reason for the failure, attempt one of the following:
+<ol>
+<li>No action required.</li>
+
+<li>Wait until the DB2 Administration Server has completed processing all administration
+requests, or resubmit the unquiesce request and specify the force option. Forcing
+the unquiesce operation will allow normal requests to be handled concurrently with
+the administration requests, which may prevent the administration requests from
+completing successfully. </li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1449" lang="en-us" id="sql22204n">
+<h1 class="msghead" id="d26851e1449"><span class="title title msgId"><span class="ph ph msgNumber">SQL22204N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server encountered a non-severe error while executing a request.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22204N: Explanation"><h2 class="sectiontitle" id="d26851e1473">Explanation</h2><p>A non-severe error occurred in the DB2 Administration Server while it was processing a request. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22204N: User response"><h2 class="sectiontitle" id="d26851e1479">User response</h2><p>Refer to the DB2 Administration Server's First Failure Data Capture Log for additional information.</p>
+
+<div class="p">If trace was active, invoke the Independent Trace Facility at the operating system
+command prompt.  
+Contact IBM Support with
+the following required information: 
+<ul>
+<li>Problem description </li>
+
+<li>SQLCODE or message number </li>
+
+<li>SQLCA contents if possible </li>
+
+<li>Trace file if possible</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1506" lang="en-us" id="sql22205c">
+<h1 class="msghead" id="d26851e1506"><span class="title title msgId"><span class="ph ph msgNumber">SQL22205C</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server encountered an unexpected error while executing a request.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22205C: Explanation"><h2 class="sectiontitle" id="d26851e1530">Explanation</h2><p>An unexpected error occurred in the DB2 Administration Server while it was processing a request. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22205C: User response"><h2 class="sectiontitle" id="d26851e1536">User response</h2><p>Refer to the DB2 Administration Server's First Failure Data Capture Log for additional information.</p>
+
+<div class="p">If trace was active, invoke the Independent Trace Facility at the operating system
+command prompt. 
+Contact IBM Support with
+the following required information:
+<ul>
+<li>Problem description </li>
+
+<li>SQLCODE or message number </li>
+
+<li>SQLCA contents if possible </li>
+
+<li>Trace file if possible</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1564" lang="en-us" id="sql22206n">
+<h1 class="msghead" id="d26851e1564"><span class="title title msgId"><span class="ph ph msgNumber">SQL22206N</span></span>  <span class="shortdesc shortdesc msgText">An error occurred while accessing a message queue. Reason code
+<var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22206N: Explanation"><h2 class="sectiontitle" id="d26851e1591">Explanation</h2><div class="p">An unexpected error or bad message was received on 
+a message queue.  The following is a list of reason codes: 
+<ol>
+<li>Unable to create a message queue. The number of message queues allowed may have been exceeded.  </li>
+
+<li>An error was encountered while reading from a message queue.  </li>
+
+<li>An error was encountered while writing to a message queue.  </li>
+
+<li>An invalid message was received from a message queue.  </li>
+
+<li>An error was encountered while opening a message queue.  </li>
+
+<li>An error was encountered while closing a message queue.  </li>
+
+<li>An error was encountered while querying a message queue.</li>
+
+<li>An error was encountered while deleting a message queue.  </li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22206N: User response"><h2 class="sectiontitle" id="d26851e1623">User response</h2><p>Ensure the number of message queues allowed is not reached. Reduce the number of
+message queues in use if necessary and resubmit the request.  </p>
+
+<p>If you continue to receive this error message after attempting the suggested solutions,
+please contact IBM Support. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1637" lang="en-us" id="sql22207n">
+<h1 class="msghead" id="d26851e1637"><span class="title title msgId"><span class="ph ph msgNumber">SQL22207N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration server cannot execute the script
+at host
+<var class="keyword varname vartype=quotedString varnumber=1">hostname</var>. Reason code
+<var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22207N: Explanation"><h2 class="sectiontitle" id="d26851e1667">Explanation</h2><div class="p">The DB2 Administration Server failed to execute the script for one of the following reasons:
+<ol>
+<li>The user specified an existing script and the script does not exist.</li>
+
+<li>The script working directory is invalid.</li>
+
+<li>The last line of the script failed to run because a statement termination character could not be found.</li>
+
+<li>A system error occurred while attempting to execute the script.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22207N: User response"><h2 class="sectiontitle" id="d26851e1686">User response</h2><div class="p">Depending on the reason for the failure, attempt one of the following:
+<ol>
+<li>Verify that the script specified exists on host <var class="keyword varname">hostname</var> at the path provided.</li>
+
+<li>Verify that the working directory is valid on host <var class="keyword varname">hostname</var>.</li>
+
+<li>Verify the script contents and resubmit the request. </li>
+
+<li>Refer to the DB2 Administration Server's First Failure Data Capture Log for additional information.</li>
+</ol>
+</div>
+
+<p>If you continue to receive this error message after attempting the suggested response, refer
+to the DB2 Administration Server's First Failure Data Capture Log for additional information or
+contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1720" lang="en-us" id="sql22208n">
+<h1 class="msghead" id="d26851e1720"><span class="title title msgId"><span class="ph ph msgNumber">SQL22208N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server failed to execute function/method
+<var class="keyword varname vartype=quotedString varnumber=1">function-name</var> in library/class
+<var class="keyword varname vartype=quotedString varnumber=2">library-name</var> at host
+<var class="keyword varname vartype=quotedString varnumber=3">hostname</var>. Reason code
+<var class="keyword varname vartype=quotedString varnumber=4">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22208N: Explanation"><h2 class="sectiontitle" id="d26851e1756">Explanation</h2><div class="p">The DB2 Administration server encountered an error while trying to execute a function/method
+in a library/class for one of the following reasons: 
+<ol>
+<li>The library/class <var class="keyword varname">library-name</var> could not be found. </li>
+
+<li>The function/method <var class="keyword varname">function-name</var> could not be found in the library/class
+<var class="keyword varname">library-name</var>.</li>
+
+<li>The version of the function/method invoked at the DB2 Administration Server is not supported.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22208N: User response"><h2 class="sectiontitle" id="d26851e1781">User response</h2><div class="p">Depending on the reason for the failure, attempt one of the following:
+<ol>
+<li>Verify that the library <var class="keyword varname">library-name</var> exists on host <var class="keyword varname">hostname</var>.</li>
+
+<li>Refer to the DB2 Administration Server's First Failure Data Capture Log for additional information.
+If trace was active, invoke the Independent Trace Facility at the operating system
+command prompt.
+Contact IBM Support with the
+following required information: 
+<ul>
+<li>Problem description </li>
+
+<li>SQLCODE or message number </li>
+
+<li>SQLCA contents if possible </li>
+
+<li>Trace file if possible</li>
+</ul>
+</li>
+
+<li>See response for reason code 2.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1821" lang="en-us" id="sql22209n">
+<h1 class="msghead" id="d26851e1821"><span class="title title msgId"><span class="ph ph msgNumber">SQL22209N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server encountered an unexpected Java error on host
+<var class="keyword varname vartype=quotedString varnumber=1">hostname</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22209N: Explanation"><h2 class="sectiontitle" id="d26851e1848">Explanation</h2><div class="p">An error occurred while the DB2 Administration Server was attempting to start or
+communicate with a Java Interpreter. The following could be the cause of the problem:
+<ol>
+<li>Java has been improperly installed or configured on host <var class="keyword varname">hostname</var>.</li>
+
+<li>The DB2 Administration Server jdk_path configuration parameter has been set incorrectly.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22209N: User response"><h2 class="sectiontitle" id="d26851e1864">User response</h2><div class="p">Attempt the following: 
+<ol>
+<li>Contact the system administrator for host <var class="keyword varname">hostname</var> to verify that Java
+is properly installed and configured. </li>
+
+<li>Verify that the DB2 Administration Server jdk_path configuration parameter has been
+set correctly. The jdk_path configuration parameter can be viewed using CLP. The
+parameter should point to the location where Java is
+installed on the host <var class="keyword varname">hostname</var>. </li>
+</ol>
+</div>
+
+<p>If you continue to receive this error message after attempting the suggested response, please contact IBM Support. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1892" lang="en-us" id="sql22210n">
+<h1 class="msghead" id="d26851e1892"><span class="title title msgId"><span class="ph ph msgNumber">SQL22210N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration server cannot execute the specified request while quiesced.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22210N: Explanation"><h2 class="sectiontitle" id="d26851e1916">Explanation</h2><p>The DB2 Administration Server failed to execute the request because the DB2 Administration
+Server is currently quiesced. Only administrative requests can be executed while
+the DB2 Administration Server is quiesced. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22210N: User response"><h2 class="sectiontitle" id="d26851e1922">User response</h2><p>Try the request again when the DB2 Administration Server is no longer quiesced.
+Contact your database administrator to determine when the DB2 Administration Server
+will be unquiesced.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e1933" lang="en-us" id="sql22211n">
+<h1 class="msghead" id="d26851e1933"><span class="title title msgId"><span class="ph ph msgNumber">SQL22211N</span></span>  <span class="shortdesc shortdesc msgText">An error occurred setting or retrieving the DB2 Administration Server configuration parameter
+<var class="keyword varname vartype=quotedString varnumber=1">parameter-token</var>. Reason code
+<var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22211N: Explanation"><h2 class="sectiontitle" id="d26851e1963">Explanation</h2><div class="p">The following error occurred while updating or reading the DB2 Administration Server configuration:
+<ol>
+<li>Configuration parameter is unknown.</li>
+
+<li>Configuration parameter value is not in the correct range.</li>
+
+<li>A system error occurred while updating the DB2 Administration Server configuration parameters.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22211N: User response"><h2 class="sectiontitle" id="d26851e1979">User response</h2><div class="p">Depending on the reason code, verify the following:
+<ol>
+<li>The configuration parameter exists.</li>
+
+<li>The value specified for the configuration parameter is in the correct range. See
+the description of the configuration parameter in the DB2 Administration Guide:
+Performance volume for the range of allowable values.</li>
+
+<li>Refer to the DB2 Administration Server's First Failure Data Capture Log for additional information
+or contact IBM Support.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2001" lang="en-us" id="sql22212n">
+<h1 class="msghead" id="d26851e2001"><span class="title title msgId"><span class="ph ph msgNumber">SQL22212N</span></span>  <span class="shortdesc shortdesc msgText">A DB2 Administration Server communication error has been detected.
+Client system: <var class="keyword varname vartype=quotedString varnumber=1">client-ip-address</var>. Server system <var class="keyword varname vartype=quotedString varnumber=2">server-ip-address</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22212N: Explanation"><h2 class="sectiontitle" id="d26851e2031">Explanation</h2><div class="p">A DB2 Administration Server communication error has been detected.
+Possible causes include the following:
+<ol>
+<li>The DB2 Administration Server at the server system was shut down by the system administrator.</li>
+
+<li>The DB2 Administration Server at the server system was terminated due to an internal or system error.</li>
+
+<li>The DB2 Administration Server is not installed at the server system. </li>
+
+<li>The DB2 Administration Server has not been cataloged correctly at the client system.</li>
+
+<li>The communication subsystem at the client system or server system has not been configured correctly, or has not been started successfully.  </li>
+
+<li>A network error has caused the connection to go down.  </li>
+
+<li>An internal error in the DB2 Administration Server caused the connection to go down.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22212N: User response"><h2 class="sectiontitle" id="d26851e2060">User response</h2><div class="p">Verify the following:
+<ol>
+<li>The DB2 Administration Server has not been shut down.</li>
+
+<li>The DB2 Administration Server has not been terminated.</li>
+
+<li>The DB2 Administration Server has been installed at the server system. </li>
+
+<li>The remote DB2 Administration Server is cataloged properly on the client system.</li>
+
+<li>The communication subsystems on both client and server systems are configured and started up properly.  </li>
+
+<li>The network is operating properly.</li>
+
+<li>Nothing to verify. </li>
+</ol>
+</div>
+
+<p>If the problem persists, consult with your network administrator or contact IBM Support. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2097" lang="en-us" id="sql22213n">
+<h1 class="msghead" id="d26851e2097"><span class="title title msgId"><span class="ph ph msgNumber">SQL22213N</span></span>  <span class="shortdesc shortdesc msgText">DB2ADMIN processing was successful. The scheduler was not started successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22213N: Explanation"><h2 class="sectiontitle" id="d26851e2121">Explanation</h2><p>The DB2ADMIN command successfully started the DB2 Administration Server, but the DB2 Administration Server was unable to start the scheduler.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22213N: User response"><h2 class="sectiontitle" id="d26851e2127">User response</h2><p>Perform the following actions:</p>
+
+<ul>
+<li>Ensure that the tools catalog database configuration parameters are set to the correct values. For instructions on configuring the Tools Catalog Database, refer to the section on the DB2 Administration Server in the DB2 Administration Guide.</li>
+
+<li>Ensure the database manager containing the tools catalog database has been started.</li>
+
+<li>If the tools catalog database is remote to the tools catalog database instance, ensure the scheduler user ID and password are set correctly. The scheduler user ID must have SYSADM authority on the tools catalog database. You can change the scheduler user ID and password by using the db2admin setschedid command.</li>
+
+<li>Ensure the tools catalog database is not being used by another scheduler.</li>
+</ul>
+
+<p>After performing the suggested actions, try stopping and then restarting the DB2 Administration Server. If you continue to receive the error message after performing the suggested actions, contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2156" lang="en-us" id="sql22214n">
+<h1 class="msghead" id="d26851e2156"><span class="title title msgId"><span class="ph ph msgNumber">SQL22214N</span></span>  <span class="shortdesc shortdesc msgText">The admin node <var class="keyword varname vartype=quotedString varnumber=1">node-name</var>
+does not exist in the DB2 node directory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22214N: Explanation"><h2 class="sectiontitle" id="d26851e2183">Explanation</h2><p>The admin node <var class="keyword varname">node-name</var> is invalid. The node name does not exist in the
+DB2 node directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22214N: User response"><h2 class="sectiontitle" id="d26851e2192">User response</h2><p>Verify that the node name <var class="keyword varname">node-name</var> is cataloged in the admin node directory
+using the LIST ADMIN NODE DIRECTORY command. If the admin node is not listed in
+the admin node directory, submit a CATALOG ADMIN ... NODE command to catalog the admin node. 
+If you continue to receive this error message after attempting the suggested response,
+please contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2206" lang="en-us" id="sql22215w">
+<h1 class="msghead" id="d26851e2206"><span class="title title msgId"><span class="ph ph msgNumber">SQL22215W</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server configuration parameters
+were updated successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22215W: Explanation"><h2 class="sectiontitle" id="d26851e2230">Explanation</h2><p>The configuration parameters were updated successfully, however, you must
+restart the DB2 Administration Server to have the changes become effective.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22215W: User response"><h2 class="sectiontitle" id="d26851e2236">User response</h2><p>Restart the DB2 Administration Server to have the changes become effective.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2248" lang="en-us" id="sql22216n">
+<h1 class="msghead" id="d26851e2248"><span class="title title msgId"><span class="ph ph msgNumber">SQL22216N</span></span>  <span class="shortdesc shortdesc msgText">An error occurred while performing an extended console
+operation. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22216N: Explanation"><h2 class="sectiontitle" id="d26851e2275">Explanation</h2><div class="p">While performing the operation, an unexpected 
+error occurred. The possible reason codes are as follows: 
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">The console name used to active the console
+has more than 8 characters.</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry">The operator command that was issued is 
+longer than the allowed 126 characters.</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry">For an activate request, the issuer does not
+have read authority to resource name,
+MVS.MCSOPER.*, where * is the name of the 
+console.</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry">For an activate request, the console was 
+already active.  </dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22216N: User response"><h2 class="sectiontitle" id="d26851e2314">User response</h2><div class="p">The action corresponding to the reason code is:
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">Check if the user name supplied as the
+console name has more than 8 characters.</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry">Check if the operator command is more than 
+126 characters in length.</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry">Provide the required read authority to the 
+resource MVS.MCSOPER.*, where * is the name 
+of the console.</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry">Ensure that the extended console you want to 
+activate is not active.</dd>
+</dl>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2358" lang="en-us" id="sql22220n">
+<h1 class="msghead" id="d26851e2358"><span class="title title msgId"><span class="ph ph msgNumber">SQL22220N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server encountered a script error.
+Script error code <var class="keyword varname vartype=quotedString varnumber=1">error-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22220N: Explanation"><h2 class="sectiontitle" id="d26851e2385">Explanation</h2><p>A script error was encountered while the DB2 Administration server was executing the
+script. The script exited with error code <var class="keyword varname">error-code</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22220N: User response"><h2 class="sectiontitle" id="d26851e2394">User response</h2><p>Verify that the script is correct.</p>
+
+<p>If you continue to receive this error message after attempting the
+suggested response, refer to the DB2 Administration Server's First Failure
+Data Capture Log for additional information or contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2409" lang="en-us" id="sql22221n">
+<h1 class="msghead" id="d26851e2409"><span class="title title msgId"><span class="ph ph msgNumber">SQL22221N</span></span>  <span class="shortdesc shortdesc msgText">The scheduler is not active. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22221N: Explanation"><h2 class="sectiontitle" id="d26851e2436">Explanation</h2><div class="p">The scheduler was unable to handle the request because the scheduler is not active
+for one of the following reasons:
+<ol>
+<li>The scheduler is not enabled.</li>
+
+<li>The scheduler is not configured properly.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22221N: User response"><h2 class="sectiontitle" id="d26851e2449">User response</h2><div class="p">Check the following:
+<ol>
+<li>Verify that the scheduler has been enabled. The scheduler is enabled using the
+SCHED_ENABLE DB2 Administration Server configuration parameter. Verify the current
+setting of the SCHED_ENABLE parameter by viewing the DB2 Administration Server configuration
+parameters using the GET ADMIN CONFIGURATION command. To modify the value of any
+configuration parameter, use the UPDATE ADMIN CONFIGURATION command.</li>
+
+<li>Verify that the scheduler is properly configured. To configure the scheduler, refer to
+the section on the DB2 administration server in the DB2 Administration Guide.</li>
+</ol>
+</div>
+
+<p>If you continue to receive this error message after attempting the suggested
+response, refer to the DB2 Administration Server's First Failure Data Capture
+Log for additional information or contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2470" lang="en-us" id="sql22222n">
+<h1 class="msghead" id="d26851e2470"><span class="title title msgId"><span class="ph ph msgNumber">SQL22222N</span></span>  <span class="shortdesc shortdesc msgText">The logon user account for the Scheduler is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22222N: Explanation"><h2 class="sectiontitle" id="d26851e2494">Explanation</h2><p>The scheduler requires a valid logon account to connect to the tools
+catalog database if the tools catalog database is remote to the DB2
+Administration Server. This error is caused by the account not being setup,
+or the logon user account does not contain a valid DB2 user ID. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22222N: User response"><h2 class="sectiontitle" id="d26851e2500">User response</h2><div class="p">If a logon user account has been set up, then ensure that the account uses a valid DB2 user ID.  
+You can set up the logon user account for the Scheduler by using the following command: 
+<pre class="codeblock"><code>DB2ADMIN SETSCHEDID &lt;userid&gt; &lt;password&gt;</code></pre></div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2514" lang="en-us" id="sql22223n">
+<h1 class="msghead" id="d26851e2514"><span class="title title msgId"><span class="ph ph msgNumber">SQL22223N</span></span>  <span class="shortdesc shortdesc msgText">The instance <var class="keyword varname vartype=quotedString varnumber=1">instance-name</var> does not exist on host <var class="keyword varname vartype=quotedString varnumber=2">hostname</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22223N: Explanation"><h2 class="sectiontitle" id="d26851e2544">Explanation</h2><p>The DB2 Administration Server on host <var class="keyword varname">hostname</var> failed to execute a
+request because the instance <var class="keyword varname">instance-name</var> provided in the request
+does not exist on the host. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22223N: User response"><h2 class="sectiontitle" id="d26851e2556">User response</h2><div class="p">Verify the following:
+<ul>
+<li>The remote instance field of the node entry in the local node directory corresponding
+to the instance <var class="keyword varname">instance-name</var> is correct.</li>
+
+<li>The instance <var class="keyword varname">instance-name</var> exists on host <var class="keyword varname">hostname</var>.</li>
+</ul>
+</div>
+
+<p>If you continue to receive this error message after attempting the suggested
+response, refer to the DB2 Administration Server's First Failure Data Capture
+Log for additional information or contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2586" lang="en-us" id="sql22230n">
+<h1 class="msghead" id="d26851e2586"><span class="title title msgId"><span class="ph ph msgNumber">SQL22230N</span></span>  <span class="shortdesc shortdesc msgText">The data set <var class="keyword varname vartype=quotedString varnumber=1">dataset</var> could not be located on the system.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22230N: Explanation"><h2 class="sectiontitle" id="d26851e2613">Explanation</h2><div class="p">One of the following reasons may apply:
+<ol>
+<li>The data set has not been cataloged.</li>
+
+<li>The volume on which the data set is located is not mounted.</li>
+
+<li>The data set does not exist on the volume specified in the catalog.</li>
+
+<li>A data set or PDS/E member name required for this operation was not specified.</li>
+
+<li>The data set or PDS/E member name contains invalid characters or is longer than the maximum length allowed by the system.</li>
+</ol>
+</div>
+
+<p>For more information on the first three of these reasons refer to the MVS system messages IGW01021T, IGW01508T and IGW01511E.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22230N: User response"><h2 class="sectiontitle" id="d26851e2638">User response</h2><p>Ensure that the name of the data set is entered correctly, that the data set has been cataloged and that the volume on which it is located is mounted on the system.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2650" lang="en-us" id="sql22231n">
+<h1 class="msghead" id="d26851e2650"><span class="title title msgId"><span class="ph ph msgNumber">SQL22231N</span></span>  <span class="shortdesc shortdesc msgText">The requested operation is not supported for the data set <var class="keyword varname vartype=quotedString varnumber=1">dataset</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22231N: Explanation"><h2 class="sectiontitle" id="d26851e2677">Explanation</h2><p>Certain properties of the specified data set prevent it from being used in conjunction with the requested operation, which may include an inapplicable record format or data set type. For example, a member name cannot be specified for a PS data set.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22231N: User response"><h2 class="sectiontitle" id="d26851e2683">User response</h2><p>Ensure that the data set has properties that are appropriate for the selected operation. Refer to the DB2 Administration Server's (DAS) First Failure Data Capture Log for additional information.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2694" lang="en-us" id="sql22232n">
+<h1 class="msghead" id="d26851e2694"><span class="title title msgId"><span class="ph ph msgNumber">SQL22232N</span></span>  <span class="shortdesc shortdesc msgText">The job ID <var class="keyword varname vartype=quotedString varnumber=1">jobid</var> was not found on the Job Entry Subsystem (JES).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22232N: Explanation"><h2 class="sectiontitle" id="d26851e2721">Explanation</h2><div class="p">Possible reasons include:
+<ol>
+<li>The job with the specified job ID has not been submitted to the JES.</li>
+
+<li>The job with the specified job ID has been purged from the JES.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22232N: User response"><h2 class="sectiontitle" id="d26851e2734">User response</h2><p>Ensure that the job ID belongs to a job that has been submitted to the JES and that has not been purged yet.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2746" lang="en-us" id="sql22236n">
+<h1 class="msghead" id="d26851e2746"><span class="title title msgId"><span class="ph ph msgNumber">SQL22236N</span></span>  <span class="shortdesc shortdesc msgText">A file I/O error occurred. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22236N: Explanation"><h2 class="sectiontitle" id="d26851e2773">Explanation</h2><div class="p">An error occurred while accessing the file system. The reasons codes are as
+follows:
+<ol>
+<li>An invalid directory was specified.</li>
+
+<li>An attempt was made to open a non-existent file.</li>
+
+<li>An attempt was made to create an existing file.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22236N: User response"><h2 class="sectiontitle" id="d26851e2789">User response</h2><div class="p">The action is based on the reason code as follows.
+<ol>
+<li>Specify a valid directory.</li>
+
+<li>Specify a file that exists.</li>
+
+<li>Specify a file that does not already exist.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e2810" lang="en-us" id="sql22237n">
+<h1 class="msghead" id="d26851e2810"><span class="title title msgId"><span class="ph ph msgNumber">SQL22237N</span></span>  <span class="shortdesc shortdesc msgText">A file system error occurred when performing an operation on path <var class="keyword varname vartype=quotedString varnumber=1">path</var>. Reason code = <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22237N: Explanation"><h2 class="sectiontitle" id="d26851e2840">Explanation</h2><div class="p">An error occurred while accessing the file system. The explanation corresponding to the reason code is:
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">The specified path already exists.</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry">The specified path does not exist.</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry">An attempt was made to modify the specified file or directory which is currently read-only.</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry">An attempt was made to modify or delete the specified file or directory which is currently in use by another application.</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry">The specified file or directory is not accessible.</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry">The specified path or device is not available.</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry">The specified non-empty directory was mentioned in an inappropriate context.  For example trying to non-recursively delete a non-empty directory.</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry">The specified path does not refer to a directory.</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry">The specified path is invalid.</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry">The specified path name is too long.</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry">There is no more space available on the file-system.</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry">The maximum number of files that can be open has been reached.</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry">The end of the specified file has been reached.</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry">A physical I/O error occurred.</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry">An unidentified error occurred.</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry">A directory with the new directory name already exists.</dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22237N: User response"><h2 class="sectiontitle" id="d26851e2977">User response</h2><div class="p">The user response corresponding to the reason code is:
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">Specify a path that does not exist.</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry">Specify a path that does exist.</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry">Verify the specified file or directory is not read-only.</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry">Verify the specified file or directory is not in use by any other applications.</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry">Verify the specified file or directory is accessible to the current user.</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry">Verify the specified path or device is still available.</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry">Verify the specified directory is empty.</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry">Verify the specified path refers to a directory. </dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry">Verify the specified path is valid.</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry">Verify the specified path is within the maximum limit for path names on the specific operating system.</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry">Verify there is space available on the file-system.</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry">Close one or more files and re-try the operation.</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry">Verify the operation is not trying to read or seek beyond the end of file.</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry">Retry the operation.  If the problem persists, contact IBM Support.</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry">Retry the operation.  If the problem persists, contact IBM Support.</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry">Specify a directory name that does not exist.</dd>
+</dl>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3120" lang="en-us" id="sql22245n">
+<h1 class="msghead" id="d26851e3120"><span class="title title msgId"><span class="ph ph msgNumber">SQL22245N</span></span>  <span class="shortdesc shortdesc msgText">JCL generation failed. Reason (code[, token]) = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22245N: Explanation"><h2 class="sectiontitle" id="d26851e3147">Explanation</h2><div class="p">JCL generation failed as indicated by the following reason code:
+<dl>
+
+<dt class="dlterm">01</dt>
+
+<dd class="dlentry">A card with the reserved JCL skeleton parameter &amp;JOB is not found or is misplaced
+in the main JCL skeleton. This card should be the first non-comment card in the main
+JCL skeleton after the TEMPLATE card.</dd>
+
+
+<dt class="dlterm">02</dt>
+
+<dd class="dlentry">Incorrect use of a reserved JCL skeleton parameter. The token in this message contains the name of the parameter that caused the problem.</dd>
+
+
+<dt class="dlterm">03</dt>
+
+<dd class="dlentry">There are more occurrences of the reserved JCL skeleton parameter &amp;CTLSTMT in the main JCL skeleton than expected. The token in this message is set to the expected number of the &amp;CTLSTMT parameters.</dd>
+
+
+<dt class="dlterm">04</dt>
+
+<dd class="dlentry">There are more occurrences of the reserved JCL skeleton parameter &amp;STEPLIB in the main JCL skeleton than expected. The token in this message is set to the expected number of the &amp;STEPLIB parameters.</dd>
+
+
+<dt class="dlterm">05</dt>
+
+<dd class="dlentry">The main JCL skeleton does not begin with the TEMPLATE statement. This statement should be the first non-comment statement in the main JCL skeleton.</dd>
+
+
+<dt class="dlterm">06</dt>
+
+<dd class="dlentry">The jobname or stepname  in the JCL skeleton does not contain the JCL skeleton built-in function &amp;SEQ required for job or step sequencing. The JCL skeleton built-in function &amp;SEQ should be specified in the jobname or stepname of the JCL skeleton. The token in this message contains a fragment of the incorrect JCL statement.</dd>
+
+
+<dt class="dlterm">07</dt>
+
+<dd class="dlentry">The keyword JOB is not found in the first non-comment statement in the JCL skeleton for //JOB-statement. It might be commented out, mistyped, or missed delimiting spaces, especially after the keyword.</dd>
+
+
+<dt class="dlterm">08</dt>
+
+<dd class="dlentry">The main JCL skeleton is incomplete or has incorrect structure. The required standard JCL statements may be commented out, missed or misplaced, especially if in-stream JCL procedures are being used in this JCL skeleton. </dd>
+
+
+<dt class="dlterm">09</dt>
+
+<dd class="dlentry">The syntax of  jobname, stepname, or ddname in the JCL skeleton is invalid. Possible reasons for this: incorrect length of the name field, or the field includes some non-alphanumerical characters. The token in this message contains a fragment of the incorrect JCL statement.</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry">An incorrect use of ampersand in the JCL skeleton. The JCL skeleton contains one or more stand-alone ampersand characters. An ampersand is the first symbol of any JCL skeleton parameter and should not be used without an accompanying identifier. The token in this message contains a fragment of the incorrect JCL statement.</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry">The reserved JCL skeleton parameter &amp;OBJECT was not found in the JCL skeleton.    </dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry">A user-defined JCL skeleton parameter should not appear in the JCL skeleton.  The token in this message contains the name of the JCL skeleton parameter that caused the problem.</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry">A reserved JCL skeleton parameter should not appear in the JCL skeleton. The token in this message contains the name of the reserved JCL skeleton parameter that caused the problem.</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry">The generated JCL is too long and the buffer for it cannot be allocated. The token in this message contains requested size that caused the problem. To avoid this problem, decrease the number of database objects selected for processing. </dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22245N: User response"><h2 class="sectiontitle" id="d26851e3268">User response</h2><p>Correct the problem according to the given explanation.  If the problem persists, contact your
+Database Administrator or IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3279" lang="en-us" id="sql22247n">
+<h1 class="msghead" id="d26851e3279"><span class="title title msgId"><span class="ph ph msgNumber">SQL22247N</span></span>  <span class="shortdesc shortdesc msgText">The known discovery operation failed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22247N: Explanation"><h2 class="sectiontitle" id="d26851e3303">Explanation</h2><p>Discovery is disabled on the target DB2 Administration Server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22247N: User response"><h2 class="sectiontitle" id="d26851e3309">User response</h2><p>Enable discovery by modifying the value of the DISCOVER configuration parameter on
+the DB2 Administration Server. Change the value to KNOWN if you only want known discovery enabled.
+Change the value to SEARCH if you want both known and search discovery enabled. 
+To modify the value of the configuration parameter, use the UPDATE ADMIN CONFIGURATION command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3321" lang="en-us" id="sql22250n">
+<h1 class="msghead" id="d26851e3321"><span class="title title msgId"><span class="ph ph msgNumber">SQL22250N</span></span>  <span class="shortdesc shortdesc msgText">Usage: DASMIGR is a utility to migrate the DB2 Administration Server to run under the DB2 Copy from which the utility was invoked.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22250N: Explanation"><h2 class="sectiontitle" id="d26851e3345">Explanation</h2><div class="p">The DASMIGR command syntax is: 
+<pre class="codeblock"><code>  DASMIGR [-h | -p [DAS Profile Path]]</code></pre></div>
+
+<div class="p">The command options are:
+<dl>
+
+<dt class="dlterm">-h</dt>
+
+<dd class="dlentry">Prints this message.</dd>
+
+
+<dt class="dlterm">-p</dt>
+
+<dd class="dlentry">Moves the DAS working directory under the install directory of the current DB2 Copy.</dd>
+
+
+<dt class="dlterm">DAS Profile Path</dt>
+
+<dd class="dlentry">Overrides the default location where the DAS working directory is to be moved.
+This option takes affect only if "-p" option is specified.</dd>
+</dl>
+</div>
+
+<div class="p">Example: 
+<pre class="codeblock"><code>	dasmigr -p "C:\DB2 PROFILES"</code></pre></div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22250N: User response"><h2 class="sectiontitle" id="d26851e3386">User response</h2><p>Issue the DASMIGR command with one of the valid 
+command options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3397" lang="en-us" id="sql22251n">
+<h1 class="msghead" id="d26851e3397"><span class="title title msgId"><span class="ph ph msgNumber">SQL22251N</span></span>  <span class="shortdesc shortdesc msgText">Migration of the DB2 Administration Server from <var class="keyword varname vartype=quotedString varnumber=1">source-dasname</var> to
+<var class="keyword varname vartype=quotedString varnumber=2">target-dasname</var> failed. Reason code <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22251N: Explanation"><h2 class="sectiontitle" id="d26851e3430">Explanation</h2><div class="p">The DB2 Administration Server <var class="keyword varname">source-dasname</var> could not be migrated for
+one of the following reasons:
+<ol>
+<li>The Tools Catalog Database has not been created at the target DB2 Administration Server.</li>
+
+<li>The Tools Catalog Database has been configured improperly at the target DB2 Administration Server.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22251N: User response"><h2 class="sectiontitle" id="d26851e3446">User response</h2><div class="p">Attempt the following at the target DB2 Administration Server <var class="keyword varname">target-dasname</var>:
+<ol>
+<li>Verify that the Tools Catalog Database exists.</li>
+
+<li>Verify the TOOLSCAT_DB and TOOLSCAT_SCHEMA DB2 Administration Server configuration
+parameters are correct. They should be set to the name and schema of the Tools Catalog
+Database. View the current settings of TOOLSCAT_DB and TOOLSCAT_SCHEMA using the
+GET ADMIN CONFIGURATION command. To modify the value of any DB2 Administration Server
+configuration parameter, use the UPDATE ADMIN CONFIGURATION command</li>
+</ol>
+</div>
+
+<p>If you continue to receive this error message after attempting the suggested response, please contact
+IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3471" lang="en-us" id="sql22252n">
+<h1 class="msghead" id="d26851e3471"><span class="title title msgId"><span class="ph ph msgNumber">SQL22252N</span></span>  <span class="shortdesc shortdesc msgText">DAS migration failed with reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22252N: Explanation"><h2 class="sectiontitle" id="d26851e3498">Explanation</h2><div class="p">An error has occurred while migrating the DB2 Administration Server.
+The reason codes are as follows:
+<ol>
+<li>The system resources available were insufficient to complete the migration.</li>
+
+<li>The DB2 Administration Server's configuration parameters do not identify
+a valid tools catalog.</li>
+
+<li>A non-severe error occurred during migration.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22252N: User response"><h2 class="sectiontitle" id="d26851e3514">User response</h2><div class="p"><ol>
+<li>Verify that enough system resources are available for DAS migration.</li>
+
+<li>Verify that a tools catalog is created and is identified correctly by the
+DB2 Administration Server's configuration parameters.</li>
+
+<li>Refer to the DB2 Administration Server's First Failure Data Capture Log for
+additional information.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3534" lang="en-us" id="sql22255w">
+<h1 class="msghead" id="d26851e3534"><span class="title title msgId"><span class="ph ph msgNumber">SQL22255W</span></span>  <span class="shortdesc shortdesc msgText">Usage: dasauto [-h|-?] -on|-off</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22255W: Explanation"><h2 class="sectiontitle" id="d26851e3558">Explanation</h2><div class="p">An incorrect argument was entered.  Valid arguments for this command are:
+<dl>
+
+<dt class="dlterm">-h|-?</dt>
+
+<dd class="dlentry">display the usage information </dd>
+
+
+<dt class="dlterm">-on|-off</dt>
+
+<dd class="dlentry">enables or disables autostarting of the DB2 Administration Server</dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22255W: User response"><h2 class="sectiontitle" id="d26851e3581">User response</h2><p>Enter the command again as follows:<br><br>
+dasauto&nbsp;[-h|-?]&nbsp;-on|-off<br><br> </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3599" lang="en-us" id="sql22256w">
+<h1 class="msghead" id="d26851e3599"><span class="title title msgId"><span class="ph ph msgNumber">SQL22256W</span></span>  <span class="shortdesc shortdesc msgText">The dasauto command was successful.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22256W: Explanation"><h2 class="sectiontitle" id="d26851e3623">Explanation</h2><p>All processing completed normally. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22256W: User response"><h2 class="sectiontitle" id="d26851e3629">User response</h2><p>No further action is required. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3640" lang="en-us" id="sql22260i">
+<h1 class="msghead" id="d26851e3640"><span class="title title msgId"><span class="ph ph msgNumber">SQL22260I</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server has been updated successfully.</span></h1>
+
+
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3670" lang="en-us" id="sql22261n">
+<h1 class="msghead" id="d26851e3670"><span class="title title msgId"><span class="ph ph msgNumber">SQL22261N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server update command has encountered an unexpected error.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22261N: Explanation"><h2 class="sectiontitle" id="d26851e3694">Explanation</h2><p>An unexpected error occurred while attempting to update the DB2 Administration
+Server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22261N: User response"><h2 class="sectiontitle" id="d26851e3700">User response</h2><p>Contact IBM Support and, if possible supply a trace file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3711" lang="en-us" id="sql22262n">
+<h1 class="msghead" id="d26851e3711"><span class="title title msgId"><span class="ph ph msgNumber">SQL22262N</span></span>  <span class="shortdesc shortdesc msgText">Update of the DB2 Administration Server between major releases is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22262N: Explanation"><h2 class="sectiontitle" id="d26851e3735">Explanation</h2><p>You can only update the DB2 Administration Server between minor releases of DB2.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22262N: User response"><h2 class="sectiontitle" id="d26851e3741">User response</h2><p>Please Use DB2 Administration Server migrate command (dasmigr) to update
+between major releases.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3753" lang="en-us" id="sql22263i">
+<h1 class="msghead" id="d26851e3753"><span class="title title msgId"><span class="ph ph msgNumber">SQL22263I</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server has been migrated successfully.</span></h1>
+
+
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3782" lang="en-us" id="sql22264n">
+<h1 class="msghead" id="d26851e3782"><span class="title title msgId"><span class="ph ph msgNumber">SQL22264N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server migrate command has encountered an unexpected error.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22264N: Explanation"><h2 class="sectiontitle" id="d26851e3806">Explanation</h2><p>An unexpected error occurred while attempting to migrate the DB2 Administration Server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22264N: User response"><h2 class="sectiontitle" id="d26851e3812">User response</h2><p>Contact IBM Support and, if possible supply a trace file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3824" lang="en-us" id="sql22265n">
+<h1 class="msghead" id="d26851e3824"><span class="title title msgId"><span class="ph ph msgNumber">SQL22265N</span></span>  <span class="shortdesc shortdesc msgText">Migration of the DB2 Administration Server between minor releases is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22265N: Explanation"><h2 class="sectiontitle" id="d26851e3848">Explanation</h2><p>You can only migrate the DB2 Administration Server between major releases of DB2.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22265N: User response"><h2 class="sectiontitle" id="d26851e3854">User response</h2><p>Use DB2 Administration Server update command (dasupdt) to update between minor releases.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3865" lang="en-us" id="sql22266n">
+<h1 class="msghead" id="d26851e3865"><span class="title title msgId"><span class="ph ph msgNumber">SQL22266N</span></span>  <span class="shortdesc shortdesc msgText">The DB2 Administration Server is already installed under the current DB2 Copy.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22266N: Explanation"><h2 class="sectiontitle" id="d26851e3889">Explanation</h2><p>The DB2 Administration Server is already installed under the DB2 Copy from which the DB2 Administration Server update command was run.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22266N: User response"><h2 class="sectiontitle" id="d26851e3895">User response</h2><p>Run the DB2 Administration Server update command from the DB2 Copy to which you would like the DB2 Administration Server to be moved.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3907" lang="en-us" id="sql22267w">
+<h1 class="msghead" id="d26851e3907"><span class="title title msgId"><span class="ph ph msgNumber">SQL22267W</span></span>  <span class="shortdesc shortdesc msgText">Usage: DASUPDT is a utility to update the DB2 Administration Server to run under the DB2 Copy from which the utility was invoked.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22267W: Explanation"><h2 class="sectiontitle" id="d26851e3931">Explanation</h2><div class="p">The DASUPDT command syntax is: 
+<pre class="codeblock"><code>  DASUPDT [-h | -p [DAS Profile Path]]</code></pre></div>
+
+<div class="p">The command options are:
+<dl>
+
+<dt class="dlterm">-h</dt>
+
+<dd class="dlentry">Prints this message.</dd>
+
+
+<dt class="dlterm">-p</dt>
+
+<dd class="dlentry">Moves the DAS working directory under the install directory of the current DB2 Copy.</dd>
+
+
+<dt class="dlterm">DAS Profile Path</dt>
+
+<dd class="dlentry">Overrides the default location where the DAS working directory is to be moved.
+This option takes affect only if "-p" option is specified.</dd>
+</dl>
+</div>
+
+<div class="p">Example: 
+<pre class="codeblock"><code>	dasupdt -p "C:\DB2 PROFILES"</code></pre></div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22267W: User response"><h2 class="sectiontitle" id="d26851e3972">User response</h2><p>Issue the DASUPDAT command with one of the valid 
+command options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e3983" lang="en-us" id="sql22270n">
+<h1 class="msghead" id="d26851e3983"><span class="title title msgId"><span class="ph ph msgNumber">SQL22270N</span></span>  <span class="shortdesc shortdesc msgText">The contact, or contact group, with name <var class="keyword varname vartype=quotedString varnumber=1">name</var> cannot be added
+to the contact list.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22270N: Explanation"><h2 class="sectiontitle" id="d26851e4010">Explanation</h2><p>The contact, or contact group, already exists in the contact list.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22270N: User response"><h2 class="sectiontitle" id="d26851e4016">User response</h2><p>Create a new contact, or contact group, with a unique name.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4028" lang="en-us" id="sql22271n">
+<h1 class="msghead" id="d26851e4028"><span class="title title msgId"><span class="ph ph msgNumber">SQL22271N</span></span>  <span class="shortdesc shortdesc msgText">The contact, or contact group, information with name
+<var class="keyword varname vartype=quotedString varnumber=1">name</var> could not be found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22271N: Explanation"><h2 class="sectiontitle" id="d26851e4055">Explanation</h2><p>The contact, or contact group, could not be found in the contact list.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22271N: User response"><h2 class="sectiontitle" id="d26851e4061">User response</h2><p> Check and correct the name, and try again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4072" lang="en-us" id="sql22272n">
+<h1 class="msghead" id="d26851e4072"><span class="title title msgId"><span class="ph ph msgNumber">SQL22272N</span></span>  <span class="shortdesc shortdesc msgText">The record with key <var class="keyword varname vartype=quotedString varnumber=1">key</var> cannot be inserted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22272N: Explanation"><h2 class="sectiontitle" id="d26851e4099">Explanation</h2><p>The system tried to insert a record and the new record's key <var class="keyword varname">key</var> already exists in the system.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22272N: User response"><h2 class="sectiontitle" id="d26851e4108">User response</h2><p>Remove the duplicate from the system; or, insert a new record with another key.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4120" lang="en-us" id="sql22273n">
+<h1 class="msghead" id="d26851e4120"><span class="title title msgId"><span class="ph ph msgNumber">SQL22273N</span></span>  <span class="shortdesc shortdesc msgText">The record with key <var class="keyword varname vartype=quotedString varnumber=1">key</var> could not be found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22273N: Explanation"><h2 class="sectiontitle" id="d26851e4147">Explanation</h2><p>The record with key <var class="keyword varname">key</var> could not be found because the record  does not exist.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22273N: User response"><h2 class="sectiontitle" id="d26851e4156">User response</h2><p>Check and correct the key, and try again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4167" lang="en-us" id="sql22280n">
+<h1 class="msghead" id="d26851e4167"><span class="title title msgId"><span class="ph ph msgNumber">SQL22280N</span></span>  <span class="shortdesc shortdesc msgText">This action cannot be performed because the scheduler
+is quiesced.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22280N: Explanation"><h2 class="sectiontitle" id="d26851e4191">Explanation</h2><p>No action can be performed until the scheduler is activated again.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22280N: User response"><h2 class="sectiontitle" id="d26851e4197">User response</h2><p>Activate the scheduler.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4209" lang="en-us" id="sql22281n">
+<h1 class="msghead" id="d26851e4209"><span class="title title msgId"><span class="ph ph msgNumber">SQL22281N</span></span>  <span class="shortdesc shortdesc msgText">The scheduler is already active.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22281N: Explanation"><h2 class="sectiontitle" id="d26851e4233">Explanation</h2><p>The scheduler cannot be made active because it is already active.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22281N: User response"><h2 class="sectiontitle" id="d26851e4239">User response</h2><p>No further action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4250" lang="en-us" id="sql22282n">
+<h1 class="msghead" id="d26851e4250"><span class="title title msgId"><span class="ph ph msgNumber">SQL22282N</span></span>  <span class="shortdesc shortdesc msgText">The scheduler is unable to access the Tools Catalog
+Database. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var> and  SQLCODE <var class="keyword varname vartype=quotedString varnumber=2">sqlcode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22282N: Explanation"><h2 class="sectiontitle" id="d26851e4280">Explanation</h2><div class="p">The scheduler function cannot be processed because the scheduler is unable to
+access the Tools Catalog Database for the reason specified by the
+<var class="keyword varname">reason-code</var> as follows:
+<ol>
+<li>The given user ID, or password, is incorrect.</li>
+
+<li>Incorrect Tools Catalog Database configuration in the DB2 Administration Server
+configuration parameters. One or more of the following DB2 Administration Server
+configuration parameters is incorrect:
+<ul>
+<li>TOOLSCAT_DB</li>
+
+<li>TOOLSCAT_SCHEMA</li>
+</ul>
+</li>
+
+<li>The Tools Catalog Database is already being used by another scheduler on the same system.</li>
+
+<li>The Tools Catalog Database is only supported through TCP/IP as a communication protocol.</li>
+
+<li>Unexpected errors. Refer to SQLCODE <var class="keyword varname">sqlcode</var> for more details.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22282N: User response"><h2 class="sectiontitle" id="d26851e4315">User response</h2><div class="p">The action corresponding to the reason code is:
+<ol>
+<li>Check your user ID and password and try again.</li>
+
+<li>Verify that the DB2 Administration Server TOOLSCAT_DB and TOOLSCAT_SCHEMA
+configuration parameters have been set correctly. View the current settings of
+TOOLSCAT_DB and TOOLSCAT_SCHEMA using the GET ADMIN CONFIGURATION command.
+To modify the value of any DB2 Administration Server configuration parameter,
+use the UPDATE ADMIN CONFIGURATION command.
+If you continue to receive this error message after attempting the suggested
+response, please contact IBM Support.</li>
+
+<li>Contact your system administrator.</li>
+
+<li>Attempt the following:
+<ul>
+<li>If the tools catalog database is local to the scheduler, then set up the
+instance specified by the DB2 Administration Server configuration parameter
+toolscat_inst to use TCP/IP communications.</li>
+
+<li>If the tools catalog database is remote to the scheduler, then ensure that
+the node used by the toolscat_db admin configuration parameter supports TCP/IP as the
+communication protocol.</li>
+</ul>
+</li>
+
+<li>Refer to the DB2 Administration Server's First Failure Data Capture Log for
+additional information.</li>
+</ol>
+</div>
+
+<p>Contact IBM Support if you continue to receive this message after attempting the
+suggested solutions.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4353" lang="en-us" id="sql22283n">
+<h1 class="msghead" id="d26851e4353"><span class="title title msgId"><span class="ph ph msgNumber">SQL22283N</span></span>  <span class="shortdesc shortdesc msgText">Task <var class="keyword varname vartype=quotedString varnumber=1">taskid</var>.<var class="keyword varname vartype=quotedString varnumber=2">suffix</var> does not exist in the Tools Catalog
+Database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22283N: Explanation"><h2 class="sectiontitle" id="d26851e4383">Explanation</h2><p>The scheduler cannot retrieve the task from the Tools Catalog Database.
+The task might have been removed from the Tools Catalog Database or never
+existed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22283N: User response"><h2 class="sectiontitle" id="d26851e4389">User response</h2><p>Check for the existence of the task using the Task Center.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4400" lang="en-us" id="sql22284n">
+<h1 class="msghead" id="d26851e4400"><span class="title title msgId"><span class="ph ph msgNumber">SQL22284N</span></span>  <span class="shortdesc shortdesc msgText">Task <var class="keyword varname vartype=quotedString varnumber=1">taskid</var>.<var class="keyword varname vartype=quotedString varnumber=2">suffix</var> is not scheduled.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22284N: Explanation"><h2 class="sectiontitle" id="d26851e4430">Explanation</h2><p>The requested action, Run a scheduled task now,  cannot be performed because
+the task is not currently scheduled to run.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22284N: User response"><h2 class="sectiontitle" id="d26851e4436">User response</h2><div class="p">Attempt one of the following:
+<ul>
+<li>Perform a Run now instead</li>
+
+<li>Activate all of the task's schedules and perform Run a scheduled task now again.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4455" lang="en-us" id="sql22285n">
+<h1 class="msghead" id="d26851e4455"><span class="title title msgId"><span class="ph ph msgNumber">SQL22285N</span></span>  <span class="shortdesc shortdesc msgText">The scheduler is unable to get the corresponding hostname from
+the partitioned database on partition number <var class="keyword varname vartype=quotedString varnumber=1">partition-number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22285N: Explanation"><h2 class="sectiontitle" id="d26851e4482">Explanation</h2><p>The requested partition number does not exist in the partitioned database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22285N: User response"><h2 class="sectiontitle" id="d26851e4488">User response</h2><p>Verify that the partition number exists by displaying the list of nodes
+using the LIST DBPARTITIONNUMS command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4499" lang="en-us" id="sql22286n">
+<h1 class="msghead" id="d26851e4499"><span class="title title msgId"><span class="ph ph msgNumber">SQL22286N</span></span>  <span class="shortdesc shortdesc msgText">Unable to execute the required task.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22286N: Explanation"><h2 class="sectiontitle" id="d26851e4523">Explanation</h2><p>The scheduler failed to run the task because an unexpected error occurred.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22286N: User response"><h2 class="sectiontitle" id="d26851e4529">User response</h2><p>Refer to the DB2 Administration Server's First Failure Data Capture Log
+for additional information.</p>
+
+<p>If trace was active, invoke the Independent Trace Facility at the operating
+system command prompt.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4544" lang="en-us" id="sql22287n">
+<h1 class="msghead" id="d26851e4544"><span class="title title msgId"><span class="ph ph msgNumber">SQL22287N</span></span>  <span class="shortdesc shortdesc msgText">User <var class="keyword varname vartype=quotedString varnumber=1">userid</var> does not have permission to execute
+Task <var class="keyword varname vartype=quotedString varnumber=2">taskid</var>.<var class="keyword varname vartype=quotedString varnumber=3">suffix</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22287N: Explanation"><h2 class="sectiontitle" id="d26851e4577">Explanation</h2><p>The task failed to execute because the user does not have sufficient
+authority to run the task.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22287N: User response"><h2 class="sectiontitle" id="d26851e4583">User response</h2><p>Users must be granted run permission by the owner of the task before they
+can run the task.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4594" lang="en-us" id="sql22295n">
+<h1 class="msghead" id="d26851e4594"><span class="title title msgId"><span class="ph ph msgNumber">SQL22295N</span></span>  <span class="shortdesc shortdesc msgText">Unable to communicate successfully with the SMTP
+server at host <var class="keyword varname vartype=quotedString varnumber=1">host-name</var> using port <var class="keyword varname vartype=quotedString varnumber=2">port-number</var>.
+Reason code = <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22295N: Explanation"><h2 class="sectiontitle" id="d26851e4627">Explanation</h2><p>The SMTP server at host <var class="keyword varname">host-name</var> using port <var class="keyword varname">port-number</var> failed to successfully negotiate the protocol to send mail. An explanation of the error is indicated by the following reason code:</p>
+
+<ol>
+<li>There is no SMTP server running at <var class="keyword varname">host-name</var> on port <var class="keyword varname">port-number</var>.</li>
+
+<li>An unexpected error was encountered while communicating with the SMTP server.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22295N: User response"><h2 class="sectiontitle" id="d26851e4653">User response</h2><ol>
+<li>Verify that the SMTP server name is specified correctly and that the SMTP port specified in the services file corresponds to the port number being used by the SMTP server.</li>
+
+<li>Invoke the Independent Trace Facility at the operating system command prompt. Contact IBM Support if the problem persists.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -22295</p>
+
+<p><strong>sqlstate</strong>:  08001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4680" lang="en-us" id="sql22296n">
+<h1 class="msghead" id="d26851e4680"><span class="title title msgId"><span class="ph ph msgNumber">SQL22296N</span></span>  <span class="shortdesc shortdesc msgText">Unable to send mail using the SMTP protocol
+due to invalid recipient addresses.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22296N: Explanation"><h2 class="sectiontitle" id="d26851e4704">Explanation</h2><p>The SMTP server failed to successfully negotiate the send mail protocol for
+all the specified recipients.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22296N: User response"><h2 class="sectiontitle" id="d26851e4710">User response</h2><p>Verify that the recipient addresses are specified correctly. </p>
+
+<p>This error might also be returned if the SMTP server is unable to reach
+the recipient addresses. This can be independently verified by using any
+other  mail client to send mail to the recipients using the same SMTP
+server. If this is successful, invoke the Independent Trace Facility at the
+operating system command prompt.
+Contact IBM Support if the problem persists.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4724" lang="en-us" id="sql22297i">
+<h1 class="msghead" id="d26851e4724"><span class="title title msgId"><span class="ph ph msgNumber">SQL22297I</span></span>  <span class="shortdesc shortdesc msgText">Configuration changes will not be effective until
+the DB2 Administration Server is restarted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22297I: Explanation"><h2 class="sectiontitle" id="d26851e4748">Explanation</h2><p>The DB2 Administration Server has been successfully configured, but the changes
+will not take effect immediately. The changes will take effect when the
+DB2 Administration Server is restarted.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22297I: User response"><h2 class="sectiontitle" id="d26851e4754">User response</h2><p>To have the change take effect at the next DB2 Administration Server restart,
+no further action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4766" lang="en-us" id="sql22400n">
+<h1 class="msghead" id="d26851e4766"><span class="title title msgId"><span class="ph ph msgNumber">SQL22400N</span></span>  <span class="shortdesc shortdesc msgText">The function or feature name <var class="keyword varname vartype=quotedString varnumber=1">function-or-feature-name</var> is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22400N: Explanation"><h2 class="sectiontitle" id="d26851e4793">Explanation</h2><p>The function or feature name <var class="keyword varname">function-or-feature-name</var> is not valid. For valid function and feature names, search the documentation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22400N: User response"><h2 class="sectiontitle" id="d26851e4802">User response</h2><p>Specify a valid function or feature name, then try the request again.</p>
+
+<p><strong>sqlcode</strong>: -22400</p>
+
+<p><strong>sqlstate</strong>: 5U001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4823" lang="en-us" id="sql22401n">
+<h1 class="msghead" id="d26851e4823"><span class="title title msgId"><span class="ph ph msgNumber">SQL22401N</span></span>  <span class="shortdesc shortdesc msgText">The application with agent ID <var class="keyword varname vartype=quotedString varnumber=1">agent-ID</var> does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22401N: Explanation"><h2 class="sectiontitle" id="d26851e4850">Explanation</h2><p>The application with agent ID <var class="keyword varname">agent-ID</var> does not currently exist. To see all active database applications, use LIST APPLICATIONS command.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22401N: User response"><h2 class="sectiontitle" id="d26851e4859">User response</h2><p>Specify an agent ID for an active application, then try the request again.</p>
+
+<p><strong>sqlcode</strong>: -22401</p>
+
+<p><strong>sqlstate</strong>: 5U002</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4881" lang="en-us" id="sql22402n">
+<h1 class="msghead" id="d26851e4881"><span class="title title msgId"><span class="ph ph msgNumber">SQL22402N</span></span>  <span class="shortdesc shortdesc msgText">No activity monitor reports can be found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22402N: Explanation"><h2 class="sectiontitle" id="d26851e4905">Explanation</h2><p>No activity monitor reports can be found because either the report ID or the report type specified is invalid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22402N: User response"><h2 class="sectiontitle" id="d26851e4911">User response</h2><p>Specify a valid report ID or a valid report type, then try the request again.</p>
+
+<p><strong>sqlcode</strong>: -22402</p>
+
+<p><strong>sqlstate</strong>: 5U003</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e4932" lang="en-us" id="sql22403n">
+<h1 class="msghead" id="d26851e4932"><span class="title title msgId"><span class="ph ph msgNumber">SQL22403N</span></span>  <span class="shortdesc shortdesc msgText">One or more values provided when saving or dropping the monitoring task <var class="keyword varname vartype=quotedString varnumber=1">monitoring-task-name</var> are invalid. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22403N: Explanation"><h2 class="sectiontitle" id="d26851e4962">Explanation</h2><p>One or more values provided when saving the monitoring task <var class="keyword varname">monitoring-task-name</var> are invalid for the reason given by reason code <var class="keyword varname">code</var>. The possible reason codes are as follows:</p>
+
+<ul>
+<li>The action mode <var class="keyword varname">action-mode</var> is invalid.</li>
+
+<li>The request to create the monitoring task failed because the specified monitoring task name <var class="keyword varname">monitoring-task-name</var> is not valid.</li>
+
+<li>The request to create the monitoring task failed because another monitoring task with the same name <var class="keyword varname">monitoring-task-name</var> was found.</li>
+
+<li>The request to save the monitoring task failed because the value specified for the availability of application lock chains is not valid.</li>
+
+<li>The request to save the monitoring task failed. One or more report IDs in <var class="keyword varname">report-IDs</var> are invalid because there are no associated reports.</li>
+
+<li>The request to modify or drop the monitoring task failed because the specified monitoring task ID <var class="keyword varname">monitoring-task-ID</var> is not valid. The associated monitoring task either does not exist or is a built-in monitoring task. A built-in monitoring task cannot be modified or dropped.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22403N: User response"><h2 class="sectiontitle" id="d26851e5010">User response</h2><p>The action corresponding to the reason code is:</p>
+
+<ul>
+<li>To create a new monitoring task, specify action mode C. To modify an existing monitoring task, specify action mode M. Try the request again.</li>
+
+<li>A monitoring task name cannot be null, blank, or exceed 128 characters in length. Specify a valid monitoring task name, then try the request again.</li>
+
+<li>Monitoring tasks must have unique names. Specify a unique name for the new monitoring task, then try the request again.</li>
+
+<li>To make application lock chains available for this monitoring task, specify 'Y'; otherwise, specify 'N'. Try the request again.</li>
+
+<li>Specify one or more IDs for activity monitor reports that exist, then try the request again.</li>
+
+<li>Specify an existing user-defined monitoring task ID, then try the request again.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -22403</p>
+
+<p><strong>sqlstate</strong>:  5U004</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e5053" lang="en-us" id="sql22404n">
+<h1 class="msghead" id="d26851e5053"><span class="title title msgId"><span class="ph ph msgNumber">SQL22404N</span></span>  <span class="shortdesc shortdesc msgText">The action mode <var class="keyword varname vartype=quotedString varnumber=1">action-mode</var> specified when creating or dropping the database objects for function or feature <var class="keyword varname vartype=quotedString varnumber=2">function-or-feature-name</var> is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22404N: Explanation"><h2 class="sectiontitle" id="d26851e5083">Explanation</h2><p>The action mode <var class="keyword varname">action-mode</var> is invalid. To create the database objects for <var class="keyword varname">function-or-feature-name</var>, specify action mode C. To drop the database objects for <var class="keyword varname">function-or-feature-name</var>, specify action mode D.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22404N: User response"><h2 class="sectiontitle" id="d26851e5098">User response</h2><p>Specify a valid action mode, then try the request again.</p>
+
+<p><strong>sqlcode</strong>: -22404</p>
+
+<p><strong>sqlstate</strong>: 5U005</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d26851e5119" lang="en-us" id="sql22405n">
+<h1 class="msghead" id="d26851e5119"><span class="title title msgId"><span class="ph ph msgNumber">SQL22405N</span></span>  <span class="shortdesc shortdesc msgText">The Activity Monitor is unable to collect the required snapshot data because the monitor switch <var class="keyword varname vartype=quotedString varnumber=1">monitor-switch</var> is not turned on at the database manager level.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL22405N: Explanation"><h2 class="sectiontitle" id="d26851e5146">Explanation</h2><p>The Activity Monitor is unable to collect the required snapshot data because the monitor switch <var class="keyword varname">monitor-switch</var> is not turned on at the database manager level.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL22405N: User response"><h2 class="sectiontitle" id="d26851e5155">User response</h2><p>Turn on the specified monitor switch using the monitor switch database manager configuration parameter, then try the request again.</p>
+
+<p><strong>sqlcode</strong>: -22405</p>
+
+<p><strong>sqlstate</strong>: 5U006</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>
