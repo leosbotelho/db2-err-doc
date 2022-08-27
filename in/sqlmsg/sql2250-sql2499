@@ -1,0 +1,1694 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+<meta name="keywords" content="sql2446">
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL2250 - SQL2499</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d274337e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic10">
+   <h1 class="topictitle1" id="d274337e14">SQL2250 - SQL2499</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d274337e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e64" lang="en-us" id="sql2300n">
+<h1 class="msghead" id="d274337e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL2300N</span></span>  <span class="shortdesc shortdesc msgText">The identifier for the table name is too long or
+it was not specified as part of the table name.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2300N: Explanation"><h2 class="sectiontitle" id="d274337e88">Explanation</h2><p>The table name must be fully qualified.
+The format is 
+<em>authid.tablename</em> where 
+<em>authid</em> contains 1 to 128 bytes and 
+<em>tablename</em> contains 1 to 128 bytes in.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2300N: User response"><h2 class="sectiontitle" id="d274337e106">User response</h2><p>Resubmit the command with the fully qualified table name,
+including the correct qualifier.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e117" lang="en-us" id="sql2301n">
+<h1 class="msghead" id="d274337e117"><span class="title title msgId"><span class="ph ph msgNumber">SQL2301N</span></span>  <span class="shortdesc shortdesc msgText">The tablename parameter is not valid.  Either it
+is too long, only an authorization ID was specified, or the address of
+the name is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2301N: Explanation"><h2 class="sectiontitle" id="d274337e141">Explanation</h2><p>The table name must be fully qualified and in the format 
+<em>authid.name</em> where 
+<em>authid</em> contains 1 to 128 bytes and
+<em>name</em> contains 1 to 128 bytes and
+must be located at a valid application address.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2301N: User response"><h2 class="sectiontitle" id="d274337e159">User response</h2><p>Resubmit the command with the correct table name.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e171" lang="en-us" id="sql2302n">
+<h1 class="msghead" id="d274337e171"><span class="title title msgId"><span class="ph ph msgNumber">SQL2302N</span></span>  <span class="shortdesc shortdesc msgText">The index list is not valid.  Either the address
+for the list is not valid, the number of entries in the list is less
+than the number of indexes specified, or the address for an index in
+the list is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2302N: Explanation"><h2 class="sectiontitle" id="d274337e195">Explanation</h2><p>The address for the list is not valid,
+the number of entries in the list is less than the number of
+indexes specified,
+or the address for an index in the list is not valid.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2302N: User response"><h2 class="sectiontitle" id="d274337e204">User response</h2><p>Resubmit the command with a valid index list.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e215" lang="en-us" id="sql2303n">
+<h1 class="msghead" id="d274337e215"><span class="title title msgId"><span class="ph ph msgNumber">SQL2303N</span></span>  <span class="shortdesc shortdesc msgText">The statsopt parameter is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2303N: Explanation"><h2 class="sectiontitle" id="d274337e239">Explanation</h2><div class="p">The 
+<em>statsopt</em> parameter in the Run Statistics command
+must be one of the following:
+<ul>
+<li>T for basic table only</li>
+
+<li>I for basic indexes only</li>
+
+<li>B for both basic table and indexes</li>
+
+<li>D for table and distribution</li>
+
+<li>E for table and distribution and basic indexes</li>
+
+<li>X for extended indexes only</li>
+
+<li>Y for extended indexes and basic table</li>
+
+<li>A for all</li>
+</ul>
+</div>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2303N: User response"><h2 class="sectiontitle" id="d274337e277">User response</h2><p>Resubmit the command with a valid 
+<em>statsopt</em> parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e292" lang="en-us" id="sql2304n">
+<h1 class="msghead" id="d274337e292"><span class="title title msgId"><span class="ph ph msgNumber">SQL2304N</span></span>  <span class="shortdesc shortdesc msgText">The sharelev parameter is not valid.  It must be
+'R' for reference or 'C' for change.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2304N: Explanation"><h2 class="sectiontitle" id="d274337e316">Explanation</h2><p>The 
+<em>sharelev</em> parameter in the RUN STATISTICS command
+must be R for reference or C for change.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2304N: User response"><h2 class="sectiontitle" id="d274337e328">User response</h2><p>Resubmit the command with a valid 
+<em>sharelev</em> parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e342" lang="en-us" id="sql2305n">
+<h1 class="msghead" id="d274337e342"><span class="title title msgId"><span class="ph ph msgNumber">SQL2305N</span></span>  <span class="shortdesc shortdesc msgText">The table specified is a view or nickname. The utility cannot be run against a view or nickname.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2305N: Explanation"><h2 class="sectiontitle" id="d274337e366">Explanation</h2><p>The 
+<em>tname</em> parameter specified a view or nickname rather than a
+table.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2305N: User response"><h2 class="sectiontitle" id="d274337e378">User response</h2><p>Resubmit the command with a valid 
+<em>tname</em> parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e393" lang="en-us" id="sql2306n">
+<h1 class="msghead" id="d274337e393"><span class="title title msgId"><span class="ph ph msgNumber">SQL2306N</span></span>  <span class="shortdesc shortdesc msgText">The table or index <var class="keyword varname vartype=quotedString varnumber=1">name</var> does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2306N: Explanation"><h2 class="sectiontitle" id="d274337e420">Explanation</h2><p>The table or index identified by <var class="keyword varname">name</var>
+does not exist in the
+database, or the index identified by <var class="keyword varname">name</var>
+is not defined on the
+specified table.
+The qualifier for the table or one of the indexes may be
+incorrect.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2306N: User response"><h2 class="sectiontitle" id="d274337e435">User response</h2><p>Resubmit the command with valid table names and indexes.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e446" lang="en-us" id="sql2307n">
+<h1 class="msghead" id="d274337e446"><span class="title title msgId"><span class="ph ph msgNumber">SQL2307N</span></span>  <span class="shortdesc shortdesc msgText">The table specified is a system table.  The
+Runstats utility cannot be run against a system table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2307N: Explanation"><h2 class="sectiontitle" id="d274337e470">Explanation</h2><p>The Run Statistics utility command
+may not be run against a system table.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2307N: User response"><h2 class="sectiontitle" id="d274337e479">User response</h2><p>Resubmit the command with a valid table name.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e491" lang="en-us" id="sql2308n">
+<h1 class="msghead" id="d274337e491"><span class="title title msgId"><span class="ph ph msgNumber">SQL2308N</span></span>  <span class="shortdesc shortdesc msgText">The qualifier for the index name <var class="keyword varname vartype=quotedString varnumber=1">name</var> is too long
+or it was not specified as part of the index name.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2308N: Explanation"><h2 class="sectiontitle" id="d274337e518">Explanation</h2><p>The index name must be a fully qualified name.
+The format is 
+<em>authid.name</em> where 
+<em>authid</em> contains 1 to 128 bytes and 
+<em>name</em> contains 1 to 128 bytes.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2308N: User response"><h2 class="sectiontitle" id="d274337e536">User response</h2><p>Resubmit the command with a fully qualified name, including
+the correct qualifier.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e547" lang="en-us" id="sql2309n">
+<h1 class="msghead" id="d274337e547"><span class="title title msgId"><span class="ph ph msgNumber">SQL2309N</span></span>  <span class="shortdesc shortdesc msgText">The index name <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid.  It is too long
+or only a qualifier was specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2309N: Explanation"><h2 class="sectiontitle" id="d274337e574">Explanation</h2><p>The index name must be a fully qualified name.  The format is 
+<em>authid.name</em> where 
+<em>authid</em> contains 1 to 128 bytes and 
+<em>name</em> contains 1 to 128 bytes.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2309N: User response"><h2 class="sectiontitle" id="d274337e592">User response</h2><p>Resubmit the command with a valid index.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e604" lang="en-us" id="sql2310n">
+<h1 class="msghead" id="d274337e604"><span class="title title msgId"><span class="ph ph msgNumber">SQL2310N</span></span>  <span class="shortdesc shortdesc msgText">The utility could not generate statistics.  Error
+<var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var> was returned.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2310N: Explanation"><h2 class="sectiontitle" id="d274337e631">Explanation</h2><p>An error occurred while the utility was gathering statistics.</p>
+
+<p>The sqlcode number in the token <var class="keyword varname">sqlcode</var> indicates more specifically what the underlying error was.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2310N: User response"><h2 class="sectiontitle" id="d274337e643">User response</h2><ol>
+<li>Review the SQL message for the given sqlcode.</li>
+
+<li>Resolve the cause of the underlying error.</li>
+
+<li>Resubmit the command.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e662" lang="en-us" id="sql2311n">
+<h1 class="msghead" id="d274337e662"><span class="title title msgId"><span class="ph ph msgNumber">SQL2311N</span></span>  <span class="shortdesc shortdesc msgText">The user does not have the authority to run the RUNSTATS utility on table <var class="keyword varname vartype=quotedString varnumber=1">name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2311N: Explanation"><h2 class="sectiontitle" id="d274337e689">Explanation</h2><p>The user attempted to run statistics on the specified table without the appropriate authorization. If the table specified for the RUNSTATS command is the root table of a table hierarchy, the table name returned in the message might be a subtable of the specified root table.</p>
+
+<p>For tables, CONTROL privilege on the table or one of the following authorities is required: SYSADM, SYSCTRL,SYSMAINT,DBADM,SQLADM, or LOAD.</p>
+
+<p>For statistical views, both of the following authorizations are required:</p>
+
+<ul>
+<li>CONTROL privilege on the table or one of the following authorities: SYSADM, SYSCTRL,SYSMAINT,DBADM,SQLADM</li>
+
+<li>The appropriate privilege to access rows in the view. This means for each table, statistical view, or nickname referenced in the statistical view, you need one of the following privileges or authorities: SYSADM, DBADM, DATAACCESS, CONTROL or SELECT.</li>
+</ul>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2311N: User response"><h2 class="sectiontitle" id="d274337e712">User response</h2><p>Call the RUNSTATS utility command with appropriate authorization.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e724" lang="en-us" id="sql2312n">
+<h1 class="msghead" id="d274337e724"><span class="title title msgId"><span class="ph ph msgNumber">SQL2312N</span></span>  <span class="shortdesc shortdesc msgText">Statistics heap size is too small to carry out
+the operation. Suggested heap size is <var class="keyword varname vartype=quotedString varnumber=1">num</var> pages.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2312N: Explanation"><h2 class="sectiontitle" id="d274337e751">Explanation</h2><p>The setting of the database configuration parameter
+<cite>stat_heap_sz</cite> is not big enough to collect non-uniform
+distribution statistics on the table.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2312N: User response"><h2 class="sectiontitle" id="d274337e760">User response</h2><p>Update the database configuration parameter
+<cite>stat_heap_sz</cite> to the suggested value and try again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e774" lang="en-us" id="sql2313w">
+<h1 class="msghead" id="d274337e774"><span class="title title msgId"><span class="ph ph msgNumber">SQL2313W</span></span>  <span class="shortdesc shortdesc msgText">All available memory in the statistics heap has
+been used. Statistics were collected on the first <var class="keyword varname vartype=quotedString varnumber=1">n1</var> rows out of a
+total of <var class="keyword varname vartype=quotedString varnumber=2">n2</var> rows.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2313W: Explanation"><h2 class="sectiontitle" id="d274337e804">Explanation</h2><p>The setting of the database configuration parameter
+<cite>stat_heap_sz</cite> is not big enough to collect non-uniform
+distribution statistics on the table.  Only &lt;n1&gt; of &lt;n2&gt; rows could be
+processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2313W: User response"><h2 class="sectiontitle" id="d274337e813">User response</h2><p>Update the database configuration parameter
+<cite>stat_heap_sz</cite> by 20 percent and try again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e828" lang="en-us" id="sql2314w">
+<h1 class="msghead" id="d274337e828"><span class="title title msgId"><span class="ph ph msgNumber">SQL2314W</span></span>  <span class="shortdesc shortdesc msgText">Some statistics are in an inconsistent state. The newly collected <var class="keyword varname vartype=quotedString varnumber=1">object1</var> statistics are inconsistent with the existing <var class="keyword varname vartype=quotedString varnumber=2">object2</var>
+statistics.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2314W: Explanation"><h2 class="sectiontitle" id="d274337e858">Explanation</h2><p>The query optimizer uses statistics to determine the best access plan for a query.  When inconsistent statistics are present, the optimizer performs access plan evaluation with information that is less accurate then if a consistent set of statistics was available.  This might result in an access plan that is not optimal.</p>
+
+<p>Possible causes of this warning include the following.</p>
+
+<ol>
+<li>Issuing RUNSTATS on the table only may result in a situation where the table level statistics are inconsistent with the already existing index level statistics.  Likewise, issuing RUNSTATS for indexes only or during index creation may leave table level statistics in an inconsistent state.  For example, if index level statistics are collected on a particular table and later a significant number of rows is deleted from this table, issuing RUNSTATS on the table only may end up with the table cardinality less than FIRSTKEYCARD which is an inconsistent state.</li>
+
+<li>If a RUNSTATS is issued with the ALLOW WRITE ACCESS option when many inserts, updates, or deletes are occurring concurrently, then inconsistencies may occur because of table changes between the time that table and index statistics are collected.</li>
+
+<li>If a RUNSTATS is issued with the TABLESAMPLE option, then an excessively low sample size may cause statistics to be inaccurately extrapolated, resulting in inconsistencies.  The chance of inaccurate extrapolation is higher for SYSTEM sampling than for BERNOULLI sampling.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2314W: User response"><h2 class="sectiontitle" id="d274337e878">User response</h2><p>Address the cause of the inconsistency and then collect statistics again to resolve the inconsistency.</p>
+
+<ol>
+<li>Issue a RUNSTATS to collect both table level and index level statistics.</li>
+
+<li>Collect statistics when inserts, updates, and deletes are minimal or not occurring at all.  Or, if concurrent inserts, updates, and deletes are not essential, issue a RUNSTATS with the ALLOW READ ACCESS option.</li>
+
+<li>Increase the sample size, or, if RUNSTATS was issued with TABLESAMPLE SYSTEM, use the TABLESAMPLE BERNOULLI option instead.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  +2314</p>
+
+<p><strong>sqlstate</strong>:  01650</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e910" lang="en-us" id="sql2315n">
+<h1 class="msghead" id="d274337e910"><span class="title title msgId"><span class="ph ph msgNumber">SQL2315N</span></span>  <span class="shortdesc shortdesc msgText">The RUNSTATS utility was called with the <var class="keyword varname vartype=quotedString varnumber=1">option-name</var> option. 
+However, a statistics profile for this table does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2315N: Explanation"><h2 class="sectiontitle" id="d274337e937">Explanation</h2><p>The statistics profile for this table does not exist in the catalog table SYSIBM.SYSTABLES.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2315N: User response"><h2 class="sectiontitle" id="d274337e946">User response</h2><p>To create a statistics profile for this table, use the SET PROFILE or SET PROFILE ONLY options. 
+Refer to the RUNSTATS utility documentation for information about the utility options.</p>
+
+<p><var class="keyword varname">option-name</var> is a token which can be "USE PROFILE", "UNSET PROFILE", or "UPDATE PROFILE".</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e963" lang="en-us" id="sql2316w">
+<h1 class="msghead" id="d274337e963"><span class="title title msgId"><span class="ph ph msgNumber">SQL2316W</span></span>  <span class="shortdesc shortdesc msgText">The Runstats command string for the statistics profile has exceeded the maximum size. The Runstats command string will be truncated to the maximum size and stored in the catalog table SYSIBM.SYSTABLES.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2316W: Explanation"><h2 class="sectiontitle" id="d274337e987">Explanation</h2><p>The maximum size of the STATISTICS_PROFILE column is 32768 bytes. If the size of the statistics profile is greater than this 
+amount, the Runstats command strings is truncated to the maximum size.</p>
+
+<p>The utility continues processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2316W: User response"><h2 class="sectiontitle" id="d274337e996">User response</h2><p>Refer to the STATISTICS_PROFILE column in the catalog table SYSIBM.SYSTABLES to review the statistics profile. If the existing statistics profile is not desired, reissue the RUNSTATS utility and specify the UPDATE PROFILE or the UPDATE PROFILE ONLY option to modify the profile. Refer to the RUNSTATS utility documentation for information about the utility options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1007" lang="en-us" id="sql2317w">
+<h1 class="msghead" id="d274337e1007"><span class="title title msgId"><span class="ph ph msgNumber">SQL2317W</span></span>  <span class="shortdesc shortdesc msgText">SYSTEM SAMPLING was specified for RUNSTATS but is not supported for the statistical view specified. BERNOULLI SAMPLING was done instead.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2317W: Explanation"><h2 class="sectiontitle" id="d274337e1031">Explanation</h2><p>Page-level sampling, or SYSTEM SAMPLING, could not be performed on the statistical view specified for RUNSTATS. For statistical views, SYSTEM sampling can only be applied to a single base table referenced in the view definition. If the view contains multiple tables, SYSTEM sampling is possible if a single table among all the tables in the statistical view can be identified as being joined with all primary keys or unique index columns of the other tables used in the view.</p>
+
+<p>The referential integrity constraints can be informational. If the view meets the previously described criteria, page-level sampling will be done on the child table.</p>
+
+<p>Because the statistical view specified did not satisfy these conditions, row-level sampling, or BERNOULLI SAMPLING, was done instead.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2317W: User response"><h2 class="sectiontitle" id="d274337e1043">User response</h2><p>Specify BERNOULLI SAMPLING for the statistical view to avoid having this warning returned.</p>
+
+<p><strong>sqlcode</strong>:  +2317</p>
+
+<p><strong>sqlstate</strong>:  0168V</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1065" lang="en-us" id="sql2406n">
+<h1 class="msghead" id="d274337e1065"><span class="title title msgId"><span class="ph ph msgNumber">SQL2406N</span></span>  <span class="shortdesc shortdesc msgText">The BACKUP cannot be performed because the
+database needs to be rolled forward.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2406N: Explanation"><h2 class="sectiontitle" id="d274337e1089">Explanation</h2><p>The backup failed because the database is in an inconsistent
+state.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2406N: User response"><h2 class="sectiontitle" id="d274337e1098">User response</h2><p>Use the ROLLFORWARD command to make the database usable.
+Then resubmit the BACKUP command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1109" lang="en-us" id="sql2412c">
+<h1 class="msghead" id="d274337e1109"><span class="title title msgId"><span class="ph ph msgNumber">SQL2412C</span></span>  <span class="shortdesc shortdesc msgText">A corrupted database page was encountered while
+running a database utility.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2412C: Explanation"><h2 class="sectiontitle" id="d274337e1133">Explanation</h2><p>During the utility operation a corrupted database page was
+encountered.  The database is in an unpredictable
+state and the utility cannot continue.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2412C: User response"><h2 class="sectiontitle" id="d274337e1139">User response</h2><p>Record the message number (SQLCODE).</p>
+
+<div class="p">If trace was active,
+invoke the Independent Trace Facility at the operating system command prompt.
+Then contact
+your technical service representative with the following information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE or message number</li>
+
+<li>SQLCA if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1167" lang="en-us" id="sql2413n">
+<h1 class="msghead" id="d274337e1167"><span class="title title msgId"><span class="ph ph msgNumber">SQL2413N</span></span>  <span class="shortdesc shortdesc msgText">Online backup is not allowed because the database
+is not recoverable or a backup pending condition is in effect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2413N: Explanation"><h2 class="sectiontitle" id="d274337e1191">Explanation</h2><p>Online backup cannot be performed while the database is not
+logging for forward recovery as forward recovery will be required
+at restore time.  Forward recovery is placed into effect by
+setting either the database configuration LOGARCHMETH1 or LOGARCHMETH2 and then
+performing an offline backup of the database. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2413N: User response"><h2 class="sectiontitle" id="d274337e1197">User response</h2><p>Execute an offline backup or reconfigure the database for roll-forward
+recovery and issue an offline backup so that subsequent online backups
+will be allowed.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1208" lang="en-us" id="sql2416w">
+<h1 class="msghead" id="d274337e1208"><span class="title title msgId"><span class="ph ph msgNumber">SQL2416W</span></span>  <span class="shortdesc shortdesc msgText">Warning!  Device <var class="keyword varname vartype=quotedString varnumber=1">device</var> is full.  Please mount
+new media.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2416W: Explanation"><h2 class="sectiontitle" id="d274337e1235">Explanation</h2><p>The tape which the utility is using has become
+full.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2416W: User response"><h2 class="sectiontitle" id="d274337e1241">User response</h2><p>Mount another tape and continue the operation
+with the 
+<em>callerac</em> parameter indicating if processing continues.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1256" lang="en-us" id="sql2417n">
+<h1 class="msghead" id="d274337e1256"><span class="title title msgId"><span class="ph ph msgNumber">SQL2417N</span></span>  <span class="shortdesc shortdesc msgText">Archive log is not allowed on non-recoverable databases.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2417N: Explanation"><h2 class="sectiontitle" id="d274337e1280">Explanation</h2><p>The archive log command can only be used on databases that are in recoverable mode. A database is in recoverable mode if LOGARCHMETH1 is set to DISK, TSM, VENDOR, USEREXIT, or LOGRETAIN, or if LOGARCHMETH2 is set to DISK, TSM, or VENDOR.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2417N: User response"><h2 class="sectiontitle" id="d274337e1286">User response</h2><p>Ensure that the specified database is in recoverable mode and reissue the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1297" lang="en-us" id="sql2418n">
+<h1 class="msghead" id="d274337e1297"><span class="title title msgId"><span class="ph ph msgNumber">SQL2418N</span></span>  <span class="shortdesc shortdesc msgText">The database specified for Backup does not
+exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2418N: Explanation"><h2 class="sectiontitle" id="d274337e1321">Explanation</h2><p>The database specified in the 
+<em>dbase</em> parameter
+of the Database Backup command could not be found.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2418N: User response"><h2 class="sectiontitle" id="d274337e1330">User response</h2><p>Ensure that the correct database alias was specified for
+the Backup Database utility and that the database exists for this
+alias.  Resubmit the command with the correct alias.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1342" lang="en-us" id="sql2419n">
+<h1 class="msghead" id="d274337e1342"><span class="title title msgId"><span class="ph ph msgNumber">SQL2419N</span></span>  <span class="shortdesc shortdesc msgText">The target disk <var class="keyword varname vartype=quotedString varnumber=1">disk</var> has become full.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2419N: Explanation"><h2 class="sectiontitle" id="d274337e1369">Explanation</h2><p>During the processing of a database utility,
+the target disk
+became full.  The utility
+has stopped and the target is deleted.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2419N: User response"><h2 class="sectiontitle" id="d274337e1375">User response</h2><p>Ensure enough disk space is available for the
+utility or direct the target to other media, such as tape.</p>
+
+<p>On unix-based systems, this disk full condition may be due
+to exceeding the maximum file size allowed for the current
+userid.  Use the chuser command to update fsize.  A reboot
+may be necessary.</p>
+
+<p>On non unix-based systems, this disk full condition may be due
+to exceeding the maximum file size allowed for the operating
+system.  Direct the target to other media, such as tape, or
+use multiple targets.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1392" lang="en-us" id="sql2420n">
+<h1 class="msghead" id="d274337e1392"><span class="title title msgId"><span class="ph ph msgNumber">SQL2420N</span></span>  <span class="shortdesc shortdesc msgText">Insufficient space on device <var class="keyword varname vartype=quotedString varnumber=1">device</var> to
+contain initial backup control information.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2420N: Explanation"><h2 class="sectiontitle" id="d274337e1419">Explanation</h2><p>During the Backup operation an initial backup header needs to be
+created at the start of the backup image.  This header must
+fit on one tape when backing up to tape.  There is insufficient
+space on the tape to contain this header.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2420N: User response"><h2 class="sectiontitle" id="d274337e1425">User response</h2><p>Resubmit the Backup operation and either direct the output to a
+new tape, or reposition the current tape to provide enough space for
+this header.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1437" lang="en-us" id="sql2421n">
+<h1 class="msghead" id="d274337e1437"><span class="title title msgId"><span class="ph ph msgNumber">SQL2421N</span></span>  <span class="shortdesc shortdesc msgText">Table space level backup is not allowed because the database is not recoverable or a backup pending condition is in effect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2421N: Explanation"><h2 class="sectiontitle" id="d274337e1461">Explanation</h2><p>This message is returned when a table space level backup cannot be performed because the database is not recoverable or a backup pending condition is in effect. This can happen under the following conditions:</p>
+
+<ul>
+<li>The database is in an offline backup pending condition.  This can be caused by a topology change, or when the database has been made recoverable.</li>
+
+<li>Table space level backup cannot be performed while the database is not logging for forward recovery as forward recovery will be required at restore time.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2421N: User response"><h2 class="sectiontitle" id="d274337e1475">User response</h2><ol>
+<li>Do one of the following: 
+<ul>
+<li>Execute a full database backup</li>
+
+<li>Reconfigure the database for roll-forward recovery. Forward recovery is configured by setting either of the database configuration parameters, LOGARCHMETH1 or LOGARCHMETH2, and then performing an offline backup of the database.</li>
+</ul>
+</li>
+
+<li>Issue an offline backup so that subsequent table space level backups will be allowed.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1498" lang="en-us" id="sql2423n">
+<h1 class="msghead" id="d274337e1498"><span class="title title msgId"><span class="ph ph msgNumber">SQL2423N</span></span>  <span class="shortdesc shortdesc msgText">The database cannot be backed up because some
+index files are missing.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2423N: Explanation"><h2 class="sectiontitle" id="d274337e1522">Explanation</h2><p>Some of the index files required by the backup are missing.
+These index files must be recreated prior to backing up the database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2423N: User response"><h2 class="sectiontitle" id="d274337e1528">User response</h2><p>Run the 'db2recri' program to recreate the missing index files
+and then resubmit the backup command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1540" lang="en-us" id="sql2424n">
+<h1 class="msghead" id="d274337e1540"><span class="title title msgId"><span class="ph ph msgNumber">SQL2424N</span></span>  <span class="shortdesc shortdesc msgText">The backup could not succeed because asynchronous copy
+operations at DB2 Data Links Managers are not complete.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2424N: Explanation"><h2 class="sectiontitle" id="d274337e1564">Explanation</h2><p>The TSM or vendor supplied archive server might not
+be in operational state.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2424N: User response"><h2 class="sectiontitle" id="d274337e1570">User response</h2><p>Ensure TSM or the vendor supplied archive server is
+in an operational state and resubmit the backup command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1581" lang="en-us" id="sql2425w">
+<h1 class="msghead" id="d274337e1581"><span class="title title msgId"><span class="ph ph msgNumber">SQL2425W</span></span>  <span class="shortdesc shortdesc msgText">The log file for the online backup was not truncated.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2425W: Explanation"><h2 class="sectiontitle" id="d274337e1605">Explanation</h2><p>During an online backup, all buffered log records are forced
+to disk and the last active log file is truncated. During the
+current backup, truncation of the last active log file has failed.
+As a result, new log records will continue to be written into the
+last log file used during the backup.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2425W: User response"><h2 class="sectiontitle" id="d274337e1611">User response</h2><p>No user action is required. The last active log file used during
+the backup will eventually become inactive when it becomes full.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1623" lang="en-us" id="sql2426n">
+<h1 class="msghead" id="d274337e1623"><span class="title title msgId"><span class="ph ph msgNumber">SQL2426N</span></span>  <span class="shortdesc shortdesc msgText">The database has not been configured to allow the
+incremental backup operation. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2426N: Explanation"><h2 class="sectiontitle" id="d274337e1650">Explanation</h2><p>Incremental backups are not enabled for a table space until after modification tracking has been activated for the database and a non-incremental backup has been performed on the table space.</p>
+
+<p>Possible reason codes:</p>
+
+<ol>
+<li>The configuration parameter TRACKMOD has not been set for the database.</li>
+
+<li>The TRACKMOD configuration parameter has been set but at least one table space has not had a non-incremental backup taken since the TRACKMOD parameter was set.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2426N: User response"><h2 class="sectiontitle" id="d274337e1667">User response</h2><p>The action is based on the reason code as follows:</p>
+
+<ol>
+<li>Activate modification tracking for the database by setting the TRACKMOD database configuration parameter to on, then perform a full database backup.</li>
+
+<li>Consult the db2diag log file to determine the name of the table space, then perform a full backup of that table space.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1686" lang="en-us" id="sql2427n">
+<h1 class="msghead" id="d274337e1686"><span class="title title msgId"><span class="ph ph msgNumber">SQL2427N</span></span>  <span class="shortdesc shortdesc msgText">Plug-in library <var class="keyword varname vartype=quotedString varnumber=1">filename</var> cannot be backed up because
+it does not contain entrypoint <var class="keyword varname vartype=quotedString varnumber=2">entrypoint</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2427N: Explanation"><h2 class="sectiontitle" id="d274337e1716">Explanation</h2><p>A compressed backup image is being created with the plug-in library being
+included in the image. However, the library does not contain all the functions
+needed to decompress the backup image when it is restored.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2427N: User response"><h2 class="sectiontitle" id="d274337e1725">User response</h2><p>Resubmit the command, specifying the name of a library that has all the
+functions needed to decompress the backup image.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1737" lang="en-us" id="sql2428n">
+<h1 class="msghead" id="d274337e1737"><span class="title title msgId"><span class="ph ph msgNumber">SQL2428N</span></span>  <span class="shortdesc shortdesc msgText">The backup operation did not complete because an error was encountered while the backup utility was retrieving the log files.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2428N: Explanation"><h2 class="sectiontitle" id="d274337e1761">Explanation</h2><p>You can include database log files in a backup image by specifying the INCLUDE LOGS parameter with the BACKUP command. When the INCLUDE LOGS parameter is specified with the BACKUP command, if any of the logs required for rollforward recovery cannot be retrieved and copied into the backup image the backup operation fails.</p>
+
+<p>There are multiple reasons why the backup utility might encounter a problem while retrieving and copying the log files into the backup image, including these examples:</p>
+
+<ul>
+<li>An administrative action, such as unmounting the drive on which the log path resides or changing the permissions on the directory where the log path is located, has occurred which prevents the backup utility from access the log files.</li>
+
+<li>The contents of the log path have been moved or log files have been deleted.</li>
+
+<li>The archive log path contains log files from a previous database that has the same name as a current database.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2428N: User response"><h2 class="sectiontitle" id="d274337e1781">User response</h2><ol>
+<li>Refer to the administration notification log for additional information about the cause of the failed log retrieval.</li>
+
+<li>If the current log path was previously used for a database with the same name as the database being backed up, move old log files that were created for the previous database from both the archive log path and the current log path to another directory.</li>
+
+<li>Correct the error and resubmit the command.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1800" lang="en-us" id="sql2429n">
+<h1 class="msghead" id="d274337e1800"><span class="title title msgId"><span class="ph ph msgNumber">SQL2429N</span></span>  <span class="shortdesc shortdesc msgText">The database backup failed.  The following database partitions returned errors: <var class="keyword varname vartype=quotedString varnumber=1">database-partition-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2429N: Explanation"><h2 class="sectiontitle" id="d274337e1827">Explanation</h2><p>The backup of a partitioned database failed on one or more database partitions.</p>
+
+<p>When the database server backs up a partitioned database, a failure on any one of the partitions causes the whole backup to fail.</p>
+
+<p>The backup operation terminated.  No backup image was generated.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2429N: User response"><h2 class="sectiontitle" id="d274337e1839">User response</h2><ol>
+<li>For each partition that returned an error, correct the problems that caused the error.</li>
+
+<li>Rerun the BACKUP command.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1856" lang="en-us" id="sql2430w">
+<h1 class="msghead" id="d274337e1856"><span class="title title msgId"><span class="ph ph msgNumber">SQL2430W</span></span>  <span class="shortdesc shortdesc msgText">The database backup succeeded, but the following table spaces do not exist on this database partition: <var class="keyword varname vartype=quotedString varnumber=1">table-space-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2430W: Explanation"><h2 class="sectiontitle" id="d274337e1883">Explanation</h2><p>The database server successfully backed up the partitioned database containing this partition.</p>
+
+<p>However, some of the table spaces that were specified in the BACKUP command do not exist on this partition.  This might be because the table spaces specified are located on other partitions of this database; or because the list of table spaces specified contains an error.</p>
+
+<p>The backup completed successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2430W: User response"><h2 class="sectiontitle" id="d274337e1895">User response</h2><ol>
+<li>Verify that the list of table spaces specified in the BACKUP command is correct.</li>
+
+<li><ul>
+<li>If the list of tables spaces that was specified is correct, no action is required.</li>
+
+<li>If the list of tables spaces that was specified contains an error, correct the list and rerun the BACKUP command.</li>
+</ul>
+</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1917" lang="en-us" id="sql2431w">
+<h1 class="msghead" id="d274337e1917"><span class="title title msgId"><span class="ph ph msgNumber">SQL2431W</span></span>  <span class="shortdesc shortdesc msgText">The database backup succeeded.  On each database partition, only those log files that were active during the backup operation are included in the backup image.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2431W: Explanation"><h2 class="sectiontitle" id="d274337e1941">Explanation</h2><p>The database server successfully backed up a partitioned database.</p>
+
+<p>The backup image of each database partition contains only the log files that was were active at the time of the backup.  It is not possible to rollforward the whole partitioned database using only the log files included in the backup images, if any of those log files does not span a period of time including the database minimum recovery time.</p>
+
+<p>The minimum recovery time (MRT) for a database object is the earliest point in time to which it can be rolled forward.</p>
+
+<p>In a partitioned database, the database MRT is the latest MRT of any one of its database partitions.</p>
+
+<p>You can only roll forward a partitioned database if you have a set of log files on all database partitions that span a period of time that includes the database MRT.</p>
+
+<p>The log files included with the backup image might not satisfy this requirement.</p>
+
+<p>The backup completed successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2431W: User response"><h2 class="sectiontitle" id="d274337e1966">User response</h2><p>If your database recovery strategy relies on using only log files included in backup images to rollforward your partitioned database, rerun the backup command with the "ON ALL DBPARTITIONNUMS" parameter.  This will ensure the log files included with the backup image will be sufficient to rollforward your database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e1978" lang="en-us" id="sql2432n">
+<h1 class="msghead" id="d274337e1978"><span class="title title msgId"><span class="ph ph msgNumber">SQL2432N</span></span>  <span class="shortdesc shortdesc msgText">A snapshot backup failed because the EXCLUDE LOGS parameter was specified but the following log directories could not be excluded because they are not independent of other database paths and devices: <var class="keyword varname vartype=quotedString varnumber=1">log-directory-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2432N: Explanation"><h2 class="sectiontitle" id="d274337e2005">Explanation</h2><p>A snapshot backup enables you to use fast copying technologies for the data copying and movement parts of DB2 database backup and restore operations.</p>
+
+<p>The EXCLUDE LOGS parameter was specified for a snapshot backup, but the path for the given log directory or directories shares a path or storage device with other paths or storage devices used by the database being backed up.</p>
+
+<p>When the log directory shares a path or storage device with other paths or storage devices used by the database being backed up, it is not possible for the snapshot backup to include the shared path or storage device without including the log directory.</p>
+
+<p>For example: when you create a database, the log directory is created under the main database directory by default.  Because a snapshot backup will include everything under the main database directory, the log directory will be included in the resulting backup image too.  If you use the default log path when you create a database, you will not be able to exclude the logs from the backup image when you perform a snapshot backup on that database.</p>
+
+<p>The mechanism for grouping database directories varies among the snapshot backup support provided by different storage management software.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2432N: User response"><h2 class="sectiontitle" id="d274337e2023">User response</h2><p>You can do one of:</p>
+
+<ul>
+<li>Choose not to exclude the logs from the snapshot backup image.</li>
+
+<li>Resubmit the BACKUP command without the EXCLUDE LOGS parameter.</li>
+
+<li>Reconfigure the log directory to enable excluding the logs from the snapshot backup image.</li>
+
+<li>Use the newlogpath database configuration parameter to specify a path for the log directory that is independent of any other database path.</li>
+
+<li>Reissue the BACKUP command using EXCLUDE LOGS.</li>
+
+<li>You can use the DBPATHS administrative view to determine the current database paths.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2055" lang="en-us" data-hd-otherprops="dbg1435" id="sql2433n">
+<h1 class="msghead" id="d274337e2055"><span class="title title msgId"><span class="ph ph msgNumber">SQL2433N</span></span>  <span class="shortdesc shortdesc msgText">The backup operation did not
+complete because an error was encountered while the backup utility was processing the extraction log
+files.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2433N: Explanation"><h2 class="sectiontitle" id="d274337e2079">Explanation</h2>
+<p>You can include extraction log files in a backup image by specifying the INCLUDE LOGS parameter
+with the BACKUP DATABASE command. INCLUDE LOGS is the default with most online backups. If
+extraction log files exist they will be copied into the backup image.</p>
+
+<p>In default environments, failing to include an extraction log file into a backup image is not a
+cause for the BACKUP DATABASE command to fail. The backup utility can tolerate such errors and will
+proceed to include the corresponding active log file instead to ensure the backup image is
+recoverable at restore time.</p>
+
+
+<div class="p">This error will be returned if the user has specified, in the environment, that the backup
+utility should fail when an error is encountered trying to copy an extraction log file in the backup
+image. There are multiple reasons why the backup utility might encounter a problem while processing
+and copying the extraction log files into the backup image, including these examples:<ul>
+<li>The contents of the log path have been moved or one or more of the extraction log files have
+been deleted.</li>
+
+<li>The file permissions for one or more of the extraction log files have been modified.</li>
+
+<li>One or more of the extraction log files are corrupted.</li>
+
+</ul>
+</div>
+
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2433N: User response"><h2 class="sectiontitle" id="d274337e2104">User response</h2>
+<div class="p">
+<ol>
+<li>Refer to the DB2 diagnostic (db2diag) log for additional information about the cause of the
+failure.</li>
+
+<li>Correct the error and resubmit the command.</li>
+
+</ol>
+
+</div>
+
+</section>
+
+</div>
+
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2129" lang="en-us" id="sql2434n">
+<h1 class="msghead" id="d274337e2129"><span class="title title msgId"><span class="ph ph msgNumber">SQL2434N</span></span>  <span class="shortdesc shortdesc msgText">The redirected restore operation failed because a table space operation could not be replayed during the rollforward phase of the restore operation.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2434N: Explanation"><h2 class="sectiontitle" id="d274337e2153">Explanation</h2><p>A redirected restore is a restore in which the set of table space containers for the restored database is different from the set of containers for the original database at the time the backup was done.</p>
+
+<p>When you define new table space containers that are to be used by the restored database, you can define an architecture for the new table space containers that is not the same as the architecture of the original table space containers.  For example, you can use a redirected restore operation to change a database that currently uses two table space containers to use a single table space container.</p>
+
+<p>If the architecture of the table spaces to be used by the restored database is different from the architecture of the original database, it is possible that there are table space altering operations in the database log files that will have to be replayed during rollforward that are not valid in the new table space architecture.</p>
+
+<p>This message is returned during a redirected restore operation when the rollforward utility attempts to replay a table space operation that is invalid for the target table space container architecture.  Specifically, this message is returned when the rollforward utility attempts to perform a table space operation on a REGULAR or USER TEMPORARY DMS table space that causes the size of the table space to increase beyond the defined maximum allowed size, as determined by the PAGESIZE database configuration parameter.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2434N: User response"><h2 class="sectiontitle" id="d274337e2168">User response</h2><ol>
+<li>Begin the redirected restore again using the RESTORE command with the REDIRECT parameter.</li>
+
+<li>Define the new table space containers to be used by the restored database using the SET TABLESPACE CONTAINERS command, forcing the rollforward operation to omit replaying table space operations by specifying the IGNORE ROLLFORWARD CONTAINER OPERATION parameter.</li>
+
+<li>Complete the restore operation using the RESTORE command with the CONTINUE parameter.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -2434</p>
+
+<p><strong>sqlstate</strong>:  58004</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2197" lang="en-us" id="sql2435n">
+<h1 class="msghead" id="d274337e2197"><span class="title title msgId"><span class="ph ph msgNumber">SQL2435N</span></span>  <span class="shortdesc shortdesc msgText">Database activation failed because there is insufficient memory available in the CF for this database.  Database name: <var class="keyword varname vartype=quotedString varnumber=1">database-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2435N: Explanation"><h2 class="sectiontitle" id="d274337e2224">Explanation</h2><p>This message is returned when an attempt is made to have multiple active databases in a DB2 pureScale environment, but the activation of one database fails because there is not enough memory in the cluster caching facility, also known as CF, for that database.</p>
+
+<p>You can configure the total amount of memory that is available for the CF using the cf_mem_sz database manager configuration parameter.  You can configure the percentage of the total CF memory that is assigned to each database that has the cf_db_mem_sz database configuration parameter set to AUTOMATIC using the DB2_DATABASE_CF_MEMORY registry variable.  (Any database that has cf_db_mem_sz set to a specific value will ignore the DB2_DATABASE_CF_MEMORY registry variable.)</p>
+
+<p>Use of the DB2_DATABASE_CF_MEMORY registry variable must be coordinated with the cf_db_mem_sz database configuration paremter and the numdb database manager configuration parameter.</p>
+
+<dl>
+
+<dt class="dlterm">Example</dt>
+
+<dd class="dlentry"><p>If there are four databases to be active at once, then the configuration parameters should be coordinated like this:</p>
+
+<ul>
+<li>The database manager configuration parameter numdb should be set to 4</li>
+
+<li>If the database configuration parameter cf_dm_mem_sz is set to AUTOMATIC for each of the four database, then the registry variable DB2_DATABASE_CF_MEMORY should be set to 25</li>
+</ul>
+</dd>
+</dl>
+
+<p>One reason this error can occur is because the DB2_DATABASE_CF_MEMORY registry variable is set to 100 when numdb is greater than 1.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2435N: User response"><h2 class="sectiontitle" id="d274337e2258">User response</h2><p>Respond to this error in one of the following ways:</p>
+
+<ul>
+<li>Determine the amount of CF memory used by other databases and see if any settings need to be changed in order to accommodate the CF memory requirements of this database.</li>
+
+<li>If the cf_db_mem_sz database configuration parameter is set to automatic for this database, increase the amount of memory available in the CF for this database by modifying the value of the DB2_DATABASE_CF_MEMORY registry variable.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2278" lang="en-us" id="sql2436n">
+<h1 class="msghead" id="d274337e2278"><span class="title title msgId"><span class="ph ph msgNumber">SQL2436N</span></span>  <span class="shortdesc shortdesc msgText">The table <var class="keyword varname vartype=quotedString varnumber=1">table-name</var> failed to meet the prerequisites for data redistribution. Reason code=<var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2436N: Explanation"><h2 class="sectiontitle" id="d274337e2308">Explanation</h2><p>You can use the redistribute utility to rebalance the distribution of data across database partitions after adding or removing database partitions, or to achieve a desired data distribution across partitions.  This message is returned when an attempt is made to redistribute data in a database, using the REDISTRIBUTE DATABASE PARTITION GROUP command for example, but the redistribute utility determines that there are one or more tables that are not in an appropriate state to be redistributed.</p>
+
+<p>If the PRECHECK YES OR PRECHECK ONLY command parameter was specified in the REDISTRIBUTE DATABASE PARTITION GROUP command, this error message describes the first check that failed; data redistribution does not commence.  In all other cases, the data redistribution was attempted and failed; tables that were partially processed are put in "redistribute pending" state.</p>
+
+<p>The reason that the table failed to meet data redistribution prerequisites is indicated by the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The table is in "set integrity pending" state.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The table is in "load in progress" state. The LOAD utility is currently operating on this table, no access is allowed until the LOAD is finished.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The table is in "load pending" state.  A previous LOAD attempt on this table resulted in failure. No access to the table is allowed until the LOAD operation is restarted or terminated.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The table is in "read access only" state.  This state can occur during on-line LOAD processing (LOAD INSERT with the READ ACCESS option), or after an on-line LOAD operation, but before all constraints have been validated in the newly appended portion of the table using the SET INTEGRITY statement.  No update activity is allowed on this table.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The table is in "reorg pending" state.  This can occur after an ALTER TABLE statement containing a REORG-recommended operation.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The table is unavailable.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The table is an MDC table with a deferred index cleanup rollout operation in progress.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The table is a target table for an active event monitor of type "WRITE TO TABLE".</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The table is in "not load restartable" state, which is a partially loaded state that will not allow a load restart operation.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The table is not in FULL access mode (ACCESS_MODE='F' in SYSCAT.TABLES).</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>The table has data partitions that are currently being attached (SYSCAT.DATAPARTITIONS.STATUS = 'A').</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>The table has detached data partitions and there are dependent tables that need to be incrementally maintained with respect to these detached data partitions (SYSCAT.DATAPARTITIONS.STATUS = 'D').</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>The table has detached data partitions that are involved with an index cleanup operation that is currently running (SYSCAT.DATAPARTITIONS.STATUS = 'I').</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2436N: User response"><h2 class="sectiontitle" id="d274337e2441">User response</h2><p>Take corrective action on <var class="keyword varname">table-name</var>, but be aware that it  might not be the only problematic table in the database partition group. By checking all of the tables in the database partition group, you can avoid multiple unsuccessful redistribution attempts. For more information, refer to the documentation about troubleshooting table states during data redistribution.</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Execute the SET INTEGRITY statement with the IMMEDIATE CHECKED option on table <var class="keyword varname">table-name</var> and then issue the REDISTRIBUTE DATABASE PARTITION GROUP command again.  Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Wait until the load operation has finished, then issue the REDISTRIBUTE DATABASE PARTITION GROUP command again.  You can use the LOAD QUERY command to monitor the progress the load operation. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Restart or terminate the previously failed LOAD operation on this table by issuing the LOAD command with RESTART or TERMINATE command parameters, respectively. When the load operation completes, issue the REDISTRIBUTE DATABASE PARTITION GROUP command again. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Issue the LOAD QUERY command to check whether the table is in the process of being loaded.  If yes, wait until the LOAD utility has completed, or if necessary, restart or terminate the previously failed LOAD operation. If LOAD is currently not in progress, issue the SET INTEGRITY statement with the IMMEDIATE CHECKED option, to validate constraints in the newly loaded portion of the table.  When the table is no longer in "read access only" state, issue the REDISTRIBUTE DATABASE PARTITION GROUP command again. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Perform a REORG operation to make the table accessible, then issue the REDISTRIBUTE DATABASE PARTITION GROUP command again. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Drop the table or restore it from a backup, then issue the REDISTRIBUTE DATABASE PARTITION GROUP command again. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Issue the REDISTRIBUTE DATABASE PARTITION GROUP command again once the index cleanup of the rolled out blocks is complete.  Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>Either wait for the event monitor activity to complete or deactivate the event monitor using the SET EVENT MONITOR STATE statement.  Re-submit the REDISTRIBUTE DATABASE PARTITION GROUP command, specifying the CONTINUE parameter or the ABORT parameter. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>Issue a LOAD TERMINATE or a LOAD REPLACE command to bring the table out of the "not load restartable" state. Re-submit the REDISTRIBUTE DATABASE PARTITION GROUP command using either the CONTINUE or ABORT option. Alternatively, omit the table by specifying the EXCLUDE  parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>Execute the SET INTEGRITY statement with the IMMEDIATE CHECKED option on the dependent immediate materialized query tables and staging tables for <var class="keyword varname">table-name</var>.  Re-submit the REDISTRIBUTE DATABASE PARTITION GROUP command using either the CONTINUE or ABORT option. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>Execute the SET INTEGRITY statement with the IMMEDIATE CHECKED option on table <var class="keyword varname">table-name</var> and then issue the REDISTRIBUTE DATABASE PARTITION GROUP command again.  Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>Execute the SET INTEGRITY statement with the IMMEDIATE CHECKED option on the dependent immediate materialized query and staging tables of the tables that still need to be incrementally maintained with respect to the detached data partitions. Query the SYSCAT.TABDETACHEDDEP catalog view to locate these detached dependent tables. Then issue the REDISTRIBUTE DATABASE PARTITION GROUP command again using either the CONTINUE or ABORT option. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>Wait for the completion of the index cleanup for the detached partition. Re-submit the REDISTRIBUTE DATABASE PARTITION GROUP command using either the CONTINUE or ABORT option. Alternatively, omit the table by specifying the EXCLUDE parameter in the REDISTRIBUTE DATABASE PARTITION GROUP command.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -2436</p>
+
+<p><strong>sqlstate</strong>:  55019</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2595" lang="en-us" id="sql2437n">
+<h1 class="msghead" id="d274337e2595"><span class="title title msgId"><span class="ph ph msgNumber">SQL2437N</span></span>  <span class="shortdesc shortdesc msgText">The data movement command failed because the utility was unable to resolve how implicitly hidden columns should be processed. No data was moved.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2437N: Explanation"><h2 class="sectiontitle" id="d274337e2619">Explanation</h2><p>You can move data into and out of databases, using utilities such as LOAD, IMPORT, INGEST, and EXPORT.</p>
+
+<p>There are several ways to specify how data movement utilities should handle implicitly hidden columns:</p>
+
+<ul>
+<li>Explicitly specify the list of columns to include in the data movement operation.</li>
+
+<li>Specify the hidden column-related parameter in the data movement command.</li>
+
+<li>Set the hidden column-related registry variable to indicate how all data movement utilities should handle hidden columns.</li>
+</ul>
+
+<p>This message is returned when an attempt is made to move data into or out of one or more tables that contain implicitly hidden columns, and the data movement utility cannot determine whether the implicitly hidden columns should be included in the data movement operation because none of the methods described have been used to specify how hidden columns should be handled.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2437N: User response"><h2 class="sectiontitle" id="d274337e2642">User response</h2><p>Run the utility again, specifying how implicitly hidden columns should be handled using appropriate command parameters or registry variables.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2654" lang="en-us" id="sql2438w">
+<h1 class="msghead" id="d274337e2654"><span class="title title msgId"><span class="ph ph msgNumber">SQL2438W</span></span>  <span class="shortdesc shortdesc msgText">The data movement command succeeded. However, the utility detected that one or more of the tables that were involved in the data movement operation contain implicitly hidden columns, and the utility was unable to resolve how those implicitly hidden columns should be processed.  Any data in implicitly hidden columns was not moved.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2438W: Explanation"><h2 class="sectiontitle" id="d274337e2678">Explanation</h2><p>You can move data into and out of databases, using utilities such as LOAD, IMPORT, INGEST, and EXPORT.</p>
+
+<p>There are several ways to specify how data movement utilities should handle implicitly hidden columns:</p>
+
+<ul>
+<li>Explicitly specify the list of columns to include in the data movement operation.</li>
+
+<li>Specify the hidden column-related parameter in the data movement command.</li>
+
+<li>Set the hidden column-related registry variable to indicate how all data-movement utilities should handle hidden columns.</li>
+</ul>
+
+<p>This message is returned when data is being moved into or out of one or more tables that contain implicitly hidden columns, and the data movement utility cannot determine whether the implicitly hidden columns should be included in the data movement operation because none of the methods described have been used to specify how hidden columns should be handled.</p>
+
+<p>Data has been moved, but data in any implicitly hidden columns was not moved.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2438W: User response"><h2 class="sectiontitle" id="d274337e2704">User response</h2><p>If the data in the implicitly hidden columns should have been moved, rerun the data movement operation specifying how implicitly hidden columns should be handled using appropriate command parameters or registry variables.</p>
+
+<p>To avoid this warning in the future: When moving data into or out of tables that contain implicitly hidden columns, specify how implicitly hidden columns should be handled using appropriate command parameters or registry variables.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2718" lang="en-us" id="sql2440w">
+<h1 class="msghead" id="d274337e2718"><span class="title title msgId"><span class="ph ph msgNumber">SQL2440W</span></span>  <span class="shortdesc shortdesc msgText">The BACKUP completed but one or more of the requested log files could not be retrieved.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2440W: Explanation"><h2 class="sectiontitle" id="d274337e2742">Explanation</h2><p>When the DB2_BCKP_INCLUDE_LOGS_WARNING registry variable is set to ON, online backups that include logs can succeed even if some of the logs required for the successful rollforward recovery of the image cannot be retrieved and copied into the backup image.</p>
+
+<p>If this backup image is restored, it will not be able to complete rollforward recovery unless all of the required logs are made available.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2440W: User response"><h2 class="sectiontitle" id="d274337e2751">User response</h2><p>Respond to this warning in one of the following ways:</p>
+
+<ul>
+<li>Refer to the administration notification log for additional information about the cause of the failed log retrieval attempt.  Correct the error and resubmit the command.</li>
+
+<li>Ensure that a copy of the required logs is retained. As well, you should ensure that the log archiving device is made available for use as soon as possible.</li>
+</ul>
+
+<p>To revert to the previous behavior in which online backups with missing logs failed, set the DB2_BCKP_INCLUDE_LOGS_WARNING registry variable to OFF.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2774" lang="en-us" id="sql2441n">
+<h1 class="msghead" id="d274337e2774"><span class="title title msgId"><span class="ph ph msgNumber">SQL2441N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed because a specified table is involved in an in-progress conversion or move operation. Table name: <var class="keyword varname vartype=quotedString varnumber=1">table-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2441N: Explanation"><h2 class="sectiontitle" id="d274337e2801">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert utility.</p>
+
+<p>This message is returned when the db2convert command is called and one or more tables to be converted are either already in the process of being converted or are involved in a table move operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2441N: User response"><h2 class="sectiontitle" id="d274337e2810">User response</h2><ol>
+<li>Resolve the in-progress conversion or table move operation by performing one of the following actions: 
+<ul>
+<li>Monitor the table and wait for the in-progress conversion or move operation to complete.</li>
+
+<li>Cancel the in-progress conversion or move operation by running the ADMIN_MOVE_TABLE stored procedure, specifying the CANCEL parameter.</li>
+</ul>
+</li>
+
+<li>Run the db2convert command again.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2833" lang="en-us" id="sql2442n">
+<h1 class="msghead" id="d274337e2833"><span class="title title msgId"><span class="ph ph msgNumber">SQL2442N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed because the following invalid parameter or invalid combination of parameters was specified: <var class="keyword varname vartype=quotedString varnumber=1">parameter-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2442N: Explanation"><h2 class="sectiontitle" id="d274337e2860">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert utility.</p>
+
+<p>This message is returned when either an invalid parameter is specified with the db2convert command, or when an invalid combination of parameters is specified.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2442N: User response"><h2 class="sectiontitle" id="d274337e2869">User response</h2><p>Run the db2convert command again, specifying valid parameters.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2881" lang="en-us" id="sql2443n">
+<h1 class="msghead" id="d274337e2881"><span class="title title msgId"><span class="ph ph msgNumber">SQL2443N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed because a database was not specified with the -d parameter.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2443N: Explanation"><h2 class="sectiontitle" id="d274337e2905">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert utility.</p>
+
+<p>When you run the db2convert command, you must use the -d parameter to specify the name of the database in which the tables to convert are located.</p>
+
+<p>This message is returned when the db2convert command is called but no database is specified with the -d parameter.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2443N: User response"><h2 class="sectiontitle" id="d274337e2917">User response</h2><p>Call the db2convert command again, specifying a database name with the -d parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2928" lang="en-us" id="sql2444n">
+<h1 class="msghead" id="d274337e2928"><span class="title title msgId"><span class="ph ph msgNumber">SQL2444N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed because the -continue parameter was specified but no corresponding convert operation is ready to be continued.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2444N: Explanation"><h2 class="sectiontitle" id="d274337e2952">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can perform the conversion operation all in one step.  However, you can also choose to perform the conversion operation in two steps:</p>
+
+<ol>
+<li>Perform only the INIT, COPY, and REPLAY phases of the conversion by calling the db2convert command specifying the -stopBeforeSwap parameter.</li>
+
+<li>Complete the conversion operation by calling the db2convert command specifying the -continue parameter.</li>
+</ol>
+
+<p>If you choose to perform the conversion in two steps, the table specification in the first db2convert call and in the second db2convert call must match, and the first step must be completed before you can perform the second step.</p>
+
+<p>This message is returned when the db2convert command is run with the -continue parameter, but no matching call to the db2convert command with the -stopBeforeSwap parameter has completed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2444N: User response"><h2 class="sectiontitle" id="d274337e2975">User response</h2><ul>
+<li>Before running the db2convert command with the -continue parameter, run the db2convert command with the -stopBeforeSwap parameter.</li>
+
+<li>If a call to the db2convert  command with the -stopBeforeSwap parameter is still running, wait for that operation to complete.  Then call the db2convert command with the -continue parameter.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e2992" lang="en-us" id="sql2445n">
+<h1 class="msghead" id="d274337e2992"><span class="title title msgId"><span class="ph ph msgNumber">SQL2445N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed because no tables satisfy the matching criteria specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2445N: Explanation"><h2 class="sectiontitle" id="d274337e3016">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+</ul>
+
+<p>For example, the following command converts all row-organized tables in database db1 that satisfy the matching criteria "owned by user1 and in schemaA":</p>
+
+<pre class="codeblock"><code>db2convert -d db1 -u user1 -z schemaA</code></pre>
+<p>This message is returned when no tables satisfy the matching criteria that were specified with the db2convert command.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2445N: User response"><h2 class="sectiontitle" id="d274337e3049">User response</h2><p>To convert row-organized tables into column-organized tables, call the db2convert command specifying criteria that match one or more tables in the database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3060" lang="en-us" id="sql2446i">
+<h1 class="msghead" id="d274337e3060"><span class="title title msgId"><span class="ph ph msgNumber">SQL2446I</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command completed successfully.  All row-organized tables that satisfy the specified matching criteria have been converted to column-organized tables.</span></h1>
+
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2446I: Explanation"><h2 class="sectiontitle" id="d274337e3094">Explanation</h2>
+<p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+
+</ul>
+
+<p>This message is returned when the db2convert utility has completed the conversion process successfully for all tables that match the specified criteria.</p>
+
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2446I: User response"><h2 class="sectiontitle" id="d274337e3123">User response</h2>
+<p>No response is required.</p>
+
+</section>
+
+</div>
+
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3139" lang="en-us" id="sql2447w">
+<h1 class="msghead" id="d274337e3139"><span class="title title msgId"><span class="ph ph msgNumber">SQL2447W</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command successfully converted one or more row-organized tables to column-organized tables.  However, one or more tables failed to be converted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2447W: Explanation"><h2 class="sectiontitle" id="d274337e3163">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+</ul>
+
+<p>The db2convert utility will attempt to convert all row-organized tables that match the specified criteria.  This message is returned when the db2convert fails to convert one or more tables.</p>
+
+<p>There are multiple reasons that a table might have failed to be converted, including the following examples:</p>
+
+<ul>
+<li>The table includes functionality that is not supported with column-organized tables.</li>
+
+<li>The table includes functionality that cannot be converted by the db2convert utility due to a restriction.</li>
+
+<li>An error occurred while the table was being converted.</li>
+</ul>
+
+<p>The db2convert utility prints summary information to stdout upon completion.  That summary information includes a list of tables that were converted and tables that were not converted, including details about what errors occurred.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2447W: User response"><h2 class="sectiontitle" id="d274337e3207">User response</h2><p>Review the summary information that the db2convert utility printed to stdout for more information about what succeeded and what failed.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3218" lang="en-us" id="sql2448n">
+<h1 class="msghead" id="d274337e3218"><span class="title title msgId"><span class="ph ph msgNumber">SQL2448N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed to convert any row-organized tables to column-organized tables.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2448N: Explanation"><h2 class="sectiontitle" id="d274337e3242">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+</ul>
+
+<p>The db2convert utility will attempt to convert all row-organized tables that match the specified criteria.  This message is returned when the db2convert fails to convert any tables.</p>
+
+<p>There are multiple reasons that a table might have failed to be converted, including the following examples:</p>
+
+<ul>
+<li>The table includes functionality that is not supported with column-organized tables.</li>
+
+<li>The table includes functionality that cannot be converted by the db2convert utility due to a restriction.</li>
+
+<li>An error occurred while the table was being converted.</li>
+</ul>
+
+<p>The db2convert utility prints summary information to stdout upon completion.  That summary information includes a list of tables that were converted and tables that were not converted, including details about what errors occurred.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2448N: User response"><h2 class="sectiontitle" id="d274337e3286">User response</h2><p>Review the summary information that the db2convert utility printed to stdout for more information about what what failed.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3298" lang="en-us" id="sql2449w">
+<h1 class="msghead" id="d274337e3298"><span class="title title msgId"><span class="ph ph msgNumber">SQL2449W</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command converted no tables because no tables that satisfied the specified matching criteria were row-organized.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2449W: Explanation"><h2 class="sectiontitle" id="d274337e3322">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+</ul>
+
+<p>The db2convert utility will attempt to convert all row-organized tables that match the specified criteria.  This message is returned when none of the tables that match the specified criteria are row-organized tables.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2449W: User response"><h2 class="sectiontitle" id="d274337e3348">User response</h2><p>To convert row-organized tables to column-organized tables, call the db2convert command specifying table criteria that match existing row-organized tables.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3359" lang="en-us" id="sql2450i">
+<h1 class="msghead" id="d274337e3359"><span class="title title msgId"><span class="ph ph msgNumber">SQL2450I</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command successfully completed the INIT, COPY, and REPLAY phases of the conversion process for all row-organized tables that satisfy the specified matching criteria.  If the database is recoverable, a backup can be taken at this point.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2450I: Explanation"><h2 class="sectiontitle" id="d274337e3383">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+</ul>
+
+<p>You can perform the conversion operation in one step.  However, you can also choose to perform the conversion operation in two steps:</p>
+
+<ol>
+<li>Perform only the INIT, COPY, and REPLAY phases of the conversion by calling the db2convert command specifying the -stopBeforeSwap parameter.</li>
+
+<li>Complete the conversion operation by calling the db2convert command specifying the -continue parameter.</li>
+</ol>
+
+<p>Performing the operation in two steps allows you to back up the database before completing the conversion.</p>
+
+<p>This message is returned when the db2convert utility has successfully completed the first step of the two-step conversion process for all tables that match the specified criteria.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2450I: User response"><h2 class="sectiontitle" id="d274337e3424">User response</h2><p>To complete the conversion of the tables to column-organized tables, call the db2convert command specifying the same table criteria and the -continue parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3436" lang="en-us" id="sql2451w">
+<h1 class="msghead" id="d274337e3436"><span class="title title msgId"><span class="ph ph msgNumber">SQL2451W</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command successfully completed the INIT, COPY, and REPLAY phases of the conversion process for some row-organized tables that satisfy the specified matching criteria.  However, errors were encountered during the conversion of one or more tables.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2451W: Explanation"><h2 class="sectiontitle" id="d274337e3460">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+</ul>
+
+<p>You can perform the conversion operation in one step.  However, you can also choose to perform the conversion operation in two steps:</p>
+
+<ol>
+<li>Perform only the INIT, COPY, and REPLAY phases of the conversion by calling the db2convert command specifying the -stopBeforeSwap parameter.</li>
+
+<li>Complete the conversion operation by calling the db2convert command specifying the -continue parameter.</li>
+</ol>
+
+<p>The db2convert utility will attempt to convert all row-organized tables that match the specified criteria. This message is returned when the db2convert fails to convert one or more tables.</p>
+
+<p>There are multiple reasons that a table might have failed to be converted, including the following examples:</p>
+
+<ul>
+<li>The table includes functionality that is not supported with column-organized tables.</li>
+
+<li>The table includes functionality that cannot be converted by the db2convert utility due to a restriction.</li>
+
+<li>An error occurred while the table was being converted.</li>
+</ul>
+
+<p>The db2convert utility prints summary information to stdout upon completion. That summary information includes a list of tables that were converted and tables that were not converted, including details about what errors occurred.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2451W: User response"><h2 class="sectiontitle" id="d274337e3515">User response</h2><p>To complete the conversion of the tables for which the INIT, COPY, and REPLAY phases of the conversion process were successful, call the db2convert command specifying the -continue parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3526" lang="en-us" id="sql2452n">
+<h1 class="msghead" id="d274337e3526"><span class="title title msgId"><span class="ph ph msgNumber">SQL2452N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed to complete the INIT, COPY, and REPLAY phases of the conversion process for any tables that satisfy the specified matching criteria.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2452N: Explanation"><h2 class="sectiontitle" id="d274337e3550">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>You can control which tables to convert by specifying matching criteria with db2convert parameters:</p>
+
+<ul>
+<li>All tables in the database</li>
+
+<li>Tables created by a specific user (-u parameter)</li>
+
+<li>Tables in a specified schema (-z parameter)</li>
+
+<li>One specified table (-t parameter)</li>
+</ul>
+
+<p>You can perform the conversion operation in one step.  However, you can also choose to perform the conversion operation in two steps:</p>
+
+<ol>
+<li>Perform only the INIT, COPY, and REPLAY phases of the conversion by calling the db2convert command specifying the -stopBeforeSwap parameter.</li>
+
+<li>Complete the conversion operation by calling the db2convert command specifying the -continue parameter.</li>
+</ol>
+
+<p>The db2convert utility will attempt to convert all row-organized tables that match the specified criteria. This message is returned when the db2convert is unable to convert any tables.</p>
+
+<p>There are multiple reasons that a table might have failed to be converted, including the following examples:</p>
+
+<ul>
+<li>The table includes functionality that is not supported with column-organized tables.</li>
+
+<li>The table includes functionality that cannot be converted by the db2convert utility due to a restriction.</li>
+
+<li>An error occurred while the table was being converted.</li>
+</ul>
+
+<p>The db2convert utility prints summary information to stdout upon completion. That summary information includes a list of tables that were converted and tables that were not converted, including details about what errors occurred.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2452N: User response"><h2 class="sectiontitle" id="d274337e3605">User response</h2><p>Review the summary information that the db2convert utility printed to stdout for more information about what failed.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3617" lang="en-us" id="sql2453n">
+<h1 class="msghead" id="d274337e3617"><span class="title title msgId"><span class="ph ph msgNumber">SQL2453N</span></span>  <span class="shortdesc shortdesc msgText">Rebinding the package failed because the SQL object that generated the package needs to be revalidated.  SQL object name: <var class="keyword varname vartype=quotedString varnumber=1">object-name</var>. SQL object type: <var class="keyword varname vartype=quotedString varnumber=2">object-type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2453N: Explanation"><h2 class="sectiontitle" id="d274337e3647">Explanation</h2><p>Rebinding is the process of recreating a package for an application program that was previously bound. You can rebind a package by using the REBIND command.</p>
+
+<p>This message is returned when an attempt is made to rebind a package that is generated for an SQL object (such as an SQL procedure or a compiled function, among others) that is invalid. The SQL object might have become invalid for one of multiple reasons, such as because something in the body of the SQL object has changed since the SQL object and the associated package was created.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2453N: User response"><h2 class="sectiontitle" id="d274337e3656">User response</h2><ol>
+<li>Revalidate the SQL object that generated the package by using one of the following methods: 
+<ul>
+<li>Enable automatic revalidation and then execute and SQL statement that uses the SQL object.</li>
+
+<li>Call the ADMIN_REVALIDATE_DB_OBJECTS procedure</li>
+
+<li>Replace the SQL object using a CREATE OR REPLACE statement or by dropping the SQL object and creating it again.</li>
+</ul>
+</li>
+
+<li>Call the REBIND command again.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -2453</p>
+
+<p><strong>sqlstate</strong>:  560D6</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3692" lang="en-us" id="sql2454n">
+<h1 class="msghead" id="d274337e3692"><span class="title title msgId"><span class="ph ph msgNumber">SQL2454N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed because the db2convert utility failed to write to the output file that was specified with the -o option.  Specified output file name: <var class="keyword varname vartype=quotedString varnumber=1">file-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2454N: Explanation"><h2 class="sectiontitle" id="d274337e3719">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert utility.  You can cause all message text output from the db2convert utility to be printed to a file by specifying an output file name with the -o option.  If the specified file does not exist, the db2convert utility will create the file. If the specified file exists, the db2convert utility will overwrite the existing file.</p>
+
+<p>This message is returned when a file name is specified with the -o option, but the db2convert utility cannot write output to the specified file.  There are different reasons why the db2convert utility might be unable to print to the specified output file, including the following examples:</p>
+
+<ul>
+<li>The user who called the db2convert command does not have write permission for the specified file or the directory in which the file is located.</li>
+
+<li>A full path was specified with the file name, and the specified path does not exist.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2454N: User response"><h2 class="sectiontitle" id="d274337e3736">User response</h2><p>Call the db2convert command again, specifying an output file for which you have write permission.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3748" lang="en-us" id="sql2455w">
+<h1 class="msghead" id="d274337e3748"><span class="title title msgId"><span class="ph ph msgNumber">SQL2455W</span></span>  <span class="shortdesc shortdesc msgText">The configuration parameter was successfully updated.  However, one or both of the SORTHEAP and SHEAPTHRES_SHR configuration parameters is now set to a value that cannot be used with column-organized tables.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2455W: Explanation"><h2 class="sectiontitle" id="d274337e3772">Explanation</h2><p>You can enable self-tuning for sort memory by setting the database configuration parameters SORTHEAP and SHEAPTHRES_SHR to "AUTOMATIC".</p>
+
+<p>Self-tuning for sort memory is not supported with column-organized tables.</p>
+
+<p>This message is returned when either the configuration parameter SORTHEAP or the configuration parameter SHEAPTHRES_SHR is updated to "AUTOMATIC" while there is a column-organized table in the database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2455W: User response"><h2 class="sectiontitle" id="d274337e3784">User response</h2><p>To use self-tuning for sort memory, use only row-organized tables instead of colum-organized tables.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3795" lang="en-us" id="sql2456i">
+<h1 class="msghead" id="d274337e3795"><span class="title title msgId"><span class="ph ph msgNumber">SQL2456I</span></span>  <span class="shortdesc shortdesc msgText">Database configuration parameter <var class="keyword varname vartype=quotedString varnumber=1">parm-name1</var> has been set to <var class="keyword varname vartype=quotedString varnumber=2">value</var>. These database configuration parameters have also been changed to the same value: <var class="keyword varname vartype=quotedString varnumber=3">parameter-name-list</var></span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2456I: Explanation"><h2 class="sectiontitle" id="d274337e3827">Explanation</h2><p>If database configuration parameter CF_DB_MEM_SZ is set to AUTOMATIC, these memory consumer parameters are also automatically set to AUTOMATIC: CF_GBP_SZ, CF_LOCK_SZ and CF_SCA_SZ.</p>
+
+<p>If any of the memory consumer parameters is set to a fixed value, the other two memory consumer parameters and database configuration parameter CF_DB_MEM_SZ are also automatically set to a fixed value. If CF self-tuning memory was set on, CF self-tuning memory is turned off for this database.</p>
+
+<p>If any of the memory consumer parameters is set to AUTOMATIC, the other two memory consumer parameters are also set to AUTOMATIC. The value of database configuration parameter CF_DB_MEM_SZ remains unchanged.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2456I: User response"><h2 class="sectiontitle" id="d274337e3839">User response</h2><p>No action required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3851" lang="en-us" id="sql2457w">
+<h1 class="msghead" id="d274337e3851"><span class="title title msgId"><span class="ph ph msgNumber">SQL2457W</span></span>  <span class="shortdesc shortdesc msgText">CF self-tuning memory was not enabled.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2457W: Explanation"><h2 class="sectiontitle" id="d274337e3875">Explanation</h2><p>For CF self-tuning memory to be enabled, when registry variable DB2_DATABASE_CF_MEMORY is set to AUTO, these database configuration parameters must be set to AUTOMATIC:  CF_GBP_SZ, and CF_LOCK_SZ, CF_SCA_SZ.</p>
+
+<p>One of the database configuration parameters is not set to AUTOMATIC.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2457W: User response"><h2 class="sectiontitle" id="d274337e3884">User response</h2><p>To enable CF self-tuning memory, set the specified parameter to AUTOMATIC using the UPDATE DATABASE CONFIGURATION command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3895" lang="en-us" id="sql2458w">
+<h1 class="msghead" id="d274337e3895"><span class="title title msgId"><span class="ph ph msgNumber">SQL2458W</span></span>  <span class="shortdesc shortdesc msgText">The value of registry variable DB2_DATABASE_CF_MEMORY was changed after the first database activation. A database manager restart is required.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2458W: Explanation"><h2 class="sectiontitle" id="d274337e3919">Explanation</h2><p>Changing the setting of registry variable DB2_DATABASE_CF_MEMORY requires a database manager restart for the new value to take effect. Until the database manager is restarted, the databases are not aware of the new value and will not have their CF memory configurations adjusted according to the new value.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2458W: User response"><h2 class="sectiontitle" id="d274337e3925">User response</h2><p>Restart the database manager using the DB2STOP and DB2START commands.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e3937" lang="en-us" id="sql2459n">
+<h1 class="msghead" id="d274337e3937"><span class="title title msgId"><span class="ph ph msgNumber">SQL2459N</span></span>  <span class="shortdesc shortdesc msgText">The BACKUP DATABASE command failed because of compression-related or encryption-related configuration or command parameter errors. Reason code: <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2459N: Explanation"><h2 class="sectiontitle" id="d274337e3964">Explanation</h2><p>Encryption-related or compressions-related configuration settings can be specified for backup operations in two ways:</p>
+
+<ul>
+<li>In BACKUP DATABASE command parameters</li>
+
+<li>In database configuration parameters</li>
+</ul>
+
+<p>The reason code indicates more specifically why this message was returned:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Compression-related or encryption-related parameters were specified with the BACKUP DATABASE command while one of the database configuration parameters ENCRLIB and ENCROPTS was also set.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The BACKUP DATABASE command specified one of the parameters ENCRLIB or ENCROPTS as well as one of the parameters COMPRLIB or COMPROPTS.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2459N: User response"><h2 class="sectiontitle" id="d274337e4001">User response</h2><p>Respond according to the reason code:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Configure compression or encryption using either database configuration parameters or BACKUP DATABASE command parameters:</p>
+
+<ul>
+<li>Option 1: Set the database configuration parameters ENCRLIB and ENCROPTS, and then issue the BACKUP DATABASE command without specifying compression-related or encryption-related command parameters.</li>
+
+<li>Option 2: Clear the database configuration parameters ENCRLIB and ENCROPTS, and then reissue the BACKUP DATABASE command specifying encryption and compression options using command parameters.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Issue the BACKUP DATABASE command specifying either ENCRLIB and ENCROPTS or COMPRLIB and COMPROPTS.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e4040" lang="en-us" id="sql2460w">
+<h1 class="msghead" id="d274337e4040"><span class="title title msgId"><span class="ph ph msgNumber">SQL2460W</span></span>  <span class="shortdesc shortdesc msgText">The database was started with settings that might impact future growth of your database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2460W: Explanation"><h2 class="sectiontitle" id="d274337e4064">Explanation</h2><p>In a multiple database environment, when one of the databases was activated, the database could not get as much memory as it wanted. This will affect how large that database can grow in the future. This message can be returned when the CF self-tuning memory is enabled and database memory configuration parameter CF_DB_MEM_SZ is set to AUTOMATIC. If the instance is hosting more than one database, either:</p>
+
+<ul>
+<li>Too many database were activated at the same time, or</li>
+
+<li>The instance is hosting databases with both fixed and automatic CF_DB_MEM_SZ setting. The databases with fixed CF_DB_MEM_SZ are not leaving enough CF memory for the databases with AUTOMATIC CF_DB_MEM_SZ.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2460W: User response"><h2 class="sectiontitle" id="d274337e4078">User response</h2><p>Perform one of the following actions:</p>
+
+<ul>
+<li>Rerun the ACTIVATE DATABASE command,</li>
+
+<li>Manually configure database parameter CF_DB_MEM_SZ using the UPDATE DATABASE CONFIGURATION command, or</li>
+
+<li>Configure a fixed CF_DB_MEM_SZ setting for all databases.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e4101" lang="en-us" id="sql2461w">
+<h1 class="msghead" id="d274337e4101"><span class="title title msgId"><span class="ph ph msgNumber">SQL2461W</span></span>  <span class="shortdesc shortdesc msgText">CF self-tuning memory was not enabled because online fix pack updates were not committed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2461W: Explanation"><h2 class="sectiontitle" id="d274337e4125">Explanation</h2><p>An online fix pack update applies a new fix pack level to members and cluster caching facilities (CFs) while the instance remains available. However, the ability to set registry variable DB2_DATABASE_CF_MEMORY to AUTO is blocked until after the instance is committed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2461W: User response"><h2 class="sectiontitle" id="d274337e4131">User response</h2><p>After the online update is committed, set registry variable DB2_DATABASE_CF_MEMORY to AUTO using the db2set command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e4142" lang="en-us" id="sql2462n">
+<h1 class="msghead" id="d274337e4142"><span class="title title msgId"><span class="ph ph msgNumber">SQL2462N</span></span>  <span class="shortdesc shortdesc msgText">The db2convert command failed because the -cancel parameter was specified but no corresponding convert operation needs to be canceled.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2462N: Explanation"><h2 class="sectiontitle" id="d274337e4166">Explanation</h2><p>You can convert row-organized tables into column-organized tables by using the db2convert command.</p>
+
+<p>If an attempt to convert tables fails, you can cancel pending conversion changes by calling the db2convert command with the -cancel parameter.</p>
+
+<p>This message is returned when the db2convert command is called with the -cancel parameter, but no matching conversion operation has failed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2462N: User response"><h2 class="sectiontitle" id="d274337e4178">User response</h2><p>To convert row-organized tables into column-organized tables, call the db2convert command again without specifying the -cancel parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e4190" lang="en-us" id="sql2463n">
+<h1 class="msghead" id="d274337e4190"><span class="title title msgId"><span class="ph ph msgNumber">SQL2463N</span></span>  <span class="shortdesc shortdesc msgText">The roll forward stopped because the rollforward utility has reached an upgrade operation in the logs.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2463N: Explanation"><h2 class="sectiontitle" id="d274337e4214">Explanation</h2><p>To rollforward (or recover) through an upgrade operation requires multiple steps.  This message is returned when the rollforward utility has reached an upgrade operation in the logs, which means additional actions are required to complete the rollforward operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2463N: User response"><h2 class="sectiontitle" id="d274337e4220">User response</h2><p>Issue the rollforward (or recover) command from the later version of the product to complete the operation.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d274337e4231" lang="en-us" id="sql2464n">
+<h1 class="msghead" id="d274337e4231"><span class="title title msgId"><span class="ph ph msgNumber">SQL2464N</span></span>  <span class="shortdesc shortdesc msgText">The rollforward operation stopped because the utility detected an upgrade operation in the database logs and pre-upgrade verification tests failed. Reason code: <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL2464N: Explanation"><h2 class="sectiontitle" id="d274337e4258">Explanation</h2><p>When the rollforward utility encounters an upgrade operation in the database logs, the utility performs verification tests before replay of the upgrade operation can continue.</p>
+
+<p>This message is returned when the rollforward utility detects an upgrade operation in the database logs and verification tests fail for one of the following reasons:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Not all transactions before the upgrade have been successfully replayed. (For example, a transaction that is in doubt cannot be replayed.)</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>A table space is in a state that is not supported with rollforward operations.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL2464N: User response"><h2 class="sectiontitle" id="d274337e4287">User response</h2><ol>
+<li>Identify the problem that is blocking the rollforward operation by reading related messages in the diagnostic (db2diag) log files.  Look for this sqlcode and use the timestamps to verify that you are looking at the correct messages.</li>
+
+<li>Resolve the error that is blocking the rollforward operation.</li>
+
+<li>Re-issue the rollforward command from the same product version.</li>
+</ol>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

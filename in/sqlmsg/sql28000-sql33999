@@ -1,0 +1,2594 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL28000 - SQL33999</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d89974e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic27">
+   <h1 class="topictitle1" id="d89974e14">SQL28000 - SQL33999</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d89974e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e64" lang="en-us" id="sql29006n">
+<h1 class="msghead" id="d89974e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL29006N</span></span>  <span class="shortdesc shortdesc msgText">A Java exception <var class="keyword varname vartype=quotedString varnumber=1">exception-string</var> was encountered.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29006N: Explanation"><h2 class="sectiontitle" id="d89974e91">Explanation</h2><p>Java exception <var class="keyword varname">exception-string</var> was thrown.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29006N: User response"><h2 class="sectiontitle" id="d89974e100">User response</h2><p>If the problem persists contact your technical service
+representative.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e111" lang="en-us" id="sql29007n">
+<h1 class="msghead" id="d89974e111"><span class="title title msgId"><span class="ph ph msgNumber">SQL29007N</span></span>  <span class="shortdesc shortdesc msgText">Unable to communicate with the Query Controller.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29007N: Explanation"><h2 class="sectiontitle" id="d89974e135">Explanation</h2><p>The Query Controller may not be running or the communication has timed out.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29007N: User response"><h2 class="sectiontitle" id="d89974e141">User response</h2><p>Request that the database administrator start the Query Controller.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e153" lang="en-us" id="sql29008n">
+<h1 class="msghead" id="d89974e153"><span class="title title msgId"><span class="ph ph msgNumber">SQL29008N</span></span>  <span class="shortdesc shortdesc msgText">Error encountered during job sequence number generation.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29008N: Explanation"><h2 class="sectiontitle" id="d89974e177">Explanation</h2><p>An error was encountered during job sequence number generation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29008N: User response"><h2 class="sectiontitle" id="d89974e183">User response</h2><p>If the problem persists contact your technical service
+representative.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e194" lang="en-us" id="sql29009n">
+<h1 class="msghead" id="d89974e194"><span class="title title msgId"><span class="ph ph msgNumber">SQL29009N</span></span>  <span class="shortdesc shortdesc msgText">The query has been rejected. Reason code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29009N: Explanation"><h2 class="sectiontitle" id="d89974e221">Explanation</h2><p>The query has been rejected. The reason codes are as follows:</p>
+
+<ol>
+<li>DB2 does not allow the query to generate result set, or the query contains host variables, parameter markers, special registers, created temporary tables, declared temporary tables, session variables, IDENTITY_VAL_LOCAL function, NEXT VALUE expression,  and/or PREVIOUS VALUE expression. Therefore the query cannot be put on hold or run in the background, as the state might not be valid at the time the query is actually executed.</li>
+
+<li>The query would update a DB2 table, therefore it cannot be put on hold or run in background, as the state might no longer be valid at the time the query is actually executed.</li>
+
+<li>The query cannot be queued because it contains nested routines.</li>
+
+<li>The query cannot be put on hold or run in the background because it contains nested routines.</li>
+
+<li>DB2 does not allow this query to be queued. This may occur when the query contains array inserts.</li>
+
+<li>DB2 does not allow a query to be queued when the concentrator is turned on.</li>
+
+<li>DB2 does not allow a query to be queued when the REOPT ALWAYS option is enabled for the query.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29009N: User response"><h2 class="sectiontitle" id="d89974e251">User response</h2><p>Contact the database administrator to examine the reason code and increase the appropriate cost threshold accordingly.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e263" lang="en-us" id="sql29010n">
+<h1 class="msghead" id="d89974e263"><span class="title title msgId"><span class="ph ph msgNumber">SQL29010N</span></span>  <span class="shortdesc shortdesc msgText">The query submission has been cancelled.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29010N: Explanation"><h2 class="sectiontitle" id="d89974e287">Explanation</h2><p>The user has cancelled the query submission. No query was submitted.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e298" lang="en-us" id="sql29011i">
+<h1 class="msghead" id="d89974e298"><span class="title title msgId"><span class="ph ph msgNumber">SQL29011I</span></span>  <span class="shortdesc shortdesc msgText">Query <var class="keyword varname vartype=quotedString varnumber=1">query-ID</var> will be run in the background.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29011I: Explanation"><h2 class="sectiontitle" id="d89974e325">Explanation</h2><p>The user has chosen to run the query in the background.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e337" lang="en-us" id="sql29013i">
+<h1 class="msghead" id="d89974e337"><span class="title title msgId"><span class="ph ph msgNumber">SQL29013I</span></span>  <span class="shortdesc shortdesc msgText">Query <var class="keyword varname vartype=quotedString varnumber=1">query-ID</var> has been held.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29013I: Explanation"><h2 class="sectiontitle" id="d89974e364">Explanation</h2><p>The query has been put in held state by Query Patroller.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29013I: User response"><h2 class="sectiontitle" id="d89974e370">User response</h2><p>Contact the database administrator to have the query released.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e381" lang="en-us" id="sql29014n">
+<h1 class="msghead" id="d89974e381"><span class="title title msgId"><span class="ph ph msgNumber">SQL29014N</span></span>  <span class="shortdesc shortdesc msgText">The value specified for DB2 registry
+variable <var class="keyword varname vartype=quotedString varnumber=1">registry-variable</var> is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29014N: Explanation"><h2 class="sectiontitle" id="d89974e408">Explanation</h2><div class="p">The value specified for <var class="keyword varname">registry-variable</var>
+is invalid because of the following restrictions by
+<var class="keyword varname">registry-variable</var>:
+<dl>
+
+<dt class="dlterm">DQP_NTIER</dt>
+
+<dd class="dlentry">The value must be one of OFF, RUN[:timeout],
+or CHECK[:timeout].</dd>
+
+
+<dt class="dlterm">DQP_LAST_RESULT_DEST</dt>
+
+<dd class="dlentry">The length must not exceed 32 characters.</dd>
+
+
+<dt class="dlterm">DQP_TRACEFILE</dt>
+
+<dd class="dlentry">The length must not exceed 256 characters.</dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29014N: User response"><h2 class="sectiontitle" id="d89974e445">User response</h2><p>Correct the value of the DB2 registry variable
+<var class="keyword varname">registry-variable</var> with the db2set
+command and resubmit the query.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e460" lang="en-us" id="sql29015n">
+<h1 class="msghead" id="d89974e460"><span class="title title msgId"><span class="ph ph msgNumber">SQL29015N</span></span>  <span class="shortdesc shortdesc msgText">Error encountered during job cancellation.
+Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29015N: Explanation"><h2 class="sectiontitle" id="d89974e487">Explanation</h2><p>An error was encountered while trying to cancel a job.
+The reason code maps to an SQL or DB2 message.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29015N: User response"><h2 class="sectiontitle" id="d89974e493">User response</h2><p>Examine the reason code, correct the error,
+and retry the action again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e504" lang="en-us" id="sql29017n">
+<h1 class="msghead" id="d89974e504"><span class="title title msgId"><span class="ph ph msgNumber">SQL29017N</span></span>  <span class="shortdesc shortdesc msgText">Query <var class="keyword varname vartype=quotedString varnumber=1">query-id</var> has been cancelled.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29017N: Explanation"><h2 class="sectiontitle" id="d89974e531">Explanation</h2><p>The user has cancelled the query.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e543" lang="en-us" id="sql29020n">
+<h1 class="msghead" id="d89974e543"><span class="title title msgId"><span class="ph ph msgNumber">SQL29020N</span></span>  <span class="shortdesc shortdesc msgText">An internal error has occurred. Error = <var class="keyword varname vartype=quotedString varnumber=1">error</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29020N: Explanation"><h2 class="sectiontitle" id="d89974e570">Explanation</h2><p>An error has occurred during internal processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29020N: User response"><h2 class="sectiontitle" id="d89974e576">User response</h2><p>Contact IBM Support and provide the db2diag log file and the qpdiag.log file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e587" lang="en-us" id="sql29021n">
+<h1 class="msghead" id="d89974e587"><span class="title title msgId"><span class="ph ph msgNumber">SQL29021N</span></span>  <span class="shortdesc shortdesc msgText">User <var class="keyword varname vartype=quotedString varnumber=1">user-ID</var> is suspended.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL29021N: Explanation"><h2 class="sectiontitle" id="d89974e614">Explanation</h2><p>The user <var class="keyword varname">user-ID</var> is suspended from submitting a query to the database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL29021N: User response"><h2 class="sectiontitle" id="d89974e623">User response</h2><p>Contact the database administrator to have the user's submitter profile
+reactivated.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e635" lang="en-us" id="sql30000n">
+<h1 class="msghead" id="d89974e635"><span class="title title msgId"><span class="ph ph msgNumber">SQL30000N</span></span>  <span class="shortdesc shortdesc msgText">Execution failed because of a Distributed
+Protocol Error that will not affect the successful execution of
+subsequent commands or SQL statements:  Reason Code <var class="keyword varname vartype=quotedString varnumber=1">reason-code(subcode)</var>(<var class="keyword varname vartype=quotedString varnumber=2">text</var>).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30000N: Explanation"><h2 class="sectiontitle" id="d89974e665">Explanation</h2><p>A system error occurred that prevented successful processing
+of the current environment command or SQL statement.
+This message (SQLCODE) is produced at statement compilation
+or execution time.</p>
+
+<p>The command or statement cannot be processed.  The current
+transaction is not rolled back and the application remains connected to
+the remote database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30000N: User response"><h2 class="sectiontitle" id="d89974e674">User response</h2><p>Record the message number and the reason code.
+Record all error information from the SQLCA, if possible.
+Attempt to rerun the application.</p>
+
+<p>If sufficient memory resources exist and the problem continues,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and reason code</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30000</p>
+
+<p> 
+<strong>sqlstate</strong>:  58008</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e716" lang="en-us" id="sql30002n">
+<h1 class="msghead" id="d89974e716"><span class="title title msgId"><span class="ph ph msgNumber">SQL30002N</span></span>  <span class="shortdesc shortdesc msgText">The SQL statement cannot be executed due to
+a prior condition in a chain of statements.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30002N: Explanation"><h2 class="sectiontitle" id="d89974e740">Explanation</h2><div class="p">An SQL statement was chained to
+PREPARE, but the PREPARE statement has received a warning SQLCODE
+that requires the program or end user to either re-issue the
+chained statement or issue a different SQL request.
+This error can occur only in a client/server environment.
+<ul>
+<li>A distributed client using DRDA has chained an
+OPEN statement to a PREPARE, but the PREPARE
+statement received SQLCODE +1140.</li>
+</ul>
+</div>
+
+<p>The statement cannot be executed as chained.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30002N: User response"><h2 class="sectiontitle" id="d89974e753">User response</h2><p>The statement must be sent again as a separate request.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -30002</p>
+
+<p> 
+<strong>sqlstate</strong>:  57057</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e777" lang="en-us" id="sql30005n">
+<h1 class="msghead" id="d89974e777"><span class="title title msgId"><span class="ph ph msgNumber">SQL30005N</span></span>  <span class="shortdesc shortdesc msgText">Execution failed because function not supported by
+the server: location <var class="keyword varname vartype=quotedString varnumber=1">location</var> product ID <var class="keyword varname vartype=quotedString varnumber=2">pppvvrrm</var> reason code <var class="keyword varname vartype=quotedString varnumber=3">reason-code(subcode)</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30005N: Explanation"><h2 class="sectiontitle" id="d89974e810">Explanation</h2><p>The current SQL statement failed because the SQL statement was routed
+to a server that does not support the requested function.
+The error was such that it will not preclude the successful
+execution of further SQL statements.</p>
+
+<p>The statement cannot be executed. The SQLCA is formatted.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30005N: User response"><h2 class="sectiontitle" id="d89974e819">User response</h2><p>Notify the DBA for assistance in analyzing the SQL statement
+that prompted this SQL code.</p>
+
+<p><var class="keyword varname">location</var> identifies the name of the server that could not
+support the required database protocols to perform the
+requested function. The product identifier is in the form &lt;pppvvrrm&gt;.
+It is an eight-byte field with alphanumeric characters, and identifies the
+product that could not support the function.
+<var class="keyword varname">ppp</var> identifies the specific database product.
+<var class="keyword varname">vv</var> identifies the product version.
+<var class="keyword varname">rr</var> identifies the product release.
+<var class="keyword varname">m</var> identifies the product modification level.</p>
+
+<div class="p">Possible values for <var class="keyword varname">ppvvrrm</var>:
+<dl>
+
+<dt class="dlterm">ppp</dt>
+
+<dd class="dlentry">DSN for zOS, ARI for VM/VSE, SQL for Linux/Unix/Windows,
+QSQ for iSeries, and JCC for Java.</dd>
+
+
+<dt class="dlterm">vv</dt>
+
+<dd class="dlentry">Version number</dd>
+
+
+<dt class="dlterm">rr</dt>
+
+<dd class="dlentry">Release level</dd>
+
+
+<dt class="dlterm">m</dt>
+
+<dd class="dlentry">Modification level</dd>
+</dl>
+</div>
+
+<div class="p">To correct the problem, identify the function that is not supported. To determine what function was not supported and why,
+refer to the <var class="keyword varname">reason-code</var> that was specified. 
+Here are the possible values for the <var class="keyword varname">reason-code</var>, and the functions
+they correspond to:
+<dl>
+
+<dt class="dlterm">0010</dt>
+
+<dd class="dlentry">LONG_STMTS</dd>
+
+
+<dt class="dlterm">0020</dt>
+
+<dd class="dlentry">LONG255_IDS</dd>
+
+
+<dt class="dlterm">0030</dt>
+
+<dd class="dlentry">EXTENDED_DESCRIBE</dd>
+
+
+<dt class="dlterm">0040</dt>
+
+<dd class="dlentry">EXTENDED_DIAGNOSTICS</dd>
+
+
+<dt class="dlterm">0050</dt>
+
+<dd class="dlentry">KEEP_DYNAMIC</dd>
+
+
+<dt class="dlterm">0060</dt>
+
+<dd class="dlentry">MULTI_ROW_FETCH</dd>
+
+
+<dt class="dlterm">0070</dt>
+
+<dd class="dlentry">MULTI_ROW_INSERT</dd>
+
+
+<dt class="dlterm">0080</dt>
+
+<dd class="dlentry">SQL_CANCEL</dd>
+
+
+<dt class="dlterm">0090</dt>
+
+<dd class="dlentry">SCROLLABLE_CURSORS</dd>
+
+
+<dt class="dlterm">0100</dt>
+
+<dd class="dlentry">CURSOR_ATTRIBUTES</dd>
+
+
+<dt class="dlterm">0110</dt>
+
+<dd class="dlentry">MONITORING</dd>
+
+
+<dt class="dlterm">0120</dt>
+
+<dd class="dlentry">SELECT_WITH_INSERT</dd>
+
+
+<dt class="dlterm">0130</dt>
+
+<dd class="dlentry">DATA_ENCRYPTION</dd>
+
+
+<dt class="dlterm">0140</dt>
+
+<dd class="dlentry">PACKAGE_PATH</dd>
+
+
+<dt class="dlterm">0150</dt>
+
+<dd class="dlentry">2PC_INCOMPATIBILITY</dd>
+</dl>
+</div>
+
+<div class="p">Lastly, you may use the <var class="keyword varname">subcode</var> value to further identify the problem.
+When non-zero, the <var class="keyword varname">subcode</var> consists of a one-byte code to indicate
+how the error was detected in the network:
+<ul>
+<li>If '01'x, then the local DB2 that is acting as the requestor detected the
+error. The location and PRDID identify the server in error.</li>
+
+<li>If '02'x, then the server detected the error. The location and PRDID identify
+the location and level of the local database server.</li>
+
+<li>If '03'x, then an intermediate server (hop site) detected the error
+and the error and the location and PRDID identify the server in error.</li>
+
+<li>If '04'x, then an intermediate server (hop site) detected the error
+and the error and the location and PRDID identify the server in error.</li>
+
+<li>If '05'x, then an intermediate server (hop site) detected the error. SYNCLOG mapping error. Unable to map the end server's IPv6 address to a IPv4 address.</li>
+</ul>
+</div>
+
+<p><strong>sqlcode</strong>: -30005</p>
+
+<p><strong>sqlstate</strong>: 56072</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1054" lang="en-us" id="sql30020n">
+<h1 class="msghead" id="d89974e1054"><span class="title title msgId"><span class="ph ph msgNumber">SQL30020N</span></span>  <span class="shortdesc shortdesc msgText">Execution of the command or SQL statement failed because of a syntax error in the communication data stream that will affect the successful execution of subsequent commands and SQL statements:  Reason Code <var class="keyword varname vartype=quotedString varnumber=1">reason-code(subcode)</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30020N: Explanation"><h2 class="sectiontitle" id="d89974e1081">Explanation</h2><p>The command or statement cannot be processed. The current transaction is rolled back and the application is disconnected from the remote database.</p>
+
+<p>Some possible reason codes include:</p>
+
+<dl>
+
+<dt class="dlterm">121C</dt>
+
+<dd class="dlentry"><p>Indicates that the user is not authorized to perform the requested command.</p>
+</dd>
+
+
+<dt class="dlterm">124C</dt>
+
+<dd class="dlentry"><p>The DRDA data stream for the request contains a syntax error.</p>
+</dd>
+
+
+<dt class="dlterm">1232</dt>
+
+<dd class="dlentry"><p>The command could not be completed because of a permanent error.  In most cases, the server will be in the process of an abend.</p>
+</dd>
+
+
+<dt class="dlterm">1254</dt>
+
+<dd class="dlentry"><p>A command sent from the client has resulted in an unarchitected and implementation specific condition  on the remote server for which there is no architected message to return to the client.</p>
+
+<p>If the remote server is DB2 UDB for OS/390,zOS then check the console log for information  about this error.</p>
+
+<p>If the remote server is DB2 UDB for iSeries, the job log of the server job, and/or a first failure  data capture (FFDC) spooled file is usually necessary to determine the cause of the error.</p>
+
+<p>If the remote server is DB2 Database for Linux, UNIX, and Windows, then check the remote database server's administration notification log for information regarding this error.</p>
+</dd>
+
+
+<dt class="dlterm">220A</dt>
+
+<dd class="dlentry"><p>The target server has received an invalid data description. If a user SQLDA is specified, ensure that the fields are initialized correctly.  Also, ensure that the length does not exceed the maximum allowed length for the data type being used.</p>
+
+<p>If you are using the DB2 Connect product in a gateway server environment with downlevel clients, this error may occur if your application's host variables and the queried table's column descriptions do not match.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30020N: User response"><h2 class="sectiontitle" id="d89974e1149">User response</h2><ul>
+<li>For reason code 121C, contact your DBA to see if you are authorized to perform requested command.</li>
+
+<li>For reason code 220A,  if programming the SQLDA directly, ensure that fields are initialized correctly and the length does not exceed the maximum allowed length for the data type being used. If you are using DB2 Connect as described in Explanation, check that application host variables and table's column descriptions match.</li>
+
+<li>For reason code 124C, one common case involves executing a stored procedure. If this case applies, ensure that you have correctly defined the stored procedure parameters, with type and length matching the types of the corresponding table columns.</li>
+</ul>
+
+<p>If you are unable to resolve the problem (or if you have received reason codes not explained in this message), refer your DBA to the following instructions:</p>
+
+<ul>
+<li>Search http://www.ibm.com/software/data/support/ for APARs which might cover the situation you are experiencing.</li>
+
+<li>Attempt to connect the remote database and rerun the application. Record the following information and contact IBM support: 
+<ul>
+
+<li>For DB2 for z/OS Data Server, invoke the Independent Trace Facility and retry the scenario to
+collect the trace information. Provide the z/OS trace, the z/OS console log, the db2support output
+from the DB2 Connect server, and the db2support output from the IBM Data Server Client located with
+the application (if not coresident with the DB2 Connect Server).</li>
+
+<li>For DB2 for iSeries  Data Server, collect any FFDC data generated by the failing DRDA server job, the db2support output from the DB2 Connect Server, and the db2support output from the IBM Data Server Client located with the application (if not coresident with the DB2 Connect Server).</li>
+
+<li>Problem description</li>
+
+<li>SQLCODE and reason code</li>
+
+<li>SQLCA contents, if possible</li>
+
+<li>IBM Data Server Client and DB2 Connect Server trace file if possible.</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -30020</p>
+
+<p><strong>sqlstate</strong>:  58009</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1210" lang="en-us" id="sql30021n">
+<h1 class="msghead" id="d89974e1210"><span class="title title msgId"><span class="ph ph msgNumber">SQL30021N</span></span>  <span class="shortdesc shortdesc msgText">Execution failed because of a Distributed
+Protocol Error that will affect the successful execution of subsequent
+commands and SQL statements:  Manager <var class="keyword varname vartype=quotedString varnumber=1">manager</var> at Level <var class="keyword varname vartype=quotedString varnumber=2">level</var> not
+supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30021N: Explanation"><h2 class="sectiontitle" id="d89974e1240">Explanation</h2><p>A system error occurred that prevented successful connection of the
+application to the remote database.  This message (SQLCODE) is produced
+for SQL CONNECT
+statement.
+<var class="keyword varname">manager</var> and <var class="keyword varname">level</var> are numeric values that identify
+the incompatibility between the client and the server.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30021N: User response"><h2 class="sectiontitle" id="d89974e1255">User response</h2><p>Record the message number, the <var class="keyword varname">manager</var>, and
+<var class="keyword varname">level</var> values.  Record all error information from the
+SQLCA, if possible.
+Attempt to connect to the remote database again.</p>
+
+<div class="p">If the problem persists,
+invoke the Independent Trace Facility at the operating system command
+prompt.
+Then, contact your service representative with the
+following information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and reason code</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30021</p>
+
+<p> 
+<strong>sqlstate</strong>:  58010</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1300" lang="en-us" id="sql30040n">
+<h1 class="msghead" id="d89974e1300"><span class="title title msgId"><span class="ph ph msgNumber">SQL30040N</span></span>  <span class="shortdesc shortdesc msgText">Execution failed because of unavailable
+resources that will not affect the successful execution of subsequent
+commands and SQL statements:  Reason <var class="keyword varname vartype=quotedString varnumber=1">reason</var>, Type of Resource <var class="keyword varname vartype=quotedString varnumber=2">resource-type</var>,
+Resource Name <var class="keyword varname vartype=quotedString varnumber=3">resource-name</var>, Product ID <var class="keyword varname vartype=quotedString varnumber=4">product-ID</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30040N: Explanation"><h2 class="sectiontitle" id="d89974e1336">Explanation</h2><p>The application cannot process the command or SQL statement
+because the specified resource has run out. The current transaction is
+not rolled back and the application remains connected to the remote
+database.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30040N: User response"><h2 class="sectiontitle" id="d89974e1345">User response</h2><p>Increase the size of the specified resource and resubmit the
+command.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -30040</p>
+
+<p> 
+<strong>sqlstate</strong>:  57012</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1369" lang="en-us" id="sql30041n">
+<h1 class="msghead" id="d89974e1369"><span class="title title msgId"><span class="ph ph msgNumber">SQL30041N</span></span>  <span class="shortdesc shortdesc msgText">Execution failed because of unavailable
+resources that will affect the successful execution of subsequent
+commands and SQL statements:  Reason <var class="keyword varname vartype=quotedString varnumber=1">reason</var>, Type of Resource <var class="keyword varname vartype=quotedString varnumber=2">resource-type</var>,
+Resource Name <var class="keyword varname vartype=quotedString varnumber=3">resource-name</var>, Product ID <var class="keyword varname vartype=quotedString varnumber=4">product-ID</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30041N: Explanation"><h2 class="sectiontitle" id="d89974e1405">Explanation</h2><p>The application cannot process the command or SQL statement because resources are not available at the remote database. This SQLCODE is produced at statement compilation or processing time.</p>
+
+<p>Federated system users: this situation can also be detected by the data source.</p>
+
+<p>If the <var class="keyword varname">resource-name</var> is "Encrypt" or "Decrypt", the user exits for password encryption or decryption are unavailable or had an error.</p>
+
+<p>The command or statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30041N: User response"><h2 class="sectiontitle" id="d89974e1423">User response</h2><p>Investigate the remote database system environment.</p>
+
+<p>Federated system users:</p>
+
+<ul>
+<li>If the password encryption or decryption user exit failed, <var class="keyword varname">reason</var> is the integer value that the federated server received when invoking the user exit.  Ensure that no errors occurred when the encryption and decryption user exits were link-edited with the federated server.
+<p>If using a user-supplied user exit, check the user exit source code to determine why the <var class="keyword varname">reason</var> was returned. If the error is found in the user exit source code, fix the error, link-edit the object code with the federated server, and reissue the failing command or statement.</p>
+</li>
+
+<li>For all other cases, isolate the problem to the data source failing the request, correct the problem at the data source, and reissue the failing command or statement.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -30041</p>
+
+<p><strong>sqlstate</strong>:  57013</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1463" lang="en-us" id="sql30050n">
+<h1 class="msghead" id="d89974e1463"><span class="title title msgId"><span class="ph ph msgNumber">SQL30050N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">number</var> command or SQL statement invalid while bind
+is in progress.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30050N: Explanation"><h2 class="sectiontitle" id="d89974e1489">Explanation</h2><p>An application attempted to issue a command or SQL statement
+that is not valid while a precompile/bind operation is in progress.
+&lt;number&gt; is a numeric value that identifies the
+erroneous command or SQL statement.</p>
+
+<p>The command or statement is not processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30050N: User response"><h2 class="sectiontitle" id="d89974e1498">User response</h2><p>If the application is not the database manager
+precompiler/binder, verify that bind is not active before issuing
+the command or SQL statement.</p>
+
+<p>If the application is the database manager precompiler/binder,
+record the message number (SQLCODE) and the
+&lt;number&gt; value.  Record all error information
+from the SQLCA, if possible.  Attempt to perform the bind operation
+again.</p>
+
+<p>If sufficient memory resources exist and the problem continues,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+
+<p>Contact your technical service representative with the following information:</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and reason code</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30050</p>
+
+<p> 
+<strong>sqlstate</strong>:  58011</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1548" lang="en-us" id="sql30051n">
+<h1 class="msghead" id="d89974e1548"><span class="title title msgId"><span class="ph ph msgNumber">SQL30051N</span></span>  <span class="shortdesc shortdesc msgText">Bind process with specified package name and
+consistency token not active.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30051N: Explanation"><h2 class="sectiontitle" id="d89974e1572">Explanation</h2><p>An attempt has been made to issue a precompile/bind operation
+when precompile/bind is not active or an attempt was made to use
+an invalid package name and/or consistency token during an active
+precompile/bind operation.</p>
+
+<p>The command or statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30051N: User response"><h2 class="sectiontitle" id="d89974e1581">User response</h2><p>If the application is not the database manager
+precompiler/binder, verify that precompile/bind is active before
+issuing the bind operation and that correct information is being
+passed on the bind operation.</p>
+
+<p>If the application is the database manager precompiler/binder,
+record the message number (SQLCODE) and all error information
+from the SQLCA, if possible.  Attempt to perform the operation
+again.</p>
+
+<p>If sufficient memory resources exist and the problem continues,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+
+<p>Contact your technical service representative with the following information:</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and reason code</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30051</p>
+
+<p> 
+<strong>sqlstate</strong>:  58012</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1630" lang="en-us" id="sql30052n">
+<h1 class="msghead" id="d89974e1630"><span class="title title msgId"><span class="ph ph msgNumber">SQL30052N</span></span>  <span class="shortdesc shortdesc msgText">Program preparation assumptions are incorrect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30052N: Explanation"><h2 class="sectiontitle" id="d89974e1654">Explanation</h2><p>The SQL statement being compiled is not recognized by the
+precompiler and cannot be processed by the database.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30052N: User response"><h2 class="sectiontitle" id="d89974e1663">User response</h2><p>Ensure that the statement is correct and attempt to
+perform the operation again.  If the problem continues, remove
+the statement from the program.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -30052</p>
+
+<p> 
+<strong>sqlstate</strong>:  42932</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1687" lang="en-us" id="sql30053n">
+<h1 class="msghead" id="d89974e1687"><span class="title title msgId"><span class="ph ph msgNumber">SQL30053N</span></span>  <span class="shortdesc shortdesc msgText">The value for OWNER failed the authorization
+check at the remote database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30053N: Explanation"><h2 class="sectiontitle" id="d89974e1711">Explanation</h2><p>The value specified for the OWNER option on the precompile/bind
+failed the authorization check at the remote database.
+This SQLCODE is produced during precompile/bind.  It is not produced
+by the database manager precompiler/binder.</p>
+
+<p>The precompile/bind operation cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30053N: User response"><h2 class="sectiontitle" id="d89974e1720">User response</h2><p>Ensure that you are authorized to use the ID specified for the
+OWNER option, or do not use the OWNER option.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -30053</p>
+
+<p> 
+<strong>sqlstate</strong>:  42506</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1743" lang="en-us" id="sql30060n">
+<h1 class="msghead" id="d89974e1743"><span class="title title msgId"><span class="ph ph msgNumber">SQL30060N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">authorization-ID</var> does not have the privilege to perform
+operation <var class="keyword varname vartype=quotedString varnumber=2">operation</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30060N: Explanation"><h2 class="sectiontitle" id="d89974e1772">Explanation</h2><p>Authorization ID &lt;authorization-ID&gt; attempted to perform the
+specified
+&lt;operation&gt; without having been granted the proper authorization
+to do so.  This SQLCODE is produced at statement compilation or
+processing time.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30060N: User response"><h2 class="sectiontitle" id="d89974e1781">User response</h2><p>Ensure that the &lt;authorization-ID&gt; has been granted the authorization
+necessary to perform the desired operation.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -30060</p>
+
+<p> 
+<strong>sqlstate</strong>:  08004</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1805" lang="en-us" id="sql30061n">
+<h1 class="msghead" id="d89974e1805"><span class="title title msgId"><span class="ph ph msgNumber">SQL30061N</span></span>  <span class="shortdesc shortdesc msgText">The database alias or database name <var class="keyword varname vartype=quotedString varnumber=1">name</var> was not
+found at the remote node.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30061N: Explanation"><h2 class="sectiontitle" id="d89974e1832">Explanation</h2><p>The database name is not an existing database at the remote
+database node.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30061N: User response"><h2 class="sectiontitle" id="d89974e1841">User response</h2><p>Resubmit the command with the correct database name or alias.</p>
+
+<p>Federated system users: check to ensure that the entry in SYSCAT.SERVERS
+correctly specifies the database name of the data source.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -30061</p>
+
+<p> 
+<strong>sqlstate</strong>:  08004</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1867" lang="en-us" id="sql30070n">
+<h1 class="msghead" id="d89974e1867"><span class="title title msgId"><span class="ph ph msgNumber">SQL30070N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">command-identifier</var> Command is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30070N: Explanation"><h2 class="sectiontitle" id="d89974e1893">Explanation</h2><p>The remote database received a command that it does not
+recognize.  The current environment command or SQL statement cannot
+be processed successfully, nor can any subsequent commands or
+SQL statements.</p>
+
+<p>The current transaction is rolled back and the application is
+disconnected from the remote database.
+The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30070N: User response"><h2 class="sectiontitle" id="d89974e1902">User response</h2><p>Record the message number (SQLCODE) and the
+command identifier.
+Record all error information from the SQLCA, if possible.  Attempt
+to connect to the remote database and rerun the application.</p>
+
+<p>If sufficient memory resources exist and the problem continues,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+
+<p>Contact your technical service representative with the following information:</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and command identifier</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30070</p>
+
+<p> 
+<strong>sqlstate</strong>:  58014</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e1949" lang="en-us" id="sql30071n">
+<h1 class="msghead" id="d89974e1949"><span class="title title msgId"><span class="ph ph msgNumber">SQL30071N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">object-identifier</var> Object is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30071N: Explanation"><h2 class="sectiontitle" id="d89974e1975">Explanation</h2><p>The remote database received data it does not recognize.
+The current environment command or SQL statement cannot be processed
+successfully, nor can any subsequent commands or SQL statements.</p>
+
+<p>The current transaction is rolled back and the application is
+disconnected from the remote database.
+The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30071N: User response"><h2 class="sectiontitle" id="d89974e1984">User response</h2><p>Record the message number (SQLCODE)
+and the object identifier.
+Record all error information from the SQLCA, if possible.  Attempt to
+connect to the remote database and rerun the application.</p>
+
+<p>If sufficient memory resources exist and the problem continues,</p>
+
+<p>If trace was active,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+
+<p>Contact your technical service representative with the following information:</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and object identifier</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30071</p>
+
+<p> 
+<strong>sqlstate</strong>:  58015</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e2033" lang="en-us" id="sql30072n">
+<h1 class="msghead" id="d89974e2033"><span class="title title msgId"><span class="ph ph msgNumber">SQL30072N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">parameter-identifier</var> Parameter is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30072N: Explanation"><h2 class="sectiontitle" id="d89974e2059">Explanation</h2><p>The remote database received data it does not recognize.
+The current environment command or SQL statement cannot be processed
+successfully, nor can any subsequent commands or SQL statements.</p>
+
+<p>The command cannot be processed..  The current transaction
+is rolled back and the application is disconnected from the remote
+database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30072N: User response"><h2 class="sectiontitle" id="d89974e2068">User response</h2><p>Record the message number (SQLCODE) and
+the parameter identifier.
+Record all error information from the SQLCA, if possible.  Attempt to
+connect to the remote database and rerun the application.</p>
+
+<p>If sufficient memory resources exist and the problem continues,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+
+<p>Contact your technical service representative with the following information:</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and parameter identifier</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30072</p>
+
+<p> 
+<strong>sqlstate</strong>:  58016</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e2115" lang="en-us" id="sql30073n">
+<h1 class="msghead" id="d89974e2115"><span class="title title msgId"><span class="ph ph msgNumber">SQL30073N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">parameter-identifier</var> Parameter value <var class="keyword varname vartype=quotedString varnumber=2">value</var> is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30073N: Explanation"><h2 class="sectiontitle" id="d89974e2144">Explanation</h2><p>The remote database received data it does not recognize.
+The current environment command or SQL statement cannot be processed
+successfully, nor can any subsequent commands or SQL statements.</p>
+
+<p>The current transaction is rolled back and the application is
+disconnected from the remote database.  The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30073N: User response"><h2 class="sectiontitle" id="d89974e2153">User response</h2><p>Record the message number (SQLCODE) and
+the parameter identifier.
+Record all error information from the SQLCA, if possible.  Attempt to
+connect to the remote database and rerun the application.</p>
+
+<p>If sufficient memory resources exist and the problem continues,</p>
+
+<p>If trace was active,
+invoke the Independent Trace Facility at the operating system command prompt.
+Contact your technical service representative with the following information:</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE, parameter identifier, and value</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<div class="p">Some possible parameter identifiers include:
+<dl>
+
+<dt class="dlterm">002F</dt>
+
+<dd class="dlentry">The target server does not support the data type requested
+by the application requester. For example, when DB2 Connect is
+used to connect to DB2 2.3, this error will be returned unless
+the proper PTF is applied to DB2 2.3. Ensure that the level of
+the server is supported by the requester.</dd>
+
+
+<dt class="dlterm">119C, 119D, 119E</dt>
+
+<dd class="dlentry">The target server does not support the
+CCSID requested by the application requester. Ensure the
+CCSID used by the requester is supported by the server.
+<ul>
+<li>119C - Verify the single-byte CCSID.</li>
+
+<li>119D - Verify the double-byte CCSID.</li>
+
+<li>119E - Verify the mixed-byte CCSID.</li>
+</ul>
+</dd>
+</dl>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30073</p>
+
+<p> 
+<strong>sqlstate</strong>:  58017</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e2229" lang="en-us" id="sql30074n">
+<h1 class="msghead" id="d89974e2229"><span class="title title msgId"><span class="ph ph msgNumber">SQL30074N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">reply-identifier</var> Reply is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30074N: Explanation"><h2 class="sectiontitle" id="d89974e2255">Explanation</h2><p>The client received a reply it does not recognize.
+The current environment command or SQL statement cannot be processed
+successfully, nor can any subsequent commands or SQL statements.</p>
+
+<p>The current transaction
+is rolled back and the application is disconnected from the remote
+database.  The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30074N: User response"><h2 class="sectiontitle" id="d89974e2264">User response</h2><p>Record the message number (SQLCODE) and
+the reply identifier.
+Record all error information from the SQLCA, if possible.  Attempt to
+connect to the remote database and rerun the application.</p>
+
+<p>If sufficient memory resources exist and the problem continues,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+
+<p>Contact your technical service representative with the following information:</p>
+
+<div class="p">Required information:
+<ul>
+<li>Problem description</li>
+
+<li>SQLCODE and reply identifier</li>
+
+<li>SQLCA contents if possible</li>
+
+<li>Trace file if possible.</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30074</p>
+
+<p> 
+<strong>sqlstate</strong>:  58018</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e2311" lang="en-us" id="sql30080n">
+<h1 class="msghead" id="d89974e2311"><span class="title title msgId"><span class="ph ph msgNumber">SQL30080N</span></span>  <span class="shortdesc shortdesc msgText">A communication error <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var> occurred sending or
+receiving data from the remote database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30080N: Explanation"><h2 class="sectiontitle" id="d89974e2338">Explanation</h2><p>The <var class="keyword varname">reason-code</var> contains the original error codes reported by
+Communications Manager.</p>
+
+<p>For APPC error codes, the format is 
+<em>pppp-ssssssss-dddddddd</em> where 
+<em>pppp</em> is the primary return code, 
+<em>ssssssss</em> is the secondary return code and 
+<em>dddddddd</em> is the sense data.
+Each of these error code values is represented in hexadecimal notation.
+Possible primary and secondary error codes include
+0003-00000004 and 0003-00000005, which indicate that
+a conversation with the Database Server could not be allocated.
+Sense data will only be displayed for an APPC ALLOCATE error.</p>
+
+<p>The command cannot be processed.  The connection attempted
+to the database is unsuccessful or the current transaction to the
+connected database is rolled back and the application is disconnected
+from the remote database.</p>
+
+<p>Refer to the document
+<cite>IBM Communications Manager 1.0
+APPC Programming Guide and Reference (SC31-6160)</cite>
+for explanation of the APPC primary and secondary return codes.
+For details of
+APPC sense data, refer to the
+<cite>IBM Communications Manager 1.0 Problem Determination Guide
+(SC31-6156)</cite>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30080N: User response"><h2 class="sectiontitle" id="d89974e2374">User response</h2><p>Ensure that both the database manager and Communications
+Manager are
+started at the Database Server and
+that all Communications Manager configuration parameters are correct.</p>
+
+<div class="note"><span class="notetitle">Note:</span> If the reason code embedded in your message is 0003-084C0001
+one possible cause for this message is that you are trying to make a
+remote connection to a workstation that is not a server.  Verify that
+the remote workstation is a server.  If it is not a server, install
+the database manager as a server.</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30080</p>
+
+<p> 
+<strong>sqlstate</strong>:  08001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e2400" lang="en-us" id="sql30081n">
+<h1 class="msghead" id="d89974e2400"><span class="title title msgId"><span class="ph ph msgNumber">SQL30081N</span></span>  <span class="shortdesc shortdesc msgText">A communication error has been detected. Communication protocol being
+used: <var class="keyword varname vartype=quotedString varnumber=4">protocol</var>.
+Communication API being used: <var class="keyword varname vartype=quotedString varnumber=5">interface</var>.
+Location where the error was detected: <var class="keyword varname vartype=quotedString varnumber=6">location</var>.
+Communication function detecting the error: <var class="keyword varname vartype=quotedString varnumber=7">function</var>.
+Protocol specific error code(s): <var class="keyword varname vartype=quotedString varnumber=1">rc1</var>, <var class="keyword varname vartype=quotedString varnumber=2">rc2</var>, <var class="keyword varname vartype=quotedString varnumber=3">rc3</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30081N: Explanation"><h2 class="sectiontitle" id="d89974e2446">Explanation</h2><p>An error has been detected by the communication subsystem.</p>
+
+<p>The following is a description of the token values:</p>
+
+<dl>
+
+<dt class="dlterm"><var class="keyword varname">protocol</var>, <var class="keyword varname">location</var></dt>
+
+<dd class="dlentry"><p>Communication protocol used and information  that uniquely identifies the node that  detected the error. If the location information  is not available at the time that the error  occurred, then the <var class="keyword varname">location</var> token  is not filled in. Valid token values are:</p>
+
+<ul>
+<li>protocol TCP/IP; location is the IPv4 or IPv6 address.</li>
+
+<li>protocol APPC; location is the fully qualified LU name (networkID.LUname).</li>
+
+<li>protocol MQ; location is the MQ queue name.</li>
+
+<li>protocol SOAP, SSL, SOCKS, HTTP; location is the Internet address in dot notation.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm"><var class="keyword varname">interface</var></dt>
+
+<dd class="dlentry"><p>The application programming interface used to invoke the protocol services in the previous list item.  Valid token values are: SOCKETS, SOCKS, CPI-C, MQI-CLIENT, GSKit, HTTP.</p>
+</dd>
+
+
+<dt class="dlterm"><var class="keyword varname">function</var></dt>
+
+<dd class="dlentry"><p>The name of the communication subsystem function that returned the error code or codes.</p>
+</dd>
+</dl>
+
+<p>If <var class="keyword varname">protocol</var> is TCP/IP, here are descriptions of some common scenarios:</p>
+
+<ul>
+<li>Reason codes <var class="keyword varname">rc1</var>, <var class="keyword varname">rc2</var>, <var class="keyword varname">rc3</var> represent: 
+<ul>
+<li>If present, <var class="keyword varname">rc1</var> contains the errno returned by the  TCP/IP function. On Windows, this is a WSA errno.</li>
+
+<li>If present, <var class="keyword varname">rc2</var> contains the h_errno value returned by a TCP/IP name resolution function. On Windows, this is a WSA error number.</li>
+
+<li>If <var class="keyword varname">rc3</var> is present and contains "0", the remote side has  terminated the connection. If the error was received on the  client, then the remote side could be a server or gateway. If  the error was received on the gateway, the remote side could be  the client or server.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>If <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">rc1</var>=*, <var class="keyword varname">rc2</var>=*, and <var class="keyword varname">rc3</var>=0, possible causes include: 
+<ul>
+<li>The database agent at the server was forced off by the system administrator.</li>
+
+<li>A database agent could not be started at the server because a memory limitation was reached on the system.</li>
+
+<li>The connection might have been closed by the remote server at the TCP/IP level.</li>
+
+<li>The database agent at the server was terminated due to an abnormal termination of a key database manager process.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>On Windows, if <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">function</var> = WSAStartup,  and <var class="keyword varname">rc1</var> = 0, then <var class="keyword varname">rc2</var> contains the Windows Sockets  Specification version level requested by DB2, and <var class="keyword varname">rc3</var> contains  the Windows Sockets Specification version level supported by the Windows  Sockets DLL. Cause: There was a version level mismatch.</li>
+</ul>
+
+<ul>
+<li>If <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">function</var> = connect, <var class="keyword varname">rc1</var> = ECONNREFUSED/WSAECONNREFUSED, AIX (79), Windows (10061), linux (111), SUN (146), HP (239), the attempt to connect was rejected. Possible causes: 
+<ul>
+<li>The remote database server has not been cataloged correctly  at the client. In a client-gateway-server scenario, ensure  the host entries are cataloged correctly on the gateway.</li>
+
+<li>The database manager configuration file at the server has not  been configured properly with the proper communication  parameters. Check that the SVCENAME database manager configuration parameter has been configured properly  with the TCP/IP service name or port number and that the port  number is unique. If database manager configuration parameters  have been updated at the server, the database manager must be  stopped and re-started for the changes to take effect. There  might be a mismatch between the TCP/IP service name or port  number specified on the server and on the client. Ensure the  service name maps to the correct port number by checking the  services file. You can check this by reading the services file  or checking the output from running the command "netstat -a".</li>
+
+<li>A firewall at the remote database server has prevented the connection from being established. Verify that the firewall is properly configured to accept connection requests from the client.</li>
+
+<li>The DB2COMM environment variable at the server does not  specify the communication protocol used  by the client.  Check that TCPIP has been specified. Issue db2set to see  what has already been set. Run the command "db2set DB2COMM=TCPIP"  to set the value.</li>
+
+<li>The database manager at the server has not been started, or  has not been started successfully, or has gone down. The  server should have returned SQL1063N, and not SQL5043N. If  you set the database manager configuration parameter DIAGLEVEL to 4 using the command "db2 update dbm cfg using diaglevel 4" prior to issuing the "db2start" command, then the administration notification  log will provide detailed information on which protocols  were started successfully. Check the administration  notification log.</li>
+
+<li>The server might be too busy to handle the volume of incoming connections at this time.</li>
+
+<li>Network failure, contact your network administrator.  You can try a test using the protocol tester, pctt,  to verify this is not a DB2 problem.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>If <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">function</var> = connect, <var class="keyword varname">rc1</var> = ETIMEDOUT/WSAETIMEDOUT, AIX (78), Windows (10060), linux (110), SUN (145), HP (238), attempt to connect timed out before a connection was made. Possible causes: 
+<ul>
+<li>An incorrect host name or IP address was cataloged in the hostname field of the node directory on the client and/or gateway.</li>
+
+<li>The network is slow, or the server might be too busy to respond to the connect request within a reasonable amount of time, you might need to adjust your system TCP connect timeout value and/or the DB2TCP_CLIENT_CONTIMEOUT value.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>If <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">function</var> = recv, <var class="keyword varname">rc1</var> = ECONNRESET/WSAECONNRESET, AIX (73), Windows (10054), linux (104), SUN (131), HP (232), the connection was reset by the remote side executing a "hard" or "abortive" close. Possible causes: 
+<ul>
+<li>The connection might have been closed by the remote gateway or  server at the TCP/IP level (eg. firewall problem, power failure,  network failure).</li>
+
+<li>Client side connection pooling is enabled and is not handling connection failures. Code the application to retry a connection if a failure is received when connecting to the database and connection pooling is enabled.</li>
+
+<li>Might have been caused by a thread timeout on the host machine. Check the  system log on the host for the presence of the IDTHTOIN message.  Adjust the setting if applicable. If this cannot be adjusted, either  disable connection pooling on the gateway, or ensure all objects  are properly closed (eg. cursors with hold when the application  completes its operation).</li>
+
+<li>The database agent at the server was forced off by the database administrator.</li>
+
+<li>The database agent at the server was terminated due to an abnormal termination of a key database manager process.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>If <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">function</var> = recv, <var class="keyword varname">rc1</var> = ETIMEDOUT/WSAETIMEDOUT, AIX (78), Windows (10060), linux (110), SUN (145), HP (238), the connection was dropped because the remote system failed to respond. Possible causes: 
+<ul>
+<li>SQLCancel() was called from a CLI application because the application  set the Query Timeout value or there was an explicit cancel request.  Adjust the Query Timeout value set by the application. If this is  not possible, adjust the QueryTimeoutInterval setting in the  db2cli.ini file. Use QueryTimeoutInterval=0 (no timeout) in the  db2cli.ini file to test whether QueryTimeout is the cause of your  application's failure. The failure of an existing connection is  expected in this scenario.</li>
+
+<li>The network is slow, or the server might be too busy to respond to the recv request within a reasonable amount of time, you might need to adjust your system TCP recv timeout value.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>If <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">function</var> = selectForConnectTimeout, <var class="keyword varname">rc1</var> = EINPROGRESS/0, AIX (55), Windows (0), linux (115), SUN (150), HP (245), the connect request timed out before it could complete successfully. Possible causes: 
+<ul>
+<li>Either the system connect timeout or the timeout value set by DB2TCP_CLIENT_CONTIMEOUT caused the timeout. Try adjusting these values.</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li>If <var class="keyword varname">protocol</var> = TCP/IP, <var class="keyword varname">function</var> = selectForRecvTimeout, <var class="keyword varname">rc1</var> is irrelevant, the recv request timed out before it could complete successfully. Possible causes: 
+<ul>
+<li>Either the system recv timeout or the timeout value set by DB2TCP_CLIENT_RCVTIMEOUT caused the timeout.  Try adjusting these values.</li>
+</ul>
+</li>
+</ul>
+
+<p>If <var class="keyword varname">protocol</var> is APPC</p>
+
+<ul>
+<li><var class="keyword varname">rc1</var> contains the return code from the CPI-C function.</li>
+
+<li>If present, <var class="keyword varname">rc2</var> contains the global errno value from the CPI-C function call.</li>
+
+<li><var class="keyword varname">rc3</var> is not applicable.</li>
+</ul>
+
+<p>If <var class="keyword varname">protocol</var> is MQ</p>
+
+<ul>
+<li><var class="keyword varname">rc1</var> contains the function completion code, 1 for a warning and 2 for an error.</li>
+
+<li><var class="keyword varname">rc2</var> contains the MQ-specific error code.</li>
+
+<li><var class="keyword varname">rc3</var> is not used for MQ.</li>
+</ul>
+
+<p>If <var class="keyword varname">protocol</var> is SOAP, <var class="keyword varname">rc1</var> contains the return code from the SOAP communication function.</p>
+
+<p>If <var class="keyword varname">protocol</var> is SSL, <var class="keyword varname">rc1</var> contains the return code from the Secure Sockets Layer (GSKit).</p>
+
+<p>If <var class="keyword varname">protocol</var> is SOCKS</p>
+
+<ul>
+<li><var class="keyword varname">rc1</var> contains the return code from the SOCKS proxy server.</li>
+
+<li><var class="keyword varname">rc2</var> contains the version (4 or 5) of the protocol.</li>
+
+<li><var class="keyword varname">rc3</var> contains the authentication method used (SOCKS v5.)</li>
+</ul>
+
+<p>If <var class="keyword varname">protocol</var> is HTTP, <var class="keyword varname">rc1</var> contains the HTTP return code from the remote HTTP server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30081N: User response"><h2 class="sectiontitle" id="d89974e2841">User response</h2><p>Correct the problem indicated by the combination of reason code and token values returned.</p>
+
+<p><strong>sqlcode</strong>:  -30081</p>
+
+<p><strong>sqlstate</strong>:  08001, 5UA0G, 5UA0H</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e2863" lang="en-us" id="sql30082n">
+<h1 class="msghead" id="d89974e2863"><span class="title title msgId"><span class="ph ph msgNumber">SQL30082N</span></span>  <span class="shortdesc shortdesc msgText">Security processing failed with reason <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var> (<var class="keyword varname vartype=quotedString varnumber=2">reason-string</var>).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30082N: Explanation"><h2 class="sectiontitle" id="d89974e2893">Explanation</h2><p>An error occurred during security processing. The cause of the security error is described by the <var class="keyword varname">reason-code</var> and corresponding <var class="keyword varname">reason-string</var> value.</p>
+
+<p>The following is a list of reason codes and corresponding reason strings:</p>
+
+<dl>
+
+<dt class="dlterm">0 (NOT SPECIFIED)</dt>
+
+<dd class="dlentry"><p>The specific security error is not specified.</p>
+</dd>
+
+
+<dt class="dlterm">1 (PASSWORD EXPIRED)</dt>
+
+<dd class="dlentry"><p>The password specified in the request has expired.</p>
+</dd>
+
+
+<dt class="dlterm">2 (PASSWORD INVALID)</dt>
+
+<dd class="dlentry"><p>The password specified in the request is not valid.</p>
+</dd>
+
+
+<dt class="dlterm">3 (PASSWORD MISSING)</dt>
+
+<dd class="dlentry"><p>The request did not include a password.</p>
+</dd>
+
+
+<dt class="dlterm">4 (PROTOCOL VIOLATION)</dt>
+
+<dd class="dlentry"><p>The request violated security protocols.</p>
+</dd>
+
+
+<dt class="dlterm">5 (USERID MISSING)</dt>
+
+<dd class="dlentry"><p>The request did not include a userid.</p>
+</dd>
+
+
+<dt class="dlterm">6 (USERID INVALID)</dt>
+
+<dd class="dlentry"><p>The userid specified in the request is not valid.</p>
+</dd>
+
+
+<dt class="dlterm">7 (USERID REVOKED)</dt>
+
+<dd class="dlentry"><p>The userid specified in the request has been revoked.</p>
+</dd>
+
+
+<dt class="dlterm">8 (GROUP INVALID)</dt>
+
+<dd class="dlentry"><p>The group specified in the request is not valid.</p>
+</dd>
+
+
+<dt class="dlterm">9 (USERID REVOKED IN GROUP)</dt>
+
+<dd class="dlentry"><p>The userid specified in the request has been revoked in the group.</p>
+</dd>
+
+
+<dt class="dlterm">10 (USERID NOT IN GROUP)</dt>
+
+<dd class="dlentry"><p>The userid specified in the request is not in the group.</p>
+</dd>
+
+
+<dt class="dlterm">11 (USERID NOT AUTHORIZED AT REMOTE LU)</dt>
+
+<dd class="dlentry"><p>The userid specified in the request is not authorized at the remote Logical Unit.</p>
+</dd>
+
+
+<dt class="dlterm">12 (USERID NOT AUTHORIZED FROM LOCAL LU)</dt>
+
+<dd class="dlentry"><p>The userid specified in the request is not authorized at the remote Logical Unit when coming from the local Logical Unit.</p>
+</dd>
+
+
+<dt class="dlterm">13 (USERID NOT AUTHORIZED TO TP)</dt>
+
+<dd class="dlentry"><p>The userid specified in the request is not authorized to access the Transaction Program.</p>
+</dd>
+
+
+<dt class="dlterm">14 (INSTALLATION EXIT FAILED)</dt>
+
+<dd class="dlentry"><p>The installation exit failed.</p>
+</dd>
+
+
+<dt class="dlterm">15 (PROCESSING FAILURE)</dt>
+
+<dd class="dlentry"><p>Security processing at the server failed.</p>
+</dd>
+
+
+<dt class="dlterm">16 (NEW PASSWORD INVALID)</dt>
+
+<dd class="dlentry"><p>the password specified on a change password request did not meet the server's requirements.</p>
+</dd>
+
+
+<dt class="dlterm">17 (UNSUPPORTED FUNCTION)</dt>
+
+<dd class="dlentry"><p>the security mechanism specified by the client is invalid for this server.  Some typical examples:</p>
+
+<ul>
+<li>The client sent a new password value to a server that does not support the change password function.</li>
+
+<li>The client sent SERVER_ENCRYPT authentication information to a server that does not support password encryption. Authentication type catalog information must be the same at the server and the client.</li>
+
+<li>The client sent a userid (but no password) to a server that does not support authentication by  userid only.</li>
+
+<li>The client has not specified an authentication type, and the server has not responded with a supported type. This might include the server returning multiple types from which the client is unable to choose.</li>
+
+<li>The CLIENT AUTHENTICATION type is not supported by "IBM Data Server Driver for ODBC and CLI" and "IBM Data Server Driver package"</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">18 (NAMED PIPE ACCESS DENIED)</dt>
+
+<dd class="dlentry"><p>The named pipe is inaccessible due to a security violation.</p>
+</dd>
+
+
+<dt class="dlterm">19 (USERID DISABLED or RESTRICTED)</dt>
+
+<dd class="dlentry"><p>The userid has been disabled, or the userid has been restricted from accessing the operating environment at this time.</p>
+</dd>
+
+
+<dt class="dlterm">20 (MUTUAL AUTHENTICATION FAILED)</dt>
+
+<dd class="dlentry"><p>The server being contacted failed to pass a mutual authentication check. The server is either an imposter, or the ticket sent back was damaged.</p>
+</dd>
+
+
+<dt class="dlterm">21 (RESOURCE TEMPORARILY UNAVAILABLE)</dt>
+
+<dd class="dlentry"><p>Security processing at the server was terminated because a resource was temporarily unavailable. For example, on AIX, no user licenses may have been available.</p>
+</dd>
+
+
+<dt class="dlterm">24 (USERNAME AND/OR PASSWORD INVALID)</dt>
+
+<dd class="dlentry"><p>The username specified, password specified, or both, are invalid. Some specific causes are:</p>
+
+<ol>
+<li>If you have recently changed permissions on DB2 critical files such as db2ckpw or moved to a new Fixpak, the db2iupdt command which updates the instance might not have been run.</li>
+
+<li>The username being used might be in an invalid format. For example, on UNIX and Linux platforms, usernames must be all be lowercase.</li>
+
+<li>An error might have been made in specifying the catalog information. For example, the correct authentication type might not have been specified or, if applicable, the remote server might not have been cataloged on the local system.</li>
+</ol>
+</dd>
+
+
+<dt class="dlterm">25 (CONNECTION DISALLOWED)</dt>
+
+<dd class="dlentry"><p>The security plugin has disallowed the connection.</p>
+</dd>
+
+
+<dt class="dlterm">26 (UNEXPECTED SERVER ERROR)</dt>
+
+<dd class="dlentry"><p>The server security plugin encountered an unexpected error. The administration notification log file on the server contains more specific problem information. The following are examples of issues that can cause problems:</p>
+
+<ul>
+<li>The security service was not started.</li>
+
+<li>The userid starting the DB2 service did not have admin privileges.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">27 (INVALID SERVER CREDENTIAL)</dt>
+
+<dd class="dlentry"><p>The server security plugin encountered an invalid server credential.</p>
+</dd>
+
+
+<dt class="dlterm">28 (EXPIRED SERVER CREDENTIAL)</dt>
+
+<dd class="dlentry"><p>The server security plugin encountered an expired server credential.</p>
+</dd>
+
+
+<dt class="dlterm">29 (INVALID CLIENT SECURITY TOKEN)</dt>
+
+<dd class="dlentry"><p>The server security plugin encountered an invalid security token sent by the client.</p>
+</dd>
+
+
+<dt class="dlterm">30 (CLIENT PLUGIN MISSING API)</dt>
+
+<dd class="dlentry"><p>The client security plugin is missing a required API.</p>
+</dd>
+
+
+<dt class="dlterm">31 (WRONG CLIENT PLUGIN TYPE)</dt>
+
+<dd class="dlentry"><p>The client security plugin is of the wrong plugin type.</p>
+</dd>
+
+
+<dt class="dlterm">32 (UNKNOWN CLIENT GSS-API PLUGIN)</dt>
+
+<dd class="dlentry"><p>The client security plugin does not have a matching GSS-API security plugin available for connection to the database.</p>
+</dd>
+
+
+<dt class="dlterm">33 (UNABLE TO LOAD CLIENT PLUGIN)</dt>
+
+<dd class="dlentry"><p>The client security plugin cannot be loaded.</p>
+</dd>
+
+
+<dt class="dlterm">34 (INVALID CLIENT PLUGIN NAME)</dt>
+
+<dd class="dlentry"><p>The client security plugin name is invalid.</p>
+</dd>
+
+
+<dt class="dlterm">35 (INCOMPATIBLE CLIENT PLUGIN API VERSION)</dt>
+
+<dd class="dlentry"><p>The client security plugin reports an API version that is incompatible with DB2.</p>
+</dd>
+
+
+<dt class="dlterm">36 (UNEXPECTED CLIENT ERROR)</dt>
+
+<dd class="dlentry"><p>The client security plugin encountered an unexpected error.</p>
+</dd>
+
+
+<dt class="dlterm">37 (INVALID SERVER PRINCIPAL NAME)</dt>
+
+<dd class="dlentry"><p>The server security plugin encountered an invalid principal name.</p>
+</dd>
+
+
+<dt class="dlterm">38 (INVALID CLIENT CREDENTIAL)</dt>
+
+<dd class="dlentry"><p>The client security plugin encountered an invalid client credential.</p>
+</dd>
+
+
+<dt class="dlterm">39 (EXPIRED CLIENT CREDENTIAL)</dt>
+
+<dd class="dlentry"><p>The client security plugin encountered an expired client credential.</p>
+</dd>
+
+
+<dt class="dlterm">40 (INVALID SERVER SECURITY TOKEN)</dt>
+
+<dd class="dlentry"><p>The client security plugin encountered an invalid security token sent by the server.</p>
+</dd>
+
+
+<dt class="dlterm">41 (SWITCH USER INVALID)</dt>
+
+<dd class="dlentry"><p>The client is configured to request a trusted connection and switch user in the trusted connection. A trusted connection was not established and so the switch user request is invalid.</p>
+</dd>
+
+
+<dt class="dlterm">42 (ROOT CAPABILITY REQUIRED)</dt>
+
+<dd class="dlentry"><p>Authentication using local client or server passwords is not currently enabled.</p>
+</dd>
+
+
+<dt class="dlterm">43 (NON-DB2 QUERY MANAGER PRODUCT DISALLOWED CONNECTION)</dt>
+
+<dd class="dlentry"><p>A non-DB2 query manager product has disallowed the connection.</p>
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">47 (ACCESS TOKEN MISSING)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>The access token is missing.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">48 (ACCESS TOKEN TYPE MISSING</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>The type of the access token is missing.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">49 (ACCESS TOKEN ELEMENT MISSING)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>Required element in the access token is missing.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">50 (ACCESS TOKEN ELEMENT EMPTY)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>Required element exist in the token, but is empty.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">51 (ACCESS TOKEN ELEMENT UNSUPPORTED)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>The element is not one of the supported ones.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">52 (ACCESS TOKEM EXPIRED)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>The access token has already expired.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">53 (ACCESS TOKEN SIGNATURE INVALID)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>The access token has an invalid signature.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">54 (ACCESS TOKEN MALFORMED)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>One, or more parts, of the access token is missing.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">55 (ACCESS TOKEN TYPE UNSUPPORTED)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>The access token is not one of he supported types.</p>
+
+</dd>
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">56 (CREDENTIAL TOO LONG)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">
+<p>The credential is too long.</p>
+
+</dd>
+
+
+
+
+<dt class="dlterm" data-hd-otherprops="dbg629">57 (ACCESS TOKEN ALGORITHM NOT CONFIGURED)</dt>
+
+<dd class="dlentry" data-hd-otherprops="dbg629">The token used to connect contains an algorithm which is supported but not configured in the
+token configuration file.</dd>
+
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30082N: User response"><h2 class="sectiontitle" id="d89974e3461">User response</h2><p>Ensure that the proper userid and/or password is supplied.</p>
+
+<p>The userid may be disabled, the userid may be restricted to accessing specific workstations, or the userid may be restricted to certain hours of operation.</p>
+
+<dl>
+
+<dt class="dlterm">17</dt>
+
+<dd class="dlentry"><p>Retry the command with a supported authentication type. Ensure that catalog information specifies the correct authentication type.</p>
+</dd>
+
+
+<dt class="dlterm">20</dt>
+
+<dd class="dlentry"><p>Make sure the authentication mechanism for the server is started, and retry.</p>
+</dd>
+
+
+<dt class="dlterm">24</dt>
+
+<dd class="dlentry"><p>Solutions to specific problem causes described previously in this message are:</p>
+
+<ol>
+<li>Run DB2IUPDT &lt;InstName&gt; to update the instance.</li>
+
+<li>Ensure that the username created is valid. Review the DB2 General Naming Rules.</li>
+
+<li>Ensure that catalog information is correct.</li>
+</ol>
+</dd>
+
+
+<dt class="dlterm">25</dt>
+
+<dd class="dlentry"><p>Change the database name used for the connection or the TCP/IP address used to connect to this database.</p>
+</dd>
+
+
+<dt class="dlterm">26</dt>
+
+<dd class="dlentry"><p>Fix the problem identified by the plugin error message text in the administration notification log.</p>
+
+
+<p>If you are unable to correct the problem, invoke the Independent Trace Facility and retry the
+scenario to collect information for IBM support.</p>
+</dd>
+
+
+<dt class="dlterm">27</dt>
+
+<dd class="dlentry"><p>Verify that the server credential is provided during security plugin initialization and that it is in a format recognized by the security plugin. As the credential will be used to accept contexts, it must be an ACCEPT or BOTH credential.</p>
+</dd>
+
+
+<dt class="dlterm">28</dt>
+
+<dd class="dlentry"><p>Contact your DBA. The server's credential must be renewed before the command is resubmitted. If renewing alters the credential handle, then a db2stop and db2start will be necessary. For information on how to renew your server's credential, consult the documentation available for the authentication mechanism used by the security plugin.</p>
+</dd>
+
+
+<dt class="dlterm">29</dt>
+
+<dd class="dlentry"><p>Resubmit the statement. If the problem still exists, then verify that the client security plugin is generating a valid security token.</p>
+</dd>
+
+
+<dt class="dlterm">30</dt>
+
+<dd class="dlentry"><p>Check the administration notification log file for the name of the required missing API. Add the missing API to the security plugin.</p>
+</dd>
+
+
+<dt class="dlterm">31</dt>
+
+<dd class="dlentry"><p>Specify the right type of security plugin in the appropriate database manager configuration parameter. For example, do not specify a userid-password based security plugin for the SRVCON_GSSPLUGIN_LIST database manager configuration parameter.</p>
+</dd>
+
+
+<dt class="dlterm">32</dt>
+
+<dd class="dlentry"><p>Install the matching security plugin that the database server used on the client. Ensure that the indicated security plugin is located in the client-plugin directory.</p>
+</dd>
+
+
+<dt class="dlterm">33</dt>
+
+<dd class="dlentry"><p>Check the administration notification log file on the client for more information. Fix the problem identified by the error message text in the administration notification log.</p>
+</dd>
+
+
+<dt class="dlterm">34</dt>
+
+<dd class="dlentry"><p>Specify a valid security plugin name. The name should not contain any directory path information.</p>
+</dd>
+
+
+<dt class="dlterm">35</dt>
+
+<dd class="dlentry"><p>Ensure that the security plugin is using a supported version of the APIs and that it is reporting a correct version number.</p>
+</dd>
+
+
+<dt class="dlterm">36</dt>
+
+<dd class="dlentry"><p>Check the administration notification log file on the client for more information. Fix the problem identified by the error message text in the administration notification log.</p>
+</dd>
+
+
+<dt class="dlterm">37</dt>
+
+<dd class="dlentry"><p>Check the administration notification log file for the principal name. Make sure the principal name is in a format that is recognized by the security plugin.</p>
+</dd>
+
+
+<dt class="dlterm">38</dt>
+
+<dd class="dlentry"><p>Verify that the client credential (generated by db2secGenerateInitialCred or provided as an inbound delegated credential) is in a format recognized by the security plugin. As the credential will be used to initiate contexts, it must be an INITIATE or BOTH credential.</p>
+</dd>
+
+
+<dt class="dlterm">39</dt>
+
+<dd class="dlentry"><p>The user issuing the statement must obtain the appropriate credentials (or re-obtain their initial credentials) and then resubmit the statement.</p>
+</dd>
+
+
+<dt class="dlterm">40</dt>
+
+<dd class="dlentry"><p>Resubmit the statement. If the problem still exists, then verify that the server security plugin is generating a valid security token.</p>
+</dd>
+
+
+<dt class="dlterm">41</dt>
+
+<dd class="dlentry"><p>Re-establish a trusted connection with valid credentials and re-submit a switch user request.</p>
+</dd>
+
+
+<dt class="dlterm">42</dt>
+
+<dd class="dlentry"><p>To enable local client or server authentication for non-root installations, the system administrator  must run the db2rfe script. Alternatively, authentication can be done using a security plugin.</p>
+</dd>
+
+
+<dt class="dlterm">43</dt>
+
+<dd class="dlentry"><p>If additional explanation is required, contact your administrator for the query manager product.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -30082</p>
+
+<p><strong>sqlstate</strong>:  08001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e3702" lang="en-us" id="sql30083n">
+<h1 class="msghead" id="d89974e3702"><span class="title title msgId"><span class="ph ph msgNumber">SQL30083N</span></span>  <span class="shortdesc shortdesc msgText">Attempt to change password for user id <var class="keyword varname vartype=quotedString varnumber=1">uid</var> failed with
+security reason <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var> (<var class="keyword varname vartype=quotedString varnumber=3">reason-string</var>).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30083N: Explanation"><h2 class="sectiontitle" id="d89974e3735">Explanation</h2><p>The attempt to change password was rejected due to invalid or
+incorrect security information.
+The cause of the security error is described by the <var class="keyword varname">reason-code</var>
+and corresponding <var class="keyword varname">reason-string</var> values.</p>
+
+<div class="p">The following is a list of reason codes and corresponding reason strings:
+<dl>
+
+<dt class="dlterm">0 (NOT SPECIFIED)</dt>
+
+<dd class="dlentry">The specific security error is not specified.</dd>
+
+
+<dt class="dlterm">1 (CURRENT PASSWORD INVALID)</dt>
+
+<dd class="dlentry">The old password specified in the request is not valid.</dd>
+
+
+<dt class="dlterm">2 (NEW PASSWORD INVALID)</dt>
+
+<dd class="dlentry">The password specified in the request is not valid under the password
+rules imposed by the system where password was to be changed.</dd>
+
+
+<dt class="dlterm">3 (CURRENT PASSWORD MISSING)</dt>
+
+<dd class="dlentry">The request did not include an old password.</dd>
+
+
+<dt class="dlterm">4 (NEW PASSWORD MISSING)</dt>
+
+<dd class="dlentry">The request did not include a new password.</dd>
+
+
+<dt class="dlterm">5 (USERID MISSING)</dt>
+
+<dd class="dlentry">The request did not include a userid.</dd>
+
+
+<dt class="dlterm">6 (USERID INVALID)</dt>
+
+<dd class="dlentry">The userid specified in the request is not valid.</dd>
+
+
+<dt class="dlterm">7 (USERID REVOKED)</dt>
+
+<dd class="dlentry">The userid specified in the request has been revoked. Passwords can
+not be changed for revoked userids.</dd>
+
+
+<dt class="dlterm">14 (INSTALLATION EXIT FAILED)</dt>
+
+<dd class="dlentry">The installation security exit failed.</dd>
+
+
+<dt class="dlterm">15 (PROCESSING FAILURE)</dt>
+
+<dd class="dlentry">Security processing at the server failed.</dd>
+
+
+<dt class="dlterm">17 (UNSUPPORTED FUNCTION)</dt>
+
+<dd class="dlentry">Change password function is not supported by the system, or change password function is not supported at this time because of the user account restrictions.</dd>
+
+
+<dt class="dlterm">19 (USERID DISABLED or RESTRICTED)</dt>
+
+<dd class="dlentry">The userid has been disabled, or the userid has been restricted
+from accessing the operating environment at this time.</dd>
+
+
+<dt class="dlterm">23 (CHGPWD_SDN in DCS entry is not configured)</dt>
+
+<dd class="dlentry">To change an MVS password on a host system connected via SNA,
+the DCS database must be cataloged with the ,,,,,,,CHGPWD_SDN parameter string.
+The ,,,,,,,CHGPWD_SDN parameter string identifies the symbolic destination name
+for Password Expiration Management (PEM).</dd>
+
+
+<dt class="dlterm">24 (USERNAME AND/OR PASSWORD INVALID)</dt>
+
+<dd class="dlentry">The username specified, password specified, or both, are invalid.</dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30083N: User response"><h2 class="sectiontitle" id="d89974e3865">User response</h2><p>Ensure that the proper userid, current and new passwords are supplied.</p>
+
+<p>The userid may be disabled, the userid may be restricted to
+accessing specific workstations, or the userid may be restricted to
+certain hours of operation.</p>
+
+<div class="p">Instructions for some specific reason codes follow:
+<dl>
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry">Check the file db2pem.log in the instance
+subdirectory (typically "db2") for a detailed description of the
+problem encountered.</dd>
+
+
+<dt class="dlterm">23</dt>
+
+<dd class="dlentry">Catalog the DCS database using the ,,,,,,,CHGPWD_SDN parameter, as
+specified in the <cite>DB2 Connect User's Guide</cite>.</dd>
+</dl>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:  -30083</p>
+
+<p> 
+<strong>sqlstate</strong>:  08001</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e3915" lang="en-us" id="sql30090n">
+<h1 class="msghead" id="d89974e3915"><span class="title title msgId"><span class="ph ph msgNumber">SQL30090N</span></span>  <span class="shortdesc shortdesc msgText">Operation invalid for application
+execution environment.  Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30090N: Explanation"><h2 class="sectiontitle" id="d89974e3942">Explanation</h2><p>The operation is invalid for the application execution environment. For example, an operation might be invalid for applications that have special restrictions on statements or APIs - applications such as those that operate in an XA Distributed Transaction Processing environment, such as CICS; those that operate with CONNECT type 2 connection settings; or those that use federated system functionality to update multiple heterogeneous data sources. The operation was rejected.</p>
+
+<p>Possible reason codes are:</p>
+
+<dl>
+
+<dt class="dlterm">01</dt>
+
+<dd class="dlentry"><p>an SQL request that changes data (such as an INSERT or a CREATE) was issued against a read-only database; or, a stored procedure was invoked against a read-only database. Read-only databases include the following types:</p>
+
+<ul>
+<li>Databases accessed using DRDA when operating in a unit of work which has connection setting SYNCPOINT TWOPHASE and executing in a non-XA/DTP environment when either a Synchpoint Manager is not being used or the remote DRDA database does not support level 2 DRDA protocol.</li>
+
+<li>Databases accessed by DRDA in an XA/DTP environment when either a Synchpoint Manager gateway is unavailable or the remote DRDA database does not support level 2 DRDA protocol.</li>
+
+<li>Databases which were not the first database updated when the SYNCPOINT ONEPHASE connection setting is in effect for the unit of work.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">02</dt>
+
+<dd class="dlentry"><p>an API such as Precompile, Bind, or Reorganize Table which causes internal commits was issued in an application which has the setting CONNECT type 2 or is operating in an XA/DTP environment.</p>
+</dd>
+
+
+<dt class="dlterm">03</dt>
+
+<dd class="dlentry"><p>an SQL OPEN for a held cursor was issued while in an XA/DTP environment when using an ENCINA or TUXEDO transaction processing monitor.</p>
+</dd>
+
+
+<dt class="dlterm">04</dt>
+
+<dd class="dlentry"><p>a DISCONNECT statement was issued while in an XA/DTP environment.</p>
+</dd>
+
+
+<dt class="dlterm">05</dt>
+
+<dd class="dlentry"><p>A compound SQL statement which contains a COMMIT statement was issued in a CONNECT type 2 or XA/DTP environment.</p>
+</dd>
+
+
+<dt class="dlterm">06</dt>
+
+<dd class="dlentry"><p>The SET CLIENT API was issued in an XA/DTP environment.</p>
+</dd>
+
+
+<dt class="dlterm">07</dt>
+
+<dd class="dlentry"><p>A second database is being accessed within a unit of work for which two-phase commit coordination is not being supplied by the transaction manager.  To ensure data integrity, the operation has been disallowed.</p>
+</dd>
+
+
+<dt class="dlterm">08</dt>
+
+<dd class="dlentry"><p>An attempt was made to access a database for use of commit coordination from a source different from a concurrently connected database.  The two types of coordination cannot be mixed, and operations against the current database are rejected.</p>
+</dd>
+
+
+<dt class="dlterm">09</dt>
+
+<dd class="dlentry"><p>An attempt was made to execute an XA/DTP local transaction against a database accessed under Synchpoint Manager coordination.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>An SQL OPEN for a held cursor was issued in either of these cases:</p>
+
+<ul>
+<li>XA/DTP environment, or</li>
+
+<li>federated server accessing a nickname defined on a two phase commit datasource</li>
+</ul>
+
+<p>Cursor hold is not supported in these environments.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>An operation is not supported for pass-through.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>The insert/update/delete operation requires the existence of a timestamp column and a unique index due to the restriction on thedata source .</p>
+
+<p>For an update/delete operation accessing data sources:</p>
+
+<ul>
+<li>Fujitsu RDB2 requires the existence of a unique index.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>A positioned UPDATE or DELETE operation requires the existence of a column in the SELECT list of the cursor, but that column does not exist in the SELECT list of the cursor.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>An illegal combination of updatable cursors, cursor hold, and isolation level of Repeatable Read exists.  Invalid combinations are:</p>
+
+<ul>
+<li>Isolation level Repeatable Read and a WITH HOLD cursor</li>
+
+<li>A WITH HOLD cursor with FOR UPDATE</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>Reserved for future use</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>Illegal type column and protocol column value combination in SYSCAT.SERVERS.</p>
+</dd>
+
+
+<dt class="dlterm">17</dt>
+
+<dd class="dlentry"><p>The REORG utility cannot be issued against a nickname.</p>
+</dd>
+
+
+<dt class="dlterm">18</dt>
+
+<dd class="dlentry"><p>An update request (or, a DDL operation that results in the update of a system catalog table) has been issued that would result in multiple data sources being updated when one or more of the data sources in the unit of work only supports one-phase commit.  Possible causes are:</p>
+
+<ul>
+<li>An attempt was made to update a data source that only supports one-phase commit, but a different data source has already been updated in the same unit of work.</li>
+
+<li>An attempt was made to update a data source that supports two-phase commit, but a different data source that only supports one-phase commit has already been updated in the same unit of work.</li>
+
+<li>An attempt was made to update a local federated server table, but a data source that only supports one-phase commit has already been updated in the same unit of work.</li>
+
+<li>An attempt was made to update a data source that only supports one-phase commit when the application is operating with a CONNECT type 2 connection setting.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">19</dt>
+
+<dd class="dlentry"><p>The application host variable data type is not supported by the data source in a pass-through session.</p>
+</dd>
+
+
+<dt class="dlterm">20</dt>
+
+<dd class="dlentry"><p>SET CLIENT INFORMATION was issued while a Unit of Work is in progress.</p>
+</dd>
+
+
+<dt class="dlterm">21</dt>
+
+<dd class="dlentry"><p>The operation that you want performed at the specified data sources is not supported by the wrapper by which DB2 accesses the data sources.  Consult the documentation to find out what operations this wrapper supports.</p>
+</dd>
+
+
+<dt class="dlterm">22</dt>
+
+<dd class="dlentry"><p>A federated insert, update, or delete operation, or a call to federated procedure with an SQL data access indication of MODIFIES SQL DATA  is invalid in a function, a data-change-table-reference, a dynamic compound statement, a trigger, and an application execution environment where a</p>
+
+<ul>
+<li>SAVEPOINT is in effect</li>
+
+<li>scrollable cursor is used</li>
+
+<li>target view contains multiple tables or nicknames</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">23</dt>
+
+<dd class="dlentry"><p>The API, data structure, or setting is not supported.</p>
+</dd>
+
+
+<dt class="dlterm">24</dt>
+
+<dd class="dlentry"><p>Data type mappings are not supported by the specified wrapper.</p>
+</dd>
+
+
+<dt class="dlterm">25</dt>
+
+<dd class="dlentry"><p>Function mappings are not supported by the specified wrapper.</p>
+</dd>
+
+
+<dt class="dlterm">26</dt>
+
+<dd class="dlentry"><p>In a trusted connection the application can switch the trusted userid only after the commit/rollback has been processed.</p>
+</dd>
+
+
+<dt class="dlterm">27</dt>
+
+<dd class="dlentry"><p>Use of multiple 2-phase commit servers of the same wrapper library in the same connection where the client library restricts such usage</p>
+</dd>
+
+
+<dt class="dlterm">28</dt>
+
+<dd class="dlentry"><p>Mix of 1-phase commit server and 2-phase commit server of the same wrapper library in the same connection where the client library restricts such usage</p>
+</dd>
+
+
+<dt class="dlterm">29</dt>
+
+<dd class="dlentry"><p>An application attempted to issue a switch user request from within a stored procedure.</p>
+</dd>
+
+
+<dt class="dlterm">31</dt>
+
+<dd class="dlentry"><p>The CREATE WRAPPER statement failed because the DB2LIBPATH environment variable does not contain the path of the client library, and the database manager failed to automatically add that client library path to the DB2LIBPATH environment variable.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30090N: User response"><h2 class="sectiontitle" id="d89974e4291">User response</h2><p>Correct the problem by doing one of the following steps:</p>
+
+<dl>
+
+<dt class="dlterm">For reasons 01, 02, 03, 04, 06, 19, or 29,</dt>
+
+<dd class="dlentry"><p>remove the statement or API which is not supported.</p>
+</dd>
+
+
+<dt class="dlterm">Alternately, for reasons 01, 02, 03, 04, 06, or 29,</dt>
+
+<dd class="dlentry"><p>execute the application in a different environment which supports the failing statement or API.</p>
+</dd>
+
+
+<dt class="dlterm">For reason 05,</dt>
+
+<dd class="dlentry"><p>move the COMMIT request outside of the compound statement.</p>
+</dd>
+
+
+<dt class="dlterm">For reason 07,</dt>
+
+<dd class="dlentry"><p>ensure that only one database is accessed within a unit of work for which EXEC SQL COMMIT or EXEC SQL ROLLBACK will be issued in place of syncpoint requests to an external transaction manager.  If multiple databases must be accessed within the unit of work, utilize the commitment control interface provided by the external transaction manager product.</p>
+</dd>
+
+
+<dt class="dlterm">For reason 08,</dt>
+
+<dd class="dlentry"><p>ensure that all databases being accessed within a unit of work are under the commitment control of the same type of request: external transaction processing monitor (such as CICS SYNCPOINT) or local COMMIT and ROLLBACK EXEC SQL.</p>
+</dd>
+
+
+<dt class="dlterm">For reason 09,</dt>
+
+<dd class="dlentry"><p>do one of the following steps:</p>
+
+<ul>
+<li>Execute the transaction as an XA/DTP global transaction.</li>
+
+<li>Access the database in a non-XA/DTP environment.</li>
+
+<li>Do not use the services of the Synchpoint Manager for the database connection if the transaction is read-only.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">For reasons 10 through 17 (federated server users),</dt>
+
+<dd class="dlentry"><p>isolate the problem to the data source failing the request and examine the restrictions for that data source.</p>
+</dd>
+
+
+<dt class="dlterm">For reason 18,</dt>
+
+<dd class="dlentry"><p>do one of the following steps:</p>
+
+<ul>
+<li>Submit a COMMIT or ROLLBACK before issuing an update to a different data source.</li>
+
+<li>If multiple data sources need to be updated within a unit of work, make sure the db2_two_phase_commit server option has been set to 'Y' for all the data sources that need to be updated.</li>
+
+<li>If the data source to be updated supports only one-phase commit and the application is operating with a CONNECT type 2 connection setting, change the application to operate with a CONNECT type 1 connection setting.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">For reason 20,</dt>
+
+<dd class="dlentry"><p>submit a Commit or Rollback before invoking the API.</p>
+</dd>
+
+
+<dt class="dlterm">For reason 22,</dt>
+
+<dd class="dlentry"><p>Either remove the federated insert, update or delete operation, or the call to the federated procedure with  an SQL data access indication of  MODIFIES SQL DATA or:</p>
+
+<ul>
+<li>execute the federated insert, update, or delete operation outside of the function, the data-chagne-table-reference, they dynamic compound statement or trigger</li>
+
+<li>execute the call to the federated procedure with  an SQL data access indication of  MODIFIES  SQL DATA outside of the function, the dynamic compound statement or trigger</li>
+
+<li>release the savepoint that is in effect</li>
+
+<li>remove the use of the scrollable cursor</li>
+
+<li>redefine the target view to refer to only one table or nickname</li>
+
+<li>execute the federated insert, update, or delete operation outside  of the trigger.</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">For reason 23,</dt>
+
+<dd class="dlentry"><p>Use only supported APIs, data structures, and settings.</p>
+</dd>
+
+
+<dt class="dlterm">For reason 24,</dt>
+
+<dd class="dlentry"><p>If the failing statement was CREATE TYPE MAPPING, do not resubmit the statement. If the failing statement was CREATE SERVER, examine the federation catalog for type mappings for the server type and drop these mappings. In either case, consult the data source documentation for information about types and type mappings supported by the data source.</p>
+</dd>
+
+
+<dt class="dlterm">For reason code 25,</dt>
+
+<dd class="dlentry"><p>If the failing statement was CREATE FUNCTIONMAPPING, do not resubmit the statement. If the failing statement was CREATE SERVER, examine the federation catalog for function mappings for the server type and drop these mappings. In either case, consult the data source documentation for information about functions and function mappings supported by the data source.</p>
+</dd>
+
+
+<dt class="dlterm">For reason code 26,</dt>
+
+<dd class="dlentry"><p>Ensure that the trusted userid is not switched during a transaction.</p>
+</dd>
+
+
+<dt class="dlterm">For reason code 27,</dt>
+
+<dd class="dlentry"><p>An application cannot access multiple 2-phase commit servers of this data source in the same connection. Execute the application in a different environment.</p>
+</dd>
+
+
+<dt class="dlterm">For reason code 28,</dt>
+
+<dd class="dlentry"><p>An application cannot access 1-phase commit server while a connection to 2-phase commit server is active, or vice versa. Execute the application in a different environment.</p>
+</dd>
+
+
+<dt class="dlterm">For reason code 31,</dt>
+
+<dd class="dlentry"><p>Perform the following steps:</p>
+
+<ol>
+<li>Manually add the path of the client library for the new wrapper to the DB2LIBPATH environment variable.</li>
+
+<li>Restart the database manager.</li>
+
+<li>Execute the CREATE WRAPPER statement again.</li>
+</ol>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -30090</p>
+
+<p><strong>sqlstate</strong>:  25000</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e4523" lang="en-us" id="sql30101w">
+<h1 class="msghead" id="d89974e4523"><span class="title title msgId"><span class="ph ph msgNumber">SQL30101W</span></span>  <span class="shortdesc shortdesc msgText">Bind options specified on REBIND request are
+ignored.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30101W: Explanation"><h2 class="sectiontitle" id="d89974e4547">Explanation</h2><p>Bind options were specified on the REBIND request however
+the database server does not support respecification of any
+bind options.  The bind options specified will be ignored
+and the options from the original BIND request will be used.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30101W: User response"><h2 class="sectiontitle" id="d89974e4553">User response</h2><p>No action is required.  This is a warning situation only.</p>
+
+<div class="p">If the database server returned an additional warning SQLCA,
+the "sqlerrmc" tokens will indicate the following information
+about this additional SQLCA in this order:
+<ul>
+<li>sqlcode   (SQL return code)</li>
+
+<li>sqlstate  (universal SQL return code)</li>
+
+<li>sqlerrp   (product name)</li>
+
+<li>sqlerrmc  (SQL message tokens)</li>
+</ul>
+</div>
+
+<p> 
+<strong>sqlcode</strong>:   +30101</p>
+
+<p> 
+<strong>sqlstate</strong>:  01599</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e4593" lang="en-us" id="sql30104n">
+<h1 class="msghead" id="d89974e4593"><span class="title title msgId"><span class="ph ph msgNumber">SQL30104N</span></span>  <span class="shortdesc shortdesc msgText">Error in BIND or PRECOMPILE option <var class="keyword varname vartype=quotedString varnumber=1">option-name</var> with value <var class="keyword varname vartype=quotedString varnumber=2">value-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30104N: Explanation"><h2 class="sectiontitle" id="d89974e4623">Explanation</h2><p>While processing the BIND or PRECOMPILE parameters, either the BIND or PRECOMPILE option or the value is not acceptable, or the option and value pair is not appropriate.</p>
+
+<p>The statement cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30104N: User response"><h2 class="sectiontitle" id="d89974e4632">User response</h2><p>Examine the command options and values to determine the error and resubmit the command.</p>
+
+<p> 
+<strong>sqlcode</strong>: -30104</p>
+
+<p> 
+<strong>sqlstate</strong>: 56095</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e4655" lang="en-us" id="sql30106n">
+<h1 class="msghead" id="d89974e4655"><span class="title title msgId"><span class="ph ph msgNumber">SQL30106N</span></span>  <span class="shortdesc shortdesc msgText">Invalid input data detected for a multiple row
+INSERT operation.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30106N: Explanation"><h2 class="sectiontitle" id="d89974e4679">Explanation</h2><p>An error was detected with the input data for one row of 
+a multiple row INSERT operation. No further rows will be inserted. 
+For an atomic operation, all inserted rows are rolled back. For a 
+non-atomic operation, rows inserted successfully before the row 
+containing the invalid input data was encountered are not rolled back.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30106N: User response"><h2 class="sectiontitle" id="d89974e4685">User response</h2><p>Correct the row containing the invalid input data and 
+submit the multiple row INSERT again for the rows that did not get 
+inserted. </p>
+
+<p><strong>sqlcode</strong>:  -30106</p>
+
+<p><strong>sqlstate</strong>:  22527</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e4707" lang="en-us" id="sql30108n">
+<h1 class="msghead" id="d89974e4707"><span class="title title msgId"><span class="ph ph msgNumber">SQL30108N</span></span>  <span class="shortdesc shortdesc msgText">A connection failed in an automatic client reroute environment. The transaction was rolled back. Host name or IP address: <var class="keyword varname vartype=quotedString varnumber=1">host-name</var>. Service name or port number: <var class="keyword varname vartype=quotedString varnumber=2">service-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var>. Connection failure code: <var class="keyword varname vartype=quotedString varnumber=4">connection-failure-code</var>. Underlying error: <var class="keyword varname vartype=quotedString varnumber=5">underlying-error</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30108N: Explanation"><h2 class="sectiontitle" id="d89974e4746">Explanation</h2><p>You can enable database applications to continue to process transactions with minimal interruption from connection failures by using the automatic client reroute feature. This message is returned when automatic client reroute has detected a connection failure.</p>
+
+<dl>
+
+<dt class="dlterm"><var class="keyword varname">reason-code</var></dt>
+
+<dd class="dlentry"><p>The value of the token <var class="keyword varname">reason-code</var> indicates which special registers would be applied to the new connection:</p>
+
+<ul>
+<li>1 or 3: All special register settings up to the point of failure would be returned.</li>
+
+<li>2 or 4: All special register settings (and for DB2 for z/OS Version 10.1.5 and later: session global variables) up to the previous commit point would be replayed on the new connection.</li>
+</ul>
+</dd>
+
+<dd class="ddexpand"><p>The value of the token <var class="keyword varname">reason-code</var> also indicates whether connection would be re-established within the current group or in a new group:</p>
+
+<ul>
+<li>1 or 2: The connection would be re-established in the current group.</li>
+
+<li>3 or 4: The connection would be re-established in an alternate group.</li>
+</ul>
+</dd>
+</dl>
+
+<dl>
+
+<dt class="dlterm"><var class="keyword varname">host-name</var> and <var class="keyword varname">service-name</var></dt>
+
+<dd class="dlentry"><p>The value of the  tokens <var class="keyword varname">host-name</var> and <var class="keyword varname">service-name</var> depend on the token <var class="keyword varname">reason-code</var>:</p>
+
+<ul>
+<li>When <var class="keyword varname">reason-code</var> is 1  or 3, the value of the tokens <var class="keyword varname">host-name</var> and <var class="keyword varname">service-name</var> refer to the new connection.</li>
+
+<li>When <var class="keyword varname">reason-code</var> is 2  or 4, the value of the tokens <var class="keyword varname">host-name</var> and <var class="keyword varname">service-name</var> depend on whether or not workload balancing is enabled: 
+<ul>
+<li>When workload balancing is enabled, the host name given in the token <var class="keyword varname">host-name</var> and the IP address given in <var class="keyword varname">service-name</var> refer to the connection that failed.</li>
+
+<li>When workload balancing is not enabled, the host name given in the token <var class="keyword varname">host-name</var> and the IP address given in <var class="keyword varname">service-name</var> refer to the new connection.</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+
+<dl>
+
+<dt class="dlterm"><var class="keyword varname">connection-failure-code</var></dt>
+
+<dd class="dlentry"><p>The value of the token <var class="keyword varname">connection-failure-code</var> indicates the nature of the connection failure:</p>
+
+<ol>
+
+<li>Communication failure. For example: connection timeout or query timeout was configured, but
+before the time out occurred, a member failed over.</li>
+
+<li>Database server action.  For example: the DB2 member was shut down, or the database was quiesced.</li>
+
+<li>An SQL error occurred.</li>
+
+<li>Interrupt on client. For example: a query timed out or  SQLCancel was called.</li>
+</ol>
+</dd>
+</dl>
+
+<dl>
+
+<dt class="dlterm"><var class="keyword varname">underlying-error</var></dt>
+
+<dd class="dlentry"><p>The value of the token <var class="keyword varname">underlying-error</var> depends on the value of the token <var class="keyword varname">connection-failure-code</var>:</p>
+
+<ul>
+<li>When <var class="keyword varname">connection-failure-code</var> is 1 or 2, <var class="keyword varname">underlying-error</var> contains the platform-specific error number. Example 1: when the SQLCODE that caused the connection to fail is -30081 and <var class="keyword varname">connection-failure-code</var> is 1 or 2, <var class="keyword varname">underlying-error</var> might contain the value of the runtime token <var class="keyword varname">rc1</var> of message SQL30081N. Example 2: for Java applications, this value is a communication exception message token that is received from the Java sockets API.</li>
+
+<li>When <var class="keyword varname">connection-failure-code</var> is 3, <var class="keyword varname">underlying-error</var> contains the SQLCODE that caused the connection to fail.</li>
+
+<li>When <var class="keyword varname">connection-failure-code</var> is 4, <var class="keyword varname">underlying-error</var> contains one of the following numerical values: 
+<ul>
+<li>1 - The client canceled the execution because a query timed out.</li>
+
+<li>2 - The driver received an interrupt request or a cancel request.</li>
+
+<li>3 - The client canceled the execution because the execution time exceeded the value of the queryTimeout property.</li>
+</ul>
+</li>
+</ul>
+
+<p>When the database server does not provide a value for the <var class="keyword varname">underlying-error</var>, a value of "*" will be returned for <var class="keyword varname">underlying-error</var>.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30108N: User response"><h2 class="sectiontitle" id="d89974e4963">User response</h2><p>Perform following operations for the rolled back transaction:</p>
+
+<ul>
+<li>Recreate all session resources, including any session resource that might have been created in a previous transaction.</li>
+
+<li>Re-issue all SQL statements.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -30108</p>
+
+<p><strong>sqlstate</strong>:  08506</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e4992" lang="en-us" id="sql30109n">
+<h1 class="msghead" id="d89974e4992"><span class="title title msgId"><span class="ph ph msgNumber">SQL30109N</span></span>  <span class="shortdesc shortdesc msgText">A connection could not be re-established because the release level of any database server within the current group of servers or within an alternate group is not compatible with the release level of the original server.   New host name or IP address: <var class="keyword varname vartype=quotedString varnumber=1">host-name</var>. New server name or port number: <var class="keyword varname vartype=quotedString varnumber=2">service-name</var>.  Release level of the new connection: <var class="keyword varname vartype=quotedString varnumber=3">new-release-level</var>. Release level of the original connection: <var class="keyword varname vartype=quotedString varnumber=4">old-release-level</var>.
+Reason code: <var class="keyword varname vartype=quotedString varnumber=5">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL30109N: Explanation"><h2 class="sectiontitle" id="d89974e5031">Explanation</h2><p>There was an attempt to re-establish the connection on a different database server from within the current group of servers or on a database server in an alternate group. The reason code indicates which of these applies.</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>A connection to the database server failed and a connection could not be re-established to an alternate server in the group as none of the available servers in the group had a release level compatible with the initial connection. The release level of the alternate server in the group to which the last connect attempt was made is not compatible with the release level of the original connection.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>A connection to the database server failed and a connection could not be re-established to a server in an alternate group of servers as none of the available servers in the alternate group had a release level compatible with the initial connection. The release level of the server in the alternate group to which the last connect attempt was made is not compatible with the release level of the original server in the original group.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL30109N: User response"><h2 class="sectiontitle" id="d89974e5057">User response</h2><p>The action corresponding to the reason code is as follows:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>If failover is occurring within a mixed DB2 for z/OS data sharing group manually reconnect to the database.  If failover is to an alternate server, verify that the alternate server is set up to handle the failover.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Manually reconnect to the database.</p>
+</dd>
+</dl>
+
+<p><strong>sqlcode</strong>:  -30109</p>
+
+<p><strong>sqlstate</strong>:  08507</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e5099" lang="en-us" id="sql32765w">
+<h1 class="msghead" id="d89974e5099"><span class="title title msgId"><span class="ph ph msgNumber">SQL32765W</span></span>  <span class="shortdesc shortdesc msgText">Warning or informational message information from an external product: <var class="keyword varname vartype=quotedString varnumber=1">token-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL32765W: Explanation"><h2 class="sectiontitle" id="d89974e5126">Explanation</h2><p>A software product that interacts with the database manager, but is not part of the database product, is returning information about a warning or informational situation in <var class="keyword varname">token-list</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL32765W: User response"><h2 class="sectiontitle" id="d89974e5135">User response</h2><p>Use the information in <var class="keyword varname">token-list</var> along with any documentation available for the product that is returning the information to understand the situation being reported on.</p>
+
+<p><strong>sqlcode</strong>: +32765</p>
+
+<p><strong>sqlstate</strong>: (any SQLSTATE might be returned)</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d89974e5159" lang="en-us" id="sql32766n">
+<h1 class="msghead" id="d89974e5159"><span class="title title msgId"><span class="ph ph msgNumber">SQL32766N</span></span>  <span class="shortdesc shortdesc msgText">Error message information from an external product: <var class="keyword varname vartype=quotedString varnumber=1">token-list</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL32766N: Explanation"><h2 class="sectiontitle" id="d89974e5186">Explanation</h2><p>A software product that interacts with the database manager, but is not part of the database product, is returning information about an error situation in <var class="keyword varname">token-list</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL32766N: User response"><h2 class="sectiontitle" id="d89974e5195">User response</h2><p>Use the information in <var class="keyword varname">token-list</var> along with any documentation available for the product that is returning the information to determine how to handle this error situation.</p>
+
+<p><strong>sqlcode</strong>: -32766</p>
+
+<p><strong>sqlstate</strong>: (any SQLSTATE might be returned)</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

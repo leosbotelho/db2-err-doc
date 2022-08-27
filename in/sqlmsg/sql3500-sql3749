@@ -1,0 +1,1443 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL3500 - SQL3749</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d64277e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic15">
+   <h1 class="topictitle1" id="d64277e14">SQL3500 - SQL3749</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d64277e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e64" lang="en-us" id="sql3500w">
+<h1 class="msghead" id="d64277e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL3500W</span></span>  <span class="shortdesc shortdesc msgText">The utility is beginning the <var class="keyword varname vartype=quotedString varnumber=1">phase</var> phase at time <var class="keyword varname vartype=quotedString varnumber=2">timestamp</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3500W: Explanation"><h2 class="sectiontitle" id="d64277e94">Explanation</h2><p>This is an informational message indicating that a phase is about to begin and that the previous phase has ended.  The phases are (in order of appearance):</p>
+
+<ul>
+<li>ANALYZE</li>
+
+<li>LOAD</li>
+
+<li>BUILD</li>
+
+<li>DELETE</li>
+</ul>
+
+<p>During the ANALYZE phase, if the target table for the LOAD command is a column-organized table, the compression dictionary is built. During the LOAD phase, data is loaded into your table. If there are any indexes to be built, BUILD phase will follow the LOAD phase. If there were any duplicate keys found for a unique index, the DELETE phase will follow the BUILD phase.</p>
+
+<p>If the LOAD is terminated before the end of the LOAD, you need to know the phase at which you should restart the LOAD.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3500W: User response"><h2 class="sectiontitle" id="d64277e120">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e131" lang="en-us" id="sql3501w">
+<h1 class="msghead" id="d64277e131"><span class="title title msgId"><span class="ph ph msgNumber">SQL3501W</span></span>  <span class="shortdesc shortdesc msgText">The table space(s) in which the table resides
+will not be placed in backup pending state since forward recovery is
+disabled for the database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3501W: Explanation"><h2 class="sectiontitle" id="d64277e155">Explanation</h2><p>COPY NO was specified on the invocation of LOAD which
+results in the table space(s) in which the table resides
+being placed into backup pending state unless
+forward recovery is disabled for the database.</p>
+
+<p>The utility continues.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3501W: User response"><h2 class="sectiontitle" id="d64277e164">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e176" lang="en-us" id="sql3502n">
+<h1 class="msghead" id="d64277e176"><span class="title title msgId"><span class="ph ph msgNumber">SQL3502N</span></span>  <span class="shortdesc shortdesc msgText">The utility has encountered <var class="keyword varname vartype=quotedString varnumber=1">number</var> warnings which
+exceeds the total number of warnings allowed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3502N: Explanation"><h2 class="sectiontitle" id="d64277e203">Explanation</h2><p>The number of warnings issued during the command has exceeded the
+total number of warnings that the user specified at invocation of the
+utility.</p>
+
+<p>The utility terminates.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3502N: User response"><h2 class="sectiontitle" id="d64277e212">User response</h2><p>Ensure that the correct data is being loaded with the appropriate
+options or increase the number of warnings allowed.  Resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e223" lang="en-us" id="sql3503w">
+<h1 class="msghead" id="d64277e223"><span class="title title msgId"><span class="ph ph msgNumber">SQL3503W</span></span>  <span class="shortdesc shortdesc msgText">The utility has loaded <var class="keyword varname vartype=quotedString varnumber=1">number</var> rows which equals
+the total count specified by the user.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3503W: Explanation"><h2 class="sectiontitle" id="d64277e250">Explanation</h2><p>The number of rows loaded has equaled the
+total number of rows that the user specified at invocation of the
+utility.</p>
+
+<p>The utility has successfully completed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3503W: User response"><h2 class="sectiontitle" id="d64277e259">User response</h2><p>No response required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e271" lang="en-us" id="sql3504w">
+<h1 class="msghead" id="d64277e271"><span class="title title msgId"><span class="ph ph msgNumber">SQL3504W</span></span>  <span class="shortdesc shortdesc msgText">A consistency point is being established.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3504W: Explanation"><h2 class="sectiontitle" id="d64277e295">Explanation</h2><div class="p">Consistency points will be established at times
+other than the regular interval specified in the SAVECOUNT parameter
+at invocation
+when:
+<ul>
+<li>the threshold for the amount of meta-data kept in memory
+or in temporary files has been reached.</li>
+
+<li>A device error occurred for the copy image and the load must
+terminate.</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3504W: User response"><h2 class="sectiontitle" id="d64277e308">User response</h2><p>If the LOAD continues after this message,
+no action is required.
+If the LOAD terminates, it can be restarted after all errors
+are corrected (such as activating a device or decreasing the
+interval at which consistency points are to be established).</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e319" lang="en-us" id="sql3505n">
+<h1 class="msghead" id="d64277e319"><span class="title title msgId"><span class="ph ph msgNumber">SQL3505N</span></span>  <span class="shortdesc shortdesc msgText">The length specified in the filetmod for the
+RECLEN option is not in the valid range of 1 to 32767.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3505N: Explanation"><h2 class="sectiontitle" id="d64277e343">Explanation</h2><p>In the 
+<em>filetmod</em>
+parameter, the RECLEN option was specified for an ASC file.
+The length specified is not valid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3505N: User response"><h2 class="sectiontitle" id="d64277e352">User response</h2><p>Correct the length specified and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e364" lang="en-us" id="sql3506w">
+<h1 class="msghead" id="d64277e364"><span class="title title msgId"><span class="ph ph msgNumber">SQL3506W</span></span>  <span class="shortdesc shortdesc msgText">The value specified in the null indicator in row
+<var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var> is not valid.  A value of 'N' will be assumed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3506W: Explanation"><h2 class="sectiontitle" id="d64277e394">Explanation</h2><p>For ASC files, a null indicator column can be specified
+for each data column and should contain either a 'Y' or a 'N'.
+A 'Y' indicates that the column is a null value and a 'N'
+indicates that the column contains data.
+If neither of these values are in the null indicator column,
+it is assumed to be a 'N' and data will be loaded into the column.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3506W: User response"><h2 class="sectiontitle" id="d64277e400">User response</h2><p>If the data or the null indicator are incorrect, correct the
+input file and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e411" lang="en-us" id="sql3507n">
+<h1 class="msghead" id="d64277e411"><span class="title title msgId"><span class="ph ph msgNumber">SQL3507N</span></span>  <span class="shortdesc shortdesc msgText">The column number specified for a null indicator
+is not in the valid range of 0 to 32767 or the null indicator
+parameter is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3507N: Explanation"><h2 class="sectiontitle" id="d64277e435">Explanation</h2><p>In the 
+<em>null_ind</em> parameter, columns for
+null indicators were specified for an ASC file but one
+of the columns is not valid or the pointer passed in for
+the null indicators is not valid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3507N: User response"><h2 class="sectiontitle" id="d64277e444">User response</h2><p>Correct the parameter and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e456" lang="en-us" id="sql3508n">
+<h1 class="msghead" id="d64277e456"><span class="title title msgId"><span class="ph ph msgNumber">SQL3508N</span></span>  <span class="shortdesc shortdesc msgText">Error in accessing a file or path of type <var class="keyword varname vartype=quotedString varnumber=1">file-type</var> during
+load or load query.  Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.  Path: <var class="keyword varname vartype=quotedString varnumber=3">path/file</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3508N: Explanation"><h2 class="sectiontitle" id="d64277e489">Explanation</h2><p>An error occurred while trying to access a file during load or load query processing. The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3508N: User response"><h2 class="sectiontitle" id="d64277e495">User response</h2><p>If doing a load and the table space is not in load pending state, correct the problem and invoke the load utility again. If the table is in load pending state, then invoke the load utility in RESTART or REPLACE mode, or restore a backup of the table space(s). The state of the table space can be determined using the LOAD QUERY command.</p>
+
+<p>The following is a list of reason codes:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Unable to open the file.</p>
+
+<p>This could be caused by an incorrect file name or insufficient authority to access the file/directory. Correct the problem and either restart or rerun the load.</p>
+
+<p>The load temporary file could have been destroyed or the database could have been restored from an earlier backup. Load restart is not supported under these circumstances. Use load terminate to bring the table out of load pending state.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Unable to read/scan the file.</p>
+
+<p>This could be the result of a hardware error. If the error is a hardware error, take the appropriate action and restart or rerun the load.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Unable to write to or change size of the file.</p>
+
+<p>This could be the result of a disk full condition or a hardware error.  Refer to the file type list provided later in this message, and either ensure there is enough space to run the load or specify a different location to be used.  Restart or rerun the load. If the error is a hardware error, take the appropriate action an restart or rerun the load.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The file contains invalid data.</p>
+
+<p>A file required by the load contains incorrect data. See the action described for TEMPFILES_PATH.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Unable to close the file.</p>
+
+<p>If the load cannot be restarted or rerun, contact your IBM service representative.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Unable to delete the file.</p>
+
+<p>If the load cannot be restarted or rerun, contact your IBM service representative.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Parameter specified incorrectly. Refer to the list of file types to determine the parameter in error and rerun the load with a valid parameter.</p>
+</dd>
+</dl>
+
+<p>The following is a list of file types:</p>
+
+<dl>
+
+<dt class="dlterm">SORTDIRECTORY</dt>
+
+<dd class="dlentry"><p>Ensure that the workdirectory parameter is specified properly. There must be enough combined space in all the directories to hold twice the size of the index keys for the loaded data.  For load insert and load restart there must also be room for twice the size of the index keys of the existing data in the table.</p>
+</dd>
+
+
+<dt class="dlterm">MSGFILE</dt>
+
+<dd class="dlentry"><p>Ensure that the messagefile parameter is specified properly. There must be enough disk space to write out the messages that occur during the load.</p>
+
+<p>If this is a load query, ensure that the local message file parameter is NOT the same as the messagefile parameter used for the load whose status is being queried.</p>
+</dd>
+
+
+<dt class="dlterm">TEMPFILES_PATH</dt>
+
+<dd class="dlentry"><p>Ensure that the tempfiles path parameter is specified properly.</p>
+</dd>
+</dl>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e631" lang="en-us" id="sql3509w">
+<h1 class="msghead" id="d64277e631"><span class="title title msgId"><span class="ph ph msgNumber">SQL3509W</span></span>  <span class="shortdesc shortdesc msgText">The utility has deleted <var class="keyword varname vartype=quotedString varnumber=1">number</var> rows from the
+table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3509W: Explanation"><h2 class="sectiontitle" id="d64277e658">Explanation</h2><p>When a table with a unique index is loaded,
+rows causing violation of uniqueness of
+an index will be deleted from the table during the delete phase.
+This message provides information on how many rows have been deleted.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3509W: User response"><h2 class="sectiontitle" id="d64277e664">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e676" lang="en-us" id="sql3510n">
+<h1 class="msghead" id="d64277e676"><span class="title title msgId"><span class="ph ph msgNumber">SQL3510N</span></span>  <span class="shortdesc shortdesc msgText">The working directory for the sort phase cannot
+be accessed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3510N: Explanation"><h2 class="sectiontitle" id="d64277e700">Explanation</h2><p>One or more of
+the specified working directories for the sort phase either
+does not exist or has no read/write permission.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3510N: User response"><h2 class="sectiontitle" id="d64277e706">User response</h2><p>Ensure that the specified working directories exist
+and the read/write permission is setup correctly and resubmit the
+command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e717" lang="en-us" id="sql3511w">
+<h1 class="msghead" id="d64277e717"><span class="title title msgId"><span class="ph ph msgNumber">SQL3511W</span></span>  <span class="shortdesc shortdesc msgText">The file named in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var>
+cannot be found.  A null was loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3511W: Explanation"><h2 class="sectiontitle" id="d64277e747">Explanation</h2><p>The filename in the specified field cannot be found.
+There may be a data type mismatch.</p>
+
+<p>For delimited ASCII (DEL) files, the value of the column
+number specifies the field within the row that contains the value
+in question.
+For ASCII files, the value of the column number specifies the byte
+location within the row where the value in question begins.</p>
+
+<p>A null value is loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3511W: User response"><h2 class="sectiontitle" id="d64277e759">User response</h2><p>Examine the input value.
+If necessary, correct the input file and resubmit the command or
+edit the data in the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e771" lang="en-us" id="sql3512w">
+<h1 class="msghead" id="d64277e771"><span class="title title msgId"><span class="ph ph msgNumber">SQL3512W</span></span>  <span class="shortdesc shortdesc msgText">The file named in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var>
+cannot be found, but the target column is not nullable. The row was
+not loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3512W: Explanation"><h2 class="sectiontitle" id="d64277e801">Explanation</h2><p>The filename in the specified field cannot be found.
+A null cannot be loaded because the output column in the table is not
+nullable.</p>
+
+<p>For delimited ASCII (DEL) files, the value of the column
+number specifies the field within the row that contains the value
+in question.
+For ASCII files, the value of the column number specifies the byte
+location within the row where the value in question begins.</p>
+
+<p>The row is not loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3512W: User response"><h2 class="sectiontitle" id="d64277e813">User response</h2><p>Correct the input file and resubmit the command or
+edit the data in the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e824" lang="en-us" id="sql3513n">
+<h1 class="msghead" id="d64277e824"><span class="title title msgId"><span class="ph ph msgNumber">SQL3513N</span></span>  <span class="shortdesc shortdesc msgText">The codepage of the file does not match the
+codepage of the database.  The file cannot be loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3513N: Explanation"><h2 class="sectiontitle" id="d64277e848">Explanation</h2><p>DB2CS files cannot be loaded into a database with
+a codepage that differs from the original database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3513N: User response"><h2 class="sectiontitle" id="d64277e854">User response</h2><p>Change the codepage of the database and resubmit the command
+or use another filetype (such as PC/IXF)
+to move your data from the original database
+to the new database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e866" lang="en-us" id="sql3514n">
+<h1 class="msghead" id="d64277e866"><span class="title title msgId"><span class="ph ph msgNumber">SQL3514N</span></span>  <span class="shortdesc shortdesc msgText">A utility system error occurred.  Function
+code: <var class="keyword varname vartype=quotedString varnumber=1">function</var>.  Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.  Error code: <var class="keyword varname vartype=quotedString varnumber=3">error-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3514N: Explanation"><h2 class="sectiontitle" id="d64277e899">Explanation</h2><p>A system error occurred during database utility processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3514N: User response"><h2 class="sectiontitle" id="d64277e905">User response</h2><p>Different actions are required depending on the value of
+<var class="keyword varname">function</var>.</p>
+
+<div class="p">The possible function codes are:
+<ul>
+<li>1 - An error occurred while Load was sorting.
+<p>Try to restart the load.  If the error persists, provide the
+function, reason code and error code to your technical service
+representative.</p>
+</li>
+
+<li>2 - An error occurred using the vendor sort utility.
+<p>Try the load again using the IBM Data Server Client/DB2 Server sort utility
+instead of the vendor sort. To do this, reset the Profile Registry value
+at the server to blank. You may have to restart the
+Database Manager in order to pick up the new Profile Registry value.
+If the error persists, provide the function, reason code
+and error code to your vendor sort technical service representative.</p>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e933" lang="en-us" id="sql3515w">
+<h1 class="msghead" id="d64277e933"><span class="title title msgId"><span class="ph ph msgNumber">SQL3515W</span></span>  <span class="shortdesc shortdesc msgText">The utility has finished the <var class="keyword varname vartype=quotedString varnumber=1">phase</var> phase at time
+<var class="keyword varname vartype=quotedString varnumber=2">timestamp</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3515W: Explanation"><h2 class="sectiontitle" id="d64277e963">Explanation</h2><div class="p">This is an informational message indicating that a phase
+has finished. The
+phases are (in order of appearance):
+<ul>
+<li>LOAD</li>
+
+<li>BUILD</li>
+
+<li>DELETE</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3515W: User response"><h2 class="sectiontitle" id="d64277e979">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e991" lang="en-us" id="sql3516n">
+<h1 class="msghead" id="d64277e991"><span class="title title msgId"><span class="ph ph msgNumber">SQL3516N</span></span>  <span class="shortdesc shortdesc msgText">The utility could not restart the load as
+specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3516N: Explanation"><h2 class="sectiontitle" id="d64277e1015">Explanation</h2><p>The Load Utility detected discrepancies in the last consistency
+point performed by Load before failure occurred. This condition might
+be caused either by a system error or an invalid log file.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3516N: User response"><h2 class="sectiontitle" id="d64277e1021">User response</h2><p>Restart the Load at the Build phase, to bring the table to a
+consistent state and create indexes (if applicable), or perform Load
+with the REPLACE option.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1032" lang="en-us" id="sql3517n">
+<h1 class="msghead" id="d64277e1032"><span class="title title msgId"><span class="ph ph msgNumber">SQL3517N</span></span>  <span class="shortdesc shortdesc msgText">An unexpected record was read from the input
+source.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3517N: Explanation"><h2 class="sectiontitle" id="d64277e1056">Explanation</h2><p>The utility has encountered a record that is in a format that is
+not valid.  The source may have been corrupted when copied from the
+original source.</p>
+
+<p>Processing terminates.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3517N: User response"><h2 class="sectiontitle" id="d64277e1065">User response</h2><p>Copy the record from the original source in binary and restart
+the LOAD or Import.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1077" lang="en-us" id="sql3518n">
+<h1 class="msghead" id="d64277e1077"><span class="title title msgId"><span class="ph ph msgNumber">SQL3518N</span></span>  <span class="shortdesc shortdesc msgText">The data in the source is not compatible to the
+table to be loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3518N: Explanation"><h2 class="sectiontitle" id="d64277e1101">Explanation</h2><div class="p">The source cannot be used to load this table because one of the
+following reasons:
+<ul>
+<li>the table definition does not match the table definition of the
+source.</li>
+
+<li>the source was created on a different platform than the table that
+is being loaded.</li>
+
+<li>the source was created from a table that had a different codepage
+from the table that is being loaded.</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3518N: User response"><h2 class="sectiontitle" id="d64277e1117">User response</h2><p>Ensure that both the table and source are correctly specified.
+If you want to load data from a table with a different definition or
+from a different platform or codepage, use another filetype such
+as IXF or DEL.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1128" lang="en-us" id="sql3519w">
+<h1 class="msghead" id="d64277e1128"><span class="title title msgId"><span class="ph ph msgNumber">SQL3519W</span></span>  <span class="shortdesc shortdesc msgText">Begin Load Consistency Point. Input record count
+= <var class="keyword varname vartype=quotedString varnumber=1">count</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3519W: Explanation"><h2 class="sectiontitle" id="d64277e1155">Explanation</h2><p>The Load Utility is about to attempt to perform a Consistency
+Point to commit the table data that has already been loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3519W: User response"><h2 class="sectiontitle" id="d64277e1161">User response</h2><p>If message SQL3520W is not printed immediately
+after this message, then the Consistency Point failed. The Load will
+have to be restarted at the Build phase, to ensure that the table is
+brought back to a consistent state and all indexes (if any) created.
+It will then be possible to check which records have been loaded.
+Start the Load again with a RESTARTCOUNT set to the number of
+records successfully loaded to skip those rows and load the rest of
+the file.</p>
+
+<p>If this message is followed by messages SQL3520W, then this message
+is informational only and no response is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1176" lang="en-us" id="sql3520w">
+<h1 class="msghead" id="d64277e1176"><span class="title title msgId"><span class="ph ph msgNumber">SQL3520W</span></span>  <span class="shortdesc shortdesc msgText">Load Consistency Point was successful.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3520W: Explanation"><h2 class="sectiontitle" id="d64277e1200">Explanation</h2><p>The Consistency Point performed by Load was successful.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3520W: User response"><h2 class="sectiontitle" id="d64277e1206">User response</h2><p>This is an informational message only.  No response is
+required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1217" lang="en-us" id="sql3521n">
+<h1 class="msghead" id="d64277e1217"><span class="title title msgId"><span class="ph ph msgNumber">SQL3521N</span></span>  <span class="shortdesc shortdesc msgText">The input source file <var class="keyword varname vartype=quotedString varnumber=1">sequence-num</var> was not provided.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3521N: Explanation"><h2 class="sectiontitle" id="d64277e1244">Explanation</h2><p>A load was invoked with multiple input files but not all the
+files were provided.
+For the DB2CS filetype, all the input source files that were created
+originally must be provided.
+For the IXF filetype, all the input source files must be provided in
+the correct order.</p>
+
+<p>The utility terminates.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3521N: User response"><h2 class="sectiontitle" id="d64277e1253">User response</h2><p>Restart the utility providing all the input source files and
+setting the RESTARTCOUNT appropriately for the data that was already
+loaded.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1265" lang="en-us" id="sql3522n">
+<h1 class="msghead" id="d64277e1265"><span class="title title msgId"><span class="ph ph msgNumber">SQL3522N</span></span>  <span class="shortdesc shortdesc msgText">The load operation failed because the COPY YES parameter was specified but the database does not use recoverable logging.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3522N: Explanation"><h2 class="sectiontitle" id="d64277e1289">Explanation</h2><p>You can enable roll-forward recovery by using archive logging. You can configure log archiving by using the database configuration parameters logarchmeth1 and logarchmeth2.</p>
+
+<p>You can load data into a table by using the LOAD command.  You can cause a copy of the loaded data be saved by specifying the COPY YES parameter with the LOAD command.  Specifying the COPY YES parameter with the LOAD command is only supported with databases that are enabled for roll-forward recovery.</p>
+
+<p>This message is returned when an attempt is made to run the LOAD command, specifying the COPY YES parameter, with a database that is not enabled for roll-forward recovery.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3522N: User response"><h2 class="sectiontitle" id="d64277e1301">User response</h2><p>Respond to this message in one of the following ways:</p>
+
+<ul>
+<li>Enable the database for roll-forward recovery and then call the LOAD command again with the COPY YES parameter.</li>
+
+<li>Call the LOAD command again without specifying the COPY YES parameter.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1320" lang="en-us" id="sql3523w">
+<h1 class="msghead" id="d64277e1320"><span class="title title msgId"><span class="ph ph msgNumber">SQL3523W</span></span>  <span class="shortdesc shortdesc msgText">There are no messages to be retrieved from the
+message file.  Reason code: <var class="keyword varname vartype=quotedString varnumber=1">rc</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3523W: Explanation"><h2 class="sectiontitle" id="d64277e1347">Explanation</h2><div class="p">No messages are returned from a query of the LOAD temporary message
+file.  The possible return codes are:
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry">No LOAD temporary message file exists.</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry">There are no messages in the LOAD temporary message file.</dd>
+</dl>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3523W: User response"><h2 class="sectiontitle" id="d64277e1370">User response</h2><p>Ensure that a valid table name has been specified.  If the table name
+is specified correctly and messages are expected, check the database
+monitor to verify that the utility is active and it is not waiting
+for resources such as locks.  Note that the LOAD temporary message
+file will not be created until the LOAD utility is in progress and
+it will be deleted after the completion of the LOAD utility.</p>
+
+<div class="p">The syntax of the CLP command includes the keyword TABLE, for example:
+<pre class="codeblock"><code>LOAD QUERY TABLE &lt;tablename&gt;</code></pre></div>
+
+<p>Neglecting the TABLE keyword will result in load query opening a binary
+load message file with the name <var class="keyword varname">tablename</var>.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1393" lang="en-us" id="sql3524n">
+<h1 class="msghead" id="d64277e1393"><span class="title title msgId"><span class="ph ph msgNumber">SQL3524N</span></span>  <span class="shortdesc shortdesc msgText">Option <var class="keyword varname vartype=quotedString varnumber=1">option</var> has an invalid value of <var class="keyword varname vartype=quotedString varnumber=2">value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3524N: Explanation"><h2 class="sectiontitle" id="d64277e1423">Explanation</h2><div class="p">The value provided must be an integer value. Its
+range for each option is as follows:
+<ol>
+<li>TOTALFREESPACE: the value must be in the range
+of 0 to 100, and is interpreted as a
+percentage of the total pages in the table that are to be
+appended to the end of the table as free space.</li>
+
+<li>PAGEFREESPACE: the value must be in the range
+of 0 to 100, and is interpreted as a
+percentage of each data page that is to be left as free
+space.</li>
+
+<li>INDEXFREESPACE: the value must be in the range
+of 0 to 99, and is interpreted as a percentage of
+each index page that is to be left as free space when
+loading indexes.</li>
+</ol>
+</div>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3524N: User response"><h2 class="sectiontitle" id="d64277e1442">User response</h2><p>Correct the value and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1453" lang="en-us" id="sql3525n">
+<h1 class="msghead" id="d64277e1453"><span class="title title msgId"><span class="ph ph msgNumber">SQL3525N</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=quotedString varnumber=1">option-1</var> option is incompatible with the <var class="keyword varname vartype=quotedString varnumber=2">option-2</var>
+option.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3525N: Explanation"><h2 class="sectiontitle" id="d64277e1483">Explanation</h2><p>Incompatible options have been provided to the utility.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3525N: User response"><h2 class="sectiontitle" id="d64277e1489">User response</h2><p>Remove or modify one of the options and resubmit the command.
+See the Command Reference for more information on valid options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1501" lang="en-us" id="sql3526n">
+<h1 class="msghead" id="d64277e1501"><span class="title title msgId"><span class="ph ph msgNumber">SQL3526N</span></span>  <span class="shortdesc shortdesc msgText">The modifier clause <var class="keyword varname vartype=quotedString varnumber=1">clause</var> is inconsistent with the current
+load command. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3526N: Explanation"><h2 class="sectiontitle" id="d64277e1531">Explanation</h2><p>The load file type mode (modifier) indicated, is incompatible with your load/import/export command. This is because of one of the following reasons:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The current option requires you to specify the RECLEN and NOEOFCHAR file type modifiers. One or more of these options are missing from your command.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The indicated option, such as DEL or ASC, is inconsistent with the format of the input or output data file.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Generated or identity related file type modifiers have been specified but the target table contains no such columns.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>When a pre-Version 8 client is used, it is not possible to     load a table having a non-identity generated column in a       unique index, unless the column is specified in the INCLUDE    clause of the CREATE INDEX statement or the GENERATEDOVERRIDE  file type modifier is used.  For pre-Version 8 clients, it is also necessary to specify the GENERATEDOVERRIDE file type modifier when loading a table that has a non-identity generated column in its ORGANIZE BY clause.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The IDENTITYOVERRIDE file type modifier cannot be used when loading a table with a GENERATED BY DEFAULT identity column.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The LOBSINFILE file type modifier cannot be specified in a partitioned database load when a generated column, that is part of the partitioning key, is defined in terms of a long field or LOB column.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Use of the GENERATEDMISSING or IDENTITYMISSING modifier in the current load or import command would result in all columns in the table being excluded from the load operation.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>If an identity column is part of the partitioning key or a generated column in the partitioning key depends upon an identity column that is not in the partitioning key, the IDENTITYOVERRIDE file type modifier must be specified if the current loading mode is either PARTITION_ONLY, LOAD_ONLY or LOAD_ONLY_VERIFY_PART, or if the value of the SAVECOUNT option is greater than 0.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>When the target table contains a generated column thati s defined in terms of an identity column and the GENERATEDOVERRIDE file type modifier is specified, then the IDENTITYOVERRIDE file type modifier must be specified as well. This ensures that the generated column values are computed in a way that is consistent with the identity column values in the table.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The DUMPFILEACCESSALL file type modifier is only valid  when the user has SELECT privileges on the load  target table, DUMPFILE modifier is specified, and the database partition resides on an  UNIX based operating system.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>The USEDEFAULTS file type modifier cannot be used in conjunction with the IXF file type or ASC file type with RECLEN modifier.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>Security label related file type modifiers have been specified, but the target table contains no such columns.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>The IMPLICITLYHIDDENINCLUDE file type modifier cannot be specified, when loading a  table without implicitly hidden columns.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>The IMPLICITLYHIDDENINCLUDE file type modifier cannot be specified, when exporting a  table without SELECT * query.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3526N: User response"><h2 class="sectiontitle" id="d64277e1667">User response</h2><p>Check the requirements of the option you are using. Reissue the command using modifier clauses (file type modes) and utility options that are consistent.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1678" lang="en-us" id="sql3527n">
+<h1 class="msghead" id="d64277e1678"><span class="title title msgId"><span class="ph ph msgNumber">SQL3527N</span></span>  <span class="shortdesc shortdesc msgText">The number specified in the FILETMOD parameter
+for the CODEPAGE option is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3527N: Explanation"><h2 class="sectiontitle" id="d64277e1702">Explanation</h2><p>In the FILETMOD parameter, the CODEPAGE option was invalid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3527N: User response"><h2 class="sectiontitle" id="d64277e1708">User response</h2><p>Correct the codepage number and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1720" lang="en-us" id="sql3528w">
+<h1 class="msghead" id="d64277e1720"><span class="title title msgId"><span class="ph ph msgNumber">SQL3528W</span></span>  <span class="shortdesc shortdesc msgText">The delimiter (column delimiter, string delimiter,
+or decimal point) specified in the CLP command may get translated from the
+application codepage to the database codepage.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3528W: Explanation"><h2 class="sectiontitle" id="d64277e1744">Explanation</h2><p>When a CLP command is sent from the client to the server, it may
+get translated from the codepage of client to the codepage of server, if
+they are different.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3528W: User response"><h2 class="sectiontitle" id="d64277e1750">User response</h2><p>To ensure that delimiters are not converted, they should
+be specified in hex format.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1761" lang="en-us" id="sql3529n">
+<h1 class="msghead" id="d64277e1761"><span class="title title msgId"><span class="ph ph msgNumber">SQL3529N</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=quotedString varnumber=1">operation-name</var> operation encountered the unsupported data type
+<var class="keyword varname vartype=quotedString varnumber=2">data-type</var> in column <var class="keyword varname vartype=quotedString varnumber=3">column-number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3529N: Explanation"><h2 class="sectiontitle" id="d64277e1794">Explanation</h2><p>The <var class="keyword varname">operation-name</var> operation does not support data type
+<var class="keyword varname">data-type</var> found in column <var class="keyword varname">column-number</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3529N: User response"><h2 class="sectiontitle" id="d64277e1809">User response</h2><p>Please check your table definition and the Data Movement Guide for
+supported data types.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1821" lang="en-us" id="sql3530i">
+<h1 class="msghead" id="d64277e1821"><span class="title title msgId"><span class="ph ph msgNumber">SQL3530I</span></span>  <span class="shortdesc shortdesc msgText">The Load Query utility is monitoring <var class="keyword varname vartype=quotedString varnumber=1">agenttype</var> progress on
+partition <var class="keyword varname vartype=quotedString varnumber=2">partitionnumber</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3530I: Explanation"><h2 class="sectiontitle" id="d64277e1851">Explanation</h2><p>The Load Query utility was invoked in an MPP environment.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3530I: User response"><h2 class="sectiontitle" id="d64277e1857">User response</h2><p>No action is necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1868" lang="en-us" id="sql3531i">
+<h1 class="msghead" id="d64277e1868"><span class="title title msgId"><span class="ph ph msgNumber">SQL3531I</span></span>  <span class="shortdesc shortdesc msgText">A LOAD RESTART has occurred.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3531I: Explanation"><h2 class="sectiontitle" id="d64277e1892">Explanation</h2><p>The RESTART option was given for the Load currently being
+queried.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3531I: User response"><h2 class="sectiontitle" id="d64277e1898">User response</h2><p>No action is necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1910" lang="en-us" id="sql3532i">
+<h1 class="msghead" id="d64277e1910"><span class="title title msgId"><span class="ph ph msgNumber">SQL3532I</span></span>  <span class="shortdesc shortdesc msgText">The Load utility is currently in the <var class="keyword varname vartype=quotedString varnumber=1">phase</var> phase.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3532I: Explanation"><h2 class="sectiontitle" id="d64277e1937">Explanation</h2><p>This is an informational message indicating the phase of the
+Load currently being queried.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3532I: User response"><h2 class="sectiontitle" id="d64277e1943">User response</h2><p>No action is necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e1954" lang="en-us" id="sql3533i">
+<h1 class="msghead" id="d64277e1954"><span class="title title msgId"><span class="ph ph msgNumber">SQL3533I</span></span>  <span class="shortdesc shortdesc msgText">The Load utility is currently building index
+<var class="keyword varname vartype=quotedString varnumber=1">number</var> of <var class="keyword varname vartype=quotedString varnumber=2">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3533I: Explanation"><h2 class="sectiontitle" id="d64277e1984">Explanation</h2><p>This is an informational message returned if the Load currently
+being queried is in the BUILD phase.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3533I: User response"><h2 class="sectiontitle" id="d64277e1990">User response</h2><p>No action is necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2002" lang="en-us" id="sql3534i">
+<h1 class="msghead" id="d64277e2002"><span class="title title msgId"><span class="ph ph msgNumber">SQL3534I</span></span>  <span class="shortdesc shortdesc msgText">The Load DELETE phase is approximately
+<var class="keyword varname vartype=quotedString varnumber=1">number</var> percent complete.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3534I: Explanation"><h2 class="sectiontitle" id="d64277e2029">Explanation</h2><p>This is an informational message returned if the Load currently
+being queried is in the DELETE phase.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3534I: User response"><h2 class="sectiontitle" id="d64277e2035">User response</h2><p>No action is necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2046" lang="en-us" id="sql3535w">
+<h1 class="msghead" id="d64277e2046"><span class="title title msgId"><span class="ph ph msgNumber">SQL3535W</span></span>  <span class="shortdesc shortdesc msgText">The LOAD command parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter-name</var> is no longer
+supported; its value will be ignored by the LOAD utility.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3535W: Explanation"><h2 class="sectiontitle" id="d64277e2073">Explanation</h2><p>Your LOAD command contains a parameter that is no longer supported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3535W: User response"><h2 class="sectiontitle" id="d64277e2079">User response</h2><p>Please refer to the documentation for information on temporary sort space
+for LOAD and suggestions related to LOAD performance tuning.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2091" lang="en-us" id="sql3536n">
+<h1 class="msghead" id="d64277e2091"><span class="title title msgId"><span class="ph ph msgNumber">SQL3536N</span></span>  <span class="shortdesc shortdesc msgText">System temporary table space <var class="keyword varname vartype=quotedString varnumber=1">table-space-name</var> is full.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3536N: Explanation"><h2 class="sectiontitle" id="d64277e2118">Explanation</h2><p>The LOAD utility has encountered a table space full condition while sorting
+index keys.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3536N: User response"><h2 class="sectiontitle" id="d64277e2124">User response</h2><p>Ensure that there is enough space allocated to the system temporary table space
+<var class="keyword varname">table-space-name</var>, at least two times the total size of
+the indexes being built. Restart the LOAD utility.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2138" lang="en-us" id="sql3537n">
+<h1 class="msghead" id="d64277e2138"><span class="title title msgId"><span class="ph ph msgNumber">SQL3537N</span></span>  <span class="shortdesc shortdesc msgText">Sort memory could not be allocated during the
+execution of the LOAD utility.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3537N: Explanation"><h2 class="sectiontitle" id="d64277e2162">Explanation</h2><p>Insufficient process virtual memory is available to the LOAD utility for
+sort processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3537N: User response"><h2 class="sectiontitle" id="d64277e2168">User response</h2><p>Terminate the application on receipt of this message. Ensure there is enough
+virtual memory available for sort processing.</p>
+
+<div class="p">Possible solutions include:
+<ul>
+<li>Disconnect all applications from the database and decrease the size of the
+sort heap parameter
+(sortheap) in the corresponding database configuration file.</li>
+
+<li>Remove background processes and/or terminate other currently executing
+applications.</li>
+
+<li>Increase the amount of virtual memory available.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2193" lang="en-us" id="sql3538n">
+<h1 class="msghead" id="d64277e2193"><span class="title title msgId"><span class="ph ph msgNumber">SQL3538N</span></span>  <span class="shortdesc shortdesc msgText">The LOAD QUERY utility failed because multiple LOADs are
+using the same temporary files path.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3538N: Explanation"><h2 class="sectiontitle" id="d64277e2217">Explanation</h2><p>At least one other LOAD was invoked using the same
+TEMPFILES PATH as the queried LOAD and is still in progress.
+The LOAD QUERY utility cannot uniquely determine which LOAD
+to query.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3538N: User response"><h2 class="sectiontitle" id="d64277e2223">User response</h2><p>Use the TABLE parameter of LOAD QUERY instead.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2234" lang="en-us" id="sql3539n">
+<h1 class="msghead" id="d64277e2234"><span class="title title msgId"><span class="ph ph msgNumber">SQL3539N</span></span>  <span class="shortdesc shortdesc msgText">LOAD RESTART cannot proceed because LOAD TERMINATE
+has been attempted at least once.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3539N: Explanation"><h2 class="sectiontitle" id="d64277e2258">Explanation</h2><p>LOAD TERMINATE can only be followed by LOAD TERMINATE.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3539N: User response"><h2 class="sectiontitle" id="d64277e2264">User response</h2><p>User can proceed with LOAD TERMINATE only.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2276" lang="en-us" id="sql3550w">
+<h1 class="msghead" id="d64277e2276"><span class="title title msgId"><span class="ph ph msgNumber">SQL3550W</span></span>  <span class="shortdesc shortdesc msgText">The field value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var> is not
+NULL, but the target column has been defined as GENERATED ALWAYS.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3550W: Explanation"><h2 class="sectiontitle" id="d64277e2306">Explanation</h2><p>A non NULL field value was encountered in the input file.
+Because the target column is of type GENERATED ALWAYS, the value cannot be loaded.
+The column number specifies the field within the row of the missing data.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3550W: User response"><h2 class="sectiontitle" id="d64277e2312">User response</h2><p>For LOAD, an explicit, non NULL field value can be loaded into a GENERATED ALWAYS
+identity column only if the identityoverride file type modifier is used.  For
+non-identity GENERATED ALWAYS columns, the generatedoverride file type modifier
+can be used to load explicit, non NULL values into a row. If using these modifiers
+is not appropriate, the field value must be replaced with a NULL if LOAD is to accept the row.</p>
+
+<p>For IMPORT there is no way to override a GENERATED ALWAYS column. The field value
+must be removed and replaced with a NULL if the utility is to accept the row.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2326" lang="en-us" id="sql3551w">
+<h1 class="msghead" id="d64277e2326"><span class="title title msgId"><span class="ph ph msgNumber">SQL3551W</span></span>  <span class="shortdesc shortdesc msgText">The table contains at least one GENERATED ALWAYS
+column that the utility will override.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3551W: Explanation"><h2 class="sectiontitle" id="d64277e2350">Explanation</h2><p>An “override” file type modifier (for example,
+IDENTITYOVERRIDE or GENERATEDOVERRIDE) has been specified.</p>
+
+<p>For IDENTITYOVERRIDE, this may violate the uniqueness property
+of an identity column defined as GENERATED ALWAYS.</p>
+
+<p>For GENERATEDOVERRIDE, this may result in a non-identity
+GENERATED ALWAYS column containing a value that does not correspond
+to its column definition.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3551W: User response"><h2 class="sectiontitle" id="d64277e2362">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2374" lang="en-us" id="sql3600n">
+<h1 class="msghead" id="d64277e2374"><span class="title title msgId"><span class="ph ph msgNumber">SQL3600N</span></span>  <span class="shortdesc shortdesc msgText">The IMMEDIATE CHECKED option of the SET INTEGRITY statement is not valid because the table <var class="keyword varname vartype=quotedString varnumber=1">table-name</var> is a user-maintained materialized query table, a shadow table, or is not in Set Integrity Pending state.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3600N: Explanation"><h2 class="sectiontitle" id="d64277e2401">Explanation</h2><p>The IMMEDIATE CHECKED option of the SET INTEGRITY statement is valid only if the table has been placed in Set Integrity Pending state, is not a user-maintained materialized query table, is not a shadow table, or if one of its ancestors that has been placed in Set Integrity Pending state is also in the invocation list, and all intermediate ancestors are also in the list.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3600N: User response"><h2 class="sectiontitle" id="d64277e2407">User response</h2><ol>
+<li>Use the SET INTEGRITY statement with the OFF option to place the table in Set Integrity Pending state.</li>
+
+<li>Use the IMMEDIATE UNCHECKED option for a user-maintained materialized query table or a shadow table.</li>
+
+<li>Include an ancestor of the table to the list of tables to be checked. The ancestor must be in Set Integrity Pending state and all intermediate ancestors must also be in the list.</li>
+
+<li>If the table is in No Data Movement state but it is not in Set Integrity Pending state, issue the SET INTEGRITY statement with the FULL ACCESS option to force the table out of No Data Movement state. Note that all dependent immediate materialized query tables that remain in Set Integrity Pending state are also forced to be fully recomputed in subsequent REFRESH TABLE statements, and all dependent immediate staging tables that remain in Set Integrity Pending state can no longer be used to refresh their dependent materialized query tables.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -3600</p>
+
+<p><strong>sqlstate</strong>:  51027</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2439" lang="en-us" id="sql3601w">
+<h1 class="msghead" id="d64277e2439"><span class="title title msgId"><span class="ph ph msgNumber">SQL3601W</span></span>  <span class="shortdesc shortdesc msgText">The statement caused one or more tables to
+automatically be placed in the Set Integrity Pending state.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3601W: Explanation"><h2 class="sectiontitle" id="d64277e2463">Explanation</h2><p>Tables have been placed in the Set Integrity Pending state to enforce integrity constraints or to enforce the data relationship between the base table, the descendent immediate materialized query tables, and the descendent staging tables. Specifically, the following statements caused at least one of the listed tables to be placed in the Set Integrity Pending state.</p>
+
+<ul>
+<li>ALTER TABLE ... ATTACH statement forced the target table of the ATTACH into the Set Integrity Pending state</li>
+
+<li>ALTER TABLE ... DETACH statement forced descendent immediate materialized  query tables or descendent staging tables into the Set Integrity Pending state</li>
+
+<li>SET INTEGRITY statement forced descendent foreign key tables,  descendent immediate materialized or descendent staging tables into the Set Integrity Pending state</li>
+</ul>
+
+<p>A detached partition that is a newly created detached table is not accessible until its detached dependent materialized query tables and staging tables are maintained.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3601W: User response"><h2 class="sectiontitle" id="d64277e2483">User response</h2><p>To validate the integrity for tables in the Set Integrity Pending state, execute the SET INTEGRITY statement with the IMMEDIATE CHECKED or IMMEDIATE UNCHECKED option for these tables. To determine which tables are in the Set Integrity Pending state, issue the following query:</p>
+
+<pre class="codeblock"><code>SELECT TABSCHEMA, TABNAME, STATUS
+FROM SYSCAT.TABLES
+WHERE STATUS = 'C'</code></pre>
+<p>To determine which detached tables have been created by the ALTER TABLE ... DETACH statement and are not yet accessible, issue the following query:</p>
+
+<pre class="codeblock"><code>SELECT TABSCHEMA, TABNAME, TYPE
+FROM SYSCAT.TABLES
+WHERE TYPE = 'L'</code></pre>
+
+<p><strong>sqlcode</strong>:  +3601</p>
+
+<p><strong>sqlstate</strong>:  01586</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2515" lang="en-us" id="sql3602w">
+<h1 class="msghead" id="d64277e2515"><span class="title title msgId"><span class="ph ph msgNumber">SQL3602W</span></span>  <span class="shortdesc shortdesc msgText">Check data processing found constraint
+violations and moved them to exception tables.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3602W: Explanation"><h2 class="sectiontitle" id="d64277e2539">Explanation</h2><p>There are rows that violate constraints that were specified
+to be checked by the SET INTEGRITY statement execution.  These were
+moved to exceptions tables.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3602W: User response"><h2 class="sectiontitle" id="d64277e2545">User response</h2><p>Check the exception tables for rows that violate constraints.
+The rows have been deleted from the original table but can
+be corrected and transferred back from the exception tables.</p>
+
+<p> 
+<strong>sqlcode</strong>:  +3602</p>
+
+<p> 
+<strong>sqlstate</strong>:  01603</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2568" lang="en-us" id="sql3603n">
+<h1 class="msghead" id="d64277e2568"><span class="title title msgId"><span class="ph ph msgNumber">SQL3603N</span></span>  <span class="shortdesc shortdesc msgText">Integrity processing through the SET INTEGRITY statement has found an integrity violation involving a constraint, a unique index, a generated column, or an index over an XML column. The associated object is identified by <var class="keyword varname vartype=quotedString varnumber=1">name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3603N: Explanation"><h2 class="sectiontitle" id="d64277e2595">Explanation</h2><p>A row has been found to violate the integrity of a table checked by the SET INTEGRITY statement. The integrity violation was caused by one of the following.</p>
+
+<ul>
+<li>A table constraint was violated. The table constraint is identified by <var class="keyword varname">name</var>.</li>
+
+<li>A unique index was violated. The unique index is identified by <var class="keyword varname">name</var>.</li>
+
+<li>The column value of a generated column does not match the result of the generation expression. The generated column is identified by <var class="keyword varname">name</var>.</li>
+
+<li>The table contains an index over an XML column that had an integrity violation. The XML column is identified by <var class="keyword varname">name</var>.</li>
+</ul>
+
+<p>The row has not been deleted from the table. The table remains in Set Integrity Pending state.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3603N: User response"><h2 class="sectiontitle" id="d64277e2630">User response</h2><p>Execute the SET INTEGRITY statement again using the FOR EXCEPTION option and use the information from the exception tables to correct the data.</p>
+
+<p><strong>sqlcode</strong>:  -3603</p>
+
+<p> 
+<strong>sqlstate</strong>:  23514</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2653" lang="en-us" id="sql3604n">
+<h1 class="msghead" id="d64277e2653"><span class="title title msgId"><span class="ph ph msgNumber">SQL3604N</span></span>  <span class="shortdesc shortdesc msgText">The statement or command failed because the following exception table is invalid: <var class="keyword varname vartype=quotedString varnumber=1">exception-table-name</var>. Table to which the exception table corresponds: <var class="keyword varname vartype=quotedString varnumber=2">table-name</var>. Reason code: <var class="keyword varname vartype=quotedString varnumber=3">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3604N: Explanation"><h2 class="sectiontitle" id="d64277e2686">Explanation</h2><p>You can validate table constraints by using the SET INTEGRITY statement with the IMMEDIATE CHECKED option.  Table constraints are also validated when the LOAD utility is being used to move data into newly created tables.  When you are validating table constraints, you can use exception tables to store copies of the rows that violate constraints in the tables being checked.</p>
+
+<p>This message is returned when an attempt is made to use an exception table, such as when the SET INTEGRITY statement is executed, or when the LOAD utility or the INGEST utility is being used, and there is something invalid or mismatched about the exception table</p>
+
+<p>The reason code indicates the reason the statement or command failed:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The exception table is in the Set Integrity Pending state.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The exception table does not have the proper column structure.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The exception table has constraints.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The exception table has triggers.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The exception table has generated columns.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The exception table has unique indexes.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The exception table is a materialized query table or is a staging table.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The exception table has dependent refresh immediate materialized query tables or dependent propagate immediate staging tables.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The exception table is the same as the table being loaded into.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The exception table is a range clustered table.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>The exception table is a data partitioned table.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>The exception table is a detached table.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>The exception table does not have the same security policy or does not have the same set of protected columns as the table being checked.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>The exception table has been defined with indexes over XML data.</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>The table has row or column level access control and the exception table does not.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>An attempt was made to create an expression-based index on an exception table.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3604N: User response"><h2 class="sectiontitle" id="d64277e2846">User response</h2><p>Create the exception table as indicated in the relevant section of the documentation and re-run the statement or utility.</p>
+
+<p><strong>sqlcode</strong>:  -3604</p>
+
+<p><strong>sqlstate</strong>:  428A5</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2867" lang="en-us" id="sql3605n">
+<h1 class="msghead" id="d64277e2867"><span class="title title msgId"><span class="ph ph msgNumber">SQL3605N</span></span>  <span class="shortdesc shortdesc msgText">Table <var class="keyword varname vartype=quotedString varnumber=1">table-name</var> named in the SET INTEGRITY
+statement is either not listed to be checked or is an exception table
+specified more than once.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3605N: Explanation"><h2 class="sectiontitle" id="d64277e2894">Explanation</h2><div class="p">When the FOR EXCEPTION clause is specified in the SET INTEGRITY
+statement, this error could be caused by one of the following :
+<ul>
+<li>The table is missing from the list of tables to be checked</li>
+
+<li>The table to be checked is the same as an exception table</li>
+
+<li>The exception table is specified for more than one table to
+be checked</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3605N: User response"><h2 class="sectiontitle" id="d64277e2910">User response</h2><p>Correct the table names and execute the command again.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -3605</p>
+
+<p> 
+<strong>sqlstate</strong>:  428A6</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2934" lang="en-us" id="sql3606n">
+<h1 class="msghead" id="d64277e2934"><span class="title title msgId"><span class="ph ph msgNumber">SQL3606N</span></span>  <span class="shortdesc shortdesc msgText">There is a mismatch in the number of tables
+being checked and in the number of exception tables specified in the
+SET INTEGRITY statement.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3606N: Explanation"><h2 class="sectiontitle" id="d64277e2958">Explanation</h2><p>There must be a one-to-one correspondence between the exception tables
+and the tables that are not materialized query tables or staging tables
+provided in the invocation list. The tables in the invocation list that
+are materialized query tables or staging tables must not have corresponding
+exception tables.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3606N: User response"><h2 class="sectiontitle" id="d64277e2964">User response</h2><p>Create the missing exception table for the table that is not
+a materialized query table or staging table if it does not already exist and
+specify it in the invocation list in order to execute the command again.
+Do not specify exception tables for materialized query tables and staging
+tables.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -3606</p>
+
+<p> 
+<strong>sqlstate</strong>:  428A7</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e2987" lang="en-us" id="sql3608n">
+<h1 class="msghead" id="d64277e2987"><span class="title title msgId"><span class="ph ph msgNumber">SQL3608N</span></span>  <span class="shortdesc shortdesc msgText">Cannot check a dependent table <var class="keyword varname vartype=quotedString varnumber=1">dependent-table-name</var>
+using the SET INTEGRITY statement while the
+parent table or underlying table <var class="keyword varname vartype=quotedString varnumber=2">parent-table-name</var> is in the Set Integrity Pending state or
+if it will be put into the Set Integrity Pending state by the SET
+INTEGRITY statement.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3608N: Explanation"><h2 class="sectiontitle" id="d64277e3017">Explanation</h2><p>The parent table or underlying table must not be in the Set Integrity
+Pending state either before or after the SET INTEGRITY statement, or
+it must be included in the invocation list in order to check a dependent
+table. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3608N: User response"><h2 class="sectiontitle" id="d64277e3023">User response</h2><p>Ensure that the parent table is not in the Set Integrity Pending state by
+executing the SET INTEGRITY statement to check the parent table.
+If the dependent table is a materialized query table or staging table,
+ensure that the underlying table is not in the Set Integrity Pending state
+by executing the SET INTEGRITY statement to check the
+underlying table.</p>
+
+<p>If the dependent table is not a materialized query table
+or staging table, it is recommended to check the parent
+table first. It is also
+possible to check the dependent table and
+include the parent table in the invocation list. In this case, the
+statement could still fail if there are rows in the parent table which violate the
+constraint and these rows are not deleted and put into an exception table.
+This can happen if the
+FOR EXCEPTION option is not used.</p>
+
+<p>If the dependent table is a materialized query table or staging table,
+it is recommended to check the underlying table first. It is also possible
+to refresh the dependent materialized query table and include the underlying
+table in the invocation list. In this case, the statement could still fail
+if there are rows in the parent table which violate the constraint and these
+rows are not deleted and put into an exception table. This can happen if
+the FOR EXCEPTION option is not used.</p>
+
+<p>In the case of a referential cycle, all tables must be included
+in the invocation list.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -3608</p>
+
+<p> 
+<strong>sqlstate</strong>:  428A8</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3057" lang="en-us" id="sql3700w">
+<h1 class="msghead" id="d64277e3057"><span class="title title msgId"><span class="ph ph msgNumber">SQL3700W</span></span>  <span class="shortdesc shortdesc msgText">Device <var class="keyword varname vartype=quotedString varnumber=1">device</var> is full.  There are <var class="keyword varname vartype=quotedString varnumber=2">active-devices</var> other
+active devices.  Please mount new media or take appropriate action.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3700W: Explanation"><h2 class="sectiontitle" id="d64277e3087">Explanation</h2><p>The media on the specified device is full.  This device is
+one of the <var class="keyword varname">active-devices</var> + 1 target devices to which unloaded
+data is being directed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3700W: User response"><h2 class="sectiontitle" id="d64277e3096">User response</h2><div class="p">Take ONE of the following actions:
+<ul>
+<li>Mount a new target media on the specified device and continue
+unloading by invoking unload with caller action 1 (SQLU_CONTINUE).
+<p>OR</p>
+</li>
+
+<li>If <var class="keyword varname">active-devices</var> is not zero, continue the unload without
+this device by invoking the UNLOAD utility with the caller action 4
+(SQLU_DEVICE_TERMINATE).
+<p>OR</p>
+</li>
+
+<li>Cancel the unload by invoking the UNLOAD utility with caller
+action 2 (SQLU_TERMINATE).</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3124" lang="en-us" id="sql3701w">
+<h1 class="msghead" id="d64277e3124"><span class="title title msgId"><span class="ph ph msgNumber">SQL3701W</span></span>  <span class="shortdesc shortdesc msgText">The lobpaths parameter was specified, but the
+table does not contain any LOB or Long data.  This parameter will be
+ignored.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3701W: Explanation"><h2 class="sectiontitle" id="d64277e3148">Explanation</h2><p>The lobpaths parameter specifies a separate target for LOB
+and Long data.  The table does not contain any
+LOB or Long data, so the targets specified by the lobpaths
+parameter will not be used.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3701W: User response"><h2 class="sectiontitle" id="d64277e3154">User response</h2><p>No action required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3166" lang="en-us" id="sql3702w">
+<h1 class="msghead" id="d64277e3166"><span class="title title msgId"><span class="ph ph msgNumber">SQL3702W</span></span>  <span class="shortdesc shortdesc msgText">Warning. SQLCODE <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var> was received for device
+<var class="keyword varname vartype=quotedString varnumber=2">device</var>. Unload will attempt to continue without this device.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3702W: Explanation"><h2 class="sectiontitle" id="d64277e3196">Explanation</h2><p>SQLCODE <var class="keyword varname">sqlcode</var> was detected for the specified
+device which is one of the targets for the unload.  Unload
+will continue but will ignore this device.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3702W: User response"><h2 class="sectiontitle" id="d64277e3205">User response</h2><p>The media loaded on the specified device will not contain
+any unloaded data and should not be included with the media
+supplied to the LOAD utility when the unloaded data is being
+loaded.  In order to fix the problem with the device, look up the
+returned SQLCODE in the Message Reference.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3216" lang="en-us" id="sql3703w">
+<h1 class="msghead" id="d64277e3216"><span class="title title msgId"><span class="ph ph msgNumber">SQL3703W</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">xxx</var> of <var class="keyword varname vartype=quotedString varnumber=2">yyy</var> number of type <var class="keyword varname vartype=quotedString varnumber=3">type</var> pages have been
+unloaded and sent to be written out to the target media.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3703W: Explanation"><h2 class="sectiontitle" id="d64277e3248">Explanation</h2><p>The table being unloaded consists of <var class="keyword varname">yyy</var> pages of the
+specified type of data.
+<var class="keyword varname">xxx</var> of these have been processed by the UNLOAD utility and
+have been sent to a media writer which will write the data to
+the target media.</p>
+
+<div class="p"><var class="keyword varname">type</var> is one of:
+<ul>
+<li>0 for regular data</li>
+
+<li>2 for Long data and allocation information</li>
+
+<li>3 for LOB data</li>
+
+<li>4 for LOB allocation information</li>
+</ul>
+</div>
+
+<p>Note that for Long and LOB data, <var class="keyword varname">xxx</var> may be less than
+<var class="keyword varname">yyy</var> when unload is complete, because unused space is not
+unloaded, but will be recreated when the data is reloaded.</p>
+
+<p>Even for regular data, a final message where <var class="keyword varname">xxx</var> = <var class="keyword varname">yyy</var> may
+not be issued. Instead message 3105 is used to indicate that the
+unload completed successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3703W: User response"><h2 class="sectiontitle" id="d64277e3296">User response</h2><p>This is an informational message.  No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3308" lang="en-us" id="sql3704n">
+<h1 class="msghead" id="d64277e3308"><span class="title title msgId"><span class="ph ph msgNumber">SQL3704N</span></span>  <span class="shortdesc shortdesc msgText">The num_buffers parameter specified is
+invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3704N: Explanation"><h2 class="sectiontitle" id="d64277e3332">Explanation</h2><p>The num_buffers parameter determines the number
+of buffers that the utility will use.
+The minimum is 2 if the lobpaths parameter is not specified
+and 3 if the lobpaths parameter is specified.  This is the
+minimum required to allow the utility to work.  There is, however,
+an optimal number of buffers that the utility will use if this
+parameter is not specified.  This optimal number is based
+on the number of internal processes that the utility will
+have running and whether or not the lobpaths parameter was specified.
+If the number of buffers specified is
+less than the optimal number, some processes will be waiting
+for buffers to use.  Therefore, it is recommended to
+specify 0 for this parameter and let the utility choose the
+number of buffers.  Only specify this parameter if,
+due to the size of the utility storage heap,
+it is necessary to limit the amount of memory
+that the utility uses.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3704N: User response"><h2 class="sectiontitle" id="d64277e3338">User response</h2><p>Resubmit the command using a valid num_buffers parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3349" lang="en-us" id="sql3705n">
+<h1 class="msghead" id="d64277e3349"><span class="title title msgId"><span class="ph ph msgNumber">SQL3705N</span></span>  <span class="shortdesc shortdesc msgText">The buffer size parameter specified is not
+valid.  The buffer size must be specified as 0 or be between 8 and
+250000 inclusive.  For multiple buffers, the total buffer size must not
+exceed 250000.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3705N: Explanation"><h2 class="sectiontitle" id="d64277e3373">Explanation</h2><p>The application calling the utility has supplied a buffer size
+parameter that is not valid.  The buffer size is used to determine the
+internal buffer size. The value is the number of 4K pages that are
+obtained for this buffer.  The value must be specified as 0 or be
+between 8 and 250000 inclusive.
+If there are multiple buffers, the number of buffers multiplied by the
+buffer size must not exceed 250000.</p>
+
+<div class="p">When 0 is specified:
+<ul>
+<li>for a table whose regular data is in a database managed storage
+table space, the default buffer size chosen is the extent size for the
+table space or 8, whichever is larger.</li>
+
+<li>for a table whose regular data is in a system managed storage
+table space, the default buffer size chosen is 8.</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3705N: User response"><h2 class="sectiontitle" id="d64277e3389">User response</h2><p>Reissue the command with a valid buffer size.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3401" lang="en-us" id="sql3706n">
+<h1 class="msghead" id="d64277e3401"><span class="title title msgId"><span class="ph ph msgNumber">SQL3706N</span></span>  <span class="shortdesc shortdesc msgText">A disk full error was encountered on <var class="keyword varname vartype=quotedString varnumber=1">path/file</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3706N: Explanation"><h2 class="sectiontitle" id="d64277e3428">Explanation</h2><p>A disk full error was encountered during the processing of a
+database utility.  The utility stops.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3706N: User response"><h2 class="sectiontitle" id="d64277e3434">User response</h2><p>Ensure enough disk space is available for the utility or direct
+the output to other media such as tape.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d64277e3445" lang="en-us" id="sql3707n">
+<h1 class="msghead" id="d64277e3445"><span class="title title msgId"><span class="ph ph msgNumber">SQL3707N</span></span>  <span class="shortdesc shortdesc msgText">The sort memory size parameter specified <var class="keyword varname vartype=quotedString varnumber=1">size1</var> is
+not valid. The minimum size required is <var class="keyword varname vartype=quotedString varnumber=2">size2</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3707N: Explanation"><h2 class="sectiontitle" id="d64277e3475">Explanation</h2><p>The sort memory size is not large enough for sorting the
+keys of the index(es).</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3707N: User response"><h2 class="sectiontitle" id="d64277e3481">User response</h2><p>Reissue the command with a valid sort memory size.</p>
+
+<p>To ensure that only the minimum amount of storage is used, specify
+a value of 0 (to let it default).  However, using more than the
+minimum should improve the performance of the sort.</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

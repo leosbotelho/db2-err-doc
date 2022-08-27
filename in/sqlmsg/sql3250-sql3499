@@ -1,0 +1,1816 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL3250 - SQL3499</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d168068e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic14">
+   <h1 class="topictitle1" id="d168068e14">SQL3250 - SQL3499</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d168068e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e64" lang="en-us" id="sql3250n">
+<h1 class="msghead" id="d168068e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL3250N</span></span>  <span class="shortdesc shortdesc msgText">COMPOUND=<var class="keyword varname vartype=quotedString varnumber=1">value</var> is invalid. Reason code: <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3250N: Explanation"><h2 class="sectiontitle" id="d168068e94">Explanation</h2><p>The COMPOUND=x option was specified for the import utility and cannot be processed due to the reason with reason code <var class="keyword varname">reason-code</var>:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>It is invalid when the INSERT_UPDATE option is used.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>It is invalid with the following file type modifiers: IDENTITYIGNORE, IDENTITYMISSING, GENERATEDIGNORE, GENERATEDMISSING.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The database being imported to is accessed through a server or gateway of a previous release.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The value is not within the allowed range of 1 to 100 (On DOS or Windows, the maximum value is 7).</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The table being imported is a hierarchy or typed table.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The table being imported has generated columns.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>It is invalid when the XMLVALIDATE USING XDS option is used.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>It is invalid when the USEDEFAULTS file type modifier is specified.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The table being imported is a random distribution table using the random by generation method.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3250N: User response"><h2 class="sectiontitle" id="d168068e187">User response</h2><p>The action corresponding to the reason code:</p>
+
+<p>For reason code 1:</p>
+
+<ul>
+<li>Remove COMPOUND=x from the file type modifier option, or use INSERT option.</li>
+</ul>
+
+<p>For reason codes 2, 3, 5, 6, 8, 9:</p>
+
+<ul>
+<li>Remove COMPOUND=x from the file type modifier option.</li>
+</ul>
+
+<p>For reason code 4:</p>
+
+<ul>
+<li>Set x in COMPOUND=x to a correct value.</li>
+</ul>
+
+<p>For reason code 7:</p>
+
+<ul>
+<li>Remove COMPOUND=x or remove XMLVALIDATE USING XDS option.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e231" lang="en-us" id="sql3251n">
+<h1 class="msghead" id="d168068e231"><span class="title title msgId"><span class="ph ph msgNumber">SQL3251N</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">error-count</var> more errors occurred during the import.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3251N: Explanation"><h2 class="sectiontitle" id="d168068e257">Explanation</h2><p>The utility encountered more errors than can be relayed in the
+sqlca (maximum number is 7) while using the COMPOUND option.
+Messages for these errors will not be printed to the message file.</p>
+
+<p>The utility continues processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3251N: User response"><h2 class="sectiontitle" id="d168068e266">User response</h2><p>If you desire all the error messages for each row inserted
+during an import, do not use the COMPOUND option or use a COMPOUND
+value less than or equal to 7.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e278" lang="en-us" id="sql3252n">
+<h1 class="msghead" id="d168068e278"><span class="title title msgId"><span class="ph ph msgNumber">SQL3252N</span></span>  <span class="shortdesc shortdesc msgText">The Load METHOD <var class="keyword varname vartype=quotedString varnumber=1">method</var> option is incompatible with the specified file format.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3252N: Explanation"><h2 class="sectiontitle" id="d168068e305">Explanation</h2><p>The Load utility was invoked with a METHOD option which is incompatible with the file format specified. </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3252N: User response"><h2 class="sectiontitle" id="d168068e311">User response</h2><p>Review the documentation for restrictions and incompatibilities and reissue the Load command using a different METHOD option or file format to accommodate this restriction.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e322" lang="en-us" id="sql3253n">
+<h1 class="msghead" id="d168068e322"><span class="title title msgId"><span class="ph ph msgNumber">SQL3253N</span></span>  <span class="shortdesc shortdesc msgText">The utility is beginning to load data from the SQL statement <var class="keyword varname vartype=quotedString varnumber=1">statement</var> in database <var class="keyword varname vartype=quotedString varnumber=2">database</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3253N: Explanation"><h2 class="sectiontitle" id="d168068e352">Explanation</h2><p>This is an informational message indicating that a load from an SQL statement fetching from a cataloged database has begun.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3253N: User response"><h2 class="sectiontitle" id="d168068e358">User response</h2><p>No action is required. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e370" lang="en-us" id="sql3254n">
+<h1 class="msghead" id="d168068e370"><span class="title title msgId"><span class="ph ph msgNumber">SQL3254N</span></span>  <span class="shortdesc shortdesc msgText">The utility is beginning to load data from the Table <var class="keyword varname vartype=quotedString varnumber=1">schema</var>.<var class="keyword varname vartype=quotedString varnumber=2">tablename</var> in database <var class="keyword varname vartype=quotedString varnumber=3">database</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3254N: Explanation"><h2 class="sectiontitle" id="d168068e403">Explanation</h2><p>This is an informational message indicating that a load from an SQL statement fetching the contents of a table on a cataloged database has begun.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3254N: User response"><h2 class="sectiontitle" id="d168068e409">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e420" lang="en-us" id="sql3255n">
+<h1 class="msghead" id="d168068e420"><span class="title title msgId"><span class="ph ph msgNumber">SQL3255N</span></span>  <span class="shortdesc shortdesc msgText">The Load utility encountered an error while executing the SOURCEUSEREXIT <var class="keyword varname vartype=quotedString varnumber=1">source user exit</var>. Reason Code <var class="keyword varname vartype=quotedString varnumber=2">reason</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3255N: Explanation"><h2 class="sectiontitle" id="d168068e450">Explanation</h2><p>The Load utility has encountered an error while executing or attempting to execute the source user exit. This is because of one of the following reasons:</p>
+
+<div class="p">Reason Codes:
+<ol>
+<li>The source user exit file specified could not be found.</li>
+
+<li>The source user exit ended prematurely or returned a non-zero return code.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3255N: User response"><h2 class="sectiontitle" id="d168068e466">User response</h2><ol>
+<li> Ensure that the source user exit exists, has correct permissions, and resides in the "bin" subdirectory of the "sqllib" path. Then reissue the Load.</li>
+
+<li>Debug your source user exit application and ensure that it is working as designed. Then reissue the Load.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e483" lang="en-us" id="sql3256n">
+<h1 class="msghead" id="d168068e483"><span class="title title msgId"><span class="ph ph msgNumber">SQL3256N</span></span>  <span class="shortdesc shortdesc msgText">The Load utility encountered an error while processing data for the specified file type.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3256N: Explanation"><h2 class="sectiontitle" id="d168068e507">Explanation</h2><p>The Load utility has encountered an error while processing data for the specified file type. The format of the data is invalid.  The utility has stopped processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3256N: User response"><h2 class="sectiontitle" id="d168068e513">User response</h2><p>Ensure the data is in the correct file type format.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e524" lang="en-us" id="sql3257n">
+<h1 class="msghead" id="d168068e524"><span class="title title msgId"><span class="ph ph msgNumber">SQL3257N</span></span>  <span class="shortdesc shortdesc msgText">The Load utility encountered an error while processing data in the specified file type.   Reason Code <var class="keyword varname vartype=quotedString varnumber=1">reason</var>. If applicable, record number is <var class="keyword varname vartype=quotedString varnumber=2">record num</var> and column number is <var class="keyword varname vartype=quotedString varnumber=3">column num</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3257N: Explanation"><h2 class="sectiontitle" id="d168068e557">Explanation</h2><p>The Load utility has encountered an error while processing data in the specified file type. The utility has stopped processing. This is because of one of the following reasons:</p>
+
+<p>Reason Codes:</p>
+
+<ol>
+<li>The data file header information is invalid or missing.</li>
+
+<li>The record header information for the given <var class="keyword varname">record num</var> is invalid or missing.</li>
+
+<li>The column header information for the given <var class="keyword varname">record num</var> is invalid or missing.</li>
+
+<li>The column data for the given column number <var class="keyword varname">column num</var> in record number <var class="keyword varname">record num</var> is invalid or missing.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3257N: User response"><h2 class="sectiontitle" id="d168068e592">User response</h2><p>1-4. Ensure the data is in the correct file type format.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e604" lang="en-us" id="sql3260n">
+<h1 class="msghead" id="d168068e604"><span class="title title msgId"><span class="ph ph msgNumber">SQL3260N</span></span>  <span class="shortdesc shortdesc msgText">An unexpected error occurred when accessing the
+LDAP directory. Error code = <var class="keyword varname vartype=quotedString varnumber=1">error-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3260N: Explanation"><h2 class="sectiontitle" id="d168068e631">Explanation</h2><p>An unexpected error occurred when accessing the LDAP directory.
+The command can not be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3260N: User response"><h2 class="sectiontitle" id="d168068e637">User response</h2><p>Record the message number (SQLCODE) and the error code.
+Use the Independent Trace Facility to obtain the DB2 trace.
+Then contact your IBM
+service representative.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e648" lang="en-us" id="sql3261n">
+<h1 class="msghead" id="d168068e648"><span class="title title msgId"><span class="ph ph msgNumber">SQL3261N</span></span>  <span class="shortdesc shortdesc msgText">The REGISTER LDAP command did not complete successfully
+because a required input parameter was not specified. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3261N: Explanation"><h2 class="sectiontitle" id="d168068e675">Explanation</h2><p>The REGISTER LDAP command did not complete successfully because a required input parameter was not specified as indicated by the following reason codes:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The Network Id parameter was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The Partner LU parameter was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>The Transaction Program (TP) name parameter was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The Mode parameter was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The TCP/IP hostname parameter was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The TCP/IP service name parameter was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The IPX Address was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The computer name was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The instance name was not specified.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3261N: User response"><h2 class="sectiontitle" id="d168068e765">User response</h2><p>Re-submit the command with the required input parameter</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e777" lang="en-us" id="sql3262n">
+<h1 class="msghead" id="d168068e777"><span class="title title msgId"><span class="ph ph msgNumber">SQL3262N</span></span>  <span class="shortdesc shortdesc msgText">The TCP/IP service name <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3262N: Explanation"><h2 class="sectiontitle" id="d168068e804">Explanation</h2><p>The TCP/IP service name specified is not valid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3262N: User response"><h2 class="sectiontitle" id="d168068e810">User response</h2><p>Ensure that the TCP/IP service name is configured and
+reserved in the local etc/services file, then re-submit the command.
+Alternatively, specify the port number that is assigned to the TCP/IP
+service name.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e821" lang="en-us" id="sql3263n">
+<h1 class="msghead" id="d168068e821"><span class="title title msgId"><span class="ph ph msgNumber">SQL3263N</span></span>  <span class="shortdesc shortdesc msgText">The protocol type is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3263N: Explanation"><h2 class="sectiontitle" id="d168068e845">Explanation</h2><p>The protocol type specified is not supported for the command.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3263N: User response"><h2 class="sectiontitle" id="d168068e851">User response</h2><p>Re-submit the command using a supported protocol type.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e863" lang="en-us" id="sql3264n">
+<h1 class="msghead" id="d168068e863"><span class="title title msgId"><span class="ph ph msgNumber">SQL3264N</span></span>  <span class="shortdesc shortdesc msgText">The database server has not been registered in LDAP.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3264N: Explanation"><h2 class="sectiontitle" id="d168068e887">Explanation</h2><p>The command did not complete successfully because the database server had not been registered in LDAP.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3264N: User response"><h2 class="sectiontitle" id="d168068e893">User response</h2><p>Register the database server in LDAP using the REGISTER LDAP command.  Then
+re-submit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e904" lang="en-us" id="sql3265n">
+<h1 class="msghead" id="d168068e904"><span class="title title msgId"><span class="ph ph msgNumber">SQL3265N</span></span>  <span class="shortdesc shortdesc msgText">An unexpected error occurred during LDAP authentication.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3265N: Explanation"><h2 class="sectiontitle" id="d168068e928">Explanation</h2><p>Unable to authenticate the LDAP user due to unexpected LDAP system error.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3265N: User response"><h2 class="sectiontitle" id="d168068e934">User response</h2><p>Use the Independent Trace Facility to obtain the DB2 trace.
+Then contact your IBM
+service representative.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e946" lang="en-us" id="sql3266n">
+<h1 class="msghead" id="d168068e946"><span class="title title msgId"><span class="ph ph msgNumber">SQL3266N</span></span>  <span class="shortdesc shortdesc msgText">The LDAP user password is incorrect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3266N: Explanation"><h2 class="sectiontitle" id="d168068e970">Explanation</h2><p>The specified password is not a correct password for the specified user
+Distinguished Name (DN).</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3266N: User response"><h2 class="sectiontitle" id="d168068e976">User response</h2><p>Re-submit the command using the correct password.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e987" lang="en-us" id="sql3267n">
+<h1 class="msghead" id="d168068e987"><span class="title title msgId"><span class="ph ph msgNumber">SQL3267N</span></span>  <span class="shortdesc shortdesc msgText">The command failed because the user does not have sufficient authority to invoke the command. User ID: <var class="keyword varname vartype=quotedString varnumber=1">user-ID</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3267N: Explanation"><h2 class="sectiontitle" id="d168068e1014">Explanation</h2><p>The command did not complete successfully because the LDAP user did not have sufficient authority to perform the required task. The LDAP user object also requires write access to the <var class="keyword varname">BaseDN</var> under which DB2 LDAP objects are created.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3267N: User response"><h2 class="sectiontitle" id="d168068e1023">User response</h2><ul>
+<li>Configure the LDAP <var class="keyword varname">userID</var> and <var class="keyword varname">password</var> by using the <var class="keyword varname">db2ldcfg</var> command.</li>
+
+<li>Grant the required access (ACL) to the LDAP user object so that the LDAP  user can add, delete, read, and write to his own object.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1049" lang="en-us" id="sql3268n">
+<h1 class="msghead" id="d168068e1049"><span class="title title msgId"><span class="ph ph msgNumber">SQL3268N</span></span>  <span class="shortdesc shortdesc msgText">The LDAP schema is not compatible with the current
+release of DB2.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3268N: Explanation"><h2 class="sectiontitle" id="d168068e1073">Explanation</h2><p>The LDAP schema defined at the server does not contain the definition for
+the DB2 object classes and/or attributes used in the current release of DB2.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3268N: User response"><h2 class="sectiontitle" id="d168068e1079">User response</h2><p>Refer to the Administration Guide on how to extend the LDAP schema with
+DB2 object classes and attributes.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1090" lang="en-us" id="sql3269n">
+<h1 class="msghead" id="d168068e1090"><span class="title title msgId"><span class="ph ph msgNumber">SQL3269N</span></span>  <span class="shortdesc shortdesc msgText">The database manager was not able to access information in the LDAP
+directory because the LDAP server was not available.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3269N: Explanation"><h2 class="sectiontitle" id="d168068e1114">Explanation</h2><p>The database manager was not able to access information in the LDAP directory because the LDAP
+server was not available.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3269N: User response"><h2 class="sectiontitle" id="d168068e1120">User response</h2><p>Perform the following actions:</p>
+
+<ol>
+<li>Ensure that the LDAP server is active.</li>
+
+<li>Verify that TCP/IP is configured correctly on your machine</li>
+
+<li>Verify that the DB2LDAPHOST registry variable is set to the TCP/IP hostname
+and port number of the LDAP server by running the "db2set DB2LDAPHOST" command.
+If the DB2LDAPHOST is not set, you can set it by using the
+"db2set DB2LDAPHOST=&lt;host-name&gt;:&lt;port-number&gt;" command, where
+&lt;host-name&gt; is
+the TCP/IP hostname of the LDAP server and &lt;port-number&gt; is the TCP/IP port
+number of the LDAP server.  The default port number is 389.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1143" lang="en-us" id="sql3270n">
+<h1 class="msghead" id="d168068e1143"><span class="title title msgId"><span class="ph ph msgNumber">SQL3270N</span></span>  <span class="shortdesc shortdesc msgText">The LDAP user's Distinguished Name (DN) is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3270N: Explanation"><h2 class="sectiontitle" id="d168068e1167">Explanation</h2><p>The LDAP user's Distinguished Name (DN) is not valid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3270N: User response"><h2 class="sectiontitle" id="d168068e1173">User response</h2><p>Re-submit the command using a valid LDAP user's DN.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1184" lang="en-us" id="sql3271n">
+<h1 class="msghead" id="d168068e1184"><span class="title title msgId"><span class="ph ph msgNumber">SQL3271N</span></span>  <span class="shortdesc shortdesc msgText">The LDAP user's Distinguished Name (DN) and/or password
+is not defined for the current logon user.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3271N: Explanation"><h2 class="sectiontitle" id="d168068e1208">Explanation</h2><p>When setting user preferences such as CLI configuration or DB2 registry
+variable, the LDAP user's DN and password must be defined for the current
+logon user.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3271N: User response"><h2 class="sectiontitle" id="d168068e1214">User response</h2><p>Refer to the IBM eNetwork LDAP documentation on how to configure the
+LDAP user's DN and password for the current logon user.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1226" lang="en-us" id="sql3272n">
+<h1 class="msghead" id="d168068e1226"><span class="title title msgId"><span class="ph ph msgNumber">SQL3272N</span></span>  <span class="shortdesc shortdesc msgText">The node <var class="keyword varname vartype=quotedString varnumber=1">node-name</var> was not found in the LDAP directory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3272N: Explanation"><h2 class="sectiontitle" id="d168068e1253">Explanation</h2><p>The command did not complete successfully because the node <var class="keyword varname">node-name</var>
+was not found in the LDAP directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3272N: User response"><h2 class="sectiontitle" id="d168068e1262">User response</h2><p>Ensure the node name is correct and re-submit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1273" lang="en-us" id="sql3273n">
+<h1 class="msghead" id="d168068e1273"><span class="title title msgId"><span class="ph ph msgNumber">SQL3273N</span></span>  <span class="shortdesc shortdesc msgText">The database <var class="keyword varname vartype=quotedString varnumber=1">database-alias</var> was not found in the LDAP directory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3273N: Explanation"><h2 class="sectiontitle" id="d168068e1300">Explanation</h2><p>The command did not complete successfully because the database <var class="keyword varname">database-alias</var>
+was not found in the LDAP directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3273N: User response"><h2 class="sectiontitle" id="d168068e1309">User response</h2><p>Ensure the database name is correct and re-submit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1321" lang="en-us" id="sql3274w">
+<h1 class="msghead" id="d168068e1321"><span class="title title msgId"><span class="ph ph msgNumber">SQL3274W</span></span>  <span class="shortdesc shortdesc msgText">The database was created successfully. However,
+the database was not cataloged in the LDAP directory. SQLCODE = <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3274W: Explanation"><h2 class="sectiontitle" id="d168068e1348">Explanation</h2><p>The database was created successfully. However, the database could not be
+cataloged in the LDAP directory because there was an error occurred during
+the operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3274W: User response"><h2 class="sectiontitle" id="d168068e1354">User response</h2><p>Correct the error as indicated in the SQLCODE.  Then catalog the database
+in the LDAP directory using the CATALOG LDAP DATABASE command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1365" lang="en-us" id="sql3275w">
+<h1 class="msghead" id="d168068e1365"><span class="title title msgId"><span class="ph ph msgNumber">SQL3275W</span></span>  <span class="shortdesc shortdesc msgText">The database was dropped successfully. However,
+the database was not uncataloged in the LDAP directory. SQLCODE = <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3275W: Explanation"><h2 class="sectiontitle" id="d168068e1392">Explanation</h2><p>The database was dropped successfully. However, the database could not be
+uncataloged in the LDAP directory because there was an error occurred during
+the operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3275W: User response"><h2 class="sectiontitle" id="d168068e1398">User response</h2><p>Correct the error as indicated in the SQLCODE.  Then uncatalog the database
+in the LDAP directory using the UNCATALOG LDAP DATABASE command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1410" lang="en-us" id="sql3276n">
+<h1 class="msghead" id="d168068e1410"><span class="title title msgId"><span class="ph ph msgNumber">SQL3276N</span></span>  <span class="shortdesc shortdesc msgText">Unable to obtain the LDAP naming context.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3276N: Explanation"><h2 class="sectiontitle" id="d168068e1434">Explanation</h2><p>Unable to query for the LDAP naming context for the LDAP server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3276N: User response"><h2 class="sectiontitle" id="d168068e1440">User response</h2><p>Contact your LDAP directory administrator to obtain the LDAP
+naming context for the LDAP server that you are using.  If you are
+using IBM eNetwork Directory V2.1, this is the name of the LDAP suffix.
+Then set the naming context for the current machine using the
+"db2set DB2LDAP_BASEDN=&lt;naming-context&gt;" command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1451" lang="en-us" id="sql3277n">
+<h1 class="msghead" id="d168068e1451"><span class="title title msgId"><span class="ph ph msgNumber">SQL3277N</span></span>  <span class="shortdesc shortdesc msgText">The database <var class="keyword varname vartype=quotedString varnumber=1">database-alias</var> already exists in the LDAP directory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3277N: Explanation"><h2 class="sectiontitle" id="d168068e1478">Explanation</h2><p>The command did not complete successfully because another database
+of the same name already exists in the LDAP directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3277N: User response"><h2 class="sectiontitle" id="d168068e1484">User response</h2><p>Re-submit the command using a different alias name.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1496" lang="en-us" id="sql3278n">
+<h1 class="msghead" id="d168068e1496"><span class="title title msgId"><span class="ph ph msgNumber">SQL3278N</span></span>  <span class="shortdesc shortdesc msgText">The node <var class="keyword varname vartype=quotedString varnumber=1">node</var> already exists in the LDAP directory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3278N: Explanation"><h2 class="sectiontitle" id="d168068e1523">Explanation</h2><p>The command did not complete successfully because another node
+of the same name already exists in the LDAP directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3278N: User response"><h2 class="sectiontitle" id="d168068e1529">User response</h2><p>Re-submit the command using a different alias name.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1540" lang="en-us" id="sql3279n">
+<h1 class="msghead" id="d168068e1540"><span class="title title msgId"><span class="ph ph msgNumber">SQL3279N</span></span>  <span class="shortdesc shortdesc msgText">The command did not complete successfully because LDAP
+is disabled.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3279N: Explanation"><h2 class="sectiontitle" id="d168068e1564">Explanation</h2><p>The command did not complete successfully because the LDAP
+support is disabled on the current machine.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3279N: User response"><h2 class="sectiontitle" id="d168068e1570">User response</h2><p>If the LDAP support is installed, enable the LDAP support by running
+the command: "db2set DB2_ENABLE_LDAP=YES".</p>
+
+<p>If the LDAP support is not installed, you need to run the setup
+program and select to install the LDAP support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1585" lang="en-us" id="sql3280n">
+<h1 class="msghead" id="d168068e1585"><span class="title title msgId"><span class="ph ph msgNumber">SQL3280N</span></span>  <span class="shortdesc shortdesc msgText">The attempt to connect to a DRDA server failed.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3280N: Explanation"><h2 class="sectiontitle" id="d168068e1609">Explanation</h2><p> 
+The attempt to connect to a DRDA server failed because DB2 Connect is not installed on this IBM Data Server Client and the gateway-node was not specified when cataloging this LDAP database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3280N: User response"><h2 class="sectiontitle" id="d168068e1615">User response</h2><p>Either install DB2 Connect on this IBM Data Server Client or recatalog this LDAP database with a valid gateway-node.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1626" lang="en-us" id="sql3281n">
+<h1 class="msghead" id="d168068e1626"><span class="title title msgId"><span class="ph ph msgNumber">SQL3281N</span></span>  <span class="shortdesc shortdesc msgText">The OSTYPE parameter is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3281N: Explanation"><h2 class="sectiontitle" id="d168068e1650">Explanation</h2><p>The database server was not registered in LDAP because the OSTYPE
+parameter specified was not valid. The OSTYPE parameter describes the 
+operating system type of the server.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3281N: User response"><h2 class="sectiontitle" id="d168068e1656">User response</h2><p>Resubmit the command specifying an operating system type (OSTYPE) that is
+supported by DB2.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1668" lang="en-us" id="sql3282n">
+<h1 class="msghead" id="d168068e1668"><span class="title title msgId"><span class="ph ph msgNumber">SQL3282N</span></span>  <span class="shortdesc shortdesc msgText">The supplied credentials are not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3282N: Explanation"><h2 class="sectiontitle" id="d168068e1692">Explanation</h2><p>Either or both the distinguished name (DN) of the user and the password
+that were specified were not valid.</p>
+
+<p>This error may occur when a user is running in a Windows 2000 domain environment
+, which supports LDAP, and logs into a local account which may not have sufficient authority.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3282N: User response"><h2 class="sectiontitle" id="d168068e1701">User response</h2><p>Resubmit the command using valid values for both the distinguished name (DN) 
+of the user and the password.</p>
+
+<p>If you are working in a Windows 2000 domain environment, ensure that logon with an account that has sufficient authority.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1715" lang="en-us" id="sql3283w">
+<h1 class="msghead" id="d168068e1715"><span class="title title msgId"><span class="ph ph msgNumber">SQL3283W</span></span>  <span class="shortdesc shortdesc msgText">The database manager configuration was updated
+successfully. However, the protocol information was not updated in the
+LDAP directory.  SQLCODE = <var class="keyword varname vartype=quotedString varnumber=1">sqlcode-value</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3283W: Explanation"><h2 class="sectiontitle" id="d168068e1742">Explanation</h2><p>The database manager configuration was updated successfully.  However,
+the protocol information could not be updated in the LDAP directory because
+an error occurred during the LDAP operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3283W: User response"><h2 class="sectiontitle" id="d168068e1748">User response</h2><p>Correct the error as indicated in the SQLCODE. Then update the protocol
+information in the LDAP directory using the UPDATE LDAP NODE command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1760" lang="en-us" id="sql3284n">
+<h1 class="msghead" id="d168068e1760"><span class="title title msgId"><span class="ph ph msgNumber">SQL3284N</span></span>  <span class="shortdesc shortdesc msgText">The nodetype parameter is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3284N: Explanation"><h2 class="sectiontitle" id="d168068e1784">Explanation</h2><p>The database server was not registered in LDAP because the nodetype
+parameter specified was not valid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3284N: User response"><h2 class="sectiontitle" id="d168068e1790">User response</h2><p>Use a valid nodetype when registering the database server in LDAP.  Valid
+values for the nodetype parameter are: SERVER, MPP, and DCS.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1801" lang="en-us" id="sql3285n">
+<h1 class="msghead" id="d168068e1801"><span class="title title msgId"><span class="ph ph msgNumber">SQL3285N</span></span>  <span class="shortdesc shortdesc msgText">The command did not complete successfully because
+LDAP is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3285N: Explanation"><h2 class="sectiontitle" id="d168068e1825">Explanation</h2><p>The command did not complete successfully because LDAP is not supported on this
+platform.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3285N: User response"><h2 class="sectiontitle" id="d168068e1831">User response</h2><p>If LDAP is not supported on this platform, issue the following command
+to disable LDAP support:<br><br>
+db2set&nbsp;DB2_ENABLE_LDAP=NO<br><br></p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1848" lang="en-us" id="sql3303n">
+<h1 class="msghead" id="d168068e1848"><span class="title title msgId"><span class="ph ph msgNumber">SQL3303N</span></span>  <span class="shortdesc shortdesc msgText">The file type must be IXF when using the CREATE or
+REPLACE_CREATE keywords in the Action String parameter.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3303N: Explanation"><h2 class="sectiontitle" id="d168068e1872">Explanation</h2><p>File types other than IXF are not allowed with the
+CREATE or REPLACE_CREATE keywords in the 
+<em>Action String</em>
+(e.g. "REPLACE into ...") parameter.</p>
+
+<p>The IMPORT utility stops processing.  No data is imported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3303N: User response"><h2 class="sectiontitle" id="d168068e1884">User response</h2><p>Change the file type to IXF, or use INSERT, INSERT_UPDATE or
+REPLACE.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1895" lang="en-us" id="sql3304n">
+<h1 class="msghead" id="d168068e1895"><span class="title title msgId"><span class="ph ph msgNumber">SQL3304N</span></span>  <span class="shortdesc shortdesc msgText">The table does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3304N: Explanation"><h2 class="sectiontitle" id="d168068e1919">Explanation</h2><p>The parameters specified on the command require that the
+table exists.</p>
+
+<p>The utility stops processing.  No data is loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3304N: User response"><h2 class="sectiontitle" id="d168068e1928">User response</h2><div class="p">Do one of the following:
+<ul>
+<li>Resubmit the command with a table name of an existing
+table.</li>
+
+<li>If the input file is a PC/IXF file, resubmit
+the command with the CREATE option.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1947" lang="en-us" id="sql3305n">
+<h1 class="msghead" id="d168068e1947"><span class="title title msgId"><span class="ph ph msgNumber">SQL3305N</span></span>  <span class="shortdesc shortdesc msgText">The table cannot be created because it already
+exists.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3305N: Explanation"><h2 class="sectiontitle" id="d168068e1971">Explanation</h2><p>The CREATE keyword indicates that a new table must be created
+but a table with the specified name already exists.</p>
+
+<p>The IMPORT utility stops processing.  No data is imported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3305N: User response"><h2 class="sectiontitle" id="d168068e1980">User response</h2><p>Either erase the existing table
+or use a keyword other than CREATE and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e1991" lang="en-us" id="sql3306n">
+<h1 class="msghead" id="d168068e1991"><span class="title title msgId"><span class="ph ph msgNumber">SQL3306N</span></span>  <span class="shortdesc shortdesc msgText">An SQL error <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var> occurred while inserting a row
+into the table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3306N: Explanation"><h2 class="sectiontitle" id="d168068e2018">Explanation</h2><p>An SQL error occurred while inserting a row into the table.</p>
+
+<p>If the SQL error is not severe the row will be rejected and the
+utility
+continues processing; otherwise
+the utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3306N: User response"><h2 class="sectiontitle" id="d168068e2027">User response</h2><p>Examine other messages in the message file for details about
+the actual error and resubmit the command, if necessary.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2039" lang="en-us" id="sql3307n">
+<h1 class="msghead" id="d168068e2039"><span class="title title msgId"><span class="ph ph msgNumber">SQL3307N</span></span>  <span class="shortdesc shortdesc msgText">The number of columns in the METHOD parameter
+does not match the number of entries in the Action String parameter or a
+column specified in the METHOD parameter does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3307N: Explanation"><h2 class="sectiontitle" id="d168068e2063">Explanation</h2><div class="p">The CREATE or REPLACE_CREATE option was specified on
+the
+IMPORT command.
+Either:
+<ul>
+<li>If the NAMES or POSITIONS method indicator was
+specified in the 
+<em>METHOD</em> parameter, the number of columns
+explicitly specified in 
+<em>METHOD</em> is not equal to the
+number of columns explicitly specified in the 
+<em>Action String</em>
+(e.g. "REPLACE into ...") parameter.</li>
+
+<li>If the DEFAULT method indicator was specified in the 
+<em>METHOD</em> parameter, the number of columns in the
+PC/IXF file is less than the number of columns specified in the 
+<em>Action String</em> parameter.</li>
+
+<li>One column specified in the 
+<em>METHOD</em> parameter does not
+exist in the PC/IXF file.</li>
+</ul>
+</div>
+
+<p>The IMPORT utility stops processing.
+No table is created.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3307N: User response"><h2 class="sectiontitle" id="d168068e2100">User response</h2><p>Either correct the columns specified in the 
+<em>METHOD</em> and 
+<em>Action String</em> parameters
+or correct the columns specified in the 
+<em>METHOD</em> parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2120" lang="en-us" id="sql3308n">
+<h1 class="msghead" id="d168068e2120"><span class="title title msgId"><span class="ph ph msgNumber">SQL3308N</span></span>  <span class="shortdesc shortdesc msgText">The code page values of the PC/IXF column <var class="keyword varname vartype=quotedString varnumber=1">name</var> are
+not compatible with the code page values for the application.  The
+FORCEIN parameter was not specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3308N: Explanation"><h2 class="sectiontitle" id="d168068e2147">Explanation</h2><p>The code page values for the column and the application are not
+compatible. When the FORCEIN parameter is not specified, the
+data cannot be loaded if the conversion from the IXF file code
+pate to the application code page is not supported.</p>
+
+<p>The utility stops processing. No data is loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3308N: User response"><h2 class="sectiontitle" id="d168068e2156">User response</h2><p>To load data with these code pages, resubmit the command with
+the FORCEIN option.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2168" lang="en-us" id="sql3309n">
+<h1 class="msghead" id="d168068e2168"><span class="title title msgId"><span class="ph ph msgNumber">SQL3309N</span></span>  <span class="shortdesc shortdesc msgText">Column <var class="keyword varname vartype=quotedString varnumber=1">name</var> in the PC/IXF file is defined as a
+graphic column.  The FORCEIN parameter was not specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3309N: Explanation"><h2 class="sectiontitle" id="d168068e2195">Explanation</h2><p>During the load of a PC/IXF file,
+a graphic data column was encountered.
+Because the 
+<em>FORCEIN</em> parameter was not used,
+the data cannot be loaded.</p>
+
+<p>The utility stops processing.  No data is loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3309N: User response"><h2 class="sectiontitle" id="d168068e2207">User response</h2><p>If you want to load the data with the graphic
+data, resubmit the command with the 
+<em>FORCEIN</em> parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2221" lang="en-us" id="sql3310n">
+<h1 class="msghead" id="d168068e2221"><span class="title title msgId"><span class="ph ph msgNumber">SQL3310N</span></span>  <span class="shortdesc shortdesc msgText">Column <var class="keyword varname vartype=quotedString varnumber=1">name</var> in the PC/IXF file is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3310N: Explanation"><h2 class="sectiontitle" id="d168068e2248">Explanation</h2><p>The CREATE or REPLACE_CREATE option was specified on the
+IMPORT command.
+A column with an invalid C record was found while importing the
+PC/IXF file.</p>
+
+<p>The IMPORT utility stops processing.
+The table is not created.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3310N: User response"><h2 class="sectiontitle" id="d168068e2257">User response</h2><p>Verify the column definition information in the input file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2269" lang="en-us" id="sql3311n">
+<h1 class="msghead" id="d168068e2269"><span class="title title msgId"><span class="ph ph msgNumber">SQL3311N</span></span>  <span class="shortdesc shortdesc msgText">The import operation failed because some aspect of the data in the IXF input file is not supported with the CREATE parameter or the CREATE_REPLACE parameter. Reason code: <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3311N: Explanation"><h2 class="sectiontitle" id="d168068e2296">Explanation</h2><p>You can insert data from a properly formatted file into an existing table, hierarchy, view or nickname by using the IMPORT command.  You can also create a new table, or replace an existing table from the data in an input file, by specifying the CREATE parameter or the CREATE_REPLACE parameter with the IMPORT command.</p>
+
+<p>This message is returned when an attempt is made to run the IMPORT command specifying the CREATE parameter or the CREATE_REPLACE parameter with an Integration Exchange Format (IXF) input file that includes functionality that is not supported with the CREATE parameter or the CREATE_REPLACE parameter.</p>
+
+<p>The reason code indicates more specifically the type of information that could not be imported:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Indexes that include column names that contain hexadecimal values of 0x2B or 0x2D</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>XML columns</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Multidimensional clustered (MDC) tables</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Table partitioning keys</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>An index name has been truncated due to code page conversion.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Protected tables</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Action strings other than 'SELECT * FROM &lt;TABLE-NAME&gt;'</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>Column names that were specified with the METHOD N parameter during export</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>A column name that was too long for IXF format was truncated.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>A user-defined type name that is too long for IXF format was truncated.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>Typed table information has been truncated due to code page conversion.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>The name of a schema that is associated with a user-defined type was truncated because the schema name was too long for IXF format.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>Decimal floating-point columns</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>Hidden columns</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>Indexes with random ordering</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>Column-organized tables</p>
+</dd>
+
+
+<dt class="dlterm">17</dt>
+
+<dd class="dlentry"><p>Expression-based indexes</p>
+</dd>
+
+
+<dt class="dlterm">18</dt>
+
+<dd class="dlentry"><p>Indexes created with the BUSINESS_TIME WITHOUT OVERLAPS clause</p>
+</dd>
+
+
+<dt class="dlterm">19</dt>
+
+<dd class="dlentry"><p>Information about columns where STRINGUNITS has been specified as CODEUNITS32</p>
+</dd>
+
+
+<dt class="dlterm">20</dt>
+
+<dd class="dlentry"><p>BINARY or VARBINARY columns</p>
+</dd>
+
+
+<dt class="dlterm">21</dt>
+
+<dd class="dlentry"><p>Random distribution tables</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3311N: User response"><h2 class="sectiontitle" id="d168068e2502">User response</h2><p>For reason codes 1, 3, 4, 5, 7, 8, 9, 11, 14, 17, and 18:</p>
+
+<ul>
+<li>To force the import utility to create the tables despite the fact that some information is missing, specify the FORCECREATE parameter when you issue the IMPORT command with the CREATE or REPLACE_CREATE parameter.</li>
+</ul>
+
+<p>For reason codes 2, 6, 10, 12, 13, 15, 16, 19, 20 and 21,  perform the following steps:</p>
+
+<ol>
+<li>Use the db2look command to extract table information and create the table.</li>
+
+<li>Issue the IMPORT command with the INSERT or REPLACE parameter with the specified IXF file.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  -3311</p>
+
+<p><strong>sqlstate</strong>:  5U058</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2540" lang="en-us" id="sql3313n">
+<h1 class="msghead" id="d168068e2540"><span class="title title msgId"><span class="ph ph msgNumber">SQL3313N</span></span>  <span class="shortdesc shortdesc msgText">The disk is full.  Processing was ended.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3313N: Explanation"><h2 class="sectiontitle" id="d168068e2564">Explanation</h2><p>The disk or diskette is full.
+During the export to a PC/IXF file, either
+the PC/IXF data file is on a fixed disk, or
+the PC/IXF data file and the database are on the same drive, or
+the PC/IXF data file and the message file are on the same drive.</p>
+
+<p>The EXPORT utility stops processing.
+The exported data is not complete.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3313N: User response"><h2 class="sectiontitle" id="d168068e2573">User response</h2><p>Provide more space on the disk or diskette or
+specify that the data file be located on a
+different drive than the database or the message file and
+resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2585" lang="en-us" id="sql3314n">
+<h1 class="msghead" id="d168068e2585"><span class="title title msgId"><span class="ph ph msgNumber">SQL3314N</span></span>  <span class="shortdesc shortdesc msgText">The date and time fields in an A record do not
+match the date and time fields in the H record.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3314N: Explanation"><h2 class="sectiontitle" id="d168068e2609">Explanation</h2><p>During the load of a PC/IXF file, an A record was found
+in the PC/IXF file,
+that contained run identification information (in the date and time
+fields) that differs from the run identification information in
+the header (H) record.
+This action does not apply to an A record at the start of a continuation
+file.</p>
+
+<p>The input file has probably been damaged.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3314N: User response"><h2 class="sectiontitle" id="d168068e2621">User response</h2><p>Re-create the damaged file, or repair the damaged file to recover
+as much data as possible.
+Resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2632" lang="en-us" id="sql3315n">
+<h1 class="msghead" id="d168068e2632"><span class="title title msgId"><span class="ph ph msgNumber">SQL3315N</span></span>  <span class="shortdesc shortdesc msgText">The volume fields in an A record of subtype C are
+not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3315N: Explanation"><h2 class="sectiontitle" id="d168068e2656">Explanation</h2><p>During the load of a PC/IXF file that was created by Database Services,
+an A record was found in the PC/IXF file,
+that contained volume information (in the volume
+fields) that is not valid.</p>
+
+<p>The input file has probably been damaged.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3315N: User response"><h2 class="sectiontitle" id="d168068e2668">User response</h2><p>Re-create the damaged file, or repair the damaged file to recover
+as much data as possible.
+Resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2680" lang="en-us" id="sql3316n">
+<h1 class="msghead" id="d168068e2680"><span class="title title msgId"><span class="ph ph msgNumber">SQL3316N</span></span>  <span class="shortdesc shortdesc msgText">An I/O error occurred while closing part of the
+input file.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3316N: Explanation"><h2 class="sectiontitle" id="d168068e2704">Explanation</h2><p>During the load of a multiple part PC/IXF file,
+an I/O error occurred while the system was closing
+one of the files that make up the input PC/IXF file.
+This action does not apply to the last file in the group of files that
+make up the PC/IXF file.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3316N: User response"><h2 class="sectiontitle" id="d168068e2713">User response</h2><p>Resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2724" lang="en-us" id="sql3318n">
+<h1 class="msghead" id="d168068e2724"><span class="title title msgId"><span class="ph ph msgNumber">SQL3318N</span></span>  <span class="shortdesc shortdesc msgText">There are duplicate keywords in the filetmod
+parameter.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3318N: Explanation"><h2 class="sectiontitle" id="d168068e2748">Explanation</h2><p>A COLDEL, CHARDEL, or DECPT keyword appears more than once in
+the 
+<em>filetmod</em> parameter.
+This condition may arise while using
+delimited ASCII (DEL) files.</p>
+
+<p>The utility stops processing.
+No data is loaded or exported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3318N: User response"><h2 class="sectiontitle" id="d168068e2760">User response</h2><p>Resubmit the command with a correct 
+<em>filetmod</em>
+parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2775" lang="en-us" id="sql3319n">
+<h1 class="msghead" id="d168068e2775"><span class="title title msgId"><span class="ph ph msgNumber">SQL3319N</span></span>  <span class="shortdesc shortdesc msgText">An SQL error <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var> occurred while creating the
+table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3319N: Explanation"><h2 class="sectiontitle" id="d168068e2802">Explanation</h2><p>An SQL error occurred while creating the table.</p>
+
+<p>The IMPORT utility stops processing.
+The table was not created.
+No data was imported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3319N: User response"><h2 class="sectiontitle" id="d168068e2811">User response</h2><p>Look at the SQLCODE (message number) in the message
+for more information.
+Make changes and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2822" lang="en-us" id="sql3320n">
+<h1 class="msghead" id="d168068e2822"><span class="title title msgId"><span class="ph ph msgNumber">SQL3320N</span></span>  <span class="shortdesc shortdesc msgText">There is no delimiter or decimal point character
+after a keyword in the filetmod parameter.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3320N: Explanation"><h2 class="sectiontitle" id="d168068e2846">Explanation</h2><p>A COLDEL, CHARDEL, or DECPT keyword is located
+at the very end of the 
+<em>filetmod</em> parameter.
+There is no delimiter or decimal point character following the keyword.
+This condition may arise while using
+delimited ASCII (DEL) files.</p>
+
+<p>The utility stops processing.
+No data is loaded or exported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3320N: User response"><h2 class="sectiontitle" id="d168068e2858">User response</h2><p>Resubmit the command with a correct 
+<em>filetmod</em>
+parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2873" lang="en-us" id="sql3321c">
+<h1 class="msghead" id="d168068e2873"><span class="title title msgId"><span class="ph ph msgNumber">SQL3321C</span></span>  <span class="shortdesc shortdesc msgText">Data was not imported into the database because
+the log was full or the lock space was exhaused.  Recovery was not successful.  SQLCODE <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var> was
+returned.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3321C: Explanation"><h2 class="sectiontitle" id="d168068e2900">Explanation</h2><p>The IMPORT utility could not
+insert a row of data into the database because the database
+transaction log was full or the lock space available to the application was exhausted.
+All work was committed, but the
+utility could not insert the row, because the database
+transaction log or the lock space remains full.</p>
+
+<p>The utility stops processing.
+All previous changes were committed, but the current row was
+not imported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3321C: User response"><h2 class="sectiontitle" id="d168068e2909">User response</h2><p>Check the amount of space remaining on the filesystem
+containing
+your database files and the amount of lock space available to the application.
+Consider increasing the maximum log size, maximum storage for the lock list, or the percent of the locklists available to a single application in the database
+configuration file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2920" lang="en-us" id="sql3322n">
+<h1 class="msghead" id="d168068e2920"><span class="title title msgId"><span class="ph ph msgNumber">SQL3322N</span></span>  <span class="shortdesc shortdesc msgText">An operating system semaphore error occurred.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3322N: Explanation"><h2 class="sectiontitle" id="d168068e2944">Explanation</h2><p>An error occurred in the wait/post semaphores.</p>
+
+<p>The utility stops processing.
+For the EXPORT utility, data may be incomplete on the media.
+For the IMPORT utility, data not already committed is rolled back.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3322N: User response"><h2 class="sectiontitle" id="d168068e2953">User response</h2><p>Stop and restart the database manager and resubmit the utility.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e2965" lang="en-us" id="sql3324n">
+<h1 class="msghead" id="d168068e2965"><span class="title title msgId"><span class="ph ph msgNumber">SQL3324N</span></span>  <span class="shortdesc shortdesc msgText">Column <var class="keyword varname vartype=quotedString varnumber=1">name</var> has a type of <var class="keyword varname vartype=quotedString varnumber=2">type</var> which is not
+recognized.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3324N: Explanation"><h2 class="sectiontitle" id="d168068e2995">Explanation</h2><p>A column of data returned by the SQL statement is not supported.</p>
+
+<p>Federated system users: The data type of the data that you want
+is not supported by either the federated server or the
+data source that you want to access.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3324N: User response"><h2 class="sectiontitle" id="d168068e3004">User response</h2><p>Correct the error and retry the command.</p>
+
+<p>Federated system users: Specify a supported data type
+and resubmit the program.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3018" lang="en-us" id="sql3326n">
+<h1 class="msghead" id="d168068e3018"><span class="title title msgId"><span class="ph ph msgNumber">SQL3326N</span></span>  <span class="shortdesc shortdesc msgText">The column list following the table name in the
+Action String parameter is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3326N: Explanation"><h2 class="sectiontitle" id="d168068e3042">Explanation</h2><div class="p">When you call IMPORT or LOAD with an 
+<em>Action String</em>
+ (e.g. "REPLACE into ...") parameter which contains a column list
+after the table name, this message will result if it is invalid.  For example,
+the following 
+<em>Action String</em> parameters will fail:
+<dl>
+
+<dt class="dlterm">insert into tablea()</dt>
+
+<dd class="dlentry">no columns within the parenthesis</dd>
+
+
+<dt class="dlterm">insert into tablea(two words)</dt>
+
+<dd class="dlentry">invalid column name</dd>
+
+
+<dt class="dlterm">insert into tablea(grant.col1)</dt>
+
+<dd class="dlentry">column name should not be qualified</dd>
+
+
+<dt class="dlterm">insert into tablea(x1234567890123456789)</dt>
+
+<dd class="dlentry">column name too long</dd>
+
+
+<dt class="dlterm">insert into tablea(,col1,col2)</dt>
+
+<dd class="dlentry">missing column name</dd>
+</dl>
+</div>
+
+<p>The command cannot continue.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3326N: User response"><h2 class="sectiontitle" id="d168068e3098">User response</h2><p>Change the 
+<em>Action String</em> parameter with a valid column list and
+call the utility again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3113" lang="en-us" id="sql3327n">
+<h1 class="msghead" id="d168068e3113"><span class="title title msgId"><span class="ph ph msgNumber">SQL3327N</span></span>  <span class="shortdesc shortdesc msgText">A system error occurred (reason code1 = <var class="keyword varname vartype=quotedString varnumber=1">reason-code-1</var> and
+reason code2 = <var class="keyword varname vartype=quotedString varnumber=2">reason-code-2</var>).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3327N: Explanation"><h2 class="sectiontitle" id="d168068e3143">Explanation</h2><p>A system error occurred during processing.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3327N: User response"><h2 class="sectiontitle" id="d168068e3152">User response</h2><p>Record all error information from the SQLCA, if possible.
+Retain the message file.  Terminate all applications using the
+database.  Reboot the system.  Restart the database.  Try the command
+again.</p>
+
+<p>If sufficient memory resources exist and the problem continues,
+invoke the Independent Trace Facility at the operating system command prompt.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3166" lang="en-us" id="sql3330w">
+<h1 class="msghead" id="d168068e3166"><span class="title title msgId"><span class="ph ph msgNumber">SQL3330W</span></span>  <span class="shortdesc shortdesc msgText">In row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> a character field has an odd length
+but its target database column is a graphic column.  The row was not
+loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3330W: Explanation"><h2 class="sectiontitle" id="d168068e3193">Explanation</h2><p>Only even length character fields can be loaded into
+graphic database columns.</p>
+
+<p>The row is not loaded.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3330W: User response"><h2 class="sectiontitle" id="d168068e3202">User response</h2><p>Either load the data to a new table using the CREATE option in the
+IMPORT command or do not load this column into this table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3214" lang="en-us" id="sql3331c">
+<h1 class="msghead" id="d168068e3214"><span class="title title msgId"><span class="ph ph msgNumber">SQL3331C</span></span>  <span class="shortdesc shortdesc msgText">The permission setting of a file (or
+directory) does not allow the specified access.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3331C: Explanation"><h2 class="sectiontitle" id="d168068e3238">Explanation</h2><div class="p">This may accompany another error message.  It indicates an
+attempt was made to get access to a
+file or directory
+in a way that is incompatible with the attributes of the file.
+One of the following may be the source of the difficulty:
+<ul>
+<li>Opening a file for writing on a read-only device</li>
+
+<li>Opening a file for writing on a read-only file</li>
+
+<li>Opening a directory instead of a file</li>
+
+<li>Encountering a locking or sharing violation.</li>
+</ul>
+</div>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3331C: User response"><h2 class="sectiontitle" id="d168068e3260">User response</h2><p>Retry the utility when the file is not in use, or retry
+the utility directing the output to a path and file that
+allows writing.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3271" lang="en-us" id="sql3332c">
+<h1 class="msghead" id="d168068e3271"><span class="title title msgId"><span class="ph ph msgNumber">SQL3332C</span></span>  <span class="shortdesc shortdesc msgText">The maximum number of open files has been
+reached.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3332C: Explanation"><h2 class="sectiontitle" id="d168068e3295">Explanation</h2><p>This message may accompany another error message.
+It indicates that the
+maximum number of open files has been reached.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3332C: User response"><h2 class="sectiontitle" id="d168068e3304">User response</h2><p>Terminate other applications to reduce the number of files open
+and retry the utility.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3316" lang="en-us" id="sql3333c">
+<h1 class="msghead" id="d168068e3316"><span class="title title msgId"><span class="ph ph msgNumber">SQL3333C</span></span>  <span class="shortdesc shortdesc msgText">The file or directory does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3333C: Explanation"><h2 class="sectiontitle" id="d168068e3340">Explanation</h2><p>This message may accompany another error message.
+It indicates that a file or directory to be
+accessed does not exist or cannot be found.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3333C: User response"><h2 class="sectiontitle" id="d168068e3349">User response</h2><p>Resubmit the command with the correct file name, including
+a valid path.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3360" lang="en-us" id="sql3334c">
+<h1 class="msghead" id="d168068e3360"><span class="title title msgId"><span class="ph ph msgNumber">SQL3334C</span></span>  <span class="shortdesc shortdesc msgText">There is not enough storage available.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3334C: Explanation"><h2 class="sectiontitle" id="d168068e3384">Explanation</h2><p>This message may accompany another error message.  It indicates
+there is not enough storage available to open the file.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3334C: User response"><h2 class="sectiontitle" id="d168068e3393">User response</h2><div class="p">Stop the application.  Possible solutions include:
+<ul>
+<li>Verify that your system has sufficient real and virtual memory.</li>
+
+<li>Remove background processes.</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3412" lang="en-us" id="sql3335c">
+<h1 class="msghead" id="d168068e3412"><span class="title title msgId"><span class="ph ph msgNumber">SQL3335C</span></span>  <span class="shortdesc shortdesc msgText">The file system is full.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3335C: Explanation"><h2 class="sectiontitle" id="d168068e3436">Explanation</h2><p>This message may accompany another error message.  It indicates
+there is no available space for writing on the device.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3335C: User response"><h2 class="sectiontitle" id="d168068e3445">User response</h2><p>To make space available on the device, delete unneeded
+files or direct the output data to a device with space available.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3456" lang="en-us" id="sql3337n">
+<h1 class="msghead" id="d168068e3456"><span class="title title msgId"><span class="ph ph msgNumber">SQL3337N</span></span>  <span class="shortdesc shortdesc msgText">An I/O error occurred while writing data to the
+server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3337N: Explanation"><h2 class="sectiontitle" id="d168068e3480">Explanation</h2><p>An I/O error has occurred while attempting to write data
+to a temporary file on the server (temporary files are
+created in the tmp directory under the sqllib directory for the instance
+of the database manager).
+The file system on the server
+may be full.</p>
+
+<p>The utility stops processing.  The database is unchanged.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3337N: User response"><h2 class="sectiontitle" id="d168068e3489">User response</h2><p>Contact the System Administrator for the server to make
+space available on the server, and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3501" lang="en-us" id="sql3338n">
+<h1 class="msghead" id="d168068e3501"><span class="title title msgId"><span class="ph ph msgNumber">SQL3338N</span></span>  <span class="shortdesc shortdesc msgText">An I/O error occurred reading a temporary message
+file on the server.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3338N: Explanation"><h2 class="sectiontitle" id="d168068e3525">Explanation</h2><p>A system I/O error has occurred while attempting to read the
+temporary message file on the server.</p>
+
+<p>The IMPORT operation is complete; however, the message file on
+the database client system may be empty or incomplete.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3338N: User response"><h2 class="sectiontitle" id="d168068e3534">User response</h2><p>Query the remote database to determine if the utility
+operation was successful.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3545" lang="en-us" id="sql3340n">
+<h1 class="msghead" id="d168068e3545"><span class="title title msgId"><span class="ph ph msgNumber">SQL3340N</span></span>  <span class="shortdesc shortdesc msgText">Unable to perform a load with concurrent read access
+to the table. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3340N: Explanation"><h2 class="sectiontitle" id="d168068e3572">Explanation</h2><div class="p">The ALLOW READ ACCESS option of the LOAD command is not supported in the following cases as specified in the <var class="keyword varname">reason-code</var>:
+<ol>
+<li>When using LOAD REPLACE.</li>
+
+<li>When using INDEXING MODE DEFERRED.</li>
+
+<li>When the target table is in the Set Integrity Pending state and is not in the Read Access only state.</li>
+
+<li>When the indexes are marked invalid.</li>
+
+<li> 
+When using LOAD TERMINATE or LOAD RESTART on a load that did not use the ALLOW READ ACCESS option, or when temporary files from the original load are missing.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3340N: User response"><h2 class="sectiontitle" id="d168068e3597">User response</h2><p>Resubmit the command using the ALLOW NO ACCESS option.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3609" lang="en-us" id="sql3341n">
+<h1 class="msghead" id="d168068e3609"><span class="title title msgId"><span class="ph ph msgNumber">SQL3341N</span></span>  <span class="shortdesc shortdesc msgText">Invalid table space name provided with the USE option. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3341N: Explanation"><h2 class="sectiontitle" id="d168068e3636">Explanation</h2><p>Only system temporary table spaces can be used for rebuilding the indexes in a table space other
+than the index table space. The page size of the system temporary table space must match the page size of the index table space.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3341N: User response"><h2 class="sectiontitle" id="d168068e3642">User response</h2><div class="p">Resubmit the command with a table space name referring to a system temporary table space with the
+correct page size. The <var class="keyword varname">reason-code</var> describes the failure
+as follows:
+<ol>
+<li>Table space name in USE clause not found.</li>
+
+<li>Table space must be a system temporary table space.</li>
+
+<li>Page size in system temporary table space must match page size in index table space.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3666" lang="en-us" id="sql3342n">
+<h1 class="msghead" id="d168068e3666"><span class="title title msgId"><span class="ph ph msgNumber">SQL3342N</span></span>  <span class="shortdesc shortdesc msgText">The user ID has insufficient authority to use the LOCK WITH FORCE option.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3342N: Explanation"><h2 class="sectiontitle" id="d168068e3690">Explanation</h2><p>The LOCK WITH FORCE option of the load utility requires SYSADM or SYSCTRL authority.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3342N: User response"><h2 class="sectiontitle" id="d168068e3696">User response</h2><p>Reissue the load command from a user ID with sufficient authority.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3708" lang="en-us" id="sql3343n">
+<h1 class="msghead" id="d168068e3708"><span class="title title msgId"><span class="ph ph msgNumber">SQL3343N</span></span>  <span class="shortdesc shortdesc msgText">Load restart not allowed after a rollforward through
+a failed load.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3343N: Explanation"><h2 class="sectiontitle" id="d168068e3732">Explanation</h2><p>The load that failed prior to the point in time of
+the end of a rollforward cannot be restarted after the rollforward
+has completed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3343N: User response"><h2 class="sectiontitle" id="d168068e3738">User response</h2><p>Use the TERMINATE mode to terminate the load or drop the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3749" lang="en-us" id="sql3346n">
+<h1 class="msghead" id="d168068e3749"><span class="title title msgId"><span class="ph ph msgNumber">SQL3346N</span></span>  <span class="shortdesc shortdesc msgText">USE TablespaceName option ignored. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3346N: Explanation"><h2 class="sectiontitle" id="d168068e3776">Explanation</h2><p>USE TablespaceName is only valid for ALLOW READ ACCESS loads with INDEXING MODE REBUILD.
+If INDEXING MODE AUTOSELECT is specified, load will use the alternate table space only if it chooses to rebuild the indexes.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3346N: User response"><h2 class="sectiontitle" id="d168068e3782">User response</h2><div class="p">Refer to the reason code for an explanation.
+<ol>
+<li>Indexing mode incompatible with USE TablespaceName option.</li>
+
+<li>Table has no indexes.</li>
+
+<li>LOAD TERMINATE does not need to use a separate table space.</li>
+
+<li>USE TablespaceName is only supported for ALLOW READ ACCESS loads.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3807" lang="en-us" id="sql3400n">
+<h1 class="msghead" id="d168068e3807"><span class="title title msgId"><span class="ph ph msgNumber">SQL3400N</span></span>  <span class="shortdesc shortdesc msgText">The method specified in METHOD is not
+valid for Non-Delimited ASCII files.  It must be 'L' for locations.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3400N: Explanation"><h2 class="sectiontitle" id="d168068e3831">Explanation</h2><p>When loading from a non-delimited ASCII file,
+columns must be selected by locations in the file.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3400N: User response"><h2 class="sectiontitle" id="d168068e3840">User response</h2><p>Resubmit the command with a valid set of locations
+for the columns in the source file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3851" lang="en-us" id="sql3401n">
+<h1 class="msghead" id="d168068e3851"><span class="title title msgId"><span class="ph ph msgNumber">SQL3401N</span></span>  <span class="shortdesc shortdesc msgText">The method specified in METHOD is not
+valid for any filetype.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3401N: Explanation"><h2 class="sectiontitle" id="d168068e3875">Explanation</h2><div class="p">The method for selecting columns in the file is not
+a value allowed for any 
+<em>filetype</em>.
+Choose one of the following method indicators:
+<ul>
+<li>P for positions</li>
+
+<li>N for names</li>
+
+<li>L for locations</li>
+
+<li>D for default</li>
+</ul>
+</div>
+
+<p>Further restrictions are based on 
+<em>filetype</em>.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3401N: User response"><h2 class="sectiontitle" id="d168068e3906">User response</h2><p>Resubmit the command with a valid method indicator.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3918" lang="en-us" id="sql3402n">
+<h1 class="msghead" id="d168068e3918"><span class="title title msgId"><span class="ph ph msgNumber">SQL3402N</span></span>  <span class="shortdesc shortdesc msgText">A beginning-ending location pair with both values
+zero was specified for non-nullable column <var class="keyword varname vartype=quotedString varnumber=1">name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3402N: Explanation"><h2 class="sectiontitle" id="d168068e3945">Explanation</h2><p>A location pair with both the beginning and the ending
+location set to zero was specified for the indicated column, but
+the column is not nullable.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3402N: User response"><h2 class="sectiontitle" id="d168068e3954">User response</h2><p>Resubmit the command with a valid set of locations for the columns
+in the source file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e3965" lang="en-us" id="sql3403n">
+<h1 class="msghead" id="d168068e3965"><span class="title title msgId"><span class="ph ph msgNumber">SQL3403N</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for inserting
+into column <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid. 
+(<var class="keyword varname vartype=quotedString varnumber=2">begin</var> <var class="keyword varname vartype=quotedString varnumber=3">end</var>)</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3403N: Explanation"><h2 class="sectiontitle" id="d168068e3998">Explanation</h2><div class="p">The field specification for locating the input
+data for the indicated
+database column within the input non-delimited ASCII file is not valid.
+The field specification has one of the following errors:
+<ul>
+<li>The beginning location is less than zero.</li>
+
+<li>The ending location is less than zero.</li>
+
+<li>The ending location is less than the beginning location.</li>
+</ul>
+</div>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3403N: User response"><h2 class="sectiontitle" id="d168068e4017">User response</h2><p>Resubmit the command with a valid set of locations for the
+columns in the source file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4029" lang="en-us" id="sql3404n">
+<h1 class="msghead" id="d168068e4029"><span class="title title msgId"><span class="ph ph msgNumber">SQL3404N</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for inserting
+into column <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid for a number.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3404N: Explanation"><h2 class="sectiontitle" id="d168068e4056">Explanation</h2><p>The field specification for locating the data for the indicated
+database column within the input non-delimited ASCII file is not valid.
+The location pair defines a field longer than 50 bytes.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3404N: User response"><h2 class="sectiontitle" id="d168068e4065">User response</h2><p>Resubmit the command with a valid set of locations
+for the columns in the source file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4076" lang="en-us" id="sql3405n">
+<h1 class="msghead" id="d168068e4076"><span class="title title msgId"><span class="ph ph msgNumber">SQL3405N</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for inserting
+into column <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid for a date.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3405N: Explanation"><h2 class="sectiontitle" id="d168068e4103">Explanation</h2><p>The field specification for locating data for the indicated
+database column within the non-delimited ASCII file is not valid.
+The location pair defines a field length that is not valid for an
+external representation of a date.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3405N: User response"><h2 class="sectiontitle" id="d168068e4112">User response</h2><p>Resubmit the command with a valid set of locations for the
+columns in the source file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4124" lang="en-us" id="sql3406n">
+<h1 class="msghead" id="d168068e4124"><span class="title title msgId"><span class="ph ph msgNumber">SQL3406N</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for inserting
+into column <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid for a time.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3406N: Explanation"><h2 class="sectiontitle" id="d168068e4151">Explanation</h2><p>The field specification for locating the data in
+the indicated database column within the input non-delimited ASCII
+file is not valid.
+The location pair defines a field length that is not valid for an
+external representation of a time.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3406N: User response"><h2 class="sectiontitle" id="d168068e4160">User response</h2><p>Resubmit the command with a valid set of locations for the
+columns in the source file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4171" lang="en-us" id="sql3407n">
+<h1 class="msghead" id="d168068e4171"><span class="title title msgId"><span class="ph ph msgNumber">SQL3407N</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for inserting
+into column <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid for a timestamp.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3407N: Explanation"><h2 class="sectiontitle" id="d168068e4198">Explanation</h2><p>The field specification for locating the data for the indicated
+database column within the input non-delimited ASCII file is not valid.
+The location pair defines a field length that is not valid for an
+external representation of a timestamp.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3407N: User response"><h2 class="sectiontitle" id="d168068e4207">User response</h2><p>Resubmit the command with a valid set of locations for the columns
+in the file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4219" lang="en-us" id="sql3408w">
+<h1 class="msghead" id="d168068e4219"><span class="title title msgId"><span class="ph ph msgNumber">SQL3408W</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for inserting
+into column <var class="keyword varname vartype=quotedString varnumber=1">name</var> defines a field larger than the target column.  Data
+may be truncated.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3408W: Explanation"><h2 class="sectiontitle" id="d168068e4246">Explanation</h2><p>The field specification for obtaining data from the input
+non-delimited ASCII file defines a field larger than the size (or
+maximum size) of the target database column.</p>
+
+<p>The utility continues processing.
+Truncation occurs when necessary.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3408W: User response"><h2 class="sectiontitle" id="d168068e4255">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4266" lang="en-us" id="sql3409w">
+<h1 class="msghead" id="d168068e4266"><span class="title title msgId"><span class="ph ph msgNumber">SQL3409W</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for inserting
+into column <var class="keyword varname vartype=quotedString varnumber=1">name</var> defines a field shorter than the target fixed length
+column.  Data will be padded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3409W: Explanation"><h2 class="sectiontitle" id="d168068e4293">Explanation</h2><p>The indicated database column is a fixed-length column.
+The field specification for obtaining data from the input non-delimited
+ASCII file defines a field smaller than the size of the target database
+column.</p>
+
+<p>The utility continues processing.
+Values input to the indicated database column are padded with spaces
+as necessary, on the right.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3409W: User response"><h2 class="sectiontitle" id="d168068e4302">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4314" lang="en-us" id="sql3410n">
+<h1 class="msghead" id="d168068e4314"><span class="title title msgId"><span class="ph ph msgNumber">SQL3410N</span></span>  <span class="shortdesc shortdesc msgText">The beginning-ending location pair for insert into
+column <var class="keyword varname vartype=quotedString varnumber=1">name</var> is not valid for a graphic column.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3410N: Explanation"><h2 class="sectiontitle" id="d168068e4341">Explanation</h2><p>The field specification for locating the input data in the ASCII file
+that is to be inserted into the indicated database column defines a
+field with an odd number of bytes.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3410N: User response"><h2 class="sectiontitle" id="d168068e4350">User response</h2><p>Resubmit the command with a valid set of locations for the columns
+in the source file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4361" lang="en-us" id="sql3411w">
+<h1 class="msghead" id="d168068e4361"><span class="title title msgId"><span class="ph ph msgNumber">SQL3411W</span></span>  <span class="shortdesc shortdesc msgText">The field value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var> is not
+valid for a graphic column.  A null was inserted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3411W: Explanation"><h2 class="sectiontitle" id="d168068e4391">Explanation</h2><p>The value in the field indicated is not an acceptable graphic column
+value.  The value may contain an odd number of bytes.
+For DEL files, the value of the column number specifies a field in
+the indicated row.
+For ASCII files, the value of the column number specifies the byte
+location within the row where the value begins.</p>
+
+<p>The row is not inserted.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3411W: User response"><h2 class="sectiontitle" id="d168068e4400">User response</h2><p>If a null is not acceptable,
+correct the input file and resubmit the command, or edit the data in the
+table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4412" lang="en-us" id="sql3412w">
+<h1 class="msghead" id="d168068e4412"><span class="title title msgId"><span class="ph ph msgNumber">SQL3412W</span></span>  <span class="shortdesc shortdesc msgText">The field value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var> is
+not valid for a graphic column but the target column is not nullable.
+The row was not inserted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3412W: Explanation"><h2 class="sectiontitle" id="d168068e4442">Explanation</h2><p>The value in the field indicated is not an acceptable graphic column
+value.
+The value may contain an odd number of bytes.
+A null cannot be inserted because the target column is not nullable.
+For DEL files, the value of the column number specifies a field in
+the indicated row.
+For ASCII files, the value of the column number specifies the byte
+location within the row where the value begins.</p>
+
+<p>The row is not inserted.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3412W: User response"><h2 class="sectiontitle" id="d168068e4451">User response</h2><p>No action is required.  If the row is necessary, correct the
+input file and resubmit the command, or edit the data in the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4462" lang="en-us" id="sql3413w">
+<h1 class="msghead" id="d168068e4462"><span class="title title msgId"><span class="ph ph msgNumber">SQL3413W</span></span>  <span class="shortdesc shortdesc msgText">The field value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var> is too
+short for the target column.  A null was inserted.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3413W: Explanation"><h2 class="sectiontitle" id="d168068e4492">Explanation</h2><p>The value in the specified field is not acceptable because
+it is too short for the target column.  The value of the column number
+specifies the byte location within the row where the field begins.</p>
+
+<p>A null value is inserted.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3413W: User response"><h2 class="sectiontitle" id="d168068e4501">User response</h2><p>No action is required.  If a null is not acceptable, correct
+the inner field and resubmit the command, or edit the data in the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4513" lang="en-us" id="sql3414n">
+<h1 class="msghead" id="d168068e4513"><span class="title title msgId"><span class="ph ph msgNumber">SQL3414N</span></span>  <span class="shortdesc shortdesc msgText">The temporary file <var class="keyword varname vartype=quotedString varnumber=1">filename</var> could not be found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3414N: Explanation"><h2 class="sectiontitle" id="d168068e4540">Explanation</h2><p>At the end of the load phase a temporary file is created with
+information necessary to restart the load.  If the load is
+interrupted before this point, this file is not created.</p>
+
+<p>This message indicates that this file could not be found
+during load restart.</p>
+
+<p>The utility stops.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3414N: User response"><h2 class="sectiontitle" id="d168068e4552">User response</h2><p>Depending on where the interrupt occurred, it may be possible to
+restart the load at the build phase.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4563" lang="en-us" id="sql3415w">
+<h1 class="msghead" id="d168068e4563"><span class="title title msgId"><span class="ph ph msgNumber">SQL3415W</span></span>  <span class="shortdesc shortdesc msgText">Failed to convert the field value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column
+<var class="keyword varname vartype=quotedString varnumber=2">column-number</var> from the codepage of the input data file to the codepage
+of the database. A null value was loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3415W: Explanation"><h2 class="sectiontitle" id="d168068e4593">Explanation</h2><p>The value in the field indicated cannot be converted from the
+codepage of the input data file to the codepage of the database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3415W: User response"><h2 class="sectiontitle" id="d168068e4599">User response</h2><p>If a null value is not acceptable, correct the input data
+file and resubmit the command, or edit the data in the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4611" lang="en-us" id="sql3416w">
+<h1 class="msghead" id="d168068e4611"><span class="title title msgId"><span class="ph ph msgNumber">SQL3416W</span></span>  <span class="shortdesc shortdesc msgText">Failed to convert the field value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column
+<var class="keyword varname vartype=quotedString varnumber=2">column-number</var> from the codepage of the input data file to the codepage
+of the database. The row was not loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3416W: Explanation"><h2 class="sectiontitle" id="d168068e4641">Explanation</h2><p>The value in the field indicated cannot be converted from the
+codepage of the input data file to the codepage of the database.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3416W: User response"><h2 class="sectiontitle" id="d168068e4647">User response</h2><p>No action is required.  If the row is necessary, correct the
+input data file and resubmit the command, or edit the data in the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4658" lang="en-us" id="sql3417n">
+<h1 class="msghead" id="d168068e4658"><span class="title title msgId"><span class="ph ph msgNumber">SQL3417N</span></span>  <span class="shortdesc shortdesc msgText">A beginning-ending location pair <var class="keyword varname vartype=quotedString varnumber=1">pair-number</var> is invalid for
+the codepage <var class="keyword varname vartype=quotedString varnumber=2">codepage</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3417N: Explanation"><h2 class="sectiontitle" id="d168068e4688">Explanation</h2><p>The location pair is invalid for the codepage because the codepage has a pure DBCS
+encoding. This means that every character in the codepage is 2 bytes long.
+An even number of bytes should be specified in the location pair.</p>
+
+<p>The command cannot be processed.  </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3417N: User response"><h2 class="sectiontitle" id="d168068e4697">User response</h2><p>Resubmit the command with a valid set of locations for the 
+columns in the source file.  </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4709" lang="en-us" id="sql3418w">
+<h1 class="msghead" id="d168068e4709"><span class="title title msgId"><span class="ph ph msgNumber">SQL3418W</span></span>  <span class="shortdesc shortdesc msgText">The NOCHARDEL file type modifier should not be
+specified if the data was exported using DB2. It is provided to support
+vendor data files that do not have character delimiters.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3418W: Explanation"><h2 class="sectiontitle" id="d168068e4733">Explanation</h2><p>The NOCHARDEL file type modifier is designed to support vendor data
+files that do not have character delimiters. It was not intended
+to be used when the data file was created by DB2 EXPORT. In the DEL
+file format, the character delimiters are used to avoid data loss or
+corruption and thus are part of the default behaviour.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3418W: User response"><h2 class="sectiontitle" id="d168068e4739">User response</h2><p>Verify that NOCHARDEL is the required in the import or load command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d168068e4750" lang="en-us" id="sql3419w">
+<h1 class="msghead" id="d168068e4750"><span class="title title msgId"><span class="ph ph msgNumber">SQL3419W</span></span>  <span class="shortdesc shortdesc msgText">The specified sort option is not supported by the vendor sort. The default DB2 sort will be used to continue with the operation.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL3419W: Explanation"><h2 class="sectiontitle" id="d168068e4774">Explanation</h2><p>The vendor sort library is activated by setting the DB2 registry variable DB2SORT. The current sort specification requires a feature that is not supported by this vendor sort library. The database manager will use the default sort to continue with the operation. Possible features not supported by vendor sort:</p>
+
+<ul>
+<li>Database created using IDENTITY_16BIT collation.</li>
+
+<li>Database configuration parameter ALT_COLLATE is set to IDENTITY_16BIT.</li>
+
+<li>Load target table has XML columns.</li>
+
+<li>Load target table has data partitioning and local indexes.</li>
+
+<li>Load target table has indexes with RANDOM ordering.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL3419W: User response"><h2 class="sectiontitle" id="d168068e4797">User response</h2><p>No action required.</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

@@ -1,0 +1,1347 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL27500 - SQL27999</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d372883e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic26">
+   <h1 class="topictitle1" id="d372883e14">SQL27500 - SQL27999</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d372883e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e64" lang="en-us" id="sql27902n">
+<h1 class="msghead" id="d372883e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL27902N</span></span>  <span class="shortdesc shortdesc msgText">LOAD RESTART/TERMINATE is not allowed on a table that is not in LOAD
+PENDING state.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27902N: Explanation"><h2 class="sectiontitle" id="d372883e88">Explanation</h2><p>No RESTART or TERMINATE is necessary. The RESTART and TERMINATE modes of
+the LOAD utility should be used to resume or cancel 
+a previously failed/interrupted LOAD operation. They are only supported
+on tables where a previous load operation failed and 
+the table is in LOAD PENDING state. For tables that are not in LOAD PENDING
+state, only the INSERT and REPLACE modes of 
+the LOAD utility are supported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27902N: User response"><h2 class="sectiontitle" id="d372883e94">User response</h2><p>To populate the table with the contents of the input source re-issue your
+LOAD command using the INSERT or REPLACE mode. 
+You can use the LOAD QUERY utility to find out the current state of the table.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e105" lang="en-us" id="sql27903i">
+<h1 class="msghead" id="d372883e105"><span class="title title msgId"><span class="ph ph msgNumber">SQL27903I</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">agenttype</var> has started on partition <var class="keyword varname vartype=quotedString varnumber=2">partitionnumber</var> at time <var class="keyword varname vartype=quotedString varnumber=3">timestamp</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27903I: Explanation"><h2 class="sectiontitle" id="d372883e137">Explanation</h2><p>This is an informational message indicating that a DB2 agent is about to begin on a given partition.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27903I: User response"><h2 class="sectiontitle" id="d372883e143">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e155" lang="en-us" id="sql27904i">
+<h1 class="msghead" id="d372883e155"><span class="title title msgId"><span class="ph ph msgNumber">SQL27904I</span></span>  <span class="shortdesc shortdesc msgText">The input file was not found. Using standard input as the input.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27904I: Explanation"><h2 class="sectiontitle" id="d372883e179">Explanation</h2><p>This is an informational message indicating that an DB2 agent is about to begin on a given partition.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27904I: User response"><h2 class="sectiontitle" id="d372883e185">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e196" lang="en-us" id="sql27905w">
+<h1 class="msghead" id="d372883e196"><span class="title title msgId"><span class="ph ph msgNumber">SQL27905W</span></span>  <span class="shortdesc shortdesc msgText">The  column compression dictionary was built. However, the dictionary might not be optimal due to insufficient utility heap memory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27905W: Explanation"><h2 class="sectiontitle" id="d372883e220">Explanation</h2><p>The load utility analyzes the input data to determine the best encoding schemes for building column compression dictionaries. To build the best dictionaries and get the maximum possible compression, the entire set of data should be loaded at one time and enough utility heap memory should be available.</p>
+
+<p>These message is return when the LOAD operation completed successfully but the compression dictionary that was built is not optimal for compression because of insufficient utility heap memory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27905W: User response"><h2 class="sectiontitle" id="d372883e229">User response</h2><p>Increase the  utility heap size before invoking the Load utility.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e241" lang="en-us" id="sql27906n">
+<h1 class="msghead" id="d372883e241"><span class="title title msgId"><span class="ph ph msgNumber">SQL27906N</span></span>  <span class="shortdesc shortdesc msgText">The load operation was not performed because the specified parameters are not supported with the type of the target table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27906N: Explanation"><h2 class="sectiontitle" id="d372883e265">Explanation</h2><p>You can efficiently move a large amount of data into a table by using the load utility.</p>
+
+<p>In a partitioned database environment, you can perform a load operation on only a subset of the database partitions on which the table is defined by specifying the PARTITIONED DB CONFIG parameter with the LOAD command.</p>
+
+<p>You can cause the load utility to build a new dictionary for the table by specifying one of the following parameters with the LOAD command: RESETDICTIONARY, RESETDICTIONARYONLY.</p>
+
+<p>This message is returned when an attempt is made to load data into a column-organized table with the following unsupported combination of parameters passed to the LOAD command:</p>
+
+<ul>
+<li>The PARTITIONED DB CONFIG parameter is specified with a value of OUTPUT_DBPARTNUMS</li>
+
+<li>And either the RESETDICTIONARY parameter or the RESETDICTIONARYONLY parameter is specified</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27906N: User response"><h2 class="sectiontitle" id="d372883e288">User response</h2><ul>
+<li>To load data into a column-organized table, using only a subset of database partitions, issue the LOAD command specifying the KEEPDICTIONARY parameter.</li>
+
+<li>To load data into a column-organized table and create a new dictionary, issue the LOAD command without specifying OUTPUT_DBPARTNUMS with the PARTITIONED DB CONFIG parameter.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e304" lang="en-us" id="sql27907i">
+<h1 class="msghead" id="d372883e304"><span class="title title msgId"><span class="ph ph msgNumber">SQL27907I</span></span>  <span class="shortdesc shortdesc msgText">Maximum input record length <var class="keyword varname vartype=quotedString varnumber=1">record-length</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27907I: Explanation"><h2 class="sectiontitle" id="d372883e331">Explanation</h2><p>This is an informational message indicating the record length used for the Load operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27907I: User response"><h2 class="sectiontitle" id="d372883e337">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e349" lang="en-us" id="sql27908i">
+<h1 class="msghead" id="d372883e349"><span class="title title msgId"><span class="ph ph msgNumber">SQL27908I</span></span>  <span class="shortdesc shortdesc msgText">The utility is running with check level: <var class="keyword varname vartype=quotedString varnumber=1">check-level</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27908I: Explanation"><h2 class="sectiontitle" id="d372883e376">Explanation</h2><p>This is an informational message indicating whether truncation checking is enabled or not.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27908I: User response"><h2 class="sectiontitle" id="d372883e382">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e393" lang="en-us" id="sql27909i">
+<h1 class="msghead" id="d372883e393"><span class="title title msgId"><span class="ph ph msgNumber">SQL27909I</span></span>  <span class="shortdesc shortdesc msgText">Tracing <var class="keyword varname vartype=quotedString varnumber=1">numberofrecords</var> non-delimited record(s).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27909I: Explanation"><h2 class="sectiontitle" id="d372883e420">Explanation</h2><p>This is an informational message indicating that tracing is enabled for the first <var class="keyword varname">numofrecords</var>
+record(s).</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27909I: User response"><h2 class="sectiontitle" id="d372883e429">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e441" lang="en-us" id="sql27910i">
+<h1 class="msghead" id="d372883e441"><span class="title title msgId"><span class="ph ph msgNumber">SQL27910I</span></span>  <span class="shortdesc shortdesc msgText">The string delimiter is <var class="keyword varname vartype=quotedString varnumber=1">chardel</var>, the column delimiter is <var class="keyword varname vartype=quotedString varnumber=2">coldel</var>, and
+the decimal point is <var class="keyword varname vartype=quotedString varnumber=3">decept</var>. Tracing <var class="keyword varname vartype=quotedString varnumber=4">numofrecords</var> delimited record(s).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27910I: Explanation"><h2 class="sectiontitle" id="d372883e477">Explanation</h2><p>This is an informational message indicating  what delimiters are used for string, column and decimal point.  In addition, this message also shows tracing is enabled for the first <var class="keyword varname">numofrecords</var> record(s).</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27910I: User response"><h2 class="sectiontitle" id="d372883e486">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e497" lang="en-us" id="sql27911i">
+<h1 class="msghead" id="d372883e497"><span class="title title msgId"><span class="ph ph msgNumber">SQL27911I</span></span>  <span class="shortdesc shortdesc msgText">The input partition map file <var class="keyword varname vartype=quotedString varnumber=1">filename</var> was opened successfully for
+reading.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27911I: Explanation"><h2 class="sectiontitle" id="d372883e524">Explanation</h2><p>This informational message indicates the input partition map file was opened successfully for reading.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27911I: User response"><h2 class="sectiontitle" id="d372883e530">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e542" lang="en-us" id="sql27912i">
+<h1 class="msghead" id="d372883e542"><span class="title title msgId"><span class="ph ph msgNumber">SQL27912I</span></span>  <span class="shortdesc shortdesc msgText">Reading of input partitioning map is in progress.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27912I: Explanation"><h2 class="sectiontitle" id="d372883e566">Explanation</h2><p>This informational message indicates that reading of the input partition map file is in progress.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27912I: User response"><h2 class="sectiontitle" id="d372883e572">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e583" lang="en-us" id="sql27913i">
+<h1 class="msghead" id="d372883e583"><span class="title title msgId"><span class="ph ph msgNumber">SQL27913I</span></span>  <span class="shortdesc shortdesc msgText">Input partitioning map was successfully read.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27913I: Explanation"><h2 class="sectiontitle" id="d372883e607">Explanation</h2><p>This informational message indicates that the input partition map file was successfully read.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27913I: User response"><h2 class="sectiontitle" id="d372883e613">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e625" lang="en-us" id="sql27914i">
+<h1 class="msghead" id="d372883e625"><span class="title title msgId"><span class="ph ph msgNumber">SQL27914I</span></span>  <span class="shortdesc shortdesc msgText">The mode of operation is <var class="keyword varname vartype=quotedString varnumber=1">mode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27914I: Explanation"><h2 class="sectiontitle" id="d372883e652">Explanation</h2><p>This informational message indicates the mode of operation for the partitioning agent.</p>
+
+<div class="p">There are two different modes of operation:
+<ul>
+<li>Partition</li>
+
+<li>Analyze</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27914I: User response"><h2 class="sectiontitle" id="d372883e668">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e679" lang="en-us" id="sql27915i">
+<h1 class="msghead" id="d372883e679"><span class="title title msgId"><span class="ph ph msgNumber">SQL27915I</span></span>  <span class="shortdesc shortdesc msgText">Output partitioning map file not used.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27915I: Explanation"><h2 class="sectiontitle" id="d372883e703">Explanation</h2><p>This is an informational message indicating that  the output partitioning map file is not used.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27915I: User response"><h2 class="sectiontitle" id="d372883e709">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e721" lang="en-us" id="sql27916i">
+<h1 class="msghead" id="d372883e721"><span class="title title msgId"><span class="ph ph msgNumber">SQL27916I</span></span>  <span class="shortdesc shortdesc msgText">The output partitioning map file <var class="keyword varname vartype=quotedString varnumber=1">filename</var> was opened successfully.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27916I: Explanation"><h2 class="sectiontitle" id="d372883e748">Explanation</h2><p>This is an informational message indicating that  the output partitioning map file was opened successfully.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27916I: User response"><h2 class="sectiontitle" id="d372883e754">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e765" lang="en-us" id="sql27917n">
+<h1 class="msghead" id="d372883e765"><span class="title title msgId"><span class="ph ph msgNumber">SQL27917N</span></span>  <span class="shortdesc shortdesc msgText">The LOAD command was not executed because a previous load operation on the table failed and the parameters that were specified with the LOAD command are not supported after a failed load operation on this type of table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27917N: Explanation"><h2 class="sectiontitle" id="d372883e789">Explanation</h2><p>You can cause the load utility to build a new dictionary for a table by specifying one of the following parameters with the LOAD command: RESETDICTIONARY, RESETDICTIONARYONLY.  If no dictionary exist, then any LOAD command with either the INSERT parameter or the REPLACE parameter will build one.</p>
+
+<p>This message is returned when the following sequence of events occurs:</p>
+
+<ol>
+<li>The LOAD command is issued against a column-organized table that causes a new dictionary to be built.</li>
+
+<li>The load operation fails.</li>
+
+<li>The LOAD command is reissued for the same table, with one of the following parameter combinations specified: 
+<ul>
+<li>The KEEPDICTIONARY parameter</li>
+
+<li>The TERMINATE parameter in combination with the DBPARTNUM parameter</li>
+</ul>
+</li>
+</ol>
+
+<p>If the LOAD command is issued against a column-organized table, that causes a new dictionary to be built, and the operation fails, then the LOAD command may be reissued for the same table, but with the following restrictions:</p>
+
+<ul>
+<li>The KEEPDICTIONARY parameter may not be specified</li>
+
+<li>The TERMINATE parameter may not be specified in combination with the DBPARTNUM parameter</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27917N: User response"><h2 class="sectiontitle" id="d372883e827">User response</h2><p>Reissue the LOAD command without specifying either of the following parameter combinations:</p>
+
+<ul>
+<li>The KEEPDICTIONARY parameter</li>
+
+<li>The TERMINATE parameter in combination with the DBPARTNUM parameter</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e847" lang="en-us" id="sql27918i">
+<h1 class="msghead" id="d372883e847"><span class="title title msgId"><span class="ph ph msgNumber">SQL27918I</span></span>  <span class="shortdesc shortdesc msgText">Distribution file name: <var class="keyword varname vartype=quotedString varnumber=1">filename</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27918I: Explanation"><h2 class="sectiontitle" id="d372883e874">Explanation</h2><p>This is an informational message indicating the name of the distribution file used in the utility.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27918I: User response"><h2 class="sectiontitle" id="d372883e880">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e891" lang="en-us" id="sql27919i">
+<h1 class="msghead" id="d372883e891"><span class="title title msgId"><span class="ph ph msgNumber">SQL27919I</span></span>  <span class="shortdesc shortdesc msgText">The distribution file <var class="keyword varname vartype=quotedString varnumber=1">filename</var> was opened successfully for writing.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27919I: Explanation"><h2 class="sectiontitle" id="d372883e918">Explanation</h2><p>This informational message indicates the distribution file was opened successfully for writing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27919I: User response"><h2 class="sectiontitle" id="d372883e924">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e936" lang="en-us" id="sql27920i">
+<h1 class="msghead" id="d372883e936"><span class="title title msgId"><span class="ph ph msgNumber">SQL27920I</span></span>  <span class="shortdesc shortdesc msgText">This utility is using <var class="keyword varname vartype=quotedString varnumber=1">numkeys</var> partitioning keys.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27920I: Explanation"><h2 class="sectiontitle" id="d372883e963">Explanation</h2><p>This informational message indicates the number of partitioning keys used in the utility.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27920I: User response"><h2 class="sectiontitle" id="d372883e969">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e980" lang="en-us" id="sql27921i">
+<h1 class="msghead" id="d372883e980"><span class="title title msgId"><span class="ph ph msgNumber">SQL27921I</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">keyname</var>  Start:<var class="keyword varname vartype=quotedString varnumber=2">index</var>  Len:<var class="keyword varname vartype=quotedString varnumber=3">length</var>  Position:<var class="keyword varname vartype=quotedString varnumber=4">position</var>  Type:<var class="keyword varname vartype=quotedString varnumber=5">type</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27921I: Explanation"><h2 class="sectiontitle" id="d372883e1018">Explanation</h2><p>This informational message describes attributes of a partitioning key.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27921I: User response"><h2 class="sectiontitle" id="d372883e1024">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1036" lang="en-us" id="sql27922i">
+<h1 class="msghead" id="d372883e1036"><span class="title title msgId"><span class="ph ph msgNumber">SQL27922I</span></span>  <span class="shortdesc shortdesc msgText">Output data files are not created because the run type is ANALYZE.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27922I: Explanation"><h2 class="sectiontitle" id="d372883e1060">Explanation</h2><p>This is an informational message indicating that the output data files are not created because the mode of operation is ANALYZE.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27922I: User response"><h2 class="sectiontitle" id="d372883e1066">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1077" lang="en-us" id="sql27923w">
+<h1 class="msghead" id="d372883e1077"><span class="title title msgId"><span class="ph ph msgNumber">SQL27923W</span></span>  <span class="shortdesc shortdesc msgText">The value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var> could not be converted to a Boolean value, so a null value was loaded instead.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27923W: Explanation"><h2 class="sectiontitle" id="d372883e1107">Explanation</h2><p>The inability to convert the value might be due to a data type mismatch, such as trying to load a date into a Boolean column.</p>
+
+<p>If the source of the value that could not be converted is:</p>
+
+<ul>
+<li>A delimited ASCII (DEL) file, the indicated column number identifies the ordinal position of the field that contains that value</li>
+
+<li>An ASCII file, the indicated column number identifies the byte location of the beginning of the field that contains that value</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27923W: User response"><h2 class="sectiontitle" id="d372883e1124">User response</h2><p>Examine the input data. If necessary, take one of the following actions:</p>
+
+<ul>
+<li>Correct the input data and resubmit the command.</li>
+
+<li>In the output table, manually replace the null with the correct value.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1144" lang="en-us" id="sql27924w">
+<h1 class="msghead" id="d372883e1144"><span class="title title msgId"><span class="ph ph msgNumber">SQL27924W</span></span>  <span class="shortdesc shortdesc msgText">The value in row <var class="keyword varname vartype=quotedString varnumber=1">row-number</var> and column <var class="keyword varname vartype=quotedString varnumber=2">column-number</var> could not be converted to a Boolean value, and the target column is not nullable, so the row was not loaded.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27924W: Explanation"><h2 class="sectiontitle" id="d372883e1174">Explanation</h2><p>The inability to convert the value might be due to a data type mismatch, such as trying to load a date into a Boolean column.</p>
+
+<p>If the source of the value that could not be converted is:</p>
+
+<ul>
+<li>A delimited ASCII (DEL) file, the indicated column number identifies the ordinal position of the field that contains that value</li>
+
+<li>An ASCII file, the indicated column number identifies the byte location of the beginning of the field that contains that value</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27924W: User response"><h2 class="sectiontitle" id="d372883e1191">User response</h2><p>Examine the input data. If necessary, take one of the following actions:</p>
+
+<ul>
+<li>Correct the input data and resubmit the command.</li>
+
+<li>In the output table, manually insert a row containing the correct values.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1210" lang="en-us" id="sql27926i">
+<h1 class="msghead" id="d372883e1210"><span class="title title msgId"><span class="ph ph msgNumber">SQL27926I</span></span>  <span class="shortdesc shortdesc msgText">Output data for partition <var class="keyword varname vartype=quotedString varnumber=1">partitionnum</var> will be sent to standard output.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27926I: Explanation"><h2 class="sectiontitle" id="d372883e1237">Explanation</h2><p>This is an informational message indicating that the output data on partition <var class="keyword varname">partitionnum</var> will be sent to standard output.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27926I: User response"><h2 class="sectiontitle" id="d372883e1246">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1258" lang="en-us" id="sql27927i">
+<h1 class="msghead" id="d372883e1258"><span class="title title msgId"><span class="ph ph msgNumber">SQL27927I</span></span>  <span class="shortdesc shortdesc msgText">Processed <var class="keyword varname vartype=quotedString varnumber=1">numofrecords</var> records (or lines).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27927I: Explanation"><h2 class="sectiontitle" id="d372883e1285">Explanation</h2><p>This is an informational message indicating that  <var class="keyword varname">numofrecords</var> records (or lines) were processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27927I: User response"><h2 class="sectiontitle" id="d372883e1294">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1305" lang="en-us" id="sql27928i">
+<h1 class="msghead" id="d372883e1305"><span class="title title msgId"><span class="ph ph msgNumber">SQL27928I</span></span>  <span class="shortdesc shortdesc msgText">Processing record number <var class="keyword varname vartype=quotedString varnumber=1">num</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27928I: Explanation"><h2 class="sectiontitle" id="d372883e1332">Explanation</h2><p>This informational message indicates which record is being processed.  This message will only be reported when the TRACE option is specified.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27928I: User response"><h2 class="sectiontitle" id="d372883e1338">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1350" lang="en-us" id="sql27929i">
+<h1 class="msghead" id="d372883e1350"><span class="title title msgId"><span class="ph ph msgNumber">SQL27929I</span></span>  <span class="shortdesc shortdesc msgText">Partitioning number returned from hash function: <var class="keyword varname vartype=quotedString varnumber=1">hexvalue</var> (hex) <var class="keyword varname vartype=quotedString varnumber=2">decvalue</var> (decimal).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27929I: Explanation"><h2 class="sectiontitle" id="d372883e1380">Explanation</h2><p>This informational message reports the result of the hashing function in both hex and decimal format.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27929I: User response"><h2 class="sectiontitle" id="d372883e1386">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1397" lang="en-us" id="sql27930n">
+<h1 class="msghead" id="d372883e1397"><span class="title title msgId"><span class="ph ph msgNumber">SQL27930N</span></span>  <span class="shortdesc shortdesc msgText">A record was rejected during partitioning with reason  code <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var> and partition-relative record number  <var class="keyword varname vartype=quotedString varnumber=2">rec-num</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27930N: Explanation"><h2 class="sectiontitle" id="d372883e1427">Explanation</h2><p>A record was rejected during load while attempting to determine what partition the record belongs to. If the 'dumpfile' load modifier was specified, the rejected record can be found in the partition-relative dumpfile at the partition-relative record number <var class="keyword varname">rec-num</var> listed in this message.</p>
+
+<p>An explanation of the error specified by the <var class="keyword varname">reason-code</var> is as follows:</p>
+
+<ol>
+<li>The string representation of the data type of a partitioning column is invalid. Either the syntax is invalid or the value is out of range.</li>
+
+<li>The column values corresponding to the partitioning keys are not contained within the first 32K of the record.</li>
+
+<li>The record is empty (all space characters).</li>
+
+<li>The record length does not match the expected length.</li>
+
+<li>The record is incomplete.</li>
+
+<li>An error occurred while processing a generated column value.</li>
+</ol>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27930N: User response"><h2 class="sectiontitle" id="d372883e1463">User response</h2><p>The action corresponding to the <var class="keyword varname">reason-code</var> is:</p>
+
+<ol>
+<li>Ensure that the string representation or the datatype is correct.</li>
+
+<li>The column values comprising the partitioning keys must be contained within the first 32KB of the record.</li>
+
+<li>If you are concerned that the record is empty, check your data for correctness.</li>
+
+<li>Ensure the record length is not larger or smaller than the expected length.</li>
+
+<li>Ensure the input data file is complete.</li>
+
+<li>Ensure the generated column value is correct and compliant.</li>
+</ol>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1499" lang="en-us" id="sql27931i">
+<h1 class="msghead" id="d372883e1499"><span class="title title msgId"><span class="ph ph msgNumber">SQL27931I</span></span>  <span class="shortdesc shortdesc msgText">Writing output partition map to file <var class="keyword varname vartype=quotedString varnumber=1">filename</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27931I: Explanation"><h2 class="sectiontitle" id="d372883e1526">Explanation</h2><p>This is an informational message indicating that the output partition map is written to <var class="keyword varname">filename</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27931I: User response"><h2 class="sectiontitle" id="d372883e1535">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1546" lang="en-us" id="sql27932i">
+<h1 class="msghead" id="d372883e1546"><span class="title title msgId"><span class="ph ph msgNumber">SQL27932I</span></span>  <span class="shortdesc shortdesc msgText">Writing distribution map to <var class="keyword varname vartype=quotedString varnumber=1">filename</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27932I: Explanation"><h2 class="sectiontitle" id="d372883e1573">Explanation</h2><p>This is an informational message indicating that the distribution map is written to <var class="keyword varname">filename</var>.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27932I: User response"><h2 class="sectiontitle" id="d372883e1582">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1594" lang="en-us" id="sql27935i">
+<h1 class="msghead" id="d372883e1594"><span class="title title msgId"><span class="ph ph msgNumber">SQL27935I</span></span>  <span class="shortdesc shortdesc msgText"><var class="keyword varname vartype=quotedString varnumber=1">agenttype</var> has ended on partition <var class="keyword varname vartype=quotedString varnumber=2">partitionnumber</var> at time <var class="keyword varname vartype=quotedString varnumber=3">timestamp</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27935I: Explanation"><h2 class="sectiontitle" id="d372883e1626">Explanation</h2><p>This is an informational message indicating that an DB2 agent has just completed operation on a given partition.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27935I: User response"><h2 class="sectiontitle" id="d372883e1632">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1643" lang="en-us" id="sql27936i">
+<h1 class="msghead" id="d372883e1643"><span class="title title msgId"><span class="ph ph msgNumber">SQL27936I</span></span>  <span class="shortdesc shortdesc msgText">Elapsed time: <var class="keyword varname vartype=quotedString varnumber=1">hr</var> hours, <var class="keyword varname vartype=quotedString varnumber=2">min</var> minutes, <var class="keyword varname vartype=quotedString varnumber=3">sec</var> seconds.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27936I: Explanation"><h2 class="sectiontitle" id="d372883e1676">Explanation</h2><p>This informational message reports the total time elapsed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27936I: User response"><h2 class="sectiontitle" id="d372883e1682">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1694" lang="en-us" id="sql27937i">
+<h1 class="msghead" id="d372883e1694"><span class="title title msgId"><span class="ph ph msgNumber">SQL27937I</span></span>  <span class="shortdesc shortdesc msgText">Throughput: <var class="keyword varname vartype=quotedString varnumber=1">throughput</var> records/sec.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27937I: Explanation"><h2 class="sectiontitle" id="d372883e1721">Explanation</h2><p>This is an informational message indicating the throughput of a given DB2 agent.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27937I: User response"><h2 class="sectiontitle" id="d372883e1727">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1738" lang="en-us" id="sql27939i">
+<h1 class="msghead" id="d372883e1738"><span class="title title msgId"><span class="ph ph msgNumber">SQL27939I</span></span>  <span class="shortdesc shortdesc msgText">Record counts for output partitions: partition number <var class="keyword varname vartype=quotedString varnumber=1">partitionnum</var>. Record count: <var class="keyword varname vartype=quotedString varnumber=2">numofrecords</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27939I: Explanation"><h2 class="sectiontitle" id="d372883e1768">Explanation</h2><p>This informational message indicates the number of records processed for a given partition.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27939I: User response"><h2 class="sectiontitle" id="d372883e1774">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1786" lang="en-us" id="sql27941i">
+<h1 class="msghead" id="d372883e1786"><span class="title title msgId"><span class="ph ph msgNumber">SQL27941I</span></span>  <span class="shortdesc shortdesc msgText">Program terminated abnormally.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27941I: Explanation"><h2 class="sectiontitle" id="d372883e1810">Explanation</h2><p>This informational message indicates the utility program has terminated abnormally.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27941I: User response"><h2 class="sectiontitle" id="d372883e1816">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1827" lang="en-us" id="sql27942i">
+<h1 class="msghead" id="d372883e1827"><span class="title title msgId"><span class="ph ph msgNumber">SQL27942I</span></span>  <span class="shortdesc shortdesc msgText">There are <var class="keyword varname vartype=quotedString varnumber=1">number-of-warnings</var> 
+warning message(s) and <var class="keyword varname vartype=quotedString varnumber=2">number-of-rejected-records</var> 
+rejected records.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27942I: Explanation"><h2 class="sectiontitle" id="d372883e1857">Explanation</h2><p>This informational message reports there are <var class="keyword varname">number-of-warnings</var> warning message(s) and 
+<var class="keyword varname">number-of-rejected-records</var> rejected record(s) encountered during the operation.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27942I: User response"><h2 class="sectiontitle" id="d372883e1869">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1881" lang="en-us" id="sql27945i">
+<h1 class="msghead" id="d372883e1881"><span class="title title msgId"><span class="ph ph msgNumber">SQL27945I</span></span>  <span class="shortdesc shortdesc msgText">Key Index: <var class="keyword varname vartype=quotedString varnumber=1">index</var>. Data: <var class="keyword varname vartype=quotedString varnumber=2">data1</var> <var class="keyword varname vartype=quotedString varnumber=3">data2</var> <var class="keyword varname vartype=quotedString varnumber=4">data3</var> <var class="keyword varname vartype=quotedString varnumber=5">data4</var> <var class="keyword varname vartype=quotedString varnumber=6">data5</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27945I: Explanation"><h2 class="sectiontitle" id="d372883e1924">Explanation</h2><p>This informational message reports the attributes of a given partition key.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27945I: User response"><h2 class="sectiontitle" id="d372883e1930">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1941" lang="en-us" id="sql27947i">
+<h1 class="msghead" id="d372883e1941"><span class="title title msgId"><span class="ph ph msgNumber">SQL27947I</span></span>  <span class="shortdesc shortdesc msgText">The input data file specified at line <var class="keyword varname vartype=quotedString varnumber=1">linenum</var> of the configuration
+file is ignored.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27947I: Explanation"><h2 class="sectiontitle" id="d372883e1968">Explanation</h2><p>The input data file specified at line <var class="keyword varname">linenum</var> of the configuration file is ignored.  The command line option will be used if it is specified; otherwise, the first specification of input data file in the configuration file will be used.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27947I: User response"><h2 class="sectiontitle" id="d372883e1977">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e1989" lang="en-us" id="sql27948i">
+<h1 class="msghead" id="d372883e1989"><span class="title title msgId"><span class="ph ph msgNumber">SQL27948I</span></span>  <span class="shortdesc shortdesc msgText">The output data file specified at line <var class="keyword varname vartype=quotedString varnumber=1">linenum</var> of the configuration
+file is ignored.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27948I: Explanation"><h2 class="sectiontitle" id="d372883e2016">Explanation</h2><p>The output data file specified at line <var class="keyword varname">linenum</var> of the configuration file is ignored.  The command line option will be used if it is specified; otherwise, the first specification of output data in the configuration file will be used.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27948I: User response"><h2 class="sectiontitle" id="d372883e2025">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2036" lang="en-us" id="sql27949i">
+<h1 class="msghead" id="d372883e2036"><span class="title title msgId"><span class="ph ph msgNumber">SQL27949I</span></span>  <span class="shortdesc shortdesc msgText">The distribution data file specified at line <var class="keyword varname vartype=quotedString varnumber=1">linenum</var> of the
+configuration file is ignored.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27949I: Explanation"><h2 class="sectiontitle" id="d372883e2063">Explanation</h2><p>The distribution file specified at line <var class="keyword varname">linenum</var> of the configuration file is ignored.  The command line option will be used if it is specified; otherwise, the first specification of distribution file in the configuration file will be used.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27949I: User response"><h2 class="sectiontitle" id="d372883e2072">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2084" lang="en-us" id="sql27950i">
+<h1 class="msghead" id="d372883e2084"><span class="title title msgId"><span class="ph ph msgNumber">SQL27950I</span></span>  <span class="shortdesc shortdesc msgText">The type of the input data file is <var class="keyword varname vartype=quotedString varnumber=1">filetype</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27950I: Explanation"><h2 class="sectiontitle" id="d372883e2111">Explanation</h2><div class="p">This is an informational message indicating that the format of the input data is <var class="keyword varname">filetype</var>.
+<ul>
+<li>0-ASC</li>
+
+<li>1-DEL</li>
+
+<li>2-BIN</li>
+
+<li>3-CUR</li>
+</ul>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27950I: User response"><h2 class="sectiontitle" id="d372883e2133">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2144" lang="en-us" id="sql27951i">
+<h1 class="msghead" id="d372883e2144"><span class="title title msgId"><span class="ph ph msgNumber">SQL27951I</span></span>  <span class="shortdesc shortdesc msgText">The NEWLINE flag is ignored in case of binary or delimited
+input data files.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27951I: Explanation"><h2 class="sectiontitle" id="d372883e2168">Explanation</h2><p>This informational message reports that the NEWLINE flag is ignored for binary or delimited input data files.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27951I: User response"><h2 class="sectiontitle" id="d372883e2174">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2186" lang="en-us" id="sql27952i">
+<h1 class="msghead" id="d372883e2186"><span class="title title msgId"><span class="ph ph msgNumber">SQL27952I</span></span>  <span class="shortdesc shortdesc msgText">The NEWLINE flag is turned on.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27952I: Explanation"><h2 class="sectiontitle" id="d372883e2210">Explanation</h2><p>This informational message reports that the NEWLINE flag is in effect.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27952I: User response"><h2 class="sectiontitle" id="d372883e2216">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2227" lang="en-us" id="sql27953i">
+<h1 class="msghead" id="d372883e2227"><span class="title title msgId"><span class="ph ph msgNumber">SQL27953I</span></span>  <span class="shortdesc shortdesc msgText">Usage: db2split [-c configuration-file-name] [-d distribution-file-name]
+[-i input-file-name] [-o output-file-name] [-h help message]</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27953I: Explanation"><h2 class="sectiontitle" id="d372883e2251">Explanation</h2><div class="p"><dl>
+
+<dt class="dlterm">-c</dt>
+
+<dd class="dlentry">option will run this program using a user specified configuration file</dd>
+
+
+<dt class="dlterm">-d</dt>
+
+<dd class="dlentry">option specifies the distribution file</dd>
+
+
+<dt class="dlterm">-i</dt>
+
+<dd class="dlentry">option specifies the input file</dd>
+
+
+<dt class="dlterm">-o</dt>
+
+<dd class="dlentry">option specifies the output file</dd>
+
+
+<dt class="dlterm">-h</dt>
+
+<dd class="dlentry">option will generate the help message</dd>
+</dl>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2303" lang="en-us" id="sql27959n">
+<h1 class="msghead" id="d372883e2303"><span class="title title msgId"><span class="ph ph msgNumber">SQL27959N</span></span>  <span class="shortdesc shortdesc msgText">The partitioned database configuration option <var class="keyword varname vartype=quotedString varnumber=1">option-name</var> is invalid.
+Reason code = <var class="keyword varname vartype=quotedString varnumber=2">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27959N: Explanation"><h2 class="sectiontitle" id="d372883e2333">Explanation</h2><p>The partitioned database configuration option named in the error message is incorrectly specified or is incompatible with one of the other load options specified.</p>
+
+<p>The possible reason codes are as follows:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Partitioned database configuration options cannot be specified in a non-partitioned database environment or when the DB2_PARTITIONEDLOAD_DEFAULT registry variable is set to OFF.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>Partitioned database configuration options may not be specified more than once.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Invalid pointer detected in the piPartLoadInfoIn input structure passed to the db2Load API.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Invalid pointer detected in the poPartLoadInfoOut output structure passed to the db2Load API.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>The argument supplied to the MODE option must be one of the following:</p>
+
+<ul>
+<li>PARTITION_AND_LOAD</li>
+
+<li>PARTITION_ONLY</li>
+
+<li>LOAD_ONLY</li>
+
+<li>LOAD_ONLY_VERIFY_PART</li>
+
+<li>ANALYZE</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The maximum number of partitioning agents must be less than or equal to the maximum number of partitions allowable in a cluster.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>The maximum number of partition numbers in a partition list must be less than or equal to the maximum number of partitions allowable in a cluster.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The arguments supplied to the ISOLATE_PART_ERRS option must be one of the following:</p>
+
+<ul>
+<li>SETUP_ERRS_ONLY</li>
+
+<li>LOAD_ERRS_ONLY</li>
+
+<li>SETUP_AND_LOAD_ERRS</li>
+
+<li>NO_ISOLATION</li>
+</ul>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The value supplied to the STATUS_INTERVAL option must be in the range 1-4000.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>The maximum port number must be greater than or equal to the minimum port number.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>The only legal arguments for the CHECK_TRUNCATION, NEWLINE and OMIT_HEADER options are TRUE and FALSE.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>The argument supplied to RUN_STAT_DBPARTNUM must be a legal partition number.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>If the mode is ANALYZE, the MAP_FILE_OUTPUT option must be specified.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>If the mode is PARTITION_ONLY or LOAD_ONLY and a remote client is being used, then the PART_FILE_LOCATION option must be specified. If the mode is PARTITION_ONLY or LOAD_ONLY then if the file type is CURSOR, the PART_FILE_LOCATION option must be used and must specify a file name.</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>The load actions RESTART and TERMINATE can only be used when the mode is PARTITION_AND_LOAD, LOAD_ONLY or LOAD_ONLY_VERIFY_PART.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>The HOSTNAME option cannot be specified unless the FILE_TRANSFER_CMD option is also specified.</p>
+</dd>
+
+
+<dt class="dlterm">17</dt>
+
+<dd class="dlentry"><p>The partition isolation error modes LOAD_ERRS_ONLY and SETUP_AND_LOAD_ERRS cannot be used when both the ALLOW READ ACCESS or COPY YES options of the load command are used.</p>
+</dd>
+
+
+<dt class="dlterm">18</dt>
+
+<dd class="dlentry"><p>The LOAD_ONLY and LOAD_ONLY_VERIFY_PART modes are not compatible with the CLIENT option of the load command.</p>
+</dd>
+
+
+<dt class="dlterm">18</dt>
+
+<dd class="dlentry"><p>The partitioned database configuration option is not allowed on a random distribution table using the random by generation method.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27959N: User response"><h2 class="sectiontitle" id="d372883e2549">User response</h2><p>Resubmit the LOAD command with the correct partitioned database configuration options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2560" lang="en-us" id="sql27960n">
+<h1 class="msghead" id="d372883e2560"><span class="title title msgId"><span class="ph ph msgNumber">SQL27960N</span></span>  <span class="shortdesc shortdesc msgText">PART_FILE_LOCATION must specify a fully qualified base filename
+when the file type is CURSOR.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27960N: Explanation"><h2 class="sectiontitle" id="d372883e2584">Explanation</h2><p>When loading from an input file of type CURSOR, the PART_FILE_LOCATION option must specify a fully qualified base filename instead of a directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27960N: User response"><h2 class="sectiontitle" id="d372883e2590">User response</h2><p>Resubmit the LOAD command with a proper argument for the PART_FILE_LOCATION partitioned database configuration option.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2602" lang="en-us" id="sql27961n">
+<h1 class="msghead" id="d372883e2602"><span class="title title msgId"><span class="ph ph msgNumber">SQL27961N</span></span>  <span class="shortdesc shortdesc msgText">ROWCOUNT cannot be specified in a partitioned database
+environment unless the mode is ANALYZE.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27961N: Explanation"><h2 class="sectiontitle" id="d372883e2626">Explanation</h2><p>The ROWCOUNT option of the load command is not supported except when the mode is ANALYZE.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27961N: User response"><h2 class="sectiontitle" id="d372883e2632">User response</h2><p>Resubmit the load command without the ROWCOUNT option.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2643" lang="en-us" id="sql27965n">
+<h1 class="msghead" id="d372883e2643"><span class="title title msgId"><span class="ph ph msgNumber">SQL27965N</span></span>  <span class="shortdesc shortdesc msgText">The DB2_LOAD_COPY_NO_OVERRIDE registry variable value <var class="keyword varname vartype=quotedString varnumber=1">value</var> is not valid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27965N: Explanation"><h2 class="sectiontitle" id="d372883e2670">Explanation</h2><p>A Load was issued with the COPY NO parameter, but the value of the DB2_LOAD_COPY_NO_OVERRIDE registry variable was not valid.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27965N: User response"><h2 class="sectiontitle" id="d372883e2676">User response</h2><p>Set the DB2_LOAD_COPY_NO_OVERRIDE registry variable to a valid value, or unset the registry variable to stop overriding Loads which have the COPY NO parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2688" lang="en-us" id="sql27966w">
+<h1 class="msghead" id="d372883e2688"><span class="title title msgId"><span class="ph ph msgNumber">SQL27966W</span></span>  <span class="shortdesc shortdesc msgText">The DB2_LOAD_COPY_NO_OVERRIDE registry variable value <var class="keyword varname vartype=quotedString varnumber=1">value</var> overrides the COPY NO parameter specified in the Load.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27966W: Explanation"><h2 class="sectiontitle" id="d372883e2715">Explanation</h2><p>A Load command was issued with the COPY NO parameter, however the DB2_LOAD_COPY_NO_OVERRIDE registry variable overrides the parameter.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27966W: User response"><h2 class="sectiontitle" id="d372883e2721">User response</h2><p>Set the DB2_LOAD_COPY_NO_OVERRIDE registry variable to a valid value or unset the registry variable to stop overriding Loads which have the COPY NO parameter.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2732" lang="en-us" id="sql27967w">
+<h1 class="msghead" id="d372883e2732"><span class="title title msgId"><span class="ph ph msgNumber">SQL27967W</span></span>  <span class="shortdesc shortdesc msgText">The COPY NO recoverability parameter of the Load has been converted to NONRECOVERABLE within the HADR environment.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27967W: Explanation"><h2 class="sectiontitle" id="d372883e2756">Explanation</h2><p>The COPY NO recoverability parameter of the Load has been converted to NONRECOVERABLE. This occurred because the Load was issued within an HADR environment and the DB2_LOAD_COPY_NO_OVERRIDE registry variable was not set.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27967W: User response"><h2 class="sectiontitle" id="d372883e2762">User response</h2><p>The COPY NO Load parameter is not valid within an HADR environment. The DB2_LOAD_COPY_NO_OVERRIDE registry variable can be set to override the COPY NO parameter or you can accept that the COPY NO parameter will be converted to NONRECOVERABLE.  </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2774" lang="en-us" id="sql27970n">
+<h1 class="msghead" id="d372883e2774"><span class="title title msgId"><span class="ph ph msgNumber">SQL27970N</span></span>  <span class="shortdesc shortdesc msgText">An incompatible combination of import options is specified. Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27970N: Explanation"><h2 class="sectiontitle" id="d372883e2801">Explanation</h2><p>An incompatible combination of import options is specified by the user.</p>
+
+<p> The command cannot be processed.</p>
+
+<div class="p">An explanation of the error specified by the <var class="keyword varname">reason-code</var> is as follows:
+<ol>
+<li>The SKIPCOUNT and RESTARTCOUNT options are mutually exclusive.</li>
+
+<li>Online import mode (ALLOW WRITE ACCESS) is not compatible with the REPLACE, CREATE and REPLACE_CREATE import options.</li>
+
+<li>Online import mode (ALLOW WRITE ACCESS) was specified for the import command using buffered inserts.</li>
+
+<li>Online import mode (ALLOW WRITE ACCESS) was specified for the import command inserting into a view.</li>
+
+<li>Online import mode (ALLOW WRITE ACCESS) was specified for the target table using table lock size.</li>
+
+<li>Commitcount AUTOMATIC was specified for the import command using buffered inserts.</li>
+
+<li>Commitcount AUTOMATIC was specified for the import command, but the server does not support this option. The servers supporting automatic commitcount are DB2 UDB on Linux, Unix and Windows V8.1 FixPak 4 and higher DB2 versions.</li>
+
+<li>Online import mode (ALLOW WRITE ACCESS) was specified for the import command, but the server does not support this option. The servers supporting online import are Linux, Unix and Windows, zSeries and iSeries.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27970N: User response"><h2 class="sectiontitle" id="d372883e2842">User response</h2><div class="p">The action corresponds to the following reason codes:
+<ol>
+<li>Reissue the command using either the SKIPCOUNT or RESTARTCOUNT option.</li>
+
+<li>Reissue the command without specifying ALLOW WRITE ACCESS, or use INSERT or INSERT_UPDATE import option.</li>
+
+<li>Reissue the command without specifying ALLOW WRITE ACCESS, or rebind the import packages (bind files db2uimtb.bnd and db2uimpm.bnd) without using the INSERT BUF option.</li>
+
+<li>Reissue the command without specifying ALLOW WRITE ACCESS.</li>
+
+<li>Reissue the command without specifying ALLOW WRITE ACCESS, or alter the table using LOCKSIZE ROW.</li>
+
+<li>Reissue the command without specifying automatic commitcount, or rebind the import packages (bind files db2uimtb.bnd and db2uimpm.bnd) without using the INSERT BUF option.</li>
+
+<li>Do not attempt to use this command option against an incompatible server.</li>
+
+<li>Do not attempt to use this command option against an incompatible server.</li>
+</ol>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2879" lang="en-us" id="sql27971n">
+<h1 class="msghead" id="d372883e2879"><span class="title title msgId"><span class="ph ph msgNumber">SQL27971N</span></span>  <span class="shortdesc shortdesc msgText">The target table has changed since the start of the import utility.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27971N: Explanation"><h2 class="sectiontitle" id="d372883e2903">Explanation</h2><p>This message can be returned for several reasons.  For example, this message could be returned if application dropped the target table and created a new table with the same name while an online import was running.</p>
+
+<p>The utility stops processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27971N: User response"><h2 class="sectiontitle" id="d372883e2912">User response</h2><p>If desired, rerun the operation.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2924" lang="en-us" id="sql27972n">
+<h1 class="msghead" id="d372883e2924"><span class="title title msgId"><span class="ph ph msgNumber">SQL27972N</span></span>  <span class="shortdesc shortdesc msgText">A range of rows from the input file, starting at <var class="keyword varname vartype=quotedString varnumber=1">first-failed-row</var> and ending at <var class="keyword varname vartype=quotedString varnumber=2">last-failed-row</var>, was not inserted into the table. SQLCODE = <var class="keyword varname vartype=quotedString varnumber=3">sqlcode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27972N: Explanation"><h2 class="sectiontitle" id="d372883e2957">Explanation</h2><p>The atomic compound database operation failed to insert a sequence of rows of data read from the input file. One or more of the fields in the input file is not compatible with the database field where the field is being inserted.  </p>
+
+<p>Processing continues with the next row of input data.  </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27972N: User response"><h2 class="sectiontitle" id="d372883e2966">User response</h2><p>Examine the input file and the database contents. If desired, modify the database or modify the input file and rerun the operation.  </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e2977" lang="en-us" id="sql27980w">
+<h1 class="msghead" id="d372883e2977"><span class="title title msgId"><span class="ph ph msgNumber">SQL27980W</span></span>  <span class="shortdesc shortdesc msgText">The utility encountered attached or detached data partitions in the target table or the source table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27980W: Explanation"><h2 class="sectiontitle" id="d372883e3001">Explanation</h2><p>Some of the data partitions are in the attached or detached state. The utility treats these data partitions as invisible. Any input source records belonging to those data partitions will be rejected by the import utility or the load utility. The rows rejected by the load utility can be recovered from the exception table, if one was specified. The export utility will not process any data that might exist in those data partitions.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27980W: User response"><h2 class="sectiontitle" id="d372883e3007">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3019" lang="en-us" id="sql27981w">
+<h1 class="msghead" id="d372883e3019"><span class="title title msgId"><span class="ph ph msgNumber">SQL27981W</span></span>  <span class="shortdesc shortdesc msgText">The utility could not verify presence of attached or detached data partitions in the target table or the source table.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27981W: Explanation"><h2 class="sectiontitle" id="d372883e3043">Explanation</h2><p>Some of the data partitions might be in the attached or detached state, but the utility was unable to confirm this. The utility treats these data partitions as invisible. Any input source records belonging to those data partitions will be rejected by the import utility or the load utility. The rows rejected by the load utility can be recovered from the exception table, if one was specified. The export utility will not process any data that might exist in those data partitions.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27981W: User response"><h2 class="sectiontitle" id="d372883e3049">User response</h2><p>No action is required.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3060" lang="en-us" id="sql27982n">
+<h1 class="msghead" id="d372883e3060"><span class="title title msgId"><span class="ph ph msgNumber">SQL27982N</span></span>  <span class="shortdesc shortdesc msgText">Vendor Load API (sqluvtld) is no longer supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27982N: Explanation"><h2 class="sectiontitle" id="d372883e3084">Explanation</h2><p>Vendor Load API (sqluvtld) is no longer supported. DB2 Load utility is the only supported bulk loader. DB2 Load utility can be executed via db2Load API.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27982N: User response"><h2 class="sectiontitle" id="d372883e3090">User response</h2><p>Do not use the sqluvtld API or any applications that invoke it.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3102" lang="en-us" id="sql27983n">
+<h1 class="msghead" id="d372883e3102"><span class="title title msgId"><span class="ph ph msgNumber">SQL27983N</span></span>  <span class="shortdesc shortdesc msgText">The LOAD utility is unable to rebuild the index.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27983N: Explanation"><h2 class="sectiontitle" id="d372883e3126">Explanation</h2><p>The LOAD target table has detached data partitions and has dependent materialized query tables or dependent staging tables that have not been incrementally refreshed with respect to the detached data  partition. This condition prevents the LOAD utility running in insert mode or restart mode from rebuilding a unique index.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27983N: User response"><h2 class="sectiontitle" id="d372883e3132">User response</h2><p>Do not specify indexing mode REBUILD with LOAD insert until the dependent materialized query tables or dependent staging tables are refreshed. Use a different LOAD indexing mode, or execute the SET INTEGRITY statement with the IMMEDIATE CHECKED option to maintain the dependent materialized query tables or dependent staging tables with respect to the detached data partition. If a LOAD restart cannot incrementally maintain indexes, the previously failed LOAD operation must be terminated before dependent materialized query tables or dependent staging tables can be refreshed.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3143" lang="en-us" id="sql27984w">
+<h1 class="msghead" id="d372883e3143"><span class="title title msgId"><span class="ph ph msgNumber">SQL27984W</span></span>  <span class="shortdesc shortdesc msgText">The export command completed successfully. However, some information that would be required to recreate one or more tables has not been saved to the output file. The file will not be able to be used by the IMPORT command to create or replace tables. Reason code: <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27984W: Explanation"><h2 class="sectiontitle" id="d372883e3170">Explanation</h2><p>You can export data from a database to a file by using the export utility. You can then import the data from that file to recreate those tables by using the import utility.</p>
+
+<p>This message is returned when the export utility is unable to export all of the information for one or more tables, which means that the output file that the export utility created would not be able to be used by the import utility to create or recreate the tables.</p>
+
+<p>The reason code indicates the type of information that was not exported:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Index information has not been saved because the index column names contain hexadecimal values of 0x2B or 0x2D.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>XML column definitions have not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Multidimensional clustered table (MDC) key definitions have not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Table partitioning key definitions have not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Index names have been truncated due to code page conversion.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Information about protected tables has not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Action strings other than 'SELECT * FROM &lt;TABLE-NAME&gt;' have not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>Column names specified with the METHOD N parameter were not used because the METHOD N parameter is not supported when hierarchical data is being exported.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>A column name that was too long for the Integration Exchange Format (IXF) format has been truncated.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>A user-defined type name that was too long for the IXF format has been truncated.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>Typed table information has been truncated due to codepage conversion.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>The name of a schema that is associated with a user-defined type was too long for the IXF format. The schema name has been truncated.</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>Decimal floating-point column definitions have not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>Hidden columns information has not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+<dd class="dlentry"><p>Information about indexes with random ordering was not saved.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>Table column orientation in column-organized tables has not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">17</dt>
+
+<dd class="dlentry"><p>Information about expression-based indexes</p>
+</dd>
+
+
+<dt class="dlterm">18</dt>
+
+<dd class="dlentry"><p>Indexes created with the BUSINESS_TIME WITHOUT OVERLAPS clause have not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">19</dt>
+
+<dd class="dlentry"><p>Information about columns where STRINGUNITS has been specified as CODEUNITS32 has not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">20</dt>
+
+<dd class="dlentry"><p>BINARY or VARBINARY column definitions have not been saved.</p>
+</dd>
+
+
+<dt class="dlterm">21</dt>
+
+<dd class="dlentry"><p>Information that the table was created as a random distribution table was not saved.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27984W: User response"><h2 class="sectiontitle" id="d372883e3376">User response</h2><p>For reason codes 1, 3, 4, 5, 7, 8, 9, 11, 14, 17, and 18:</p>
+
+<ul>
+<li>To force the import utility to create the tables despite the fact that some information is missing, specify the FORCECREATE parameter when you issue the IMPORT command with the CREATE parameter or the REPLACE_CREATE parameter.</li>
+</ul>
+
+<p>For reason codes 2, 6, 10, 12, 13, 15, 16, 19, 20 and 21,  perform the following steps:</p>
+
+<ol>
+<li>Use the db2look command to extract table information and create the table.</li>
+
+<li>Issue the IMPORT command with the INSERT or REPLACE parameter with the exported file.</li>
+</ol>
+
+<p><strong>sqlcode</strong>:  +27984</p>
+
+<p><strong>sqlstate</strong>:  5U059</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3415" lang="en-us" id="sql27985n">
+<h1 class="msghead" id="d372883e3415"><span class="title title msgId"><span class="ph ph msgNumber">SQL27985N</span></span>  <span class="shortdesc shortdesc msgText">Autoloader executable (db2atld) is no longer supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27985N: Explanation"><h2 class="sectiontitle" id="d372883e3439">Explanation</h2><p>Autoloader executable (db2atld) is no longer supported. The Load utility is 
+the only supported bulk loader. The Load utility is executed via a db2Load API, 
+LOAD CLP command, or SYSPROC.ADMIN_CMD stored procedure.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27985N: User response"><h2 class="sectiontitle" id="d372883e3445">User response</h2><p>Do not use the db2atld executable.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3456" lang="en-us" id="sql27986w">
+<h1 class="msghead" id="d372883e3456"><span class="title title msgId"><span class="ph ph msgNumber">SQL27986W</span></span>  <span class="shortdesc shortdesc msgText">A column name has been truncated in the PC/IXF file during Export. This file will not be supported in Import using Method N.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27986W: Explanation"><h2 class="sectiontitle" id="d372883e3480">Explanation</h2><p>Data has not been affected during Export but the file cannot be used in Import with Method N because some column information is missing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27986W: User response"><h2 class="sectiontitle" id="d372883e3486">User response</h2><p>If Method N will not be used in Import, then no action is necessary.  If Method N will be used, then export using Method N again, but explicitly specify shorter column names.  Even though the PC/IXF file will contain the shorter column names, this will not affect the import of the data into an existing table.  Alternatively, rename the columns in the original table to be shorter and export the data again.</p>
+
+<p><strong>sqlcode</strong>:  +27986</p>
+
+<p><strong>sqlstate</strong>:  5U036</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3508" lang="en-us" id="sql27987n">
+<h1 class="msghead" id="d372883e3508"><span class="title title msgId"><span class="ph ph msgNumber">SQL27987N</span></span>  <span class="shortdesc shortdesc msgText">This PC/IXF file is not supported in Import using Method N.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27987N: Explanation"><h2 class="sectiontitle" id="d372883e3532">Explanation</h2><p>Data has not been affected during Export but the file cannot be used in Import using Method N since some column information is missing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27987N: User response"><h2 class="sectiontitle" id="d372883e3538">User response</h2><p>Import using another Method other than N. Alternatively, export using Method N again, but explicitly specify shorter column names. Even though the PC/IXF file will contain the shorter column names, this will not affect the import of the data into an existing table.  Alternatively, rename the columns in the original table to be shorter and export the data again.</p>
+
+<p><strong>sqlcode</strong>:  -27987</p>
+
+<p><strong>sqlstate</strong>:  5U015</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3559" lang="en-us" id="sql27990w">
+<h1 class="msghead" id="d372883e3559"><span class="title title msgId"><span class="ph ph msgNumber">SQL27990W</span></span>  <span class="shortdesc shortdesc msgText">During loading, at least one row was found to be on the wrong partition.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27990W: Explanation"><h2 class="sectiontitle" id="d372883e3583">Explanation</h2><p>When loading a partitioned database using the load utility with LOAD_ONLY_VERIFY_PART mode, any rows in the input file that are found to be on the wrong partition will be discarded.  If the "dumpfile" modifier is specified, the discarded rows will be saved to the dump file.  This message will appear only once per partition per load job, even when there are multiple partition violations present.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27990W: User response"><h2 class="sectiontitle" id="d372883e3589">User response</h2><p>If the discarded rows are saved to a dump file, they can be loaded to the correct partition by simply issuing another load command with the MODE option set to PARTITION_AND_LOAD.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3601" lang="en-us" id="sql27991w">
+<h1 class="msghead" id="d372883e3601"><span class="title title msgId"><span class="ph ph msgNumber">SQL27991W</span></span>  <span class="shortdesc shortdesc msgText">Too many partitioning agents specified in the load command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27991W: Explanation"><h2 class="sectiontitle" id="d372883e3625">Explanation</h2><p>Too many partitioning agents have been specified
+in the PARTITIONING_DBPARTNUMS partitioned
+database configuration option of the load command.
+The maximum number of partitioning agents is specified by the MAX_NUM_PART_AGENTS load option,
+which defaults to 25 if not specified.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27991W: User response"><h2 class="sectiontitle" id="d372883e3631">User response</h2><p>Resubmit the command with the correct number of partitioning agents.  Alternatively, the PARTITIONING_DBPARTNUMS option can be omitted and the load utility will automatically select an appropriate number of partitioning agents.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3642" lang="en-us" id="sql27992n">
+<h1 class="msghead" id="d372883e3642"><span class="title title msgId"><span class="ph ph msgNumber">SQL27992N</span></span>  <span class="shortdesc shortdesc msgText">The data file contains a valid partitioning map,
+but the load mode is not LOAD_ONLY.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27992N: Explanation"><h2 class="sectiontitle" id="d372883e3666">Explanation</h2><p>Load has detected a valid partitioning map at the beginning of 
+the file. The Load mode specified would cause the utility to treat 
+this as user data, possibly causing undesired results.  </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27992N: User response"><h2 class="sectiontitle" id="d372883e3672">User response</h2><p>If the reason the data file begins with a partitioning map header is that
+the data in the file has already been partitioned, then use LOAD_ONLY mode
+to load the file.  In this case it will also be necessary to use the
+OUTPUT_DBPARTNUMS option to specify the single partition to which the data
+should be loaded.</p>
+
+<p>If the partitioning map detected by load at the beginning of the file is
+actually user data, then use the IGNOREHEADER
+modifier to disable the partition map detection and load the entire data file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3687" lang="en-us" id="sql27993w">
+<h1 class="msghead" id="d372883e3687"><span class="title title msgId"><span class="ph ph msgNumber">SQL27993W</span></span>  <span class="shortdesc shortdesc msgText">The STATISTICS USE PROFILE option of the Load utility was specified, however, a statistics profile does not exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27993W: Explanation"><h2 class="sectiontitle" id="d372883e3711">Explanation</h2><p>The statistics profile does not exist in the catalog table SYSIBM.SYSTABLES. The statistics profile must be created before the load is executed.</p>
+
+<p>The load utility continues processing.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27993W: User response"><h2 class="sectiontitle" id="d372883e3720">User response</h2><p>To create a statistics profile, use the SET PROFILE or SET PROFILE ONLY options of the RUNSTATS utility. Refer to the RUNSTATS documentation for a detailed description of the utility options.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3731" lang="en-us" id="sql27994w">
+<h1 class="msghead" id="d372883e3731"><span class="title title msgId"><span class="ph ph msgNumber">SQL27994W</span></span>  <span class="shortdesc shortdesc msgText">The length of a special register default column is smaller than the target column length. Load may truncate the values corresponding to this column (<var class="keyword varname vartype=quotedString varnumber=1">column-num</var>).</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27994W: Explanation"><h2 class="sectiontitle" id="d372883e3758">Explanation</h2><p>The clause SESSION_USER, CURRENT_USER, SYSTEM_USER, or CURRENT_SCHEMA has been specified for column <var class="keyword varname">column-num</var>, but this column was either defined with a length that is less than 128 bytes (SESSION_USER only) or the column-value inserted into this column may exceed the target length after codepage conversion. Load may truncate the column-value.   </p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27994W: User response"><h2 class="sectiontitle" id="d372883e3767">User response</h2><p>If your system standards would not allow a user ID (SESSION_USER) to exceed the length of the column, then this warning may be ignored. To prevent this warning from occurring, the length of the column must be at least 128 bytes. If codepage conversion resulted in the growth of this register default column, increase the length of the column to accommodate the growth.  </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d372883e3779" lang="en-us" id="sql27999n">
+<h1 class="msghead" id="d372883e3779"><span class="title title msgId"><span class="ph ph msgNumber">SQL27999N</span></span>  <span class="shortdesc shortdesc msgText">The requested IMPORT operation into a remote target (nickname) cannot be performed.  Reason code = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL27999N: Explanation"><h2 class="sectiontitle" id="d372883e3806">Explanation</h2><p>The target of the requested IMPORT operation resides in a remote database and is referenced locally by a nickname. The options specified for the IMPORT command do not meet the constraints required to allow the operation.  The operation was rejected.</p>
+
+<p>The explanation corresponding to the reason code is:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>The federated wrapper which manages the operations on the nickname is non-relational.  Only nicknames managed by relational wrappers are supported. The ODBC wrapper is also not supported.</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>The DATALINK SPECIFICATION clause was specified, but is not supported.</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>One of the following unsupported filetype modifiers was specified: indexixf  or indexschema.</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>The dldelfiletype modifier, which is unsupported, was specified.</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>One of the following unsupported filetype modifiers was specified: nodefaults or usedefaults.</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>The no_type_idfiletype modifier, which is unsupported, was specified.</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>One of the following unsupported filetype modifiers was specified: generatedignore, generatedmissing, identityignore, identitymissing, periodignore, periodmissing, transactioidignore, or transactionidmissing.</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>The COMMITCOUNT clause was not specified or was specified with the value AUTOMATIC.  If the COMMITCOUNT clause is used, a non zero number must be specified.</p>
+</dd>
+
+
+<dt class="dlterm">9</dt>
+
+<dd class="dlentry"><p>The ALLOW WRITE ACCESS clause, which is required, was not specified.</p>
+</dd>
+
+
+<dt class="dlterm">10</dt>
+
+<dd class="dlentry"><p>An unsupported filetype was specified.  Only files of type IXF, ASC, or DEL are supported.</p>
+</dd>
+
+
+<dt class="dlterm">11</dt>
+
+<dd class="dlentry"><p>An unsupported import action was specified.  Only the INSERT INTO or INSERT_UPDATE INTO actions are supported.</p>
+</dd>
+
+
+<dt class="dlterm">12</dt>
+
+<dd class="dlentry"><p>Target table contains one of unsupported column types: LOB columns, XML columns, generated columns, datalink columns, or target table is a hierarchy table (typed table).</p>
+</dd>
+
+
+<dt class="dlterm">13</dt>
+
+<dd class="dlentry"><p>The lobsinfile filetype modifier, which is unsupported, was specified.</p>
+</dd>
+
+
+<dt class="dlterm">14</dt>
+
+<dd class="dlentry"><p>Either the remote target is not a table, or insufficient privileges prevent the utility from accessing the nickname. Import operation is only permitted when nickname is defined on a table, and PASSTHRU privilege is granted on the user.</p>
+</dd>
+
+
+<dt class="dlterm">15</dt>
+
+
+<dd class="dlentry"><p>The necessary stored procedures do not exist against the target database. Update the database
+system catalog and cause built-in SQL routines and views to be recreated by calling the version of
+the db2updv* command that is appropriate for the recently installed fix pack.</p>
+</dd>
+
+
+<dt class="dlterm">16</dt>
+
+<dd class="dlentry"><p>The target table is a random distribution table using the random by generation method, which is unsupported.</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL27999N: User response"><h2 class="sectiontitle" id="d372883e3963">User response</h2><p>Correct the options specified and retry the IMPORT command.</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>

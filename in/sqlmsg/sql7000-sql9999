@@ -1,0 +1,1009 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2021">
+
+
+
+
+
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+publisher: "IBM",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="IM/DB2LUW/v11.5/com.ibm.help.doc/swg_info_common.css/ibmdita.css">
+<link rel="Start" href="doc/rsqlmsg.html">
+<title>SQL7000 - SQL9999</title>
+</head>
+<body><main role="main"><div><article class="nested0" role="article" aria-labelledby="d270166e14" id="com.ibm.db2.luw.messages.sql.doc-gentopic20">
+   <h1 class="topictitle1" id="d270166e14">SQL7000 - SQL9999</h1>
+
+     
+
+   <aside role="complementary" aria-labelledby="d270166e14"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="doc/rsqlmsg.html" title="The SQL message identifier prefix denotes messages that are returned by database utilities or when SQL statements are executed. SQL messages are directly associated with sqlcode values that are returned in the SQL communication area (SQLCA) structure. Some SQL messages are associated with SQLSTATE messages, where SQLSTATE messages are return codes from recently executed SQL statements.">SQL messages</a></div>
+</div>
+</nav></aside></article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e64" lang="en-us" id="sql7001n">
+<h1 class="msghead" id="d270166e64"><span class="title title msgId"><span class="ph ph msgNumber">SQL7001N</span></span>  <span class="shortdesc shortdesc msgText">Unknown command <var class="keyword varname vartype=quotedString varnumber=1">command</var> was requested.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7001N: Explanation"><h2 class="sectiontitle" id="d270166e91">Explanation</h2><p>The command submitted to REXX could not be recognized.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7001N: User response"><h2 class="sectiontitle" id="d270166e100">User response</h2><p>Verify that the command is a valid SQL statement and rerun
+the procedure.
+Note that all commands must be in uppercase.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e111" lang="en-us" id="sql7002n">
+<h1 class="msghead" id="d270166e111"><span class="title title msgId"><span class="ph ph msgNumber">SQL7002N</span></span>  <span class="shortdesc shortdesc msgText">The cursor name is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7002N: Explanation"><h2 class="sectiontitle" id="d270166e135">Explanation</h2><p>The user specified an incorrect cursor name.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7002N: User response"><h2 class="sectiontitle" id="d270166e144">User response</h2><p>Verify that the cursor name is one of the form
+“c1” through “c100”.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e156" lang="en-us" id="sql7003n">
+<h1 class="msghead" id="d270166e156"><span class="title title msgId"><span class="ph ph msgNumber">SQL7003N</span></span>  <span class="shortdesc shortdesc msgText">The statement name is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7003N: Explanation"><h2 class="sectiontitle" id="d270166e180">Explanation</h2><p>The user has specified an incorrect statement name.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7003N: User response"><h2 class="sectiontitle" id="d270166e189">User response</h2><p>Verify that the statement name is of the form
+“s1” through “s100”.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e200" lang="en-us" id="sql7004n">
+<h1 class="msghead" id="d270166e200"><span class="title title msgId"><span class="ph ph msgNumber">SQL7004N</span></span>  <span class="shortdesc shortdesc msgText">The syntax of the request is invalid.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7004N: Explanation"><h2 class="sectiontitle" id="d270166e224">Explanation</h2><p>REXX was unable to parse the command string submitted.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7004N: User response"><h2 class="sectiontitle" id="d270166e233">User response</h2><p>Use proper command syntax.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e245" lang="en-us" id="sql7005w">
+<h1 class="msghead" id="d270166e245"><span class="title title msgId"><span class="ph ph msgNumber">SQL7005W</span></span>  <span class="shortdesc shortdesc msgText">The cursor used by this OPEN statement has not
+been declared.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7005W: Explanation"><h2 class="sectiontitle" id="d270166e269">Explanation</h2><p>An OPEN statement was attempted without a declaring a
+cursor.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7005W: User response"><h2 class="sectiontitle" id="d270166e278">User response</h2><p>Insert a DECLARE statement before the OPEN statement
+and rerun the procedure.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e289" lang="en-us" id="sql7006n">
+<h1 class="msghead" id="d270166e289"><span class="title title msgId"><span class="ph ph msgNumber">SQL7006N</span></span>  <span class="shortdesc shortdesc msgText">Invalid keyword <var class="keyword varname vartype=quotedString varnumber=1">keyword</var> given on <var class="keyword varname vartype=quotedString varnumber=2">request</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7006N: Explanation"><h2 class="sectiontitle" id="d270166e319">Explanation</h2><p>The statement contains a not valid keyword <var class="keyword varname">keyword</var>.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7006N: User response"><h2 class="sectiontitle" id="d270166e331">User response</h2><p>Specify the correct keyword format.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e343" lang="en-us" id="sql7007n">
+<h1 class="msghead" id="d270166e343"><span class="title title msgId"><span class="ph ph msgNumber">SQL7007N</span></span>  <span class="shortdesc shortdesc msgText">REXX variable <var class="keyword varname vartype=quotedString varnumber=1">variable</var> does not
+exist.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7007N: Explanation"><h2 class="sectiontitle" id="d270166e370">Explanation</h2><p>A REXX variable
+that did not exist in the REXX variable pool
+was passed.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7007N: User response"><h2 class="sectiontitle" id="d270166e379">User response</h2><p>Verify that all variable names in the host-variable list are
+assigned before the command that failed.  Then run the procedure again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e390" lang="en-us" id="sql7008n">
+<h1 class="msghead" id="d270166e390"><span class="title title msgId"><span class="ph ph msgNumber">SQL7008N</span></span>  <span class="shortdesc shortdesc msgText">REXX variable <var class="keyword varname vartype=quotedString varnumber=1">variable</var> contains
+inconsistent data.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7008N: Explanation"><h2 class="sectiontitle" id="d270166e417">Explanation</h2><p>A variable that contained inconsistent data
+was passed to REXX.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7008N: User response"><h2 class="sectiontitle" id="d270166e426">User response</h2><p>If the variable is an SQLDA, verify that the data and
+length fields have been assigned correctly.  If it is a
+REXX variable, verify that the
+type of data is appropriate to the command where it is being used.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e438" lang="en-us" id="sql7009n">
+<h1 class="msghead" id="d270166e438"><span class="title title msgId"><span class="ph ph msgNumber">SQL7009N</span></span>  <span class="shortdesc shortdesc msgText">Truncated REXX variable
+<var class="keyword varname vartype=quotedString varnumber=1">variable</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7009N: Explanation"><h2 class="sectiontitle" id="d270166e465">Explanation</h2><p>The variable <var class="keyword varname">variable</var> passed to  REXX contained
+inconsistent data.  The data string from <var class="keyword varname">variable</var> was truncated.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7009N: User response"><h2 class="sectiontitle" id="d270166e480">User response</h2><p>Verify that the data length is consistent with the length given in
+the input SQLDA, and run the procedure again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e491" lang="en-us" id="sql7010n">
+<h1 class="msghead" id="d270166e491"><span class="title title msgId"><span class="ph ph msgNumber">SQL7010N</span></span>  <span class="shortdesc shortdesc msgText">Invalid scan ID <var class="keyword varname vartype=quotedString varnumber=1">ID</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7010N: Explanation"><h2 class="sectiontitle" id="d270166e518">Explanation</h2><p>The scan ID <var class="keyword varname">variable</var> passed to REXX did not
+exist or contained inconsistent or missing data.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7010N: User response"><h2 class="sectiontitle" id="d270166e530">User response</h2><p>Verify that the data contained in the scan ID has
+been assigned correctly, and run the procedure again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e542" lang="en-us" id="sql7011n">
+<h1 class="msghead" id="d270166e542"><span class="title title msgId"><span class="ph ph msgNumber">SQL7011N</span></span>  <span class="shortdesc shortdesc msgText">Required parameter <var class="keyword varname vartype=quotedString varnumber=1">parameter</var> not given.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7011N: Explanation"><h2 class="sectiontitle" id="d270166e569">Explanation</h2><p>The parameter <var class="keyword varname">parameter</var> is required by REXX command
+syntax but was not specified.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7011N: User response"><h2 class="sectiontitle" id="d270166e581">User response</h2><p>Specify the required parameter value, and run the
+procedure again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e592" lang="en-us" id="sql7012n">
+<h1 class="msghead" id="d270166e592"><span class="title title msgId"><span class="ph ph msgNumber">SQL7012N</span></span>  <span class="shortdesc shortdesc msgText">Attempted ISL change while connected to a
+database.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7012N: Explanation"><h2 class="sectiontitle" id="d270166e616">Explanation</h2><p>Isolation level (ISL) may not be changed while
+connected to a database.</p>
+
+<p>The command is ignored.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7012N: User response"><h2 class="sectiontitle" id="d270166e625">User response</h2><p>If a change in isolation level is necessary, disconnect
+from the current database, then set the isolation level and
+connect to the database.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e637" lang="en-us" id="sql7013n">
+<h1 class="msghead" id="d270166e637"><span class="title title msgId"><span class="ph ph msgNumber">SQL7013N</span></span>  <span class="shortdesc shortdesc msgText">Mismatched cursor and statement name or hold
+attribute.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7013N: Explanation"><h2 class="sectiontitle" id="d270166e661">Explanation</h2><p>In REXX, the cursor and
+statement name form must be 'cnn' and 'snn,' where 'nn' is a
+number from 1 to 100.
+The numbers must be the same for a cursor and statement pair.
+Also, c1 through c50 are declared without hold and c51 through c100
+with hold.</p>
+
+<p>The command is ignored.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7013N: User response"><h2 class="sectiontitle" id="d270166e670">User response</h2><p>Verify that the cursor and statement numbers match and
+rerun the procedure.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e681" lang="en-us" id="sql7014n">
+<h1 class="msghead" id="d270166e681"><span class="title title msgId"><span class="ph ph msgNumber">SQL7014N</span></span>  <span class="shortdesc shortdesc msgText">Incorrect number of host variable components.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7014N: Explanation"><h2 class="sectiontitle" id="d270166e705">Explanation</h2><p>In REXX, the first component of a compound host variable
+lists a number which is not equal to the actual number of components
+defined.</p>
+
+<p>The command is ignored.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7014N: User response"><h2 class="sectiontitle" id="d270166e714">User response</h2><p>Verify that the number in the first component matches the
+number of components actually defined and rerun the procedure.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e726" lang="en-us" id="sql7015n">
+<h1 class="msghead" id="d270166e726"><span class="title title msgId"><span class="ph ph msgNumber">SQL7015N</span></span>  <span class="shortdesc shortdesc msgText">The variable name <var class="keyword varname vartype=quotedString varnumber=1">variable</var> is not valid in REXX.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7015N: Explanation"><h2 class="sectiontitle" id="d270166e753">Explanation</h2><p>The variable name specified is not valid in REXX.
+The name must conform to the language requirements.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7015N: User response"><h2 class="sectiontitle" id="d270166e762">User response</h2><p>Change the name to one that conforms to the REXX
+requirements and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e773" lang="en-us" id="sql7016n">
+<h1 class="msghead" id="d270166e773"><span class="title title msgId"><span class="ph ph msgNumber">SQL7016N</span></span>  <span class="shortdesc shortdesc msgText">Invalid syntax provided to the SQLDB2 interface.
+Related Error: <var class="keyword varname vartype=quotedString varnumber=1">db2-error</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7016N: Explanation"><h2 class="sectiontitle" id="d270166e800">Explanation</h2><p>Invalid syntax was provided to the SQLDB2 interface,
+e.g. both an input file and a command were specified.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7016N: User response"><h2 class="sectiontitle" id="d270166e806">User response</h2><p>Look up the related error code for more information.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e818" lang="en-us" id="sql7032n">
+<h1 class="msghead" id="d270166e818"><span class="title title msgId"><span class="ph ph msgNumber">SQL7032N</span></span>  <span class="shortdesc shortdesc msgText">SQL procedure <var class="keyword varname vartype=quotedString varnumber=1">procedure-name</var> not created.
+Diagnostic file is <var class="keyword varname vartype=quotedString varnumber=2">file-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7032N: Explanation"><h2 class="sectiontitle" id="d270166e848">Explanation</h2><div class="p">SQL Procedure <var class="keyword varname">procedure-name</var> was not created. One of the
+following has occurred:
+<ul>
+<li>Support for SQL stored procedures is not installed and
+configured on this server. You need to have the IBM Data Server Client and a C compiler installed on
+the server to create SQL procedures.  You may need to set
+the DB2 registry variable DB2_SQLROUTINE_COMPILER_PATH to
+point to a script or batch file that contains environment
+settings for the C compiler on your platform.</li>
+
+<li>DB2 failed to precompile or compile the SQL stored procedure. DB2 creates
+an SQL procedure as a C program that contains embedded SQL. Errors
+not found during the initial parsing of the CREATE PROCEDURE
+statement can be found during the precompile or compile stage.</li>
+</ul>
+</div>
+
+<p>For UNIX platforms, the full path of the file that contains
+diagnostic information is:<br><br>
+$DB2PATH/function/routine/sqlproc/&nbsp;\<br>
+$DATABASE/$SCHEMA/tmp/<var class="keyword varname">file-name</var><br><br>
+where $DATABASE represents the name of the database, and
+$SCHEMA represents the schema name of the SQL procedure.</p>
+
+<p>For Windows operating systems, the full path
+of the file that contains diagnostic information is:<br><br>
+%DB2PATH%\function\routine\sqlproc\&nbsp;\<br>
+%DATABASE%\%SCHEMA%\tmp\<var class="keyword varname">file-name</var><br><br>
+where %DATABASE% represents the name of the database, and
+%SCHEMA% represents the schema name of the SQL procedure.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7032N: User response"><h2 class="sectiontitle" id="d270166e890">User response</h2><p>Ensure that both a compatible C compiler and a DB2 Application
+Development Client are installed on the server. If a precompile or
+compile error occurred, refer to the messages from the precompiler or
+compiler in the diagnostic file <var class="keyword varname">file-name</var>.</p>
+
+<div class="p">Ensure that the DB2 registry variable DB2_SQLROUTINE_COMPILER_PATH is set
+to point to a script or batch file that sets up the C compiler environment.
+On a UNIX operating system, for example, you may create a script called
+“sr_cpath” in the /home/DB2INSTANCE/sqllib/function/routine directory.
+To set the DB2 registry variable DB2_SQL_ROUTINE_COMPILER_PATH accordingly,
+issue the following command:
+<pre class="codeblock"><code>db2set DB2_SQLROUTINE_COMPILER_PATH =
+/home/DB2INSTANCE/sqllib/function/routine/sr_cpath</code></pre></div>
+
+<p> 
+<strong>sqlcode</strong>:  -7032</p>
+
+<p> 
+<strong>sqlstate</strong>:  42904</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e921" lang="en-us" id="sql7035w">
+<h1 class="msghead" id="d270166e921"><span class="title title msgId"><span class="ph ph msgNumber">SQL7035W</span></span>  <span class="shortdesc shortdesc msgText">The executable of the SQL procedure <var class="keyword varname vartype=quotedString varnumber=1">procedure-name</var> is
+not saved in the database catalog.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7035W: Explanation"><h2 class="sectiontitle" id="d270166e948">Explanation</h2><p>The executable of the SQL procedure exceeds the limit of 2 megabytes
+and therefore cannot be stored in the database catalog.
+It will not be recovered automatically at database restore time or on ROLLBACK
+of a DROP PROCEDURE statement.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7035W: User response"><h2 class="sectiontitle" id="d270166e954">User response</h2><p>If the warning resulted from a CREATE PROCEDURE statement,
+ensure that you keep a backup of the executable associated
+with SQL procedure <var class="keyword varname">procedure-name</var>.
+If the warning was issued during a restore operation or a ROLLBACK of a
+DROP PROCEDURE statement,
+then the executable associated with <var class="keyword varname">procedure-name</var>
+must be manually synchronized with the SQL procedure that
+is defined in the catalog.</p>
+
+<p> 
+<strong>sqlcode</strong>:   +7035</p>
+
+<p> 
+<strong>sqlstate</strong>:  01645</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e984" lang="en-us" id="sql7099n">
+<h1 class="msghead" id="d270166e984"><span class="title title msgId"><span class="ph ph msgNumber">SQL7099N</span></span>  <span class="shortdesc shortdesc msgText">Invalid error <var class="keyword varname vartype=quotedString varnumber=1">error</var> has occurred.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL7099N: Explanation"><h2 class="sectiontitle" id="d270166e1011">Explanation</h2><p>A REXX internal error has occurred.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL7099N: User response"><h2 class="sectiontitle" id="d270166e1020">User response</h2><p>Verify that REXX is installed properly
+and rerun the procedure.  If the error continues, note
+the error number and call the dealer.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1031" lang="en-us" id="sql8000n">
+<h1 class="msghead" id="d270166e1031"><span class="title title msgId"><span class="ph ph msgNumber">SQL8000N</span></span>  <span class="shortdesc shortdesc msgText">DB2START processing failed; a valid product license was not found. If you have licensed this product, ensure the license key is properly registered. You can register the license using the db2licm command. The license key can be obtained from your licensed product CD.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8000N: Explanation"><h2 class="sectiontitle" id="d270166e1055">Explanation</h2><p>A valid license key could not be found and the evaluation period has expired.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8000N: User response"><h2 class="sectiontitle" id="d270166e1061">User response</h2><p>Install a license key for the fully entitled version of the product. You can obtain a license key for the product by contacting your IBM representative or authorized dealer.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1073" lang="en-us" id="sql8001n">
+<h1 class="msghead" id="d270166e1073"><span class="title title msgId"><span class="ph ph msgNumber">SQL8001N</span></span>  <span class="shortdesc shortdesc msgText">An attempt to connect to the database failed due to a product license problem.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8001N: Explanation"><h2 class="sectiontitle" id="d270166e1097">Explanation</h2><p>The connection attempt failed due to one of the following licensing issues:</p>
+
+<ul>
+<li>A license key is not present.</li>
+
+<li>A license key has not been correctly installed.</li>
+
+<li>A license key has expired.</li>
+
+<li>This product edition does not support a license key.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8001N: User response"><h2 class="sectiontitle" id="d270166e1117">User response</h2><p>Instruct your database administrator to verify that a valid license key for the database product is installed correctly, and has not expired.</p>
+
+<ul>
+<li>Use the db2licm -l command to view licenses.</li>
+
+<li>Use the db2licm -a command to register a license.</li>
+
+<li>You can obtain a license key for the product by contacting your IBM representative or authorized dealer.</li>
+</ul>
+
+<p><strong>sqlcode</strong>:  -8001</p>
+
+<p><strong>sqlstate</strong>:  42968</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1149" lang="en-us" id="sql8002n">
+<h1 class="msghead" id="d270166e1149"><span class="title title msgId"><span class="ph ph msgNumber">SQL8002N</span></span>  <span class="shortdesc shortdesc msgText">An attempt to connect to a host failed due to a missing DB2 Connect product or invalid license.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8002N: Explanation"><h2 class="sectiontitle" id="d270166e1173">Explanation</h2><p>If connecting directly to a host server, a DB2 Connect product with a valid license may not be present on your machine.</p>
+
+<p>If connecting to a host server through a DB2 Connect gateway, a valid license may not be present on the DB2 Connect gateway.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8002N: User response"><h2 class="sectiontitle" id="d270166e1182">User response</h2><p>Instruct your database administrator to check the following:</p>
+
+<p>If connecting directly to the host, first ensure that a DB2 Connect product is present and that the appropriate license key is installed on your machine and is unexpired.</p>
+
+<p>If connecting through a DB2 Connect gateway, ensure that the appropriate license key is installed on the gateway and is unexpired.</p>
+
+<ul>
+<li>To view licenses, use the db2licm -l command.</li>
+
+<li>To register a license, use the db2licm -a command.</li>
+
+<li>You can obtain a license key for the product by contacting your IBM representative or authorized dealer.</li>
+</ul>
+
+<p>Note: Some database product editions may not support connections to a host server.</p>
+
+<p><strong>sqlcode</strong>:  -8002</p>
+
+<p><strong>sqlstate</strong>:  42968</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1225" lang="en-us" id="sql8003n">
+<h1 class="msghead" id="d270166e1225"><span class="title title msgId"><span class="ph ph msgNumber">SQL8003N</span></span>  <span class="shortdesc shortdesc msgText">A valid license key was not found for the requested function.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8003N: Explanation"><h2 class="sectiontitle" id="d270166e1249">Explanation</h2><p>The current license key(s) do not allow the requested functionality.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8003N: User response"><h2 class="sectiontitle" id="d270166e1255">User response</h2><p>Purchase the license key for this function from your IBM representative or authorized dealer and update your license using the db2licm command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1266" lang="en-us" id="sql8004n">
+<h1 class="msghead" id="d270166e1266"><span class="title title msgId"><span class="ph ph msgNumber">SQL8004N</span></span>  <span class="shortdesc shortdesc msgText">A valid license key was not found for the requested function.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8004N: Explanation"><h2 class="sectiontitle" id="d270166e1290">Explanation</h2><p>The current license key(s) do not allow the requested functionality.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8004N: User response"><h2 class="sectiontitle" id="d270166e1296">User response</h2><p>Examine the administration notification log for more information. </p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1308" lang="en-us" id="sql8005n">
+<h1 class="msghead" id="d270166e1308"><span class="title title msgId"><span class="ph ph msgNumber">SQL8005N</span></span>  <span class="shortdesc shortdesc msgText">The license certificate <var class="keyword varname vartype=quotedString varnumber=1">license-certificate-file-name</var> was not applied because a conflicting license certificate is already registered on the system.  Conflicting license certificate: <var class="keyword varname vartype=quotedString varnumber=2">conflicting-license-certificate-name</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8005N: Explanation"><h2 class="sectiontitle" id="d270166e1338">Explanation</h2><p>To license your product, you must register the appropriate license key with your database product.  There are some restrictions on the supported combinations of licenses.  This message is returned when an attempt is made to apply an unsupported combination of licenses:</p>
+
+<ul>
+<li>An attempt was made to apply the DB2 pureScale feature license on a system on which either the DB2 Advanced Workgroup Server Edition terabyte license or the DB2 Advanced Enterprise Server Edition terabyte license is already registered.</li>
+
+<li>An attempt was made to apply the DB2 Advanced Workgroup Server Edition terabyte license or the DB2 Advanced Enterprise Server Edition terabyte license on a system on which the DB2 pureScale feature license is already registered.</li>
+</ul>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8005N: User response"><h2 class="sectiontitle" id="d270166e1352">User response</h2><p>Remove the conflicting license by issuing the db2licm -r command, and then apply the new license again.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1363" lang="en-us" id="sql8006w">
+<h1 class="msghead" id="d270166e1363"><span class="title title msgId"><span class="ph ph msgNumber">SQL8006W</span></span>  <span class="shortdesc shortdesc msgText">The product <var class="keyword varname vartype=quotedString varnumber=1">product-name</var> does not have a valid license key registered. If you have licensed this product, ensure the license key is properly registered. You can register the license by using the db2licm command. The license key can be obtained from your licensed product CD. If a license key is not registered, this product will be enabled for a <var class="keyword varname vartype=quotedString varnumber=2">number</var> day evaluation period. USE OF THE PRODUCT FOR THE EVALUATION PERIOD CONSTITUTES ACCEPTANCE OF THE TERMS OF THE IBM LICENSE AGREEMENT located in the installation path of this product in the license directory.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8006W: Explanation"><h2 class="sectiontitle" id="d270166e1393">Explanation</h2><p>A valid license key has not been installed for this product. The product will be enabled to operate for a limited period of time for evaluation purposes. THE EVALUATION PERIOD IS CONTROLLED BY A TIME DISABLING DEVICE.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8006W: User response"><h2 class="sectiontitle" id="d270166e1399">User response</h2><p>If you have purchased a fully entitled version of this product, install your license key as described in the product installation documentation. If you have already installed the license key, verify your license file for accuracy.</p>
+
+<p>USE OF THE PRODUCT FOR THE EVALUATION PERIOD IS SUBJECT TO THE TERMS OF THE IBM LICENSE AGREEMENT AND LICENSE INFORMATION DOCUMENT FOR THIS PRODUCT.  YOUR USE OF THE PRODUCT DURING THE EVALUATION PERIOD CONSTITUTES YOUR ACCEPTANCE OF THESE TERMS.</p>
+
+<p>If you do not accept the terms, you are not authorized to use the product and you must de-install it. You can obtain a license key for the fully authorized program with the product by contacting your IBM representative or authorized dealer.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1417" lang="en-us" id="sql8007w">
+<h1 class="msghead" id="d270166e1417"><span class="title title msgId"><span class="ph ph msgNumber">SQL8007W</span></span>  <span class="shortdesc shortdesc msgText">There are <var class="keyword varname vartype=quotedString varnumber=1">number</var> day(s) left in the evaluation period for the product <var class="keyword varname vartype=quotedString varnumber=2">product-name</var>. For evaluation license terms and conditions, refer to the License Agreement document located in the license directory in the installation path of this product. If you have licensed this product, ensure the license key is properly registered. You can register the license by using the db2licm command line utility. The license key can be obtained from your licensed product CD.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8007W: Explanation"><h2 class="sectiontitle" id="d270166e1447">Explanation</h2><p>A valid license key has not been installed for this product. The evaluation period will expire after the specified number of days.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8007W: User response"><h2 class="sectiontitle" id="d270166e1453">User response</h2><p>The product is operating in evaluation mode, and is enabled for a limited period of time. When the evaluation period has expired it will not execute until a license key for the fully entitled version of the product is installed.</p>
+
+<p>You can obtain a license key for the product by contacting your IBM representative or authorized dealer.</p>
+
+<p><strong>sqlcode</strong>:  +8007</p>
+
+<p><strong>sqlstate</strong>:  0168H</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1477" lang="en-us" id="sql8008n">
+<h1 class="msghead" id="d270166e1477"><span class="title title msgId"><span class="ph ph msgNumber">SQL8008N</span></span>  <span class="shortdesc shortdesc msgText">The product <var class="keyword varname vartype=quotedString varnumber=1">text</var> does not have a valid license key
+installed and the evaluation period has expired.
+Functions specific to this product are not enabled.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8008N: Explanation"><h2 class="sectiontitle" id="d270166e1504">Explanation</h2><p>A valid license key could not be found and the evaluation period has
+expired.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8008N: User response"><h2 class="sectiontitle" id="d270166e1510">User response</h2><p>Install a license key for the fully entitled version of the product.
+You can obtain a license key for the product by contacting your IBM
+representative or authorized dealer.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1522" lang="en-us" id="sql8009w">
+<h1 class="msghead" id="d270166e1522"><span class="title title msgId"><span class="ph ph msgNumber">SQL8009W</span></span>  <span class="shortdesc shortdesc msgText">The number of concurrent users of the DB2 Workgroup
+product has exceeded the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=1">number</var>.
+Concurrent user count is <var class="keyword varname vartype=quotedString varnumber=2">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8009W: Explanation"><h2 class="sectiontitle" id="d270166e1552">Explanation</h2><p>The number of concurrent users has exceeded the number of defined DB2 concurrent user entitlements.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8009W: User response"><h2 class="sectiontitle" id="d270166e1558">User response</h2><p>Contact your IBM representative or authorized dealer to obtain additional DB2 user entitlements and update the DB2 license information using the db2licm command.</p>
+
+<p><strong>sqlcode</strong>:  +8009</p>
+
+<p><strong>sqlstate</strong>:  01632</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1579" lang="en-us" id="sql8010w">
+<h1 class="msghead" id="d270166e1579"><span class="title title msgId"><span class="ph ph msgNumber">SQL8010W</span></span>  <span class="shortdesc shortdesc msgText">The number of concurrent users of the DB2 Connect
+product has exceeded the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=1">number</var>.
+Concurrent user count is <var class="keyword varname vartype=quotedString varnumber=2">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8010W: Explanation"><h2 class="sectiontitle" id="d270166e1609">Explanation</h2><p>The number of concurrent users has exceeded the number of defined DB2 concurrent user entitlements.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8010W: User response"><h2 class="sectiontitle" id="d270166e1615">User response</h2><p>Contact your IBM representative or authorized dealer to obtain additional DB2 user entitlements and update the DB2 license information using the db2licm command.</p>
+
+<p><strong>sqlcode</strong>:  +8010</p>
+
+<p><strong>sqlstate</strong>:  01632</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1637" lang="en-us" id="sql8011w">
+<h1 class="msghead" id="d270166e1637"><span class="title title msgId"><span class="ph ph msgNumber">SQL8011W</span></span>  <span class="shortdesc shortdesc msgText">One or more database partitions does not have a
+valid DB2 license key installed for the <var class="keyword varname vartype=quotedString varnumber=1">product-name</var> product.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8011W: Explanation"><h2 class="sectiontitle" id="d270166e1664">Explanation</h2><p>A valid license key has not been installed for this product on all
+database partitions.  The product will be enabled to operate for a
+limited period of time for evaluation purposes.  THE EVALUATION PERIOD IS
+CONTROLLED BY A TIME DISABLING DEVICE.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8011W: User response"><h2 class="sectiontitle" id="d270166e1670">User response</h2><p>If you have purchased a fully
+entitled version of this product, please install your license key
+as described in the product installation documentation.  If you have
+already installed the license key, please verify your license file for
+accuracy.</p>
+
+<p>USE OF THE PRODUCT FOR THE EVALUATION PERIOD IS SUBJECT TO
+THE TERMS OF THE IBM EVALUATION AGREEMENT IN THE
+EVALUATE.ARG FILE.  YOUR USE OF THE PRODUCT DURING THE
+EVALUATION PERIOD CONSTITUTES YOUR ACCEPTANCE OF THESE
+TERMS.</p>
+
+<p>If you do not accept the terms, you are not authorized to
+use the product and you must de-install it.  You can obtain
+a license key for the fully authorized program with the
+product by contacting your IBM representative or authorized
+dealer.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1687" lang="en-us" id="sql8012w">
+<h1 class="msghead" id="d270166e1687"><span class="title title msgId"><span class="ph ph msgNumber">SQL8012W</span></span>  <span class="shortdesc shortdesc msgText">The number of concurrent users of the DB2 Enterprise
+product has exceeded the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=1">number</var>.
+Concurrent user count is <var class="keyword varname vartype=quotedString varnumber=2">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8012W: Explanation"><h2 class="sectiontitle" id="d270166e1717">Explanation</h2><p>The number of concurrent users has exceeded the number of defined DB2 concurrent user entitlements.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8012W: User response"><h2 class="sectiontitle" id="d270166e1723">User response</h2><p>Contact your IBM representative or authorized dealer to obtain additional DB2 user entitlements and update the DB2 license information using the db2licm command.</p>
+
+<p><strong>sqlcode</strong>:  +8012</p>
+
+<p><strong>sqlstate</strong>:  01632</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1745" lang="en-us" id="sql8013w">
+<h1 class="msghead" id="d270166e1745"><span class="title title msgId"><span class="ph ph msgNumber">SQL8013W</span></span>  <span class="shortdesc shortdesc msgText">The number of concurrent database connections
+to the DB2 Connect product has exceeded the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=1">number</var>.
+Database connection count is <var class="keyword varname vartype=quotedString varnumber=2">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8013W: Explanation"><h2 class="sectiontitle" id="d270166e1775">Explanation</h2><p>The license for the DB2 Connect product you are using supports a
+limited
+number of concurrent database connections. You have requested a number of
+connections that exceeds this limit.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8013W: User response"><h2 class="sectiontitle" id="d270166e1781">User response</h2><p>Upgrade to a version of the DB2 Connect product with a higher limit of concurrent
+database connections.</p>
+
+<p>DB2 Connect Enterprise Edition users: obtain licenses for additional users
+by purchasing Additional User Packs.</p>
+
+<p> 
+<strong>sqlcode</strong>:  +8013</p>
+
+<p> 
+<strong>sqlstate</strong>:  01632</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1807" lang="en-us" id="sql8014n">
+<h1 class="msghead" id="d270166e1807"><span class="title title msgId"><span class="ph ph msgNumber">SQL8014N</span></span>  <span class="shortdesc shortdesc msgText">The version of the DB2 Connect product you are
+using is not licensed for use with TCP/IP protocol.
+Upgrade to a full function DB2 Connect product to use TCP/IP.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8014N: Explanation"><h2 class="sectiontitle" id="d270166e1831">Explanation</h2><p>This version of DB2 Connect is limited to SNA connectivity. TCP/IP connections are not supported.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8014N: User response"><h2 class="sectiontitle" id="d270166e1837">User response</h2><p>Upgrade to a full function DB2 Connect product.</p>
+
+<p><strong>sqlcode</strong>:  -8014</p>
+
+<p><strong>sqlstate</strong>:  42968</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1859" lang="en-us" id="sql8015n">
+<h1 class="msghead" id="d270166e1859"><span class="title title msgId"><span class="ph ph msgNumber">SQL8015N</span></span>  <span class="shortdesc shortdesc msgText">The version of the DB2 Connect product you are
+using is not licensed for updating multiple databases in the same transaction.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8015N: Explanation"><h2 class="sectiontitle" id="d270166e1883">Explanation</h2><p>This version of DB2 Connect is limited to working with a single database in a transaction. It does not support 2-phase commit protocol.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8015N: User response"><h2 class="sectiontitle" id="d270166e1889">User response</h2><p>Upgrade to a full function DB2 Connect product to be able to update multiple databases in a single transaction.</p>
+
+<p><strong>sqlcode</strong>:  -8015</p>
+
+<p><strong>sqlstate</strong>:  42968</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1910" lang="en-us" id="sql8017w">
+<h1 class="msghead" id="d270166e1910"><span class="title title msgId"><span class="ph ph msgNumber">SQL8017W</span></span>  <span class="shortdesc shortdesc msgText">The number of processors on this machine exceeds the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=1">licensed-quantity</var> for the product <var class="keyword varname vartype=quotedString varnumber=2">product-name</var>.
+The number of processors on this machine is <var class="keyword varname vartype=quotedString varnumber=3">processor-quantity</var>. You should purchase additional processor based entitlements from your IBM representative or authorized dealer and update your license using the db2licm command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL8017W: User response"><h2 class="sectiontitle" id="d270166e1943">User response</h2></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e1953" lang="en-us" id="sql8018w">
+<h1 class="msghead" id="d270166e1953"><span class="title title msgId"><span class="ph ph msgNumber">SQL8018W</span></span>  <span class="shortdesc shortdesc msgText">The number of concurrent users for this
+product has exceeded the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=1">number</var>.
+Concurrent user count is <var class="keyword varname vartype=quotedString varnumber=2">number</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8018W: Explanation"><h2 class="sectiontitle" id="d270166e1983">Explanation</h2><p>The number of concurrent users has exceeded the  number of defined concurrent user entitlements.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8018W: User response"><h2 class="sectiontitle" id="d270166e1989">User response</h2><p>Contact your IBM representative or authorized  dealer to obtain additional user entitlements and update the  DB2 license information using the db2licm command.</p>
+
+<p><strong>sqlcode</strong>:  +8018</p>
+
+<p><strong>sqlstate</strong>:  01632</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2010" lang="en-us" id="sql8019n">
+<h1 class="msghead" id="d270166e2010"><span class="title title msgId"><span class="ph ph msgNumber">SQL8019N</span></span>  <span class="shortdesc shortdesc msgText">There was an error updating the license
+for the OLAP Starter Kit. RC = <var class="keyword varname vartype=quotedString varnumber=1">reason-code</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8019N: Explanation"><h2 class="sectiontitle" id="d270166e2037">Explanation</h2><p>The license utility could not update the OLAP Starter Kit 
+license because of an unknown error.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8019N: User response"><h2 class="sectiontitle" id="d270166e2043">User response</h2><p>Try the command again. If the problem persists,
+please contact an IBM service representative.</p>
+
+<p> 
+<strong>sqlcode</strong>:  -8019</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2061" lang="en-us" id="sql8020w">
+<h1 class="msghead" id="d270166e2061"><span class="title title msgId"><span class="ph ph msgNumber">SQL8020W</span></span>  <span class="shortdesc shortdesc msgText">The number of concurrent connectors
+for one server has exceeded the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=1">number-sources</var>.
+Current number of connectors is <var class="keyword varname vartype=quotedString varnumber=2">number-entitled</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8020W: Explanation"><h2 class="sectiontitle" id="d270166e2091">Explanation</h2><p>The number of concurrent connectors has exceeded the number of defined entitlements.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8020W: User response"><h2 class="sectiontitle" id="d270166e2097">User response</h2><p>Contact your IBM representative or authorized dealer to obtain additional entitlements and then update the DB2 license information using the db2licm command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2108" lang="en-us" id="sql8022n">
+<h1 class="msghead" id="d270166e2108"><span class="title title msgId"><span class="ph ph msgNumber">SQL8022N</span></span>  <span class="shortdesc shortdesc msgText">Database partitioning feature is being used without database partitioning license.
+The database manager has detected that the database partitioning feature is being used but the database partitioning feature license has not been installed.  Ensure that you have purchased database partitioning feature entitlements from your IBM representative or authorized dealer and have updated your license using the db2licm command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL8022N: User response"><h2 class="sectiontitle" id="d270166e2132">User response</h2></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2142" lang="en-us" id="sql8023n">
+<h1 class="msghead" id="d270166e2142"><span class="title title msgId"><span class="ph ph msgNumber">SQL8023N</span></span>  <span class="shortdesc shortdesc msgText">The number of concurrent users
+for <var class="keyword varname vartype=quotedString varnumber=1">product-name</var> product has
+exceeded the defined entitlement of <var class="keyword varname vartype=quotedString varnumber=2">entitlement</var>. Concurrent user count is <var class="keyword varname vartype=quotedString varnumber=3">count</var>. You should purchase additional user
+based entitlements from your IBM representative or authorized dealer and update your license using
+the db2licm command.</span></h1>
+
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL8023N: User response"><h2 class="sectiontitle" id="d270166e2175">User response</h2></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2184" lang="en-us" id="sql8024n">
+<h1 class="msghead" id="d270166e2184"><span class="title title msgId"><span class="ph ph msgNumber">SQL8024N</span></span>  <span class="shortdesc shortdesc msgText">A valid license key was not found for the requested function. The current license key for <var class="keyword varname vartype=quotedString varnumber=1">product-name</var> product does not allow the requested functionality. Purchase the license key for this function from your IBM representative or authorized dealer and update your license using the db2licm command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL8024N: User response"><h2 class="sectiontitle" id="d270166e2211">User response</h2></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2221" lang="en-us" id="sql8025w">
+<h1 class="msghead" id="d270166e2221"><span class="title title msgId"><span class="ph ph msgNumber">SQL8025W</span></span>  <span class="shortdesc shortdesc msgText">The connection to the server <var class="keyword varname vartype=quotedString varnumber=1">server-name</var> is not allowed. A valid WebSphere Federated Server license could not be found.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8025W: Explanation"><h2 class="sectiontitle" id="d270166e2248">Explanation</h2><p>Your current WebSphere Federated Server license does not allow connection to the specified data source.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8025W: User response"><h2 class="sectiontitle" id="d270166e2254">User response</h2><p>Refer to the Administration Notification log for possible causes of this error. If this problem persist, contact IBM Support.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2265" lang="en-us" id="sql8026w">
+<h1 class="msghead" id="d270166e2265"><span class="title title msgId"><span class="ph ph msgNumber">SQL8026W</span></span>  <span class="shortdesc shortdesc msgText">DB2 server has detected that a valid license for this product has not been registered.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8026W: Explanation"><h2 class="sectiontitle" id="d270166e2289">Explanation</h2><p>Registration of a valid license key is required in order to comply with the terms and conditions of your License Agreement.  The license keys for this product are located on this product's media in the 'license' directory.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8026W: User response"><h2 class="sectiontitle" id="d270166e2295">User response</h2><p>Use the db2licm command to register the appropriate licenses that you have purchased. The License Agreement text is located in the 'license' directory in the installation directory of this product.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2307" lang="en-us" id="sql8027n">
+<h1 class="msghead" id="d270166e2307"><span class="title title msgId"><span class="ph ph msgNumber">SQL8027N</span></span>  <span class="shortdesc shortdesc msgText">The table partitioning feature is being used without a DB2 Enterprise Server Edition license.
+The database manager has detected that the table partitioning feature is being used without a DB2 Enterprise Server Edition license.  Ensure that you have purchased a valid DB2 Enterprise Server Edition entitlement from your 
+IBM representative or authorized dealer and have
+updated your license using the db2licm command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL8027N: User response"><h2 class="sectiontitle" id="d270166e2331">User response</h2></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2340" lang="en-us" id="sql8028n">
+<h1 class="msghead" id="d270166e2340"><span class="title title msgId"><span class="ph ph msgNumber">SQL8028N</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=quotedString varnumber=1">feature</var> feature is being used without a <var class="keyword varname vartype=quotedString varnumber=2">license</var> license. The database manager has detected that this feature is being used without the appropriate entitlements. Ensure that you have purchased appropriate entitlements from your IBM representative or authorized dealer and have updated your license using the db2licm command.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL8028N: User response"><h2 class="sectiontitle" id="d270166e2370">User response</h2></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2380" lang="en-us" id="sql8029n">
+<h1 class="msghead" id="d270166e2380"><span class="title title msgId"><span class="ph ph msgNumber">SQL8029N</span></span>  <span class="shortdesc shortdesc msgText">A valid license key was not found for the requested functionality. Reference numbers: <var class="keyword varname vartype=quotedString varnumber=1">list-of-numbers</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8029N: Explanation"><h2 class="sectiontitle" id="d270166e2407">Explanation</h2><p>License keys are required for all database products. To use the database product features or to be in compliance with your current product entitlement, you must apply the licenses manually after installation.</p>
+
+<p>This message is returned when the database manager detects that a feature or functionality is being used for which no valid license key is registered.</p>
+
+<p>The list of function numbers in <var class="keyword varname">list-of-numbers</var> identifies one or more features or functionality that is missing a valid license key:</p>
+
+<dl>
+
+<dt class="dlterm">1</dt>
+
+<dd class="dlentry"><p>Column-organized tables</p>
+</dd>
+
+
+<dt class="dlterm">2</dt>
+
+<dd class="dlentry"><p>DB2 pureScale Feature</p>
+</dd>
+
+
+<dt class="dlterm">3</dt>
+
+<dd class="dlentry"><p>Table partitioning</p>
+</dd>
+
+
+<dt class="dlterm">4</dt>
+
+<dd class="dlentry"><p>Database partitioning</p>
+</dd>
+
+
+<dt class="dlterm">5</dt>
+
+<dd class="dlentry"><p>Row compression</p>
+</dd>
+
+
+<dt class="dlterm">6</dt>
+
+<dd class="dlentry"><p>Index compression</p>
+</dd>
+
+
+<dt class="dlterm">7</dt>
+
+<dd class="dlentry"><p>Workload management</p>
+</dd>
+
+
+<dt class="dlterm">8</dt>
+
+<dd class="dlentry"><p>DB2 native encryption</p>
+</dd>
+</dl>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8029N: User response"><h2 class="sectiontitle" id="d270166e2497">User response</h2><p>Purchase the license key from your IBM representative or authorized dealer,  and then update your license using the db2licm command.</p>
+
+<p><strong>sqlcode</strong>:  -8029</p>
+
+<p><strong>sqlstate</strong>:  560D8</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2518" lang="en-us" id="sql8030w">
+<h1 class="msghead" id="d270166e2518"><span class="title title msgId"><span class="ph ph msgNumber">SQL8030W</span></span>  <span class="shortdesc shortdesc msgText">The license for the product <var class="keyword varname vartype=quotedString varnumber=1">product</var> will expire in <var class="keyword varname vartype=quotedString varnumber=2">number</var> day(s). You can register and update your license using the db2licm command. The license key can be obtained from your licensed
+product CD.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgUserResponse" role="region" aria-label="SQL8030W: User response"><h2 class="sectiontitle" id="d270166e2548">User response</h2></section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2558" lang="en-us" id="sql8100n">
+<h1 class="msghead" id="d270166e2558"><span class="title title msgId"><span class="ph ph msgNumber">SQL8100N</span></span>  <span class="shortdesc shortdesc msgText">The table is full.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8100N: Explanation"><h2 class="sectiontitle" id="d270166e2582">Explanation</h2><p>When creating a database the following parameters may be specified:</p>
+
+<ul>
+<li>maximum number of pages per segment per file</li>
+
+<li>number of segments</li>
+</ul>
+
+<p>Each table part may now have multiple files within the database segments. The file can grow until it reaches its maximum size in a segment (maximum number of pages per segment) and then it moves to the next segment to add more data.  This occurs until it has used the maximum number of pages per segment in all configured segments, and the table becomes full.</p>
+
+<p>Therefore, the total amount of space per database part is the product of the maximum number of pages and the number of segments. The table will be full if any of the table parts use all of their configured space.</p>
+
+<p>Federated system users: this situation can also be detected by the data source.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8100N: User response"><h2 class="sectiontitle" id="d270166e2605">User response</h2><ul>
+<li>Delete rows from the table</li>
+
+<li>Reorganize the table to make more space</li>
+
+<li>Create a new database with larger values for maximum pages per segment and number of segments, back up the original database and restore to the new database.</li>
+</ul>
+
+<p>Federated system users: isolate the problem to the data source failing the request and:</p>
+
+<ul>
+<li>Take the necessary steps to increase the space in the table at the data source.</li>
+
+<li>If the table is on the federated server, create a new database with larger values for maximum pages per segment and number of segments.  Back up the original database and restore to the new database.</li>
+</ul>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2635" lang="en-us" id="sql8101n">
+<h1 class="msghead" id="d270166e2635"><span class="title title msgId"><span class="ph ph msgNumber">SQL8101N</span></span>  <span class="shortdesc shortdesc msgText">A Database segment may be incorrect.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL8101N: Explanation"><h2 class="sectiontitle" id="d270166e2659">Explanation</h2><div class="p">This error could occur in two ways:
+<ol>
+<li>Every database segment has an identifier file.  The
+file may be missing or the contents of the file may be incorrect.</li>
+
+<li>One, or more, previously allocated
+database segments are missing.</li>
+</ol>
+</div>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL8101N: User response"><h2 class="sectiontitle" id="d270166e2672">User response</h2><div class="p"><ul>
+<li>Check to ensure that the file systems are mounted correctly</li>
+
+<li>Restore the database from a backup</li>
+
+<li>Call your IBM service representative</li>
+</ul>
+</div>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2693" lang="en-us" id="sql9301n">
+<h1 class="msghead" id="d270166e2693"><span class="title title msgId"><span class="ph ph msgNumber">SQL9301N</span></span>  <span class="shortdesc shortdesc msgText">An invalid option is specified or an option parameter is missing.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9301N: Explanation"><h2 class="sectiontitle" id="d270166e2717">Explanation</h2><p>Either the option specified is invalid or an option parameter is
+not specified.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9301N: User response"><h2 class="sectiontitle" id="d270166e2726">User response</h2><p>Correct the option and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2737" lang="en-us" id="sql9302n">
+<h1 class="msghead" id="d270166e2737"><span class="title title msgId"><span class="ph ph msgNumber">SQL9302N</span></span>  <span class="shortdesc shortdesc msgText">Invalid option parameter: <var class="keyword varname vartype=quotedString varnumber=1">option-parameter</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9302N: Explanation"><h2 class="sectiontitle" id="d270166e2764">Explanation</h2><p>The option parameter specified is invalid.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9302N: User response"><h2 class="sectiontitle" id="d270166e2773">User response</h2><p>Correct the option parameter and resubmit the command.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2785" lang="en-us" id="sql9303n">
+<h1 class="msghead" id="d270166e2785"><span class="title title msgId"><span class="ph ph msgNumber">SQL9303N</span></span>  <span class="shortdesc shortdesc msgText">No <var class="keyword varname vartype=unquotedString varnumber=1">option</var> is specified.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9303N: Explanation"><h2 class="sectiontitle" id="d270166e2812">Explanation</h2><p>The required option <var class="keyword varname">option</var> is not specified.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9303N: User response"><h2 class="sectiontitle" id="d270166e2824">User response</h2><p>Resubmit the command with the required option.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2835" lang="en-us" id="sql9304n">
+<h1 class="msghead" id="d270166e2835"><span class="title title msgId"><span class="ph ph msgNumber">SQL9304N</span></span>  <span class="shortdesc shortdesc msgText">Unable to open file <var class="keyword varname vartype=quotedString varnumber=1">filename</var> for writing.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9304N: Explanation"><h2 class="sectiontitle" id="d270166e2862">Explanation</h2><p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9304N: User response"><h2 class="sectiontitle" id="d270166e2868">User response</h2><p>Ensure that the system can access the file.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2880" lang="en-us" id="sql9305n">
+<h1 class="msghead" id="d270166e2880"><span class="title title msgId"><span class="ph ph msgNumber">SQL9305N</span></span>  <span class="shortdesc shortdesc msgText">The <var class="keyword varname vartype=unquotedString varnumber=1">name</var> is too long. The maximum length is <var class="keyword varname vartype=unquotedString varnumber=2">max-length</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9305N: Explanation"><h2 class="sectiontitle" id="d270166e2910">Explanation</h2><p>The &lt;name&gt; is longer than the maximum length of &lt;max-length&gt;.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9305N: User response"><h2 class="sectiontitle" id="d270166e2919">User response</h2><p>Ensure that the &lt;name&gt; does not exceed the maximum length.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2930" lang="en-us" id="sql9306n">
+<h1 class="msghead" id="d270166e2930"><span class="title title msgId"><span class="ph ph msgNumber">SQL9306N</span></span>  <span class="shortdesc shortdesc msgText">One or more of the field names are too long.
+The maximum length is <var class="keyword varname vartype=unquotedString varnumber=1">max-length</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9306N: Explanation"><h2 class="sectiontitle" id="d270166e2957">Explanation</h2><p>The total length of a field name includes the specified prefix
+and/or a column suffix, which can either be its name or its number.
+This total length must not exceed the maximum length.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9306N: User response"><h2 class="sectiontitle" id="d270166e2966">User response</h2><p>Ensure that all the field names do not exceed the maximum length.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e2978" lang="en-us" id="sql9307n">
+<h1 class="msghead" id="d270166e2978"><span class="title title msgId"><span class="ph ph msgNumber">SQL9307N</span></span>  <span class="shortdesc shortdesc msgText">Remarks cannot be retrieved from the database.
+Error code = <var class="keyword varname vartype=quotedString varnumber=1">sqlcode</var>.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9307N: Explanation"><h2 class="sectiontitle" id="d270166e3005">Explanation</h2><p>An error has occurred when attempting to retrieve the remarks
+of a column from the database.</p>
+
+<p>The command cannot be processed.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9307N: User response"><h2 class="sectiontitle" id="d270166e3014">User response</h2><p>Check the error code for more information.</p>
+</section>
+</div>
+</article><article class="topic reference msg nested0" role="article" aria-labelledby="d270166e3025" lang="en-us" id="sql9308w">
+<h1 class="msghead" id="d270166e3025"><span class="title title msgId"><span class="ph ph msgNumber">SQL9308W</span></span>  <span class="shortdesc shortdesc msgText">SQL data type <var class="keyword varname vartype=quotedString varnumber=1">sqltype</var> of the column <var class="keyword varname vartype=quotedString varnumber=2">colname</var> is not supported.</span></h1>
+
+<div class="body refbody msgBody">
+<section class="section section msgExplanation" role="region" aria-label="SQL9308W: Explanation"><h2 class="sectiontitle" id="d270166e3055">Explanation</h2><p>The SQL data type <var class="keyword varname">sqltype</var> is not supported in
+the specified host language.</p>
+
+<p>No declaration is generated for this column.</p>
+</section>
+
+<section class="section section msgUserResponse" role="region" aria-label="SQL9308W: User response"><h2 class="sectiontitle" id="d270166e3067">User response</h2><p>Ensure that this is the desired table.</p>
+</section>
+</div>
+</article></div></main><script type="text/javascript"  src="/W76aJP/ca4/9q7/EtEnjORS/arVEQrGG7S/fgMKIwUl/XUs5Z3/M9VQIB"></script></body></html>
